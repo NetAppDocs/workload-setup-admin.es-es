@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="0204047d2332c588e7eb7d928e84f94a" category="summary">Agregue las credenciales de AWS para que Workload Factory tenga los permisos que necesita para implementar y administrar los recursos de la nube en sus cuentas de AWS.</block>
+  <block id="287ae8bc216279a75c04344894e04b7f" category="doc">Agregar credenciales de AWS a Workload Factory</block>
+  <block id="b4b980a506b01e8ee88c1658f64ff933" category="paragraph">Agregue y administre las credenciales de AWS para que Workload Factory tenga los permisos que necesita para implementar y administrar los recursos de la nube en sus cuentas de AWS.</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="section-title">Descripción general</block>
+  <block id="4dacf6e0adb6ed0f64acd514a486bf8a" category="inline-link-macro">Obtenga más información sobre los modos operativos</block>
+  <block id="8b7ed833b15fc4a24d7c01f4ff0473e3" category="paragraph">Workload Factory funcionará en modo _BASIC_ a menos que agregue credenciales de cuenta de AWS. Puede agregar credenciales para activar otros modos de operación, como el modo de lectura y el modo de automatización. <block ref="3ecbe38d325fe0025957d871a4619a77" category="inline-link-macro-rx"></block>.</block>
+  <block id="7f76e91e5513affc227459b415e2e1cf" category="paragraph">Puede agregar credenciales de AWS a una cuenta existente de Workload Factory desde la página Credentials. Esto proporciona a Workload Factory los permisos necesarios para gestionar recursos y procesos dentro de tu entorno de nube AWS.</block>
+  <block id="df21e6f22445f7e313093546a4762e64" category="paragraph">Puede agregar credenciales mediante dos métodos:</block>
+  <block id="ebb29cdb5a9f5368e3f445c808c91552" category="list-text">*Manualmente*: Usted crea la política IAM y el rol IAM en su cuenta de AWS mientras agrega credenciales en Workload Factory.</block>
+  <block id="1a04b786edc8b8251d22307b11cb2a8d" category="list-text">*Automáticamente*: Usted captura una cantidad mínima de información sobre los permisos y luego usa una pila CloudFormation para crear las políticas y el rol de IAM para sus credenciales.</block>
+  <block id="3e704746794b6c6da13402ca9df54660" category="section-title">Agregar credenciales a una cuenta manualmente</block>
+  <block id="c3ba6c13344137feef1d3795c8b29466" category="paragraph">Puede agregar las credenciales de AWS a Workload Factory manualmente para darle a su cuenta de Workload Factory los permisos necesarios para administrar los recursos de AWS que utilizará para ejecutar sus cargas de trabajo únicas. Cada juego de credenciales que agregue incluirá una o más políticas de IAM basadas en las capacidades de carga de trabajo que desee utilizar y un rol de IAM asignado a su cuenta.</block>
+  <block id="ea106b6fa0504ddb53d4506dcd8e7755" category="paragraph">Hay tres partes para crear las credenciales:</block>
+  <block id="b4968210d824a9808cbfac903e6a2461" category="list-text">Seleccione el nivel de servicios y permisos que desea utilizar y, a continuación, cree políticas de IAM desde la consola de administración de AWS.</block>
+  <block id="3b022a10e2c2436d37f59e86b18713f7" category="list-text">Cree un rol de IAM desde la consola de administración de AWS.</block>
+  <block id="875b761ddc794776aadfc56fc5a6fc34" category="list-text">En Workload Factory, introduzca un nombre y agregue las credenciales.</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Antes de empezar</block>
+  <block id="36a8744ea109fc8ef18fd018d5d97aa0" category="paragraph">Necesitarás disponer de credenciales para iniciar sesión en tu cuenta de AWS.</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Pasos</block>
+  <block id="a8fab9cf1c5f1b2f874573a923af9503" category="list-text">En la consola de Workload Factory, selecciona el icono *Cuenta* y selecciona *Credenciales*.</block>
+  <block id="7bb5995fb8df55fef061908839bf8869" category="inline-image-macro">Una captura de pantalla que muestra el icono Configuración de la cuenta en la consola de Workload Factory.</block>
+  <block id="f1801c767f1fdb84cf89d4dc163ed814" category="paragraph"><block ref="f1801c767f1fdb84cf89d4dc163ed814" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dcad3915ef43cba7d550cad972fa348d" category="list-text">En la página *Credenciales*, seleccione *Añadir credenciales* y aparecerá la página Añadir credenciales.</block>
+  <block id="c8df78ded4cea0598f7679f11a3c3246" category="list-text">Seleccione *Agregar manualmente* y luego siga los pasos a continuación para completar las tres secciones en _Configuración de permisos_.</block>
+  <block id="ef7fe40c036b5b08d74837dcb702dc33" category="inline-image-macro">Una captura de pantalla que muestra los elementos que necesita definir manualmente para cada juego de credenciales.</block>
+  <block id="083fb8583b0a2366ef9a94388dd9640f" category="paragraph"><block ref="083fb8583b0a2366ef9a94388dd9640f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d11861b4e2dfc9ac3d86245926aa2785" category="section-title">Paso 1: Seleccione las capacidades de carga de trabajo y cree las políticas de IAM</block>
+  <block id="530d81548274a062436af51b8c3e829f" category="paragraph">En esta sección, podrá elegir qué tipos de funcionalidades de carga de trabajo se gestionarán como parte de estas credenciales y los permisos habilitados para cada carga de trabajo. Tendrá que copiar los permisos de política para cada carga de trabajo seleccionada desde CodeBox y agregarlos a la consola de administración de AWS dentro de su cuenta de AWS para crear las políticas.</block>
+  <block id="445f4ba50fbc8e7b285aedb4396412bb" category="inline-image-macro">Una captura de pantalla que muestra los tipos de capacidades de carga de trabajo que se gestionarán como parte de las políticas de estas credenciales.</block>
+  <block id="0edc9a25423073fcc768405f6aeda88b" category="paragraph"><block ref="0edc9a25423073fcc768405f6aeda88b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1ab1d79c6a7c98f384377942001e718" category="list-text">Desde la sección *Crear políticas*, habilite cada una de las capacidades de carga de trabajo que desea incluir en estas credenciales.</block>
+  <block id="3b9b789374908017040d97f81eb4008d" category="paragraph">Puede añadir más funcionalidades más adelante, solo tiene que seleccionar las cargas de trabajo que desee poner en marcha y gestionar actualmente.</block>
+  <block id="5366a51a090d4b12810a9a8050f2fec4" category="list-text">Para las funcionalidades de carga de trabajo que ofrecen diferentes niveles de permiso (operar, ver, etc.), seleccione el tipo de permisos que estarán disponibles con estas credenciales.</block>
+  <block id="6d45b51df5e4b4d742aed3a012be7ece" category="list-text">En la ventana CodeBox, copie los permisos de la primera directiva IAM.</block>
+  <block id="d9951e6a22fb7f7d403d017e5b8ef9c6" category="list-text">Abra otra ventana del explorador e inicie sesión en su cuenta de AWS en la consola de administración de AWS.</block>
+  <block id="0545945650ae73f856cfac5d203df5f5" category="list-text">Abra el servicio IAM y seleccione *Políticas* &gt; *Crear política*.</block>
+  <block id="27b582bcbcca0fd418f9f9f855710d0a" category="list-text">Seleccione JSON como tipo de archivo, pegue los permisos que copió en el paso 3 y seleccione *Siguiente*.</block>
+  <block id="e8ea9480c70ef3b586604a914898eff0" category="list-text">Introduzca el nombre de la política y seleccione *Crear política*.</block>
+  <block id="c240537b83fe8c59f5bb758e5c166662" category="list-text">Si seleccionó varias capacidades de carga de trabajo en el paso 1, repita estos pasos para crear una política para cada conjunto de permisos de carga de trabajo.</block>
+  <block id="eca99ccb2e04bfcfc06a9cb5860e53a9" category="section-title">Paso 2: Cree el rol de IAM que utiliza las políticas</block>
+  <block id="30551002ceb8abd5af0ee8907423b553" category="paragraph">En esta sección configurará un rol de IAM que Workload Factory asumirá que incluye los permisos y las políticas que acaba de crear.</block>
+  <block id="05e2d97b3b23a80afeb67390bad5f97c" category="inline-image-macro">Una captura de pantalla que muestra qué permisos formarán parte del nuevo rol.</block>
+  <block id="bfc77a43a5b610654d7d0e7bbb9162a7" category="paragraph"><block ref="bfc77a43a5b610654d7d0e7bbb9162a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c0a8070d8176ef21fdf6bc0d6b6833c9" category="list-text">En la consola de administración de AWS, seleccione *Roles &gt; Crear rol*.</block>
+  <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">En *Tipo de entidad de confianza*, seleccione *cuenta de AWS*.</block>
+  <block id="f0497660975536e414a629b7d4f9f276" category="list-text">Selecciona *Otra cuenta de AWS* y copia y pega el ID de cuenta para la gestión de cargas de trabajo de FSx para ONTAP desde la interfaz de usuario de Workload Factory.</block>
+  <block id="f97e7ca54bb60a402c14107162345b08" category="list-text">Seleccione *ID externo requerido* y copie y pegue el ID externo de la interfaz de usuario de Workload Factory.</block>
+  <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">Seleccione *Siguiente*.</block>
+  <block id="552a0f683211339f8f7517a1d4fc804d" category="list-text">En la sección Política de permisos, elige todas las políticas que definiste anteriormente y selecciona *Siguiente*.</block>
+  <block id="eb940e2ee0ec63786b166a518db881df" category="list-text">Introduzca un nombre para el rol y seleccione *Crear rol*.</block>
+  <block id="38743fa9100c2dfb5d984fc45fed3de7" category="list-text">Copie el rol ARN.</block>
+  <block id="3ef33e9c33bb03c549beb540233aef7a" category="list-text">Vuelva a Workload Factory, expanda la sección *Create Role* y pegue el ARN en el campo _Role ARN_.</block>
+  <block id="c66b75fd4a0a3e3eff2094b970b0b897" category="section-title">Paso 3: Introduzca un nombre y agregue las credenciales</block>
+  <block id="a9c4ed0c041add98b3c1c27e6191e29e" category="paragraph">El paso final es introducir un nombre para las credenciales en Workload Factory.</block>
+  <block id="3d89a5fdb924680cf3d2a6757ec9707c" category="list-text">En Workload Factory, expanda *Nombre de credenciales*.</block>
+  <block id="a961eea4fc631a6689d895b16be74287" category="list-text">Introduzca el nombre que desee usar para estas credenciales.</block>
+  <block id="027a8d7e43e765637f8ef1ae06ce3700" category="list-text">Seleccione *Agregar* para crear las credenciales.</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Resultado</block>
+  <block id="47d8a5dd0796937c17e25e1cddfa4b0a" category="paragraph">Las credenciales se crean y se devuelve a la página Credenciales.</block>
+  <block id="5512d35e832df0796cf2e9bbfc4ef8e7" category="section-title">Agregue credenciales a una cuenta usando CloudFormation</block>
+  <block id="21f73823dc240b09e9b0a0896496f95d" category="paragraph">Puede agregar credenciales de AWS a Workload Factory mediante una pila de AWS CloudFormation seleccionando las capacidades de Workload Factory que desee usar y, a continuación, iniciando la pila AWS CloudFormation en su cuenta de AWS. CloudFormation creará las políticas de IAM y el rol de IAM en función de las capacidades de carga de trabajo que haya seleccionado.</block>
+  <block id="f48f7e164b0415ad7634845f95eb03e1" category="list-text">Necesitará tener los siguientes permisos en su cuenta de AWS al agregar credenciales mediante una pila de CloudFormation:</block>
+  <block id="7f1a76d5b7da63bea7c6b448303e146a" category="list-text">En la página *Credenciales*, selecciona *Añadir credenciales*.</block>
+  <block id="4454b47599abbe986fcc1d78e9d5c3d5" category="list-text">Seleccione *Añadir a través de AWS CloudFormation*.</block>
+  <block id="5ad4ec01b313b6c0c149b0ecd63aca07" category="inline-image-macro">Una captura de pantalla que muestra los elementos que deben definirse antes de que pueda iniciar CloudFormation para crear las credenciales.</block>
+  <block id="901a75a6ee535c459b098fcdbbfb42aa" category="paragraph"><block ref="901a75a6ee535c459b098fcdbbfb42aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3534f18786c0daea2192750276eda6f0" category="list-text">En *Crear políticas*, habilite cada una de las capacidades de carga de trabajo que desea incluir en estas credenciales y elija un nivel de permiso para cada carga de trabajo.</block>
+  <block id="fa7fbda40357a3d9d2b6286d82c737a8" category="list-text">En *Nombre de Credenciales*, introduzca el nombre que desea utilizar para estas credenciales.</block>
+  <block id="55af5349296de9cc03eea75eb011b988" category="list-text">Agregue las credenciales de AWS CloudFormation:</block>
+  <block id="a83b560232f912e9085bc49e52b3b48b" category="list-text">Seleccione *Agregar* (o seleccione *Redirigir a CloudFormation*) y se mostrará la página Redirigir a CloudFormation.</block>
+  <block id="7b8b5df6726a1112cf43c1440a2b4def" category="inline-image-macro">Una captura de pantalla que muestra cómo crear la pila CloudFormation para agregar políticas y un rol para las credenciales de Workload Factory.</block>
+  <block id="b0f8c37516e3eee761656df941264fa2" category="paragraph"><block ref="b0f8c37516e3eee761656df941264fa2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d1ef06b747e151725861e376eb2fca2b" category="list-text">Si usa el inicio de sesión único (SSO) con AWS, abra una pestaña del explorador independiente e inicie sesión en la consola de AWS antes de seleccionar *Continuar*.</block>
+  <block id="43bcb79a644c3cd71bfe3cb4635d97a0" category="paragraph">Debe iniciar sesión en la cuenta de AWS en la que reside el sistema de archivos de FSx para ONTAP.</block>
+  <block id="3364e8fe52c54126e3d0ebbdc3ebe636" category="list-text">Seleccione *Continuar* en la página Redirigir a CloudFormation.</block>
+  <block id="ab44f988398acb833af7b9b2bc6c26b9" category="list-text">En la página Quick create stack, en Capacidades, seleccione *Reconozco que AWS CloudFormation podría crear recursos de IAM*.</block>
+  <block id="69831ef6721ecf7f184cdd4b29af8f45" category="list-text">Seleccione *Crear pila*.</block>
+  <block id="67a2aece01328bf00637fcc5391ba3ec" category="list-text">Vuelva a Fábrica de Carga de Trabajo y supervise la página Credenciales para verificar que las nuevas credenciales están en curso o que se han agregado.</block>
+  <block id="33806546d5449616c234971d2aa7c18b" category="summary">CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por Workload Factory. CodeBox está alineado con los modos de operación de Workload Factory (Básico, Lectura, Automatización) y establece una ruta clara para la preparación de ejecución, además de proporcionar un catálogo de automatización para una reutilización rápida en el futuro.</block>
+  <block id="b9d92ff083cdd90473a495ae946507fa" category="doc">Obtenga más información sobre la automatización de codebox</block>
+  <block id="86df170aaac2322b854dc499ffb2f681" category="paragraph">CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por Workload Factory. CodeBox está alineado con los modos de operación de Workload Factory (Básico, Lectura y Automatización) y establece una ruta clara para la preparación de ejecución, además de proporcionar un catálogo de automatización para una reutilización rápida en el futuro.</block>
+  <block id="c20a9fb18c5ad24194fdd7ccde0a108d" category="section-title">Funciones de CodeBox</block>
+  <block id="a60481064d733c1b8603777a0fed54b0" category="paragraph">CodeBox ofrece dos funciones clave de IAC:</block>
+  <block id="7b03b939d7a7886fee314498791450ce" category="list-text">_CodeBox Viewer_ muestra el IAC generado por una operación de flujo de trabajo específica haciendo coincidir las entradas y selecciones del asistente gráfico o de la interfaz de chat conversacional. Mientras que CodeBox Viewer admite codificación de colores para facilitar la navegación y el análisis, no permite editar, solo copiar o guardar código en el catálogo de automatización.</block>
+  <block id="e270244cb4311b8491d54c9d67c0622f" category="list-text">_CodeBox Automation Catalog_ muestra todos los trabajos IAC guardados, lo que le permite hacer referencia fácilmente a ellos para su uso futuro. Los trabajos del catálogo de automatización se guardan como plantillas y se muestran en el contexto de los recursos que se les aplican.</block>
+  <block id="11c284cdfd9860e62b7f844adeae2037" category="paragraph">Además, al configurar las credenciales de Workload Factory, CodeBox muestra dinámicamente los permisos de AWS necesarios para crear políticas de IAM. Se proporcionan permisos para cada funcionalidad de fábrica de carga de trabajo que vaya a utilizar (bases de datos, IA, FSx para ONTAP, etc.) y se personalizan en función de si los usuarios de la política obtendrán permisos de solo lectura o permisos de operación completa. Solo tiene que copiar los permisos de CodeBox y luego pegarlos en la consola de administración de AWS para que Workload Factory tenga los permisos correctos para administrar sus cargas de trabajo.</block>
+  <block id="83bc09f30d22b08aaed079135d400a58" category="section-title">Formatos de código admitidos</block>
+  <block id="a2d178a4422e96a4ba807df17805b391" category="paragraph">Los formatos de código admitidos incluyen:</block>
+  <block id="2a877c6ff8f47bb17f9e4d12f8a693bc" category="list-text">API DE REST DE Workload Factory</block>
+  <block id="7820fdb5d8b3ebe0c69c86cf8bd2d0cf" category="list-text">CLI DE AWS</block>
+  <block id="8679a1944db93938a65e47107be5d2b8" category="list-text">CloudFormation de AWS</block>
+  <block id="1767b6ef838f3d4774bc0f274ffd6680" category="inline-link-macro">Aprende a usar CodeBox</block>
+  <block id="431b5bf36166f939706fd1cd6625e311" category="paragraph"><block ref="58039229c34145102d9497de13b6e7b4" category="inline-link-macro-rx"></block>.</block>
+  <block id="243f4102d24e538f61072e19e53b373f" category="summary">NetApp ofrece compatibilidad con Workload Factory de varias formas. Hay disponibles amplias opciones de auto soporte gratuito las 24 horas del día, los 7 días de la semana, como artículos de la base de conocimiento (KB) y un foro de la comunidad. Su registro de soporte incluye soporte técnico remoto a través de tickets web.</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">Obtenga ayuda</block>
+  <block id="3c6efe0ce159fb5b8ee4882bcf3ad973" category="paragraph">NetApp ofrece compatibilidad con Workload Factory y sus servicios de cloud de diversas maneras. Hay disponibles amplias opciones de auto soporte gratuito las 24 horas del día, los 7 días de la semana, como artículos de la base de conocimiento (KB) y un foro de la comunidad. Su registro de soporte incluye soporte técnico remoto a través de tickets web.</block>
+  <block id="6a7b2c9c4cec65ad972b108fa0a1192b" category="section-title">Obtenga soporte para FSx for ONTAP</block>
+  <block id="4435b263dd1a35bcd8dfda050db92b3b" category="paragraph">Para obtener soporte técnico relacionado con FSx para ONTAP, su infraestructura o cualquier solución que utilice el servicio, consulte la sección «Obtener ayuda» en la documentación de Workload Factory para ese producto.</block>
+  <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">Amazon FSX para ONTAP</block>
+  <block id="9d06990508d25d367d9158c6558eb9c8" category="paragraph"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
+  <block id="35f9849ffdd809bda11d0fc56e1e3583" category="paragraph">Para recibir soporte técnico específico para Workload Factory y sus soluciones y servicios de almacenamiento, utilice las opciones de soporte descritas a continuación.</block>
+  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">Utilice opciones de soporte automático</block>
+  <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">Estas opciones están disponibles de forma gratuita, las 24 horas del día, los 7 días de la semana:</block>
+  <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">Documentación</block>
+  <block id="d935525f4850c4638cbf48ae53fb4686" category="paragraph">La documentación de Workload Factory que está viendo en ese momento.</block>
+  <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">Base de conocimientos</block>
+  <block id="436f63b446dba5a418c698d49bd39718" category="list-text"><block ref="436f63b446dba5a418c698d49bd39718" category="inline-link-rx"></block></block>
+  <block id="ba6274b9c9d1f81bb3a648fa289986b8" category="paragraph">Busque en la base de conocimientos de Workload Factory para encontrar artículos útiles para solucionar problemas.</block>
+  <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">Comunidades</block>
+  <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
+  <block id="7faef90df03399696ba9d4815b37171a" category="paragraph">Únase a la comunidad de Workload Factory para seguir las discusiones en curso o crear otras nuevas.</block>
+  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">Cree un caso con el soporte de NetApp</block>
+  <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">Además de las opciones de autosoporte anteriores, puede trabajar con un especialista de soporte de NetApp para resolver cualquier problema después de activar el soporte de.</block>
+  <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">Antes de empezar</block>
+  <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">Aprenda a registrarse para obtener soporte</block>
+  <block id="a12ea39ddf1c98adfd7f751299705efa" category="paragraph">Para utilizar la capacidad de *Crear un caso*, primero debe registrarse para recibir soporte. Asocie sus credenciales del sitio de soporte de NetApp a su inicio de sesión de fábrica de cargas de trabajo. <block ref="d9fea24984986beabae03291c4b721de" category="inline-link-macro-rx"></block>.</block>
+  <block id="356c88ac4b0ec3f7689cc91f54701fef" category="list-text">En la parte superior derecha de la consola Workload Factory, selecciona *Ayuda &gt; Soporte*.</block>
+  <block id="aadd86a3fadf19221852692c6e4adc2f" category="paragraph">Al seleccionar esta opción, se abre la consola de BlueXP una nueva pestaña del navegador y se carga la consola de soporte.</block>
+  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">En la página *Recursos*, elija una de las opciones disponibles en Soporte técnico:</block>
+  <block id="6a1b74969231967ed071d465206b15c7" category="list-text">Selecciona *Llámanos* si quieres hablar con alguien por teléfono. Se le dirigirá a una página de netapp.com que enumera los números de teléfono a los que puede llamar.</block>
+  <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">Selecciona *Crear un caso* para abrir un ticket con un especialista en Soporte NetApp:</block>
+  <block id="d7d0da18fbb8f8f85c1364883fbdf4c7" category="list-text">*Servicio*: Selecciona *Fábrica de carga de trabajo*.</block>
+  <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*Prioridad de caso*: Elija la prioridad para el caso, que puede ser Baja, Media, Alta o crítica.</block>
+  <block id="835eb4008e97c2a7f69bbb2725285e34" category="paragraph">Para obtener más información sobre estas prioridades, pase el ratón sobre el icono de información situado junto al nombre del campo.</block>
+  <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*Descripción del problema*: Proporcione una descripción detallada del problema, incluidos los mensajes de error aplicables o los pasos de solución de problemas que haya realizado.</block>
+  <block id="002c6f26fb01affb37b8cf3cef7a1fb0" category="list-text">*Direcciones de correo electrónico adicionales*: Introduzca direcciones de correo electrónico adicionales si desea que alguien más conozca este problema.</block>
+  <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">*Accesorio (opcional)*: Cargue hasta cinco archivos adjuntos, uno a la vez.</block>
+  <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">Los archivos adjuntos están limitados a 25 MB por archivo. Se admiten las siguientes extensiones de archivo: Txt, log, pdf, jpg/jpeg, rtf, doc/docx, xls/xlsx y csv.</block>
+  <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">Captura de pantalla del formulario Crear un caso que le permite crear un caso con el soporte de NetApp.</block>
+  <block id="b0c6c3ee60a29925d3f09cd609b79483" category="paragraph"><block ref="b0c6c3ee60a29925d3f09cd609b79483" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Después de terminar</block>
+  <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">Aparecerá una ventana emergente con el número de caso de soporte. Un especialista de soporte de NetApp revisará su caso y le pondrá en contacto con usted próximamente.</block>
+  <block id="0ff9b4b8684b9e03c9c1e1320935eae3" category="paragraph">Para obtener un historial de sus casos de soporte, puede seleccionar *Ajustes &gt; Línea de tiempo* y buscar acciones denominadas “Crear caso de soporte”. Un botón situado en el extremo derecho le permite ampliar la acción para ver los detalles.</block>
+  <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">Es posible que se encuentre el siguiente mensaje de error al intentar crear un caso:</block>
+  <block id="a30f69ab0ec85d427a3e8835713525bd" category="paragraph">"No está autorizado a crear un caso en el servicio seleccionado"</block>
+  <block id="c7b7a5ae9f37fd7d24e4d641b9186fe9" category="paragraph">Este error podría significar que la cuenta NSS y la compañía de registro con la que está asociada no es la misma compañía de registro para el número de serie de la cuenta de BlueXP (es decir, 960xxxx) o el número de serie del entorno de trabajo. Puede solicitar ayuda utilizando una de las siguientes opciones:</block>
+  <block id="e01df0b4dfd95eba2c59333419e4fac6" category="list-text">Usar el chat en el producto</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">Envíe un caso no técnico a<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
+  <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">Gestione sus casos de soporte (vista previa)</block>
+  <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">Puede ver y gestionar los casos de soporte activos y resueltos directamente desde BlueXP. Es posible gestionar los casos asociados con su cuenta de NSS y con su empresa.</block>
+  <block id="394ef093ad3259b9ff0fe7406f015b83" category="paragraph">La gestión de casos está disponible como vista previa. Tenemos pensado perfeccionar esta experiencia y añadir mejoras en próximos lanzamientos. Envíenos sus comentarios mediante el chat en el producto.</block>
+  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">Tenga en cuenta lo siguiente:</block>
+  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">La consola de gestión de casos en la parte superior de la página ofrece dos vistas:</block>
+  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">La vista de la izquierda muestra el total de casos abiertos en los últimos 3 meses por la cuenta de usuario NSS que ha proporcionado.</block>
+  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">La vista de la derecha muestra el total de casos abiertos en los últimos 3 meses a nivel de su compañía en función de su cuenta NSS de usuario.</block>
+  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">Los resultados de la tabla reflejan los casos relacionados con la vista seleccionada.</block>
+  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">Puede agregar o quitar columnas de interés y filtrar el contenido de columnas como prioridad y estado. Otras columnas proporcionan funciones de clasificación.</block>
+  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">Consulte los pasos a continuación para obtener más información.</block>
+  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">En el nivel por caso, ofrecemos la posibilidad de actualizar las notas de un caso o cerrar un caso que no esté ya en estado cerrado o pendiente de cierre.</block>
+  <block id="0a4050ac39772e9281a9aba225254bf8" category="list-text">Selecciona *Gestión de casos* y, si se te solicita, agrega tu cuenta de NSS a BlueXP.</block>
+  <block id="d8ce1865cf1fe3cffd60300b4b86ad63" category="paragraph">La página *Administración de casos* muestra casos abiertos relacionados con la cuenta NSS asociada con su cuenta de usuario de BlueXP. Esta es la misma cuenta NSS que aparece en la parte superior de la página *NSS Management*.</block>
+  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">Si lo desea, puede modificar la información que se muestra en la tabla:</block>
+  <block id="1d39d3ab518e1e3f16cbafb2a56e1fd9" category="list-text">En *Casos de la organización*, selecciona *Ver* para ver todos los casos asociados a tu empresa.</block>
+  <block id="059e856250b59be3069246887b74a23c" category="list-text">Modifique el rango de fechas eligiendo un rango de fechas exacto o eligiendo un marco de tiempo diferente.</block>
+  <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">Captura de pantalla de la opción situada encima de la tabla en la página de gestión de casos que permite elegir un intervalo de fechas exacto o los últimos 7 días, 30 días o 3 meses.</block>
+  <block id="4f7062c5c309a833cf46e4a1a5a5d366" category="paragraph"><block ref="4f7062c5c309a833cf46e4a1a5a5d366" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">Filtre el contenido de las columnas.</block>
+  <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">Captura de pantalla de la opción de filtro de la columna Estado que permite filtrar casos que coinciden con un estado específico, como activo o cerrado.</block>
+  <block id="8f624dee500d9670a27c4404084a7a62" category="paragraph"><block ref="8f624dee500d9670a27c4404084a7a62" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">El icono más que se muestra en la tabla</block>
+  <block id="002f1c0a8cf4a68b888010ddef3a7f7e" category="list-text">Para cambiar las columnas que aparecen en la tabla, seleccione <block ref="e55ec8dc42ae68d9326c51261c8a5f4f" category="inline-image-macro-rx" type="image"></block> y, a continuación, elija las columnas que desea mostrar.</block>
+  <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">Captura de pantalla que muestra las columnas que puede mostrar en la tabla.</block>
+  <block id="72c5c65442a2c44e7f2546b8b4c957df" category="paragraph"><block ref="72c5c65442a2c44e7f2546b8b4c957df" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">Icono con tres puntos que aparece en la última columna de la tabla</block>
+  <block id="000a1376035909240f559b8ab724030c" category="list-text">Para gestionar un caso existente, <block ref="54181d1b918b28e5f92545f8b3b4a30c" category="inline-image-macro-rx" type="image"></block> seleccione y seleccione una de las opciones disponibles:</block>
+  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*Ver caso*: Ver todos los detalles sobre un caso específico.</block>
+  <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*Actualizar notas de caso*: Proporcione detalles adicionales sobre su problema o seleccione *cargar archivos* para adjuntar hasta un máximo de cinco archivos.</block>
+  <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*Cerrar caso*: Proporciona detalles sobre por qué estás cerrando el caso y selecciona *Cerrar caso*.</block>
+  <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">Captura de pantalla que muestra las acciones que puede realizar después de seleccionar el menú de la última columna de la tabla.</block>
+  <block id="6f7cf78e14aa346236a87d9541221fb2" category="paragraph"><block ref="6f7cf78e14aa346236a87d9541221fb2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Avisos legales</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Los avisos legales proporcionan acceso a las declaraciones de copyright, marcas comerciales, patentes y mucho más.</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Copyright</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">Marcas comerciales</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NETAPP, el logotipo de NETAPP y las marcas enumeradas en la página de marcas comerciales de NetApp son marcas comerciales de NetApp, Inc. Los demás nombres de empresas y productos son marcas comerciales de sus respectivos propietarios.</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">Estadounidenses</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">Puede encontrar una lista actual de las patentes propiedad de NetApp en:</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Política de privacidad</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Código abierto</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">Los archivos de notificación proporcionan información sobre los derechos de autor y las licencias de terceros que se utilizan en software de NetApp.</block>
+  <block id="22e5a7336ebe77138f0282cedcb069ab" category="inline-link">Fábrica de carga de trabajo</block>
+  <block id="7ffcbeca3b450b8d05f9cf0eedb617f8" category="list-text"><block ref="7ffcbeca3b450b8d05f9cf0eedb617f8" category="inline-link-rx"></block></block>
+  <block id="887f800d53dc2cd5a7894464a6f60a6b" category="inline-link">Workloads Factory para bases de datos</block>
+  <block id="7e505d4c691d86e5bd415f9ccb849966" category="list-text"><block ref="7e505d4c691d86e5bd415f9ccb849966" category="inline-link-rx"></block></block>
+  <block id="9591e2d54c998ae1c9d48fd5be7762e9" category="inline-link">Workload Factory para GenAI</block>
+  <block id="f38c7416013fc239c3dd3288d40a40c0" category="list-text"><block ref="f38c7416013fc239c3dd3288d40a40c0" category="inline-link-rx"></block></block>
+  <block id="404a5efb62a3a3f22b02593091042608" category="inline-link">Workload Factory para VMware</block>
+  <block id="9a211183d3fa82368d76fdbab5abdeda" category="list-text"><block ref="9a211183d3fa82368d76fdbab5abdeda" category="inline-link-rx"></block></block>
+  <block id="dfccab35bc7005d989cb4561e9255ada" category="summary">Después de registrarte en Workload Factory, puedes iniciar sesión en cualquier momento desde la consola basada en web para empezar a gestionar tus cargas de trabajo y los sistemas de archivos FSx para ONTAP.</block>
+  <block id="7ffef60a0bb1e63a8505f9e4285dab5f" category="doc">Inicie sesión en Workload Factory</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Acerca de esta tarea</block>
+  <block id="4a82c28eaf9e486d9116434f89bacba7" category="paragraph">Puede iniciar sesión en la consola basada en web de Workload Factory mediante una de las siguientes opciones:</block>
+  <block id="19df8bb4b5a805b23aeac731605bdf21" category="list-text">Sus credenciales existentes del sitio de soporte de NetApp (NSS)</block>
+  <block id="691be8e1993c2535e4afe5834afe3b01" category="list-text">Un inicio de sesión en el cloud de NetApp con su dirección de correo electrónico y una contraseña</block>
+  <block id="8fd935558171bd50056871ef9ee7bd05" category="inline-link">Consola de Workload Factory</block>
+  <block id="ba66ed28174cebd60e2e5bb8650d4aa1" category="list-text">Abra un navegador web y vaya a la<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block>.</block>
+  <block id="03eb7e8aedd1ad900f6996ff1a9cf8dd" category="list-text">En la página *Iniciar sesión*, introduzca la dirección de correo electrónico asociada a su inicio de sesión.</block>
+  <block id="784d4eeca11deaf4ee3f37735e4d0334" category="list-text">En función del método de autenticación asociado a su inicio de sesión, se le pedirá que introduzca sus credenciales:</block>
+  <block id="8a7c8d2028930eaef2c3f44925994051" category="list-text">Credenciales de cloud de NetApp: Introduzca su contraseña</block>
+  <block id="a02705346febd77df5680fe2f12343a9" category="list-text">Federated user: Introduzca las credenciales de identidad federadas</block>
+  <block id="24bdc2b22d38abff9ff97a9c5b5e7966" category="list-text">Cuenta del sitio de soporte de NetApp: Introduzca sus credenciales del sitio de soporte de NetApp</block>
+  <block id="c4d4e21d2a557d3c9be0ce8dc071f547" category="list-text">Seleccione *Iniciar sesión*.</block>
+  <block id="1c883b8b402bae840152eb96ee53c8bf" category="paragraph">Si ha iniciado sesión correctamente en el pasado, verá la página de inicio de Workload Factory y utilizará la cuenta predeterminada.</block>
+  <block id="817b94dd7f00f6dd33e23875e9f03368" category="paragraph">Si esta es la primera vez que inicia sesión, se le dirigirá a la página *Cuenta*.</block>
+  <block id="3b05fd0eeb02280c9e89c847477bc0fc" category="list-text">Si eres miembro de una sola cuenta, selecciona *Continuar*.</block>
+  <block id="9dd8932847709b0a76c3786f584e1272" category="list-text">Si eres miembro de varias cuentas, selecciona la cuenta y selecciona *Continuar*.</block>
+  <block id="a67ab1c62f2a6164c719be422f163c0c" category="paragraph">Ahora has iniciado sesión y puedes empezar a utilizar Workload Factory para gestionar los sistemas de archivos FSx para ONTAP y tus cargas de trabajo.</block>
+  <block id="2f13edc244ce3aa63a739bc5418cd67f" category="summary">Si ya no necesita un conjunto de credenciales, puede eliminarlas de Workload Factory. Solo puede eliminar credenciales que no estén asociadas a un sistema de archivos FSx for ONTAP.</block>
+  <block id="25f033e226552b2f5ae002edb8e5fd2f" category="doc">Quite las credenciales</block>
+  <block id="58eed24ee19ccccfe9a117084c2d03a6" category="list-text">En la página *Credenciales*, selecciona el menú de acción para un conjunto de credenciales y luego selecciona *Eliminar*.</block>
+  <block id="b7dd0331ad4ede9488c2fd01dda69e83" category="list-text">Selecciona *Eliminar* para confirmar.</block>
+  <block id="be43daf19814961c1c1f681b1719f65a" category="summary">Workload Factory proporciona tres modos operativos que le permiten controlar cuidadosamente el acceso entre Workload Factory y su estado de la nube en función de sus políticas de TI. El modo operativo que utiliza viene determinado por el nivel de permisos de AWS que proporciona a Workload Factory.</block>
+  <block id="0261a8e2837bda78e3e9784459c8d346" category="doc">Obtenga más información sobre los modos operativos y las credenciales de AWS</block>
+  <block id="3b39e22b0ceb822bf56d19eb7ec14f7f" category="section-title">Modos de funcionamiento</block>
+  <block id="bc63252869898532ad7c844d8447e358" category="paragraph">Los modos operativos proporcionan una organización lógica de la funcionalidad y las capacidades ofrecidas por Workload Factory, en relación con el nivel de confianza que se asigna. El objetivo principal en los modos operativos es comunicar claramente qué tareas puede o no realizar Workload Factory dentro de su cuenta de AWS.</block>
+  <block id="dad76b021334eb3d63f98648f701f598" category="list-text">Modo básico</block>
+  <block id="4d34e6e6a767b4ce93680aa48cb370d0" category="list-text">Representa una relación de confianza cero en la que no se asignan permisos de AWS a Workload Factory. Está diseñado para una exploración temprana de la fábrica de cargas de trabajo y el uso de los distintos asistentes para crear la infraestructura como código (IAC) necesaria. Puede copiar el código y usarlo en AWS introduciendo sus credenciales de AWS manualmente.</block>
+  <block id="1aa9d894db1bbfc4f52d99a458da7ff9" category="list-text">Modo de lectura</block>
+  <block id="5198d3d3b16bbd8165878b42f177a30b" category="list-text">Mejora la experiencia del modo básico al agregar permisos de solo lectura para que las plantillas de IAC se llenen con sus variables específicas (por ejemplo, VPC, grupos de seguridad, etc.). Esto le permite ejecutar el IAC directamente desde su cuenta de AWS sin proporcionar ningún permiso de modificación a Workload Factory.</block>
+  <block id="8d350bc547891d480d771e3f371ccf36" category="list-text">Modo de automatización</block>
+  <block id="90e0e635e22e69ee097729d5734a7d9d" category="list-text">Representa una relación de confianza completa para que Workload Factory se asigne con permisos completos. Esto permite a Workload Factory ejecutar y automatizar operaciones en AWS en su nombre junto con las credenciales asignadas que tienen los permisos necesarios para su ejecución.</block>
+  <block id="ba15cdea72f76749ac3c4d115682e1d5" category="section-title">Funciones del modo operativo</block>
+  <block id="98065f8fb54547b003b502647ed5da13" category="paragraph">Las características disponibles usando cada uno de los modos crecen con cada modo.</block>
+  <block id="650be61892bf690026089544abbd9d26" category="cell">Modo</block>
+  <block id="b68bbc990631af9eef3fe553c0db51c2" category="cell">Automatización de Workload Factory</block>
+  <block id="8b9f82548e6c7bc4008b903cade408bd" category="cell">Automatización dentro de AWS mediante IAC</block>
+  <block id="cb96700fed42790aca4b326c2ddf0ee1" category="cell">Detección y autocompletado de recursos de AWS</block>
+  <block id="822fdc9d51edd3ea21167e6afc3133bb" category="cell">Supervisión del progreso</block>
+  <block id="972e73b7a882d0802a4e3a16946a2f94" category="cell">Básico</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">No</block>
+  <block id="bc459ff156247ecdc2f450d6760864e0" category="cell">Plantilla IAC mínimamente completa</block>
+  <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="cell">Lea</block>
+  <block id="dd5bf678cc7b441324b2d76ab8b6329d" category="cell">Plantilla IAC moderadamente completa</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">Sí</block>
+  <block id="9ed56d4841dbb118ee9f4fc81ea82572" category="cell">Automatizar</block>
+  <block id="3babc847b322c661049062334b9c76b2" category="cell">Automatización completa</block>
+  <block id="78ac103234082be5f5a4ea67a4551981" category="cell">Plantilla IAC completa con automatización completa</block>
+  <block id="c1ae257d71f3632f9398109243cbfd70" category="section-title">Requisitos de modo operativo</block>
+  <block id="97ad164404d252aefcb10ad97a940250" category="paragraph">No hay ningún selector que necesite configurar en Fábrica de carga de trabajo para identificar qué modo está planeando utilizar. El modo se determina en función de las credenciales y permisos de AWS que asigne a su cuenta Workload Factory.</block>
+  <block id="38a12b37ae4221c5fda46c9430a61d47" category="cell">Credenciales de cuenta de AWS</block>
+  <block id="97e7c9a7d06eac006a28bf05467fcc8b" category="cell">Enlace</block>
+  <block id="6fd5e95dc0bce8329da87e1152677b48" category="cell">No es obligatorio</block>
+  <block id="d8bd6e60adcc01ce20f509ea6800de8f" category="cell">Solo lectura</block>
+  <block id="ae4591bb8d9ec57460d11dc6394e972e" category="cell">Credenciales de lectura y escritura</block>
+  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">Obligatorio</block>
+  <block id="6015cd2e9e5bc5b037ad456163cc26cb" category="inline-link">Obtenga más información sobre los enlaces</block>
+  <block id="cea96a6659ee3b63722518018a5e6659" category="paragraph"><block ref="cea96a6659ee3b63722518018a5e6659" category="inline-link-rx"></block></block>
+  <block id="7cc58201fa83275d07886281be81a758" category="section-title">Ejemplos de modo operativo</block>
+  <block id="e45b6aecc9afa1e709e8df27941fce38" category="paragraph">Puede configurar sus credenciales para proporcionar un modo para un componente de carga de trabajo y otro modo para otro componente. Por ejemplo, puedes configurar el modo de automatización para las operaciones en las que implementas y gestionas los sistemas de archivos de FSx para ONTAP, pero solo puedes configurar el modo de lectura para crear y desplegar cargas de trabajo de bases de datos mediante Workload Factory.</block>
+  <block id="1e82623c909c729fd392237767a08bbd" category="paragraph">Puede proporcionar estas capacidades dentro de un único juego de credenciales en una cuenta de fábrica de cargas de trabajo, o puede crear varios juegos de credenciales cuando cada credencial proporciona capacidades de despliegue de cargas de trabajo únicas.</block>
+  <block id="5504977cb47d642da3d1264eefb7edda" category="section-title">Ejemplo 1</block>
+  <block id="38356e3b8f5e0e5ad2a7ff778c4e8d82" category="paragraph">Los usuarios de las cuentas que utilicen las credenciales a las que se les han otorgado los siguientes permisos tendrán control total (modo de automatización) para crear sistemas de archivos FSx para ONTAP, implementar bases de datos y ver otros tipos de almacenamiento AWS utilizados en la cuenta.</block>
+  <block id="4cd751338620bbd6099bbf7dcff61879" category="inline-image-macro">Una captura de pantalla que muestra un juego de credenciales que proporcionan dos tipos de permisos de carga de trabajo.</block>
+  <block id="9d405f908b42d501e27391e88e96690c" category="paragraph"><block ref="9d405f908b42d501e27391e88e96690c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="142d2c6ddb5d16596bad6ce5f8e87fe3" category="paragraph">Sin embargo, no dispondrán de controles de automatización para crear y poner en marcha cargas de trabajo de VMware (modo básico) desde Workload Factory. Si quieren crear cargas de trabajo de VMware, tendrán que copiar el código del CodeBox, iniciar sesión en su cuenta de AWS manualmente y rellenar manualmente las entradas que faltan en el código generado para usar esta funcionalidad.</block>
+  <block id="5f3a8aa007370d00f3fd3b293a6a1118" category="section-title">Ejemplo 2</block>
+  <block id="bad86c34eeb44e43315105ff00eb040b" category="paragraph">Aquí el usuario ha creado dos juegos de credenciales para permitir diferentes capacidades operativas dependiendo del juego de credenciales seleccionado. Normalmente, cada conjunto de credenciales se empareja con una cuenta de AWS diferente.</block>
+  <block id="f043f48233d1d8f545991908ce06fc8f" category="paragraph">El primer conjunto de credenciales incluye permisos que ofrecen a los usuarios un control total para crear sistemas de archivos FSx para ONTAP (y la capacidad de ver otros tipos de almacenamiento AWS utilizados en la cuenta), pero solo permisos de lectura cuando se trabaja con cargas de trabajo de VMware.</block>
+  <block id="13834b608e3eab1a58b1e60d8594b010" category="paragraph"><block ref="13834b608e3eab1a58b1e60d8594b010" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7b951488dcd4f24a1001cb4ce278841f" category="paragraph">El segundo conjunto de credenciales solo proporciona permisos que otorgan a los usuarios un control total para crear sistemas de archivos FSx para ONTAP y ver otros tipos de almacenamiento AWS utilizados en la cuenta.</block>
+  <block id="a1c7a646d9f617df5f4591d961591390" category="paragraph"><block ref="a1c7a646d9f617df5f4591d961591390" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c4eed705dd3e0adf6e7194858d8dff7" category="section-title">Credenciales de AWS</block>
+  <block id="79c24ecd9f3b01018d8a2753b852b157" category="paragraph">Hemos diseñado un flujo de registro de credenciales de AWS Assume Role que:</block>
+  <block id="ea26385a0e9eb0b784d2878d8ad78cdc" category="list-text">Admite permisos de cuenta de AWS más alineados, ya que le permite especificar las capacidades de carga de trabajo que desea usar y proporcionar requisitos de política de IAM de acuerdo con dichas selecciones.</block>
+  <block id="29e72ecd81812bc6e42b8fe63e32189a" category="list-text">Permite ajustar los permisos de cuenta de AWS concedidos cuando se suscriban o se inhabiliten funcionalidades de cargas de trabajo específicas.</block>
+  <block id="1638738a86a490b406672c22f563a2da" category="list-text">Simplifica la creación manual de políticas de IAM al proporcionar archivos de políticas JSON personalizados que puede aplicar en la consola de AWS.</block>
+  <block id="ba3950fc801639789c6f2c3d00092cfb" category="list-text">Simplifica aún más el proceso de registro de credenciales al ofrecer a los usuarios una opción automatizada para la política de IAM requerida y la creación de roles mediante las pilas AWS CloudFormation.</block>
+  <block id="4a2be88868f600a45501fde04364bae7" category="list-text">Se alinea mejor con los usuarios de FSx para ONTAP, que prefieren que sus credenciales se almacenen en los límites del ecosistema de cloud de AWS al permitir el almacenamiento de las credenciales de los servicios de FSx para ONTAP en un back-end de gestión secreta basado en AWS.</block>
+  <block id="f9e7dc895484b33db42d9ee0925e28e0" category="section-title">Una o más credenciales de AWS</block>
+  <block id="9e4d021b600a18ca2bdc19e316e61a90" category="paragraph">Cuando utilice la capacidad (o capacidades) de la primera fábrica de cargas de trabajo, deberá crear las credenciales utilizando los permisos necesarios para esas capacidades de carga de trabajo. Agregará las credenciales a Workload Factory, pero tendrá que acceder a la consola de administración de AWS para crear el rol y la política de IAM. Estas credenciales estarán disponibles en su cuenta cuando utilice cualquier capacidad de Workload Factory.</block>
+  <block id="2805984a9d1d71e7e662e187f6160808" category="paragraph">El conjunto inicial de credenciales de AWS puede incluir una política de IAM para una funcionalidad o para muchas funcionalidades. Solo depende de los requisitos de su negocio.</block>
+  <block id="b6cd757220290782ab371e620582ddcd" category="paragraph">Añadir más de un conjunto de credenciales de AWS a Workload Factory proporciona permisos adicionales necesarios para usar funcionalidades adicionales, como los sistemas de archivos FSx para ONTAP, poner en marcha bases de datos en FSx para ONTAP, migrar cargas de trabajo de VMware y mucho más.</block>
+  <block id="b6358992bb0152c2af9f3e2e315ef468" category="inline-link-macro">Aprenda a añadir credenciales de AWS a Workload Factory</block>
+  <block id="1350027224712371708c0a642ae2b919" category="paragraph"><block ref="bc58254869896d67e8e31b026259707a" category="inline-link-macro-rx"></block>.</block>
+  <block id="e322079c316096bc16e777a93da0a332" category="summary">Comience con Workload Factory preparando la conexión en red para la consola Workload Factory, registrando y creando una cuenta, y agregando credenciales para que Workload Factory pueda administrar los recursos de AWS directamente.</block>
+  <block id="1441f501677899abf4972d9286b527e5" category="doc">Inicio rápido para Workload Factory</block>
+  <block id="cb88f58f7496fb27698451feb9736c1d" category="paragraph">Para empezar a usar Workload Factory, regístrate y crea una cuenta, añade credenciales para que Workload Factory pueda gestionar directamente los recursos de AWS y, luego, optimizar tus cargas de trabajo mediante Amazon FSx for NetApp ONTAP.</block>
+  <block id="ba8b072b83c1e6db56e40bf48ddb0871" category="inline-link-macro">modos de funcionamiento</block>
+  <block id="4c85eb71378362d162e4b7bd1c50c800" category="paragraph">Workload Factory es accesible para los usuarios como un servicio en la nube desde la consola basada en la web. Antes de comenzar, debe tener un entendimiento de <block ref="fc500664a3cbaaa3aa46a84367805795" category="inline-link-macro-rx"></block> y. <block ref="232f97f76b2e1af290ebde69715d8d8f" category="inline-link-macro-rx"></block></block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Una</block>
+  <block id="0876e0a47d86eee44886009e6fdae6e5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Regístrate y crea una cuenta</block>
+  <block id="58902cbb0adcf45cfe72ced7fa9d043a" category="paragraph">Vaya a<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block>, regístrese y cree una cuenta.</block>
+  <block id="996a84421252d4a7c2db622831369066" category="inline-link-macro">Aprenda a registrarse y a crear una cuenta</block>
+  <block id="84be2f973a02d5b8bf1736d6dc104aba" category="paragraph"><block ref="e4d5af2c826e0765566919d017f9cac9" category="inline-link-macro-rx"></block>.</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Dos</block>
+  <block id="81fe43671919388bf418561882652f2a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Agregar credenciales de AWS a Workload Factory</block>
+  <block id="a96649d1a3b32786a74fc2de9529a00e" category="paragraph">Este paso es opcional. Puede usar Workload Factory en el modo _Basic_ sin agregar credenciales para acceder a su cuenta de AWS. Al agregar las credenciales de AWS a Workload Factory en el modo _Read_ o _Automate_, tu cuenta de Workload Factory proporciona los permisos necesarios para crear y administrar sistemas de archivos FSx para ONTAP y para implementar y gestionar cargas de trabajo específicas, como bases de datos y GenAI.</block>
+  <block id="485569d333cc1d252d174152a87152ec" category="inline-link-macro">Aprenda a agregar credenciales a su cuenta</block>
+  <block id="26779013e769dc74269c7261b62546d1" category="paragraph"><block ref="91f10e444bfec911e6e2bc237cc7d0c2" category="inline-link-macro-rx"></block>.</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Tres</block>
+  <block id="5859940cb26aa023a0c3f7bc2abb0f66" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Optimiza tus cargas de trabajo usando FSx para ONTAP</block>
+  <block id="ecf12e8c9cfc73f5d81a941356b2effd" category="paragraph">Ahora que ya te has registrado, creado una cuenta y, de forma opcional, has añadido credenciales de AWS, puedes empezar a utilizar Workload Factory para optimizar tus cargas de trabajo utilizando FSx para ONTAP. Utilice los enlaces que figuran a continuación para seguir instrucciones paso a paso para cada tipo de carga de trabajo.</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">Amazon FSX para ONTAP de NetApp</block>
+  <block id="4d8d6f286ec4089532b442b9e29bdd84" category="list-text"><block ref="4d8d6f286ec4089532b442b9e29bdd84" category="inline-link-rx"></block></block>
+  <block id="ad5615f8474eab297b35d0cbf8020dfc" category="paragraph">Evalúa y analiza el estado de los datos actuales para ahorrar posibles costes usando FSx para ONTAP como infraestructura de almacenamiento, aprovisiona y templatiza las implementaciones de FSx para ONTAP basadas en prácticas recomendadas y accede a funcionalidades de gestión avanzadas.</block>
+  <block id="cccae24691c5ff7191f1ffebe4352285" category="inline-link">GenAI</block>
+  <block id="88575fa076e31705fdc0a050f3c46540" category="list-text"><block ref="88575fa076e31705fdc0a050f3c46540" category="inline-link-rx"></block></block>
+  <block id="1ab964190acf4217fadb080cfcbe361f" category="paragraph">Implemente y gestione una infraestructura de generación aumentada de recuperación (RAG) para mejorar la precisión y la singularidad de sus aplicaciones de IA. Crea una base de conocimientos de RAG en FSx para ONTAP con seguridad de datos y cumplimiento normativo integrados.</block>
+  <block id="38bd169945a371832b0b65c9086b1792" category="inline-link">Cargas de trabajo de base de datos</block>
+  <block id="7c05124c7bff1277e0dd98967825f03a" category="list-text"><block ref="7c05124c7bff1277e0dd98967825f03a" category="inline-link-rx"></block></block>
+  <block id="0b65135cac08d591d73cff9785b28f30" category="paragraph">Detecta el estado de tus bases de datos actuales en AWS, evalúa el posible ahorro en costes con FSx para ONTAP, pon en marcha bases de datos integrales con las prácticas recomendadas incorporadas para la optimización y automatiza el clonado ligero para las canalizaciones de CI/CD.</block>
+  <block id="a76e64a0fbf98a083080351e4cb67566" category="inline-link">Cargas de trabajo de</block>
+  <block id="e555278247527c688d390729e5f7e123" category="list-text"><block ref="e555278247527c688d390729e5f7e123" category="inline-link-rx"></block></block>
+  <block id="bc9eaabfc00230f2aa0ab1f9dfcfb994" category="paragraph">Simplifique las migraciones y las operaciones con recomendaciones inteligentes y soluciones automáticas. Ponga en marcha backups eficientes y una sólida recuperación ante desastres. Supervise sus máquinas virtuales y solucione problemas.</block>
+  <block id="023c464fc92ec044e83176c4e57027c4" category="summary">Se puede acceder a la fábrica de cargas de trabajo desde una consola basada en web. Cuando comience con Workload Factory, su primer paso es registrarse con sus credenciales del sitio de soporte de NetApp o crear un inicio de sesión en el cloud de NetApp.</block>
+  <block id="86dd1f2c1da07102d586b3d680ed37a3" category="doc">Regístrese en Workload Factory</block>
+  <block id="9e9a0202d2a4a6551faca1e042e523e5" category="paragraph">Puede registrarse en Workload Factory con una de las siguientes opciones:</block>
+  <block id="d7330e52ac45b9d5a769aa9a5c244319" category="list-text">Inicio de sesión en el cloud de NetApp especificando su dirección de correo electrónico y una contraseña</block>
+  <block id="dd8dfb2c954c59328d486f61112b7dc6" category="list-text">Abra un navegador web y vaya a<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block></block>
+  <block id="3587d9f2b48c4f0c9c40433731329a21" category="list-text">Si tienes una cuenta del sitio de soporte de NetApp, introduce la dirección de correo electrónico asociada con tu cuenta de NSS directamente en la página *Iniciar sesión*.</block>
+  <block id="9afbcf749bbbaca180b483af3042470e" category="paragraph">Puede omitir la página de registro si tiene una cuenta NSS. Workload Factory le registrará como parte de este inicio de sesión inicial.</block>
+  <block id="7c74a9177ae92ae3e635c6ec91ce1d71" category="list-text">Si no tienes una cuenta NSS y quieres registrarte mediante la creación de un inicio de sesión en la nube de NetApp, selecciona *Regístrate*.</block>
+  <block id="d3ec3db6c6205c0b2c9d4904d509b3ca" category="inline-image-macro">Una captura de pantalla de la página de registro donde puede agregar su nombre de usuario y contraseña para acceder a Workload Factory.</block>
+  <block id="f469d8f6e1958f36faad490b72b0ed6c" category="paragraph"><block ref="f469d8f6e1958f36faad490b72b0ed6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="871e895e179ae68a9381988dd33c133b" category="list-text">En la página *Registrarse*, ingrese la información requerida para crear un inicio de sesión en la nube de NetApp y seleccione *Siguiente*.</block>
+  <block id="9998984c95caccce61e49ca25de1c99f" category="paragraph">Tenga en cuenta que sólo se permiten caracteres ingleses en el formulario de registro.</block>
+  <block id="ec0e398abc2c6f6a9f2afe38708291da" category="list-text">Introduzca la información detallada de su empresa y seleccione *Registrarse*.</block>
+  <block id="422588021a93cfdaa26ce8d7d46dfeda" category="list-text">Compruebe en su bandeja de entrada si hay un correo electrónico de NetApp que incluya instrucciones para verificar su dirección de correo electrónico.</block>
+  <block id="94f38e991501c8594d502e52dd265abd" category="paragraph">Este paso es necesario para poder iniciar sesión.</block>
+  <block id="94d337ef5b62bd31ee54e5111cfec45f" category="list-text">Cuando se le solicite, revise el Acuerdo de licencia de usuario final y acepte los términos y seleccione * Continuar *.</block>
+  <block id="b789a2d1c7228d0b2d7174302e2c6996" category="list-text">En la página *Cuenta*, ingrese un nombre para su cuenta y, opcionalmente, seleccione su descripción del trabajo.</block>
+  <block id="f54bc40f2305bb493aa6597d8c67d892" category="paragraph">Una cuenta es el elemento de nivel superior de la plataforma de identidad de NetApp y permite añadir y gestionar permisos y credenciales.</block>
+  <block id="2b7293baeca5711138792716543c991a" category="inline-image-macro">Una captura de pantalla de la página Cuenta que aparece al iniciar sesión con una cuenta nueva.</block>
+  <block id="28fc544db57c6f54a41eaa5c6ebc4a57" category="paragraph"><block ref="28fc544db57c6f54a41eaa5c6ebc4a57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ca580d5cb98bdcfa7834616d19d2eda" category="list-text">Seleccione *Crear* y se mostrará la página de inicio de Workload Factory.</block>
+  <block id="0fa2d9e93d2ebe5dc084c22e852d5e0e" category="paragraph">Ahora tiene un inicio de sesión de Workload Factory y una cuenta. Se le considera administrador de cuentas y tiene acceso a todas las funciones de Workload Factory.</block>
+  <block id="243263104c829e77835d632f591230d5" category="summary">Antes de poder abrir un caso de soporte con el soporte técnico de NetApp, debe añadir una cuenta de la página de soporte de NetApp a BlueXP y, a continuación, registrarse para recibir soporte.</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">Regístrese para recibir soporte</block>
+  <block id="996ad73a480311d4f86d6946935389d2" category="paragraph">Se requiere el registro de soporte para recibir soporte técnico específico para Workload Factory y sus soluciones y servicios de almacenamiento. Tienes que registrarte para recibir soporte de la consola BlueXP, que es una consola web independiente de Workload Factory.</block>
+  <block id="c552970fd4dc8118ba1806da596acad9" category="paragraph">Al registrarse para recibir soporte, no se habilita el soporte de NetApp para un servicio de archivos de proveedor de cloud. Para obtener soporte técnico relacionado con un servicio de archivos de un proveedor de cloud, su infraestructura o cualquier solución que utilice el servicio, consulte «Obtener ayuda» en la documentación de Workload Factory para ese producto.</block>
+  <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">Información general del registro de soporte</block>
+  <block id="d7e4bb081bf4ec4814d83edcfbdb8b96" category="paragraph">Registrar la suscripción de soporte de tu ID de cuenta (tu número de serie 960xxxxxxxxx de 20 dígitos, ubicado en la página de recursos de soporte de BlueXP) sirve como tu ID de suscripción de soporte único. Debe registrarse cada suscripción de asistencia técnica a nivel de cuenta de BlueXP.</block>
+  <block id="f9e05c2b383e3f11e3b4bebbe8952225" category="paragraph">El registro permite funcionalidades como la apertura de tickets de soporte y la generación automática de casos. Para completar el registro, añade cuentas del sitio de soporte de NetApp (NSS) a BlueXP, como se describe a continuación.</block>
+  <block id="856edc4caec68fece6859c4be9360f3c" category="section-title">Registre su cuenta de soporte de NetApp</block>
+  <block id="2d6573b6ae4c51dc24e58109473f2490" category="paragraph">Para registrarte para obtener soporte y activar el soporte, un usuario en tu cuenta debe asociar una cuenta en el sitio de soporte de NetApp a su inicio de sesión en BlueXP. La forma de registrarse para recibir soporte de NetApp depende de si ya tiene una cuenta del sitio de soporte de NetApp (NSS).</block>
+  <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">Cliente existente con una cuenta de NSS</block>
+  <block id="7e177185e7eddff33dd8f3aeb7551132" category="paragraph">Si es cliente de NetApp con una cuenta de NSS, solo tiene que registrarse para recibir soporte a través de BlueXP.</block>
+  <block id="0307a12e5749f8dd930472ee78f69d2c" category="list-text">En la parte superior derecha de la consola de BlueXP, seleccione el icono Configuración y seleccione *credenciales*.</block>
+  <block id="f19ab635e6d5f884a22ee4ce067fdbfd" category="list-text">Seleccione *Credenciales de usuario*.</block>
+  <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">Seleccione *Agregar credenciales NSS* y siga el aviso de autenticación del sitio de soporte de NetApp (NSS).</block>
+  <block id="cfc5506589d5a4d055e721267d5f0732" category="list-text">Para confirmar que el proceso de registro se ha realizado correctamente, seleccione el icono Ayuda y seleccione *Soporte*.</block>
+  <block id="8add4eb0d3f6ce61d374f3df3ee4eadf" category="paragraph">La página *Recursos* debe mostrar que su cuenta está registrada para soporte.</block>
+  <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">Una captura de pantalla que muestra un número de serie de cuenta y una casilla de verificación verde y el texto registrado para soporte.</block>
+  <block id="fa7897454f637026faa3e00ccbfec239" category="paragraph"><block ref="fa7897454f637026faa3e00ccbfec239" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9a01bdcfab6f0a10fc126999b4d5988" category="paragraph">Tenga en cuenta que los otros usuarios de BlueXP no verán este mismo estado de registro de soporte si no han asociado una cuenta del sitio de soporte de NetApp con su inicio de sesión de BlueXP. Sin embargo, eso no significa que tu cuenta de BlueXP no esté registrada para el soporte técnico. Siempre y cuando un usuario de la cuenta haya seguido estos pasos, su cuenta se ha registrado.</block>
+  <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">Cliente existente pero no cuenta NSS</block>
+  <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">Si eres un cliente existente de NetApp con licencias y números de serie existentes, pero _no_ NSS, deberás crear una cuenta NSS y asociarla al inicio de sesión de BlueXP.</block>
+  <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">Formulario de registro de usuarios del sitio de soporte de NetApp</block>
+  <block id="0c4a8b62da9473fbd5401273c4f85ee0" category="list-text">Cree una cuenta del sitio de soporte de NetApp completando el<block ref="041bcb6d9bdf91f7d6ac92ae3a196e12" category="inline-link-rx"></block></block>
+  <block id="d61c9f72493817776f392db42ac446a2" category="list-text">Asegúrese de seleccionar el nivel de usuario adecuado, que normalmente es *Cliente/Usuario final de NetApp*.</block>
+  <block id="5226d4ec1f4f81b740cbbd27635b441f" category="list-text">Asegúrese de copiar el número de serie de la cuenta BlueXP (960xxxx) utilizado anteriormente para el campo de número de serie. Esto agilizará el procesamiento de la cuenta.</block>
+  <block id="0499bba105f8a891a2c671f1ba99dd34" category="list-text">Asocia tu nueva cuenta de NSS con tu inicio de sesión de BlueXP completando los pasos que se indican en <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>.</block>
+  <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">Totalmente nuevo en NetApp</block>
+  <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">Si es totalmente nuevo en NetApp y no tiene una cuenta de NSS, siga cada paso que se indica a continuación.</block>
+  <block id="f5d7029ed18f998c0a9d780b2554e538" category="list-text">Busque el número de serie de su ID de cuenta en la página Recursos de soporte.</block>
+  <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">Una captura de pantalla del menú Ayuda en el que Soporte es la primera opción de la lista</block>
+  <block id="55adf589d087b17fca134b34f65498ed" category="paragraph"><block ref="55adf589d087b17fca134b34f65498ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">Sitio de registro de soporte de NetApp</block>
+  <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">Navegue<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> y seleccione *No soy un Cliente de NetApp Registrado*.</block>
+  <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">Rellene los campos obligatorios (aquellos con asteriscos rojos).</block>
+  <block id="1128fc8d5ec64880f4d49337ed798d31" category="list-text">En el campo *línea de productos*, seleccione *Cloud Manager* y, a continuación, seleccione el proveedor de facturación correspondiente.</block>
+  <block id="50a1dc01b7312307c34a888071586955" category="list-text">Copie el número de serie de su cuenta desde el paso 2 anterior, complete la comprobación de seguridad y confirme que ha leído la Política de privacidad de datos global de NetApp.</block>
+  <block id="3a24c87c9971d2011b4df223718f84b4" category="paragraph">Se envía inmediatamente un correo electrónico al buzón de correo para finalizar esta transacción segura. Asegúrese de comprobar sus carpetas de spam si el correo electrónico de validación no llega en pocos minutos.</block>
+  <block id="03413baeca1ff7222737d8ce299bd4e8" category="list-text">Confirme la acción desde el correo electrónico.</block>
+  <block id="201080500e946070a2e4873042507c77" category="paragraph">Confirmar envía su solicitud a NetApp y recomienda que cree una cuenta en la página de soporte de NetApp.</block>
+  <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Asegúrese de copiar el número de serie de la cuenta (960xxxx) utilizado anteriormente para el campo de número de serie. Esto agilizará el procesamiento de la cuenta.</block>
+  <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp debería ponerse en contacto con usted durante este proceso. Este es un ejercicio de incorporación puntual para nuevos usuarios.</block>
+  <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">Una vez que tengas tu cuenta en el sitio de soporte de NetApp, asocia la cuenta con el inicio de sesión de BlueXP completando los pasos que se muestran en <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>.</block>
+  <block id="5db41fd4421f19d93e5dd91c17ef6114" category="summary">Puede utilizar CodeBox para generar el código necesario para ejecutar cualquier operación soportada por Workload Factory. Puede generar código que se pueda consumir y ejecutar con las API DE REST DE Workload Factory, la interfaz de línea de comandos de AWS y CloudFormation de AWS.</block>
+  <block id="74e50aedf700596c6a3592a6d25fec74" category="doc">Utilice CodeBox para la automatización</block>
+  <block id="04408b634d2d9206d79119d448664c52" category="paragraph">Puede utilizar CodeBox para generar el código necesario para ejecutar cualquier operación soportada por Workload Factory. Puede generar código que se pueda consumir y ejecutar con las API DE REST DE Workload Factory, la interfaz de línea de comandos de AWS y CloudFormation de AWS.</block>
+  <block id="9e96cce41b7a764dc14629fa750c2747" category="paragraph">CodeBox se alinea con los modos de operación Workload Factory (Básico, Lectura y Automatización) rellenando los datos apropiados en el código en función de los permisos de AWS proporcionados en la cuenta Workload Factory para cada usuario. El código se puede utilizar como una plantilla en la que puede rellenar la información que falta (por ejemplo, credenciales) o personalizar ciertos datos antes de ejecutar el código.</block>
+  <block id="3d60b94b36b55e7dd31bca9ed2ce46f8" category="section-title">Cómo usar CodeBox</block>
+  <block id="a064715cfe4e3e4a214bc84cf0551160" category="inline-image-macro">el botón copiar</block>
+  <block id="62835b251ca7e00f685a007f7c8b4941" category="paragraph">A medida que introduce valores en los asistentes de la interfaz de usuario de Workload Factory, puede ver la actualización de datos en CodeBox a medida que completa cada campo. Cuando complete el asistente, pero antes de seleccionar el botón *Crear* en la parte inferior de la página, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar en CodeBox para capturar el código requerido para construir su configuración. Por ejemplo, esta captura de pantalla de la creación de un nuevo servidor Microsoft SQL Server muestra las entradas del asistente para VPC y zonas de disponibilidad y las entradas equivalentes en CodeBox para una implementación de API REST.</block>
+  <block id="502f1d03f24f8a0cfa430dc69e3b0a81" category="inline-image-macro">Una captura de pantalla que muestra cómo crear un Microsoft SQL Server en la interfaz de usuario y las entradas correspondientes para VPC y zonas de disponibilidad en CodeBox.</block>
+  <block id="5f52d0f5bc329ec0f8b2cfd9d5a45307" category="paragraph"><block ref="5f52d0f5bc329ec0f8b2cfd9d5a45307" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e1e4d5313e88ce840e8cca3e7f84f01c" category="paragraph">Con algunos formatos de código también puede seleccionar el botón Descargar para guardar el código en un archivo que puede traer a otro sistema. Si es necesario, puede editar el código después de que se haya descargado para poder adaptarlo a otras cuentas de AWS.</block>
+  <block id="309209712bce6112df6ef830b062c685" category="section-title">Utilice el código CloudFormation de CodeBox</block>
+  <block id="ea91e366c1caa6817dd5fd6381bdcf91" category="paragraph">Puede copiar el código de CloudFormation generado desde CodeBox y, a continuación, iniciar la pila CloudFormation de Amazon Web Services en su cuenta de AWS. CloudFormation realizará las acciones definidas en la interfaz de usuario de Workload Factory.</block>
+  <block id="6b2932e540d5f7ea082e1ac798f02299" category="paragraph">Los pasos para usar el código de CLoudFormation pueden ser diferentes dependiendo de si está implementando un sistema de archivos FSx for ONTAP, creando credenciales de cuenta o realizando otras acciones de Fábrica de carga de trabajo.</block>
+  <block id="db45cb70284a7cbad935a33a0ef0b6dc" category="paragraph">Tenga en cuenta que el código dentro de un archivo YAML generado por CloudFormation expira después de 7 días por razones de seguridad.</block>
+  <block id="f4beed69f4c72e3f9969d0e2daa8cc67" category="list-text">Necesitarás tener los siguientes permisos de usuario para usar una pila de CloudFormation:</block>
+  <block id="e1e1a8055c6ecfa43b025a1584c3155f" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar el código en el CodeBox.</block>
+  <block id="99ca7c9c85fef7c6ab0e44eb58675162" category="list-text">Seleccione *Redirigir a CloudFormation* y se mostrará la página Redirigir a CloudFormation.</block>
+  <block id="7463b18d69a514063d0f320bc1d16b0d" category="list-text">Abra otra ventana del explorador e inicie sesión en la consola de administración de AWS.</block>
+  <block id="3bc22cebdcd7af89d94afadce527cc1d" category="list-text">Inicie sesión en la cuenta de AWS donde se debe ejecutar el código.</block>
+  <block id="594a7e880447342dea72f44c4dc53943" category="list-text">En la página Quick create stack, en Capacidades, seleccione *Acepto que AWS CloudFormation podría ...*.</block>
+  <block id="d097667109af7665e3dae788e8f5d9c6" category="list-text">Supervisa el progreso desde AWS o desde Workload Factory.</block>
+  <block id="5f75111d3408d87431450df4c0043a74" category="section-title">Utilice el código de API REST de CodeBox</block>
+  <block id="05c017ebdfb63b85bc91ed2748f0a19f" category="paragraph">Puede usar las API de REST DE Workload Factory generadas desde CodeBox para implementar y gestionar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.</block>
+  <block id="3c3f00270f1d36904ead2ac33f53a58f" category="paragraph">Puede ejecutar las API desde cualquier host que admita cURL y que tenga conectividad a Internet.</block>
+  <block id="ed172ca8e9fe57859bcb8978982d2e0d" category="paragraph">Tenga en cuenta que los tokens de autenticación están ocultos en CodeBox, pero se rellenan al copiar y pegar la llamada API.</block>
+  <block id="50bea3d64c18b01d7ce7b30ec89500d8" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar el código API en el CodeBox.</block>
+  <block id="b68f0143fe964c9ac34ce1d33e961f82" category="list-text">Pegue el código y ejecútelo en su sistema host.</block>
+  <block id="b4c82b8569210de2a2777b454448b42e" category="section-title">Utilice el código de la CLI de AWS de CodeBox</block>
+  <block id="8d03c4936e76f2455607364517b82e3e" category="paragraph">Puede usar la interfaz de línea de comandos de Amazon Web Services generada desde CodeBox para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.</block>
+  <block id="4002cdda8ab65bc08a255c31321855ab" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar la CLI de AWS en el CodeBox.</block>
+  <block id="b28a0d67dfa6e54814b9650389eea71b" category="list-text">Pega el código y ejecútalo.</block>
+  <block id="3c9ee3abb878e5099cd76beeedcb2d04" category="summary">Descubra las novedades de las funciones de administración de Workload Factory: Credenciales del proveedor de cloud, mejoras de CodeBox y mucho más.</block>
+  <block id="490414e0366b091220802d406e52c076" category="doc">Lo nuevo</block>
+  <block id="1d949c7c5600289e10795f178278edd1" category="section-title">7 de julio de 2024</block>
+  <block id="0cd06f0acd63988f29fda6d11297591b" category="section-title">Lanzamiento inicial de Workload Factory</block>
+  <block id="40e01e3ae3c6f388cb88b96223a5b962" category="paragraph">BlueXP Workload Factory para AWS es una potente plataforma de gestión de ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo con los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.</block>
+  <block id="46e9fd42b97085e4579c13a072543d69" category="summary">Ahora que ha iniciado sesión y configurado Workload Factory, puede crear y gestionar los sistemas de archivos FSx para ONTAP, y utilizar otras capacidades de Workload Factory.</block>
+  <block id="d0a7edff5cd82c23f3d1c18e0779ccbc" category="doc">Lo que puede hacer a continuación</block>
+  <block id="fa9fb0312fb3b93323ee60f1cf0258b7" category="paragraph">Ahora que ha iniciado sesión y configurado Workload Factory, puede empezar a usar varias funcionalidades de Workload Factory, como crear sistemas de archivos Amazon FSx para ONTAP, implementar bases de datos en FSx para sistemas de archivos ONTAP, además, migrar configuraciones de máquinas virtuales a VMware Cloud on AWS mediante sistemas de archivos FSx para ONTAP como almacenes de datos externos.</block>
+  <block id="452c8a300642b831148cf770baf1cd2f" category="paragraph">Detecta el estado de tus bases de datos actuales en AWS, evalúa el posible ahorro en costes cambiando a FSx para ONTAP, pon en marcha bases de datos integrales con prácticas recomendadas incorporadas para la optimización y automatiza la clonación ligera para las canalizaciones de CI/CD.</block>
+  <block id="71c665ac24c583a0a9ad96a67210bac2" category="summary">Fábrica de cargas de trabajo de NetApp es una potente plataforma de gestión de ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo mediante los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.</block>
+  <block id="19954ae9949550c5366a9fb2b48def27" category="doc">Más información sobre Workload Factory</block>
+  <block id="96298fa6d94ac6f49aa36e586e268f0f" category="paragraph">Amazon FSx para NetApp ONTAP proporciona volúmenes de almacenamiento NFS, SMB/CIFS e iSCSI nativos de AWS totalmente gestionados para aplicaciones críticas para la misión, bases de datos, contenedores, almacenes de datos en la nube de VMware y archivos de usuario. Puedes gestionar FSx para ONTAP mediante Workload Factory y mediante herramientas de gestión nativas de AWS.</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">Funciones</block>
+  <block id="a0f53b5544ae2841af96b6a2c93a0849" category="paragraph">La plataforma Workload Factory ofrece las siguientes capacidades principales.</block>
+  <block id="6cfad4df5416db8db29bda4f011d3211" category="list-text">Almacenamiento flexible y de bajo coste</block>
+  <block id="922bba58b532e71878d3d5858f7e8194" category="list-text">Detecta, implementa y gestiona los sistemas de archivos de Amazon FSx para NetApp ONTAP en la nube. FSX para ONTAP incorpora todas las funcionalidades de ONTAP en un servicio gestionado de AWS nativo que ofrece una experiencia de nube híbrida constante.</block>
+  <block id="6d46b033eabdea8f60b174a46dfcfb14" category="list-text">Migra los entornos vSphere on-premises a VMware Cloud on AWS</block>
+  <block id="f760ee48ca0d5104a3c884c851536392" category="list-text">El asesor de migración de VMware Cloud on AWS le permite analizar sus configuraciones de máquinas virtuales actuales en entornos vSphere locales, generar un plan para implementar diseños de máquinas virtuales recomendados en VMware Cloud on AWS y utilizar sistemas de archivos personalizados de Amazon FSx para NetApp ONTAP como almacenes de datos externos.</block>
+  <block id="9a65d2a72eb8a959d799dda25fa053e1" category="list-text">Implementación optimizada de bases de datos</block>
+  <block id="65ebf27c56e124c006284c1cd9f06d3d" category="list-text">Implemente servidores SQL de Microsoft, bases de datos y clones de bases de datos, incluyendo el aprovisionamiento de recursos de AWS, el aprovisionamiento de almacenamiento, las redes y las configuraciones de SO, utilizando configuraciones de implementación optimizadas que garantizan un proceso de configuración consistente y sin errores.</block>
+  <block id="c8556381857e2b130302cd1951b0b62c" category="list-text">Desarrollo de bots conversacionales de IA</block>
+  <block id="b74c52466a8f67e18b547bf25d14844f" category="list-text">Aprovecha tus sistemas de archivos FSx para ONTAP para almacenar las fuentes de chatbot de tu organización y las bases de datos del motor de IA. Esto le permite integrar los datos no estructurados de su organización en una aplicación de chatbot empresarial.</block>
+  <block id="d4dc097b509662a241b4f1d85924fdb4" category="list-text">Calculadoras de almacenamiento para ahorrar costes</block>
+  <block id="1a78f887c27cbb9e00745a4c2bb056a1" category="list-text">Analiza tus implementaciones actuales con el almacenamiento de Amazon Elastic Block Store (EBS) o Elastic File System (EFS), o Amazon FSx para el servidor de archivos de Windows, para descubrir cuánto dinero puedes ahorrar al pasar a Amazon FSx para NetApp ONTAP. También puede utilizar la calculadora para realizar un escenario hipotético de una puesta en marcha futura que esté planificando.</block>
+  <block id="902e65d33784bd8924eb05e622aa2dda" category="section-title">Proveedores de cloud compatibles</block>
+  <block id="f23d73684a524dc65f1c2ab55054ed6c" category="paragraph">Workload Factory le permite gestionar el almacenamiento en cloud y utilizar las capacidades de carga de trabajo en Amazon Web Services.</block>
+  <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">Coste</block>
+  <block id="6396fbe69c05e9a323cf53a0fbf0983d" category="paragraph">Workload Factory es libre de usar. El coste que paga a Amazon Web Services (AWS) depende de los servicios de almacenamiento y carga de trabajo que tenga pensado poner en marcha. Esto incluye el coste de los sistemas de archivos de Amazon FSx para NetApp ONTAP, la infraestructura de VMware Cloud en AWS, los servicios de AWS y mucho más.</block>
+  <block id="d866a7eda949420ef136789c93a23ee9" category="section-title">Cómo funciona Workload Factory</block>
+  <block id="20977d337d4e7d1aa80c7ebdb962f859" category="paragraph">Workload Factory incluye una consola basada en web que se proporciona a través de la capa SaaS, una cuenta, modos operativos que controlan el acceso a su estado de nube, enlaces que proporcionan conectividad segregada entre Workload Factory y una cuenta de AWS, y mucho más.</block>
+  <block id="11cf550820ecd5e75ae1a9046f7f7f05" category="section-title">Software como servicio</block>
+  <block id="22412f0c62e1935807bc2c96a82d38cd" category="inline-link">consola basada en web</block>
+  <block id="da89a2a4a0fe528ec46275a6250f3705" category="paragraph">Se puede acceder a la fábrica de carga de trabajo a través de una<block ref="7c75ef957f9c2706e82e5fc687e49689" category="inline-link-rx"></block>. Esta experiencia SaaS le permite acceder automáticamente a las últimas funciones a medida que se lanzan y cambiar fácilmente entre sus cuentas y enlaces de Workload Factory.</block>
+  <block id="9b945efebb006547a94415eadaa12921" category="section-title">Cuentas</block>
+  <block id="0c600280e89b5a618e533108344236d5" category="paragraph">Cuando inicie sesión en Workload Factory por primera vez, se le pedirá que cree una cuenta. Esta cuenta le permite organizar el acceso a recursos, cargas de trabajo y cargas de trabajo de su organización mediante credenciales.</block>
+  <block id="2edc1f0f1478d883c0d423d0d8ce8ba6" category="inline-image-macro">Una captura de pantalla del asistente de configuración de Workload Factory que le solicita la cuenta Workload Factory.</block>
+  <block id="912befb3eaba2908b9f951f6483b77fd" category="paragraph"><block ref="912befb3eaba2908b9f951f6483b77fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e1351546ad06187ed26aac56cc1d573" category="paragraph">Cuando se crea una cuenta, se convierte en el usuario administrador de cuentas único de esa cuenta.</block>
+  <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">Si su organización requiere una cuenta adicional o administración de usuarios, comuníquese con nosotros mediante el chat del producto.</block>
+  <block id="c8046b7d36a4a9672ff01fb0fdfd88bf" category="admonition">Si usas BlueXP de NetApp, ya pertenecerás a una cuenta porque Workload Factory aprovecha las cuentas de BlueXP.</block>
+  <block id="aa9b9cc18c16d4ea10f38b25b835c5aa" category="paragraph">Workload Factory proporciona tres modos operativos que le permiten controlar cuidadosamente el acceso a su estado de la nube y asignar confianza incremental a Workload Factory en función de sus políticas DE TI.</block>
+  <block id="d41adf884cb045d0ebe1b066d2b95a2b" category="list-text">*El modo básico* representa una relación de confianza cero y está diseñado para la exploración temprana de Workload Factory y el uso de los diversos asistentes para crear la infraestructura necesaria como código. Este código puede ser copiado y utilizado manualmente por el usuario junto con sus credenciales relevantes de AWS.</block>
+  <block id="d81fee99e7fd276bb44ecddacfeba318" category="list-text">*El modo de lectura* mejora la experiencia del modo básico al ayudar al usuario a detectar diversos recursos y herramientas, y por lo tanto, ayudar a completar asistentes relevantes.</block>
+  <block id="e2cde95c1c68867f8b74113e5266c7e4" category="list-text">*El modo Automate* representa una relación de confianza total y está diseñado para ejecutar y automatizar en nombre del usuario junto con las credenciales asignadas que tienen los permisos necesarios y validados para su ejecución.</block>
+  <block id="cc85ceb9ec5c575a9f6e41669887b58d" category="inline-link-macro">Obtenga más información sobre los modos operativos de Workload Factory</block>
+  <block id="bc8c94f9b7d24148c98db964dcfdf4f4" category="paragraph"><block ref="122264b4ce030632c8f10e1e484f4776" category="inline-link-macro-rx"></block>.</block>
+  <block id="e73298b79ea9408111cb3612bf336a0e" category="section-title">Enlaces de conectividad</block>
+  <block id="a74fb96e1eef90ea865f1878f02b4e15" category="paragraph">Un enlace de fábrica de cargas de trabajo crea una relación de confianza y conectividad entre Workload Factory y uno o varios sistemas de archivos FSx para ONTAP. De este modo, puede supervisar y gestionar determinadas funciones del sistema de archivos directamente desde las llamadas API DE REST DE ONTAP que no están disponibles a través de la API de Amazon FSx para ONTAP.</block>
+  <block id="1e2cf39904eebcbddae0fe72e0186b8b" category="paragraph">No necesita un vínculo para comenzar con Workload Factory, pero en algunos casos necesitará crear un vínculo para desbloquear todas las funciones de Workload Factory y capacidades de carga de trabajo.</block>
+  <block id="e20e09752eeb59f7fee2ca964db1c848" category="paragraph">Los enlaces aprovechan actualmente AWS Lambda.</block>
+  <block id="e3bdd5798efebca8061760f610d98bcc" category="inline-link">Más información sobre Links</block>
+  <block id="cee76762b1db025f50dc7b50c80548de" category="paragraph"><block ref="cee76762b1db025f50dc7b50c80548de" category="inline-link-rx"></block></block>
+  <block id="bd282943a337f4287ca0d70f9a836261" category="section-title">Automatización de CodeBox</block>
+  <block id="528a4ef2f9c8bc3b67d3efa2374a45d4" category="paragraph">CodeBox es un copiloto de infraestructura como código (IAC) que ayuda a desarrolladores e ingenieros de DevOps a generar el código necesario para ejecutar cualquier operación soportada por Workload Factory. Los formatos de código son la API REST DE Workload Factory, la interfaz de línea de comandos de AWS y AWS CloudFormation.</block>
+  <block id="8a01a94fb083632bcf067deb51f9299b" category="paragraph">CodeBox se alinea con los modos de operación de Workload Factory (Básico, Lectura y Automatización) y establece una ruta clara para la preparación de ejecución, así como un catálogo de automatización para una rápida reutilización futura.</block>
+  <block id="7c408fda146892c9e1c039f91fee3cd3" category="paragraph">El panel CodeBox muestra el IAC generado por una operación de flujo de trabajo específica, y coincide con un asistente gráfico o una interfaz de chat conversacional. Si bien CodeBox admite codificación de colores y búsqueda para facilitar la navegación y el análisis, no permite la edición. Sólo puede copiar o guardar en el catálogo de automatización.</block>
+  <block id="ec6b8f7cd0c5cd9853d947bc13f72f4b" category="inline-link-macro">Más información sobre CodeBox</block>
+  <block id="7221d615997ca03d4480df5a43dae047" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block>.</block>
+  <block id="6495534fd654d5f36372a209ee27f0a4" category="section-title">Calculadoras de almacenamiento</block>
+  <block id="8ab314706201f4dddfd4b45dee861f4a" category="paragraph">Workload Factory proporciona una calculadora de almacenamiento para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con los de Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.</block>
+  <block id="3d40a6fbdf1b779c8b032be37bcf95a4" category="paragraph">Los criterios que se comparan entre los distintos tipos de sistemas de almacenamiento incluyen la capacidad total necesaria y el rendimiento total, lo que incluye las IOPS necesarias y el rendimiento necesario.</block>
+  <block id="c8d9b9f1a68d559ab984d4aa5efa4076" category="inline-link">Descubra cómo ahorrar con calculadoras de almacenamiento</block>
+  <block id="62ee06e3888f5791ca82b765e4aa3773" category="paragraph"><block ref="62ee06e3888f5791ca82b765e4aa3773" category="inline-link-rx"></block></block>
+  <block id="c257f5c852c12409e63afb17104f69c5" category="section-title">API de REST</block>
+  <block id="cfcd02bc3ad349605f667b1db0164fe0" category="paragraph">Workload Factory te permite optimizar, automatizar y operar tus sistemas de archivos FSx para ONTAP para cargas de trabajo específicas. Cada carga de trabajo expone una API de REST asociada. Colectivamente, estas cargas de trabajo y API forman una plataforma de desarrollo flexible y ampliable que puedes utilizar para administrar tus sistemas de archivos FSx para ONTAP.</block>
+  <block id="49dac47ef61c863ab22404394b6c84e7" category="paragraph">Hay varios beneficios cuando se utilizan las API DE REST DE Workload Factory:</block>
+  <block id="0fe398a436a33849be29455ed17d4185" category="list-text">Las API se han diseñado en función de la tecnología REST y de las mejores prácticas actuales. Las tecnologías centrales incluyen HTTP y JSON.</block>
+  <block id="b5b61948785c8f81b44871382cf798d9" category="list-text">La autenticación de Workload Factory se basa en el estándar OAuth2. NetApp confía en la implantación del servicio Auth0.</block>
+  <block id="cbc4c63269886120ca8da87d6017c0ca" category="list-text">La consola basada en web de Workload Factory utiliza las mismas API REST del núcleo para que haya coherencia entre las dos rutas de acceso.</block>
+  <block id="7d4c208fb5531fb6f56eb2444364de9a" category="inline-link">Consulte la documentación de la API de REST DE Workload Factory</block>
+  <block id="855730139927264118c576e496933287" category="paragraph"><block ref="855730139927264118c576e496933287" category="inline-link-rx"></block></block>
+  <block id="cf95d3228718365c810531ae8c95e31a" category="sidebar">Empieza con Workload Factory para que puedas sacar el máximo partido a las cargas de trabajo cuando usas Amazon FSx para NetApp ONTAP. Una vez completada la configuración, puedes crear, optimizar y gestionar sistemas de archivos de FSx para ONTAP para tus cargas de trabajo, analizar el ahorro de costes con FSx para ONTAP, utilizar el copiloto incorporado de infraestructura como código para la automatización entre plataformas y gestionar las cargas de trabajo en Workload Factory.</block>
+  <block id="88978255b949b7e0bfa9219676906cec" category="sidebar">Documentación de configuración y administración de Oracle Workload Factory</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Manos a la obra</block>
+  <block id="d9776f0775997b2e698c6975420b5c5d" category="sidebar">Regístrese</block>
+  <block id="1c71023bf289bc297d09be71221ff819" category="sidebar">Modos operativos y credenciales</block>
+  <block id="65179615095fe42a8a47efc1a529ea2f" category="sidebar">Obtenga información sobre los modos operativos</block>
+  <block id="196a1b1d4d7eff75b0b7bc0f6fa282e7" category="sidebar">Añada las credenciales de AWS</block>
+  <block id="b60830c9ff5a76f323a283c0cae1b47a" category="sidebar">Automatización mediante CodeBox</block>
+  <block id="6359b03a7ff6ac7a9c38c6edebcd1408" category="sidebar">Más información sobre CodeBox</block>
+  <block id="f53835e0f369158c476f99fda577e700" category="sidebar">Documentos de configuración y administración</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Notas de la versión</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Novedades</block>
+  <block id="e4c53684ddd66ee4898db459d57514e8" category="sidebar">Aprenda lo básico</block>
+  <block id="6ae8e58cb52cd45b321927bcb2961f4e" category="sidebar">Descripción general de Workload Factory</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">Inicio rápido</block>
+  <block id="bec1e3daee54f5a9410751eb03bd867e" category="sidebar">Administrar fábrica de cargas de trabajo</block>
+  <block id="3700c3dfbf95d68b06191b4a4cbb7592" category="sidebar">Automatizar tareas con CodeBox</block>
+  <block id="733ae60890dc5503303e1f5780ac5c9b" category="sidebar">Utilice CodeBox para generar código</block>
+  <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conocimiento y apoyo</block>
+</blocks>

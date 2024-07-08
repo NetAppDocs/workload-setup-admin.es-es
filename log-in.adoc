@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: log-in.html 
+keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account 
+summary: Después de registrarte en Workload Factory, puedes iniciar sesión en cualquier momento desde la consola basada en web para empezar a gestionar tus cargas de trabajo y los sistemas de archivos FSx para ONTAP. 
+---
+= Inicie sesión en Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Después de registrarte en Workload Factory, puedes iniciar sesión en cualquier momento desde la consola basada en web para empezar a gestionar tus cargas de trabajo y los sistemas de archivos FSx para ONTAP.
+
+.Acerca de esta tarea
+Puede iniciar sesión en la consola basada en web de Workload Factory mediante una de las siguientes opciones:
+
+* Sus credenciales existentes del sitio de soporte de NetApp (NSS)
+* Un inicio de sesión en el cloud de NetApp con su dirección de correo electrónico y una contraseña
+
+
+.Pasos
+. Abra un navegador web y vaya a la https://console.workloads.netapp.com["Consola de Workload Factory"^].
+. En la página *Iniciar sesión*, introduzca la dirección de correo electrónico asociada a su inicio de sesión.
+. En función del método de autenticación asociado a su inicio de sesión, se le pedirá que introduzca sus credenciales:
++
+** Credenciales de cloud de NetApp: Introduzca su contraseña
+** Federated user: Introduzca las credenciales de identidad federadas
+** Cuenta del sitio de soporte de NetApp: Introduzca sus credenciales del sitio de soporte de NetApp
+
+
+. Seleccione *Iniciar sesión*.
++
+Si ha iniciado sesión correctamente en el pasado, verá la página de inicio de Workload Factory y utilizará la cuenta predeterminada.
+
++
+Si esta es la primera vez que inicia sesión, se le dirigirá a la página *Cuenta*.
+
++
+** Si eres miembro de una sola cuenta, selecciona *Continuar*.
+** Si eres miembro de varias cuentas, selecciona la cuenta y selecciona *Continuar*.
+
+
+
+
+.Resultado
+Ahora has iniciado sesión y puedes empezar a utilizar Workload Factory para gestionar los sistemas de archivos FSx para ONTAP y tus cargas de trabajo.
