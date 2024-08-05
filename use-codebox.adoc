@@ -76,7 +76,7 @@ Tenga en cuenta que el código dentro de un archivo YAML generado por CloudForma
 
 
 .Pasos
-. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione image:button-copy-codebox.png["el botón copiar"] copiar el código en el CodeBox.
+. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie el código en el CodeBox.
 . Seleccione *Redirigir a CloudFormation* y se mostrará la página Redirigir a CloudFormation.
 . Abra otra ventana del explorador e inicie sesión en la consola de administración de AWS.
 . Seleccione *Continuar* en la página Redirigir a CloudFormation.
@@ -97,7 +97,7 @@ Puede ejecutar las API desde cualquier host que admita cURL y que tenga conectiv
 Tenga en cuenta que los tokens de autenticación están ocultos en CodeBox, pero se rellenan al copiar y pegar la llamada API.
 
 .Pasos
-. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione image:button-copy-codebox.png["el botón copiar"] copiar el código API en el CodeBox.
+. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie el código API en el CodeBox.
 . Pegue el código y ejecútelo en su sistema host.
 
 
@@ -108,7 +108,24 @@ Tenga en cuenta que los tokens de autenticación están ocultos en CodeBox, pero
 Puede usar la interfaz de línea de comandos de Amazon Web Services generada desde CodeBox para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
 
 .Pasos
-. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione image:button-copy-codebox.png["el botón copiar"] copiar la CLI de AWS en el CodeBox.
+. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie la CLI de AWS en el CodeBox.
 . Abra otra ventana del explorador e inicie sesión en la consola de administración de AWS.
+. Pega el código y ejecútalo.
+
+
+
+
+== Utilice Terraform de CodeBox
+
+Puedes utilizar Terraform para implementar y gestionar tus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
+
+.Antes de empezar
+* Necesitará un servidor Terraform desde el que ejecutar los comandos.
+* Necesitarás disponer de credenciales para iniciar sesión en tu cuenta de AWS.
+
+
+.Pasos
+. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie o descargue el código de Terraform en el CodeBox.
+. Conéctese a su servidor.
 . Pega el código y ejecútalo.
 

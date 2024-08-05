@@ -392,7 +392,6 @@
   <block id="6b2932e540d5f7ea082e1ac798f02299" category="paragraph">Los pasos para usar el código de CLoudFormation pueden ser diferentes dependiendo de si está implementando un sistema de archivos FSx for ONTAP, creando credenciales de cuenta o realizando otras acciones de Fábrica de carga de trabajo.</block>
   <block id="db45cb70284a7cbad935a33a0ef0b6dc" category="paragraph">Tenga en cuenta que el código dentro de un archivo YAML generado por CloudFormation expira después de 7 días por razones de seguridad.</block>
   <block id="f4beed69f4c72e3f9969d0e2daa8cc67" category="list-text">Necesitarás tener los siguientes permisos de usuario para usar una pila de CloudFormation:</block>
-  <block id="e1e1a8055c6ecfa43b025a1584c3155f" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar el código en el CodeBox.</block>
   <block id="99ca7c9c85fef7c6ab0e44eb58675162" category="list-text">Seleccione *Redirigir a CloudFormation* y se mostrará la página Redirigir a CloudFormation.</block>
   <block id="7463b18d69a514063d0f320bc1d16b0d" category="list-text">Abra otra ventana del explorador e inicie sesión en la consola de administración de AWS.</block>
   <block id="3bc22cebdcd7af89d94afadce527cc1d" category="list-text">Inicie sesión en la cuenta de AWS donde se debe ejecutar el código.</block>
@@ -402,11 +401,9 @@
   <block id="05c017ebdfb63b85bc91ed2748f0a19f" category="paragraph">Puede usar las API de REST DE Workload Factory generadas desde CodeBox para implementar y gestionar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.</block>
   <block id="3c3f00270f1d36904ead2ac33f53a58f" category="paragraph">Puede ejecutar las API desde cualquier host que admita cURL y que tenga conectividad a Internet.</block>
   <block id="ed172ca8e9fe57859bcb8978982d2e0d" category="paragraph">Tenga en cuenta que los tokens de autenticación están ocultos en CodeBox, pero se rellenan al copiar y pegar la llamada API.</block>
-  <block id="50bea3d64c18b01d7ce7b30ec89500d8" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar el código API en el CodeBox.</block>
   <block id="b68f0143fe964c9ac34ce1d33e961f82" category="list-text">Pegue el código y ejecútelo en su sistema host.</block>
   <block id="b4c82b8569210de2a2777b454448b42e" category="section-title">Utilice el código de la CLI de AWS de CodeBox</block>
   <block id="8d03c4936e76f2455607364517b82e3e" category="paragraph">Puede usar la interfaz de línea de comandos de Amazon Web Services generada desde CodeBox para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.</block>
-  <block id="4002cdda8ab65bc08a255c31321855ab" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, seleccione <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> copiar la CLI de AWS en el CodeBox.</block>
   <block id="b28a0d67dfa6e54814b9650389eea71b" category="list-text">Pega el código y ejecútalo.</block>
   <block id="3c9ee3abb878e5099cd76beeedcb2d04" category="summary">Descubra las novedades de las funciones de administración de Workload Factory: Credenciales del proveedor de cloud, mejoras de CodeBox y mucho más.</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">Lo nuevo</block>
@@ -498,4 +495,16 @@
   <block id="3700c3dfbf95d68b06191b4a4cbb7592" category="sidebar">Automatizar tareas con CodeBox</block>
   <block id="733ae60890dc5503303e1f5780ac5c9b" category="sidebar">Utilice CodeBox para generar código</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conocimiento y apoyo</block>
+  <block id="c419efd1c7454d477938da03ab909ff4" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie el código en el CodeBox.</block>
+  <block id="ac8312e3b09c390dd9da069d9697ab8c" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie el código API en el CodeBox.</block>
+  <block id="1b2b6bf8e053a2f8088251c3a2cc65f9" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie la CLI de AWS en el CodeBox.</block>
+  <block id="2532cd63354e6e99119077d45134b5ef" category="section-title">Utilice Terraform de CodeBox</block>
+  <block id="a5a1cedd11df4667bf63eec57c1622aa" category="paragraph">Puedes utilizar Terraform para implementar y gestionar tus sistemas de archivos FSx para ONTAP y otros recursos de AWS.</block>
+  <block id="372393cee3187826465089e7fa3db98e" category="list-text">Necesitará un servidor Terraform desde el que ejecutar los comandos.</block>
+  <block id="90d8257298c061974c94790388e32bbd" category="list-text">Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie o descargue el código de Terraform en el CodeBox.</block>
+  <block id="a2417f4d64bad3dff09f2bdbce4dc0e2" category="list-text">Conéctese a su servidor.</block>
+  <block id="691e71734464aaf43017f5b033e54559" category="section-title">4 de agosto de 2024</block>
+  <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Soporte de terraform</block>
+  <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">La compatibilidad con Terraform está disponible para la puesta en marcha del sistema de archivos de Amazon FSx para NetApp ONTAP y la creación de máquinas virtuales de almacenamiento. La guía de configuración y administración ahora tiene instrucciones sobre cómo usar Terraform desde el CodeBox.</block>
+  <block id="1a83a24f33c92a88ea922a23bd6cf4e5" category="paragraph"><block ref="1a83a24f33c92a88ea922a23bd6cf4e5" category="inline-link-macro-rx"></block></block>
 </blocks>
