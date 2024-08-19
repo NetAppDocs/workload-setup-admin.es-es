@@ -13,6 +13,8 @@ summary: Fábrica de cargas de trabajo de NetApp es una potente plataforma de ge
 [role="lead"]
 Fábrica de cargas de trabajo de NetApp es una potente plataforma de gestión de ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo mediante los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.
 
+Una carga de trabajo abarca una combinación de recursos, código y servicios o aplicaciones, diseñada para servir un objetivo de negocio. Esto puede ser cualquier cosa, desde una aplicación de cara al cliente hasta un proceso de back-end. Las cargas de trabajo pueden implicar un subconjunto de recursos dentro de una única cuenta de AWS o abarcar varias cuentas.
+
 Amazon FSx para NetApp ONTAP proporciona volúmenes de almacenamiento NFS, SMB/CIFS e iSCSI nativos de AWS totalmente gestionados para aplicaciones críticas para la misión, bases de datos, contenedores, almacenes de datos en la nube de VMware y archivos de usuario. Puedes gestionar FSx para ONTAP mediante Workload Factory y mediante herramientas de gestión nativas de AWS.
 
 
@@ -106,9 +108,9 @@ link:codebox-automation.html["Más información sobre CodeBox"].
 
 
 
-=== Calculadoras de almacenamiento
+=== Calculadoras de ahorro
 
-Workload Factory proporciona una calculadora de almacenamiento para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con los de Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
+Workload Factory ofrece una calculadora de ahorro para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con los de Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
 
 Los criterios que se comparan entre los distintos tipos de sistemas de almacenamiento incluyen la capacidad total necesaria y el rendimiento total, lo que incluye las IOPS necesarias y el rendimiento necesario.
 
