@@ -504,8 +504,8 @@
   <block id="691e71734464aaf43017f5b033e54559" category="section-title">4 de agosto de 2024</block>
   <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Soporte de terraform</block>
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">La compatibilidad con Terraform está disponible para la puesta en marcha del sistema de archivos de Amazon FSx para NetApp ONTAP y la creación de máquinas virtuales de almacenamiento. La guía de configuración y administración ahora tiene instrucciones sobre cómo usar Terraform desde el CodeBox.</block>
-  <block id="1a83a24f33c92a88ea922a23bd6cf4e5" category="paragraph"><block ref="1a83a24f33c92a88ea922a23bd6cf4e5" category="inline-link-macro-rx"></block></block>
   <block id="462c14d3e045d4b0b69cee0781df3207" category="paragraph">Una carga de trabajo abarca una combinación de recursos, código y servicios o aplicaciones, diseñada para servir un objetivo de negocio. Esto puede ser cualquier cosa, desde una aplicación de cara al cliente hasta un proceso de back-end. Las cargas de trabajo pueden implicar un subconjunto de recursos dentro de una única cuenta de AWS o abarcar varias cuentas.</block>
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">Calculadoras de ahorro</block>
   <block id="6904c85b1af908213d1642916b521739" category="paragraph">Workload Factory ofrece una calculadora de ahorro para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con los de Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.</block>
+  <block id="11cb17d1b990bbf37a24337d5692efa1" category="paragraph"><block ref="11cb17d1b990bbf37a24337d5692efa1" category="inline-link-macro-rx"></block></block>
 </blocks>
