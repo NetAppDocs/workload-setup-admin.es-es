@@ -508,4 +508,14 @@
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">Calculadoras de ahorro</block>
   <block id="6904c85b1af908213d1642916b521739" category="paragraph">Workload Factory ofrece una calculadora de ahorro para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con los de Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.</block>
   <block id="11cb17d1b990bbf37a24337d5692efa1" category="paragraph"><block ref="11cb17d1b990bbf37a24337d5692efa1" category="inline-link-macro-rx"></block></block>
+  <block id="2fd1745cefcdce50d6467d96e693f6b7" category="doc">Suscripción a RSS</block>
+  <block id="0fa776fabe30e41d70bd8d9c9e64c974" category="paragraph">La suscripción RSS está disponible en el <block ref="372504cb6bb48559009ff8f8cdb9a245" category="inline-link-macro-rx"></block>. El uso de una fuente RSS es una forma fácil de consumir y estar al tanto de los cambios en la fábrica de cargas de trabajo de BlueXP .</block>
+  <block id="447fb3de7bec10468f55367375163603" category="inline-image-macro">Captura de pantalla del menú desplegable Ayuda de la consola de Workload Factory. Un nuevo botón para suscribirse a RSS aparece como una opción en el menú desplegable.</block>
+  <block id="c508966f04ada556baaaa0b94e781209" category="paragraph"><block ref="c508966f04ada556baaaa0b94e781209" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80f4b5aa553e3a44455088c83954a088" category="section-title">Soporte para una política de permisos única por carga de trabajo</block>
+  <block id="c876ca70d1ae73b09cdc0004b328448e" category="paragraph">Al agregar credenciales de AWS en Workload Factory, ahora puede seleccionar una única política de permisos, ya sea en modo de lectura o automatización, para cada carga de trabajo y administración de almacenamiento.</block>
+  <block id="41b3a089d4fbacfb53e9a5634cfc6647" category="inline-image-macro">Captura de pantalla de la sección de configuración de permisos en la página Credenciales, donde puede seleccionar políticas de permisos de lectura o automatización para la gestión del almacenamiento, cargas de trabajo de IA, cargas de trabajo de bases de datos y cargas de trabajo de VMware.</block>
+  <block id="fa5f572610383fbc01cbba40c0f535e2" category="paragraph"><block ref="fa5f572610383fbc01cbba40c0f535e2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1db25aada4bff8233b24c1d7b39230cd" category="paragraph"><block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block></block>
+  <block id="b5cef683aab00353096b98823a237e69" category="section-title">1 de septiembre de 2024</block>
 </blocks>
