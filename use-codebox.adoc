@@ -120,12 +120,12 @@ Puede usar la interfaz de línea de comandos de Amazon Web Services generada des
 Puedes utilizar Terraform para implementar y gestionar tus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
 
 .Antes de empezar
-* Necesitará un servidor Terraform desde el que ejecutar los comandos.
+* Necesitarás un sistema donde Terraform esté instalado (Windows/Mac/Linux).
 * Necesitarás disponer de credenciales para iniciar sesión en tu cuenta de AWS.
 
 
 .Pasos
-. Después de utilizar la interfaz de usuario para definir la operación que desea realizar, copie o descargue el código de Terraform en el CodeBox.
-. Conéctese a su servidor.
-. Pega el código y ejecútalo.
+. Una vez que haya utilizado la interfaz de usuario para definir la operación que desea realizar, descargue el código Terraform desde el CodeBox.
+. Copie el archivo de script descargado en el sistema donde está instalado Terraform.
+. Extraiga el archivo zip y siga los pasos del archivo README.md.
 
