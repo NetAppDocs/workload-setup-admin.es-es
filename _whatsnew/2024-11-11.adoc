@@ -1,0 +1,11 @@
+= Integración de la fábrica de cargas de trabajo en la consola de BlueXP 
+:allow-uri-read: 
+
+
+
+
+=== Integración de la fábrica de cargas de trabajo en la consola de BlueXP 
+
+Ahora puede utilizar la fábrica de carga de trabajo de la link:https://console.bluexp.netapp.com["Consola BlueXP"^]. La experiencia de la consola de BlueXP  proporciona la misma funcionalidad que la consola de la carga de trabajo de fábrica.
+
+link:https://docs.netapp.com/workload-setup-admin/console-experiences.html["Aprende a acceder a la fábrica de cargas de trabajo desde la consola de BlueXP "]

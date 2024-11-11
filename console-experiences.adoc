@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: console-experiences.html 
+keywords: console, consoles, access, saas, workload factory, bluexp, bluexp workload factory 
+summary: Se puede acceder a la fábrica de cargas de trabajo de BlueXP  a través de dos consolas basadas en web. 
+---
+= Experiencias de consola
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Se puede acceder a la fábrica de cargas de trabajo de BlueXP  a través de dos consolas basadas en web. Aprenda a acceder a la fábrica de cargas de trabajo de BlueXP  usando la consola de fábrica de cargas de trabajo de BlueXP  y la consola de BlueXP .
+
+Puede utilizar dos consolas para acceder a la fábrica de cargas de trabajo de BlueXP .
+
+* *Consola BlueXP *: Ofrece una experiencia híbrida donde puedes administrar tus entornos de trabajo y cargas de trabajo en el mismo lugar.
+* *Consola de fábrica de carga de trabajo*: Ofrece una experiencia de fábrica de carga de trabajo dedicada centrada en las cargas de trabajo que se ejecutan en Amazon FSx para NetApp ONTAP.
+
+
+
+
+== Accede a la fábrica de cargas de trabajo desde la consola de BlueXP 
+
+Es posible acceder al centro de cargas de trabajo desde BlueXP . Además de utilizar BluXP Workload Factory para las capacidades de almacenamiento y carga de trabajo de AWS, también puede acceder a otros servicios de la plataforma BlueXP  como Copia y sincronización, Cartera digital, etc.
+
+.Pasos
+. Inicie sesión en link:https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^]
+. Navegue hasta la carga de trabajo que desea usar y seleccione una opción para comenzar.
+
+
+
+
+== Acceda a la fábrica de cargas de trabajo en la consola de Workload Factory
+
+Puede acceder a la fábrica de cargas de trabajo desde la consola de Workload Factory.
+
+.Pasos
+. Inicie sesión en link:https://console.bluexp.netapp.com["Consola BlueXP"^]
+. Seleccione *Workloads* en la navegación de la izquierda.
+. Seleccione *Inicio* para ver todas las cargas de trabajo o seleccione una carga de trabajo como *Almacenamiento* o *Bases de datos*.
+. Seleccione una opción para comenzar en la carga de trabajo.
+

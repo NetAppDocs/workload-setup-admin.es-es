@@ -6,16 +6,16 @@
 
 === Suscripción a RSS
 
-La suscripción RSS está disponible en el link:https://console.workloads.netapp.com/["Consola de Workload Factory"^]. El uso de una fuente RSS es una forma fácil de consumir y estar al tanto de los cambios en la fábrica de cargas de trabajo de BlueXP .
+La suscripción RSS está disponible en el link:https://console.workloads.netapp.com/["consola de fábrica de carga de trabajo"^]. El uso de una fuente RSS es una forma fácil de consumir y estar al tanto de los cambios en la fábrica de cargas de trabajo de BlueXP .
 
-image:screenshot-rss-subscribe-button.png["Captura de pantalla del menú desplegable Ayuda de la consola de Workload Factory. Un nuevo botón para suscribirse a RSS aparece como una opción en el menú desplegable."]
+image:screenshot-rss-subscribe-button.png["Captura de pantalla del menú desplegable de ayuda de la consola de fábrica de cargas de trabajo. Un nuevo botón para suscribirse a RSS aparece como una opción en el menú desplegable."]
 
 
 
 === Soporte para una política de permisos única por carga de trabajo
 
-Al agregar credenciales de AWS en Workload Factory, ahora puede seleccionar una única política de permisos, ya sea en modo de lectura o automatización, para cada carga de trabajo y administración de almacenamiento.
+Al agregar las credenciales de AWS en la fábrica de cargas de trabajo, ahora puede seleccionar una única política de permisos, ya sea en modo de lectura o automatización, para cada carga de trabajo y administración de almacenamiento.
 
 image:screenshot-single-permission-policy-support.png["Captura de pantalla de la sección de configuración de permisos en la página Credenciales, donde puede seleccionar políticas de permisos de lectura o automatización para la gestión del almacenamiento, cargas de trabajo de IA, cargas de trabajo de bases de datos y cargas de trabajo de VMware."]
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Agregar credenciales de AWS a Workload Factory"^]
+link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Agregar credenciales de AWS a la fábrica de cargas de trabajo"^]

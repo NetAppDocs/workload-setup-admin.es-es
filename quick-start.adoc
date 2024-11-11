@@ -2,36 +2,36 @@
 sidebar: sidebar 
 permalink: quick-start.html 
 keywords: quick start 
-summary: Comience con Workload Factory preparando la conexión en red para la consola Workload Factory, registrando y creando una cuenta, y agregando credenciales para que Workload Factory pueda administrar los recursos de AWS directamente. 
+summary: Comience con la fábrica de cargas de trabajo preparando la red para la consola de fábrica de cargas de trabajo, registrando y creando una cuenta, y agregando credenciales para que la fábrica de cargas de trabajo pueda administrar los recursos de AWS directamente. 
 ---
-= Inicio rápido para Workload Factory
+= Inicio rápido de fábrica de cargas de trabajo BlueXP 
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Para empezar a usar Workload Factory, regístrate y crea una cuenta, añade credenciales para que Workload Factory pueda gestionar directamente los recursos de AWS y, luego, optimizar tus cargas de trabajo mediante Amazon FSx for NetApp ONTAP.
+Empieza a usar la fábrica de cargas de trabajo registrando y creando una cuenta, añadiendo credenciales para que la fábrica de cargas de trabajo pueda gestionar directamente los recursos de AWS y, posteriormente, optimizar tus cargas de trabajo mediante Amazon FSx para NetApp ONTAP.
 
-Workload Factory es accesible para los usuarios como un servicio en la nube desde la consola basada en la web. Antes de comenzar, debe tener un entendimiento de link:workload-factory-overview.html["Fábrica de carga de trabajo"] y. link:operational-modes.html["modos de funcionamiento"]
+La fábrica de cargas de trabajo es accesible para los usuarios como un servicio en la nube desde la consola basada en la web. Antes de comenzar, debe tener un entendimiento de link:workload-factory-overview.html["fábrica de cargas de trabajo"] y. link:operational-modes.html["modos de funcionamiento"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Una"] Regístrate y crea una cuenta
 [role="quick-margin-para"]
-Vaya a https://console.workloads.netapp.com["Consola de Workload Factory"^], regístrese y cree una cuenta.
+Vaya a https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^], regístrese y cree una cuenta.
 
 [role="quick-margin-para"]
 link:sign-up-saas.html["Aprenda a registrarse y a crear una cuenta"].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Agregar credenciales de AWS a Workload Factory
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Agregar credenciales de AWS a la fábrica de cargas de trabajo
 [role="quick-margin-para"]
-Este paso es opcional. Puede usar Workload Factory en el modo _Basic_ sin agregar credenciales para acceder a su cuenta de AWS. Al agregar las credenciales de AWS a Workload Factory en el modo _Read_ o _Automate_, tu cuenta de Workload Factory proporciona los permisos necesarios para crear y administrar sistemas de archivos FSx para ONTAP y para implementar y gestionar cargas de trabajo específicas, como bases de datos y GenAI.
+Este paso es opcional. Puede utilizar la fábrica de cargas de trabajo en el modo _Basic_ sin agregar credenciales para acceder a su cuenta de AWS. Al agregar las credenciales de AWS a la fábrica de cargas de trabajo en el modo _Read_ o _Automate_, la cuenta de fábrica de cargas de trabajo proporciona a la cuenta de fábrica de cargas de trabajo los permisos necesarios para crear y gestionar sistemas de archivos FSx para ONTAP y para implementar y gestionar cargas de trabajo específicas, como bases de datos y GenAI.
 
 [role="quick-margin-para"]
 link:add-credentials.html["Aprenda a agregar credenciales a su cuenta"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Optimiza tus cargas de trabajo usando FSx para ONTAP
 [role="quick-margin-para"]
-Ahora que ya te has registrado, creado una cuenta y, de forma opcional, has añadido credenciales de AWS, puedes empezar a utilizar Workload Factory para optimizar tus cargas de trabajo utilizando FSx para ONTAP. Utilice los enlaces que figuran a continuación para seguir instrucciones paso a paso para cada tipo de carga de trabajo.
+Ahora que ya te has registrado, creado una cuenta y, de forma opcional, has añadido credenciales de AWS, puedes empezar a utilizar la fábrica de cargas de trabajo para optimizar tus cargas de trabajo utilizando FSx for ONTAP. Utilice los enlaces que figuran a continuación para seguir instrucciones paso a paso para cada tipo de carga de trabajo.
 
 [role="quick-margin-list"]
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Amazon FSX para ONTAP de NetApp"^]

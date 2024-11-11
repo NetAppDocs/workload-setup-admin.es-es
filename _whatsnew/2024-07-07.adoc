@@ -1,9 +1,9 @@
-= Lanzamiento inicial de Workload Factory
+= Lanzamiento inicial de fábrica de cargas de trabajo de BlueXP 
 :allow-uri-read: 
 
 
 
 
-=== Lanzamiento inicial de Workload Factory
+=== Lanzamiento inicial de fábrica de cargas de trabajo de BlueXP 
 
-BlueXP Workload Factory para AWS es una potente plataforma de gestión de ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo con los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.
+La fábrica de cargas de trabajo de BlueXP  es una potente plataforma de gestión del ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo mediante los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar mediante la fábrica de cargas de trabajo y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.
