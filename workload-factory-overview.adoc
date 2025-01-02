@@ -25,7 +25,7 @@ La plataforma de fábrica de cargas de trabajo ofrece las siguientes capacidades
 
 Almacenamiento flexible y de bajo coste:: Detecta, implementa y gestiona los sistemas de archivos de Amazon FSx para NetApp ONTAP en la nube. FSX para ONTAP incorpora todas las funcionalidades de ONTAP en un servicio gestionado de AWS nativo que ofrece una experiencia de nube híbrida constante.
 Migra los entornos vSphere on-premises a VMware Cloud on AWS:: El asesor de migración de VMware Cloud on AWS le permite analizar sus configuraciones de máquinas virtuales actuales en entornos vSphere locales, generar un plan para implementar diseños de máquinas virtuales recomendados en VMware Cloud on AWS y utilizar sistemas de archivos personalizados de Amazon FSx para NetApp ONTAP como almacenes de datos externos.
-Implementación optimizada de bases de datos:: Implemente servidores SQL de Microsoft, bases de datos y clones de bases de datos, incluyendo el aprovisionamiento de recursos de AWS, el aprovisionamiento de almacenamiento, las redes y las configuraciones de SO, utilizando configuraciones de implementación optimizadas que garantizan un proceso de configuración consistente y sin errores.
+Gestión del ciclo de vida de las bases de:: Detecte cargas de trabajo de bases de datos y analice el ahorro de costes con Amazon FSx para NetApp ONTAP; aproveche las ventajas de almacenamiento y aplicaciones al migrar bases de datos de SQL Server a FSx para almacenamiento de ONTAP; ponga en marcha servidores SQL, bases de datos y clones de bases de datos que implementen prácticas recomendadas de proveedores; utilice un piloto conjunto de Infraestructura como código para automatizar operaciones; y supervise y optimice continuamente las propiedades de SQL Server para mejorar el rendimiento, la disponibilidad, la protección y la rentabilidad.
 Desarrollo de bots conversacionales de IA:: Aprovecha tus sistemas de archivos FSx para ONTAP para almacenar las fuentes de chatbot de tu organización y las bases de datos del motor de IA. Esto le permite integrar los datos no estructurados de su organización en una aplicación de chatbot empresarial.
 Calculadoras de ahorro para ahorrar costes:: Analiza tus implementaciones actuales con el almacenamiento de Amazon Elastic Block Store (EBS) o Elastic File System (EFS), o Amazon FSx para el servidor de archivos de Windows, para descubrir cuánto dinero puedes ahorrar al pasar a Amazon FSx para NetApp ONTAP. También puede utilizar la calculadora para realizar un escenario hipotético de una puesta en marcha futura que esté planificando.
 
@@ -112,11 +112,11 @@ link:codebox-automation.html["Más información sobre CodeBox"].
 
 === Calculadoras de ahorro
 
-La fábrica de cargas de trabajo ofrece una calculadora de ahorro para que puedas comparar los costes del almacenamiento en los sistemas de archivos FSx para ONTAP con Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
+La fábrica de cargas de trabajo ofrece calculadoras de ahorro para que pueda comparar los costes de sus entornos de almacenamiento o las cargas de trabajo de bases de datos en los sistemas de archivos FSx para ONTAP con Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
 
-Los criterios que se comparan entre los distintos tipos de sistemas de almacenamiento incluyen la capacidad total necesaria y el rendimiento total, lo que incluye las IOPS necesarias y el rendimiento necesario.
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["Descubra cómo analizar el ahorro para sus entornos de almacenamiento"^]
+* link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html["Aprenda a analizar el ahorro para sus cargas de trabajo de base de datos"^]
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["Descubra cómo ahorrar con calculadoras de almacenamiento"^]
 
 
 
