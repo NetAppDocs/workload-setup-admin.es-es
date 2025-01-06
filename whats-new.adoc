@@ -15,6 +15,18 @@ Descubra las novedades de las funciones de administración de la fábrica de car
 
 
 
+== 05 de enero de 2025
+
+
+
+=== Soporte para cuentas de servicio en la fábrica de cargas de trabajo de BlueXP 
+
+Las cuentas de servicio ahora se admiten en la fábrica de cargas de trabajo de BlueXP . Puede crear cuentas de servicio para actuar como usuarios de máquinas que automatizan las operaciones de infraestructura.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-service-accounts.html["Crear y administrar cuentas de servicio"]
+
+
+
 == 11 de noviembre de 2024
 
 

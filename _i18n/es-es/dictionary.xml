@@ -331,7 +331,6 @@
   <block id="11cf550820ecd5e75ae1a9046f7f7f05" category="section-title">Software como servicio</block>
   <block id="22412f0c62e1935807bc2c96a82d38cd" category="inline-link">consola basada en web</block>
   <block id="9b945efebb006547a94415eadaa12921" category="section-title">Cuentas</block>
-  <block id="6e1351546ad06187ed26aac56cc1d573" category="paragraph">Cuando se crea una cuenta, se convierte en el usuario administrador de cuentas único de esa cuenta.</block>
   <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">Si su organización requiere una cuenta adicional o administración de usuarios, comuníquese con nosotros mediante el chat del producto.</block>
   <block id="d81fee99e7fd276bb44ecddacfeba318" category="list-text">*El modo de lectura* mejora la experiencia del modo básico al ayudar al usuario a detectar diversos recursos y herramientas, y por lo tanto, ayudar a completar asistentes relevantes.</block>
   <block id="e2cde95c1c68867f8b74113e5266c7e4" category="list-text">*El modo Automate* representa una relación de confianza total y está diseñado para ejecutar y automatizar en nombre del usuario junto con las credenciales asignadas que tienen los permisos necesarios y validados para su ejecución.</block>
@@ -559,4 +558,49 @@
   <block id="764ffbbd234e8c610462259cf8d50b5a" category="list-text"><block ref="764ffbbd234e8c610462259cf8d50b5a" category="inline-link-macro-rx"></block></block>
   <block id="28926214529dd2082ee42d4efccc4f1e" category="inline-link-macro">Aprenda a analizar el ahorro para sus cargas de trabajo de base de datos</block>
   <block id="ec6c7e2795e3d76a80250e83f4a0055e" category="list-text"><block ref="ec6c7e2795e3d76a80250e83f4a0055e" category="inline-link-macro-rx"></block></block>
+  <block id="5baf4417d867f07ce7f16e7810f044d7" category="doc">Soporte para cuentas de servicio en la fábrica de cargas de trabajo de BlueXP </block>
+  <block id="369af9c9eae8f9673850f588a7ed5272" category="paragraph">Las cuentas de servicio ahora se admiten en la fábrica de cargas de trabajo de BlueXP . Puede crear cuentas de servicio para actuar como usuarios de máquinas que automatizan las operaciones de infraestructura.</block>
+  <block id="f932d2619edea0dc69b40e9be53abdc4" category="inline-link-macro">Crear y administrar cuentas de servicio</block>
+  <block id="3d6080aa10267e8c67d5c76a2bc1a9f3" category="paragraph"><block ref="3d6080aa10267e8c67d5c76a2bc1a9f3" category="inline-link-macro-rx"></block></block>
+  <block id="932645866653570a60b05477eb9d244b" category="summary">Puede administrar su cuenta para que se adapte a sus necesidades creando cuentas de servicio con fines de automatización.</block>
+  <block id="7b05bdd67cf260b16b28715ae682b5db" category="doc">Gestionar cuentas de servicio</block>
+  <block id="7e25e6f3444627cdd0a9518ea63a557b" category="paragraph">Cree cuentas de servicio para que actúen como usuarios de máquinas que automatizan las operaciones de infraestructura. Puede revocar o cambiar el acceso a las cuentas de servicio en cualquier momento.</block>
+  <block id="bb121f2e42609305e9a35e628d683a11" category="paragraph">Las cuentas de servicio son una funcionalidad de multi-tenancy proporcionada por BlueXP . Los administradores de cuentas crean cuentas de servicio, controlan el acceso y eliminan cuentas de servicio. Puede gestionar las cuentas de servicio en la consola de BlueXP  o en la consola de fábrica de cargas de trabajo de BlueXP .</block>
+  <block id="e6a44c030404947ef9ee349b021fc03d" category="inline-xref">elimine la cuenta de servicio</block>
+  <block id="2d81d4fc8d386aa7db8bcac9b1d0b306" category="inline-xref">cree uno nuevo</block>
+  <block id="8a8feea1d87a91424b49ee757e409e8b" category="paragraph">A diferencia de la administración de cuentas de servicio en BlueXP , donde puede recrear un secreto de cliente, la fábrica de cargas de trabajo solo admite la creación y eliminación de cuentas de servicio. Si desea volver a crear un secreto de cliente para una cuenta de servicio específica en la consola de fábrica de carga de trabajo de BlueXP , deberá hacerlo <block ref="f3841cd8a6d92483cb4b2a04ae8d7e16" category="inline-xref-macro-rx"></block>y, a continuación, <block ref="117d146838ec9f8b2a3508452b4bae51" category="inline-xref-macro-rx"></block>.</block>
+  <block id="de3df2812a77857f11a4d58813051825" category="paragraph">Las cuentas de servicio utilizan un ID de cliente y un secreto para la autenticación en lugar de una contraseña. Los ID de cliente y los secretos se corrigen hasta que el administrador de la cuenta decide cambiarlos. Para usar una cuenta de servicio, necesitará el ID de cliente y secreto para generar el token de acceso o no obtendrá acceso. Tenga en cuenta que los tokens de acceso son de corta duración y solo se pueden utilizar durante varias horas.</block>
+  <block id="4297b1c4d208bcc93d459bd6c06031df" category="paragraph">Decidir si desea crear una cuenta de servicio en la consola de BlueXP  o en la consola de fábrica de cargas de trabajo de BlueXP . Hay ligeras diferencias. En las siguientes instrucciones se describe cómo administrar cuentas de servicio en la consola de fábrica de cargas de trabajo de BlueXP .</block>
+  <block id="3ae998467dc1449fb591d75901000406" category="inline-link-macro">Obtenga más información sobre la gestión de identidades y accesos de BlueXP </block>
+  <block id="97a3c660b50f6bf13e2dacbc15e9c830" category="inline-link-macro">Aprenda a agregar miembros de BlueXP  IAM y administrar sus permisos</block>
+  <block id="9c5579c348844cc1b850bd02a96ffe67" category="paragraph">Para gestionar cuentas de servicio en BlueXP , <block ref="1d755ffa92795de859e3dba230e1f04d" category="inline-link-macro-rx"></block> y <block ref="aa435623882bd3c92d8bd95e95dc35fe" category="inline-link-macro-rx"></block>.</block>
+  <block id="41d9e1257b3e21add2e59d038938ea94" category="section-title">Cree una cuenta de servicio</block>
+  <block id="3f196be1bd5cfb3c4da4e6f58d7c33ed" category="paragraph">Al crear una cuenta de servicio, la fábrica de cargas de trabajo BlueXP  permite copiar o descargar un ID de cliente y un secreto de cliente para la cuenta de servicio. Este par de claves se usa para la autenticación con la fábrica de cargas de trabajo de BlueXP .</block>
+  <block id="7361ae18df6957cd233a2900fa56a3a3" category="list-text">En la consola de fábrica de carga de trabajo, seleccione el icono *Cuenta* y seleccione *Cuentas de servicio*.</block>
+  <block id="c3408ec590d1e3b7e7f77d145b976fb6" category="inline-image-macro">Captura de pantalla que muestra las opciones del menú de cuenta de la interfaz de usuario de fábrica de carga de trabajo de BlueXP . Una de las opciones son las cuentas de servicio.</block>
+  <block id="2bf662d0fe68884c8c6bfbf1c7e19b28" category="paragraph"><block ref="2bf662d0fe68884c8c6bfbf1c7e19b28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ebbfd5cf39924ef59304d3b2d03bfad0" category="list-text">En la página *Cuentas de servicio*, selecciona *Crear cuenta de servicio*.</block>
+  <block id="0631e752a6ccf3310e9ff6b0aba74a38" category="list-text">En el cuadro de diálogo Crear cuenta de servicio, introduzca un nombre para la cuenta de servicio en el campo *Nombre de cuenta de servicio*.</block>
+  <block id="c151e8d990a5b1f7552461d4a7727f4a" category="paragraph">El *rol* está preseleccionado como *administrador de cuenta*.</block>
+  <block id="136dc09835924029e4299fa28f17233d" category="list-text">Seleccione *continuar*.</block>
+  <block id="a708a553b3abfac9aade748b9d27bc4e" category="list-text">Copie o descargue el ID del cliente y el secreto del cliente.</block>
+  <block id="8bfab18bdb5a0cbcfb26837e26880088" category="paragraph">El secreto del cliente solo es visible una vez y la fábrica de carga de trabajo no lo almacena en ningún lugar. Copie o descargue el secreto y guárdelo de forma segura.</block>
+  <block id="f487083f9c2db211b137935b7fc9dece" category="list-text">De manera opcional, puede obtener un token de acceso para la API de gestión de Auth0 ejecutando un intercambio de credenciales de cliente. El ejemplo de cURL muestra cómo puede tomar el ID de cliente y secreto y usar una API para generar el token de acceso que tiene un tiempo limitado. El token ofrece varias horas de acceso a las API de fábrica de cargas de trabajo de BlueXP .</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">Seleccione *Cerrar*.</block>
+  <block id="80487d01b1c728a010d93038c1678fff" category="paragraph">La nueva cuenta de servicio se crea y se muestra en la página Cuentas de servicio.</block>
+  <block id="30b299e9cb0ca616520dfdc739caa685" category="section-title">Eliminar una cuenta de servicio</block>
+  <block id="22afe6994929c83f3a017a74a15c514d" category="paragraph">Elimine una cuenta de servicio si ya no necesita utilizarla.</block>
+  <block id="76eda590152f52e14b5333efced53ebe" category="list-text">En la consola de Workload Factory, selecciona el icono *Cuenta* y selecciona *Cuentas de servicio*.</block>
+  <block id="14c8c293bfd0a79761df78d64a7cdc09" category="list-text">En la página *Cuentas de servicio*, selecciona el menú de tres puntos y luego selecciona *Eliminar*.</block>
+  <block id="897945ecf5c18d38834da2efd9b74699" category="list-text">En el cuadro de diálogo Eliminar cuenta de servicio, introduzca *delete* en el cuadro de texto.</block>
+  <block id="6b7a52834d577f2e4ac4d587036728f4" category="list-text">Seleccione *Eliminar* para confirmar la eliminación.</block>
+  <block id="0b296fc415fe75b2e0eb7ea5db103354" category="paragraph">Se elimina la cuenta de servicio.</block>
+  <block id="37b8354fe553b0151888468751ea8eb0" category="section-title">05 de enero de 2025</block>
+  <block id="99b22223be957cc9c37eee0aecb2007b" category="list-text">Cuentas de servicio para promover la automatización</block>
+  <block id="cb62deea87371902deaeb1b0a009e387" category="list-text">Utiliza las cuentas de servicio para automatizar las operaciones de la fábrica de cargas de trabajo de BlueXP  de forma segura y fiable. Las cuentas de servicio proporcionan una automatización fiable y duradera sin restricciones de administración de usuarios y son más seguras porque solo proporcionan acceso a la API.</block>
+  <block id="13b1a844b08d2d7b8144e4c0db6b5552" category="paragraph">Cuando crea una cuenta, usted es el usuario _account admin_ único de esa cuenta.</block>
+  <block id="c33f7c2cbeaca5f1462c1b3e1c276145" category="section-title">Cuentas de servicio</block>
+  <block id="05cf180c93dd06147c24c610cae8dd96" category="paragraph">Una cuenta de servicio actúa como un «usuario» que puede hacer llamadas API autorizadas a la fábrica de cargas de trabajo de BlueXP  con fines de automatización. Esto facilita la gestión de la automatización, ya que no necesita crear scripts de automatización basados en la cuenta de usuario de una persona real que pueda salir de la empresa en cualquier momento. Todos los titulares de cuentas de Workload Factory se consideran administradores de cuentas. Los administradores de cuentas pueden crear y eliminar varias cuentas de servicio.</block>
+  <block id="25e9dc09fd109741b1c7237f825ab46e" category="inline-link-macro">Aprenda a administrar cuentas de servicio</block>
+  <block id="09c9cabc1664a7683d1d411a37775b39" category="paragraph"><block ref="f09e11341fa2be3f754588bca37990f8" category="inline-link-macro-rx"></block>.</block>
 </blocks>

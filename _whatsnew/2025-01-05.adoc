@@ -1,0 +1,11 @@
+= Soporte para cuentas de servicio en la fábrica de cargas de trabajo de BlueXP 
+:allow-uri-read: 
+
+
+
+
+=== Soporte para cuentas de servicio en la fábrica de cargas de trabajo de BlueXP 
+
+Las cuentas de servicio ahora se admiten en la fábrica de cargas de trabajo de BlueXP . Puede crear cuentas de servicio para actuar como usuarios de máquinas que automatizan las operaciones de infraestructura.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-service-accounts.html["Crear y administrar cuentas de servicio"]

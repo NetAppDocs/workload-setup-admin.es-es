@@ -28,6 +28,7 @@ Migra los entornos vSphere on-premises a VMware Cloud on AWS:: El asesor de migr
 Gestión del ciclo de vida de las bases de:: Detecte cargas de trabajo de bases de datos y analice el ahorro de costes con Amazon FSx para NetApp ONTAP; aproveche las ventajas de almacenamiento y aplicaciones al migrar bases de datos de SQL Server a FSx para almacenamiento de ONTAP; ponga en marcha servidores SQL, bases de datos y clones de bases de datos que implementen prácticas recomendadas de proveedores; utilice un piloto conjunto de Infraestructura como código para automatizar operaciones; y supervise y optimice continuamente las propiedades de SQL Server para mejorar el rendimiento, la disponibilidad, la protección y la rentabilidad.
 Desarrollo de bots conversacionales de IA:: Aprovecha tus sistemas de archivos FSx para ONTAP para almacenar las fuentes de chatbot de tu organización y las bases de datos del motor de IA. Esto le permite integrar los datos no estructurados de su organización en una aplicación de chatbot empresarial.
 Calculadoras de ahorro para ahorrar costes:: Analiza tus implementaciones actuales con el almacenamiento de Amazon Elastic Block Store (EBS) o Elastic File System (EFS), o Amazon FSx para el servidor de archivos de Windows, para descubrir cuánto dinero puedes ahorrar al pasar a Amazon FSx para NetApp ONTAP. También puede utilizar la calculadora para realizar un escenario hipotético de una puesta en marcha futura que esté planificando.
+Cuentas de servicio para promover la automatización:: Utiliza las cuentas de servicio para automatizar las operaciones de la fábrica de cargas de trabajo de BlueXP  de forma segura y fiable. Las cuentas de servicio proporcionan una automatización fiable y duradera sin restricciones de administración de usuarios y son más seguras porque solo proporcionan acceso a la API.
 
 
 
@@ -64,12 +65,20 @@ Cuando inicia sesión en la fábrica de cargas de trabajo por primera vez, se le
 
 image:screenshot-account-selection.png["Una captura de pantalla del asistente de configuración de fábrica de cargas de trabajo que le solicita la cuenta de fábrica de cargas de trabajo."]
 
-Cuando se crea una cuenta, se convierte en el usuario administrador de cuentas único de esa cuenta.
+Cuando crea una cuenta, usted es el usuario _account admin_ único de esa cuenta.
 
 Si su organización requiere una cuenta adicional o administración de usuarios, comuníquese con nosotros mediante el chat del producto.
 
 
 TIP: Si usa NetApp BlueXP , ya pertenecerá a una cuenta porque la fábrica de cargas de trabajo utiliza las cuentas de BlueXP .
+
+
+
+==== Cuentas de servicio
+
+Una cuenta de servicio actúa como un «usuario» que puede hacer llamadas API autorizadas a la fábrica de cargas de trabajo de BlueXP  con fines de automatización. Esto facilita la gestión de la automatización, ya que no necesita crear scripts de automatización basados en la cuenta de usuario de una persona real que pueda salir de la empresa en cualquier momento. Todos los titulares de cuentas de Workload Factory se consideran administradores de cuentas. Los administradores de cuentas pueden crear y eliminar varias cuentas de servicio.
+
+link:manage-service-accounts.html["Aprenda a administrar cuentas de servicio"].
 
 
 
