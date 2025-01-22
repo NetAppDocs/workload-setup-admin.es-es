@@ -1,0 +1,2067 @@
+---
+sidebar: sidebar 
+permalink: permissions-reference.html 
+keywords: permissions, actions 
+summary: Para utilizar las funciones y los servicios de fábrica de cargas de trabajo de BlueXP , deberá proporcionar permisos para que la fábrica de cargas de trabajo pueda realizar operaciones en su entorno de cloud. 
+---
+= Permisos para la fábrica de cargas de trabajo de BlueXP 
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para utilizar las funciones y los servicios de fábrica de cargas de trabajo de BlueXP , deberá proporcionar permisos para que la fábrica de cargas de trabajo pueda realizar operaciones en su entorno de cloud.
+
+
+
+== Por qué usar permisos
+
+Cuando se proporcionan permisos de modo de lectura o automatización, la fábrica de cargas de trabajo asocia una política a la instancia con permisos para administrar recursos y procesos dentro de esa cuenta de AWS. Esto permite que la fábrica de cargas de trabajo ejecute diversas operaciones a partir de la detección de entornos de almacenamiento hasta implementar recursos de AWS, como sistemas de archivos en administración de almacenamiento o bases de conocimientos para cargas de trabajo GenAI.
+
+Para las cargas de trabajo de base de datos, por ejemplo, cuando se otorga la fábrica de carga de trabajo con los permisos necesarios, analiza todas las instancias EC2 de una cuenta y región determinadas y filtra todas las máquinas basadas en Windows. Si el agente de AWS Systems Manager (SSM) está instalado y ejecutándose en el host y la red de System Manager está configurada correctamente, la fábrica de cargas de trabajo puede acceder a la máquina Windows y verificar si el software de SQL Server está instalado o no.
+
+
+
+== Permisos por carga de trabajo
+
+Cada carga de trabajo utiliza permisos para realizar ciertas tareas en la fábrica de cargas de trabajo. Desplácese a la carga de trabajo que utiliza para ver la lista de permisos, su propósito, dónde se utilizan y qué modos los admiten.
+
+
+
+=== Permisos para almacenamiento
+
+Las políticas de IAM disponibles para almacenamiento proporcionan los permisos que la fábrica de carga de trabajo necesita para administrar los recursos y procesos dentro de su entorno de nube pública según el modo operativo en el que opere.
+
+Seleccione el modo operativo para ver las políticas de IAM necesarias:
+
+.Políticas de IAM para almacenamiento
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.Modo de lectura
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:Describe*",
+        "fsx:ListTagsForResource",
+        "ec2:Describe*",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+.Modo de automatización
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
+        }
+      }
+    }
+  ]
+}
+----
+--
+=====
+====
+La siguiente tabla muestra los permisos para Storage.
+
+.Tabla de permisos para almacenamiento
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| Específico | Acción | Donde se utiliza | Modo 
+
+
+| Crea un sistema de archivos FSx for ONTAP | fsx:CreateFileSystem* | Puesta en marcha | Automatizar 
+
+
+| Cree un grupo de seguridad para un sistema de archivos FSx for ONTAP | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+
+
+| Agregue etiquetas a un grupo de seguridad para un sistema de archivos FSx para ONTAP | ec2:CreateTags | Puesta en marcha | Automatizar 
+
+
+.2+| Autorizar la salida e ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Automatizar 
+
+
+| ec2:DeleteSecurityGroup | Operaciones de gestión | Automatizar 
+
+
+.16+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:TagResource* | Operaciones de gestión | Automatizar 
+
+
+| fsx:CreateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteFileSystem* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescripciónFileSystems* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:DescripciónStorageVirtualMachines* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:UpdateFileSystem* | Operaciones de gestión | Automatizar 
+
+
+| fsx:UpdateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescribeVolumes* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:UpdateVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:UntagResource* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescribeBackups* | Operaciones de gestión  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:CreateBackup* | Operaciones de gestión | Automatizar 
+
+
+| fsx:CreateVolumeFromBackup* | Operaciones de gestión | Automatizar 
+
+
+| Enumera las etiquetas de los recursos de FSx for ONTAP | fsx:ListTagsForResource | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+.7+| Consulta los detalles que necesitas para rellenar el formulario de puesta en marcha del sistema de archivos FSx para ONTAP | ec2:DescribeVpcs  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeSubnets  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:regiones describidas  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeSecurityGroups  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeRouteTables  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeNetworkinterfaces  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| EC2:DescripbeVolumeStatus  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga detalles de volumen para las instancias de EC2 | ec2:DescribeVolumes  a| 
+* Inventario
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga detalles para las instancias de EC2 | ec2:DescribInstances | Explora el ahorro  a| 
+* Lea
+* Automatizar
+
+
+
+
+.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+
+
+| Kms:describir* | Puesta en marcha | Automatizar 
+
+
+| Kms:Lista* | Puesta en marcha | Automatizar 
+
+
+| Describa Elastic File System en la calculadora de ahorro | ElasticfileSystem:describe* | Explora el ahorro | Lea 
+
+
+| Informar de las métricas de CloudWatch | Cloudwatch:PutMetricData | Operaciones de gestión | Automatizar 
+
+
+.2+| Obtenga métricas de volumen y sistema de archivos | Cloudwatch:GetMetricData | Operaciones de gestión  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Cloudwatch:GetMetricStatistics | Operaciones de gestión  a| 
+* Lea
+* Automatizar
+
+
+|===
+====
+
+
+=== Permisos para cargas de trabajo de bases de datos
+
+Las políticas de IAM disponibles para cargas de trabajo de bases de datos proporcionan los permisos que la fábrica de cargas de trabajo necesita para gestionar los recursos y procesos dentro de su entorno de cloud público según el modo operativo en el que opere.
+
+Seleccione el modo operativo para ver las políticas de IAM necesarias:
+
+.Políticas de IAM para cargas de trabajo de bases de datos
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.Modo de lectura
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "sns:ListTopics",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeAddresses",
+        "kms:ListAliases",
+        "kms:ListKeys",
+        "kms:DescribeKey",
+        "cloudformation:ListStacks",
+        "cloudformation:DescribeAccountLimits",
+        "ds:DescribeDirectories",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeBackups",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeFileSystems",
+        "servicequotas:ListServiceQuotas",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:SendCommand",
+        "ssm:DescribePatchBaselines",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:ListCommands",
+        "fsx:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    }
+  ]
+}
+----
+--
+.Modo de automatización
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EC2Group",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AllocateAddress",
+        "ec2:AllocateHosts",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:AssociateAddress",
+        "ec2:AssociateRouteTable",
+        "ec2:AssociateSubnetCidrBlock",
+        "ec2:AssociateVpcCidrBlock",
+        "ec2:AttachInternetGateway",
+        "ec2:AttachNetworkInterface",
+        "ec2:AttachVolume",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateVolume",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteTags",
+        "ec2:DeleteVolume",
+        "ec2:DetachNetworkInterface",
+        "ec2:DetachVolume",
+        "ec2:DisassociateAddress",
+        "ec2:DisassociateIamInstanceProfile",
+        "ec2:DisassociateRouteTable",
+        "ec2:DisassociateSubnetCidrBlock",
+        "ec2:DisassociateVpcCidrBlock",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyInstancePlacement",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVolume",
+        "ec2:ModifyVolumeAttribute",
+        "ec2:ReleaseAddress",
+        "ec2:ReplaceRoute",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+        }
+      }
+    },
+    {
+      "Sid": "FSxNGroup",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+        }
+      }
+    },
+    {
+      "Sid": "CommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks",
+        "cloudformation:ValidateTemplate",
+        "cloudformation:DescribeAccountLimits",
+        "cloudwatch:GetMetricStatistics",
+        "ds:DescribeDirectories",
+        "ec2:CreateLaunchTemplate",
+        "ec2:CreateLaunchTemplateVersion",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:CreateVpcEndpoint",
+        "ec2:Describe*",
+        "ec2:Get*",
+        "ec2:RunInstances",
+        "ec2:ModifyVpcAttribute",
+        "ec2messages:*",
+        "fsx:CreateFileSystem",
+        "fsx:UpdateFileSystem",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:CreateVolume",
+        "fsx:UpdateVolume",
+        "fsx:Describe*",
+        "fsx:List*",
+        "kms:CreateGrant",
+        "kms:Describe*",
+        "kms:List*",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLog*",
+        "logs:GetLog*",
+        "logs:ListLogDeliveries",
+        "logs:PutLogEvents",
+        "logs:TagResource",
+        "servicequotas:ListServiceQuotas",
+        "sns:ListTopics",
+        "sns:Publish",
+        "ssm:Describe*",
+        "ssm:Get*",
+        "ssm:List*",
+        "ssm:PutComplianceItems",
+        "ssm:PutConfigurePackageResult",
+        "ssm:PutInventory",
+        "ssm:SendCommand",
+        "ssm:UpdateAssociationStatus",
+        "ssm:UpdateInstanceAssociationStatus",
+        "ssm:UpdateInstanceInformation",
+        "ssmmessages:*",
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:PutRecommendationPreferences",
+        "compute-optimizer:GetEffectiveRecommendationPreferences",
+        "compute-optimizer:GetEC2InstanceRecommendations",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ArnGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:SignalResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/WLMDB*",
+        "arn:aws:logs:*:*:log-group:WLMDB*"
+      ]
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AddRoleToInstanceProfile",
+        "iam:CreateInstanceProfile",
+        "iam:CreateRole",
+        "iam:DeleteInstanceProfile",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser",
+        "iam:PutRolePolicy",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup1",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMGroup2",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    }
+  ]
+}
+----
+--
+=====
+====
+En la siguiente tabla se muestran los permisos para las cargas de trabajo de la base de datos.
+
+.Tabla de permisos para cargas de trabajo de base de datos
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| Específico | Acción | Donde se utiliza | Modo 
+
+
+| Obtenga estadísticas de métricas de FSx para ONTAP, EBS y FSx para el servidor de archivos de Windows | Cloudwatch:GetMetricStatistics  a| 
+* Inventario
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Listar y definir disparadores para eventos | sns:ListTopics | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+.4+| Obtenga detalles para las instancias de EC2 | ec2:DescribInstances  a| 
+* Inventario
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeKeyPairs | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeNetworkinterfaces | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| EC2:DescripciónTipos de InstanceTipos  a| 
+* Puesta en marcha
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+.6+| Obtén los detalles que necesitas para rellenar el formulario de puesta en marcha de FSx para ONTAP | ec2:DescribeVpcs  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeSubnets  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeSecurityGroups | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeImages | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:regiones describidas | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| ec2:DescribeRouteTables  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga cualquier extremo de VPC existente para determinar si es necesario crear nuevos extremos antes de las implementaciones | ec2:DescribeVpcEndpoints  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener tipos de instancias disponibles en la región para los nodos de validación (T2.micro/T3.micro) | EC2:DescripciónInstanceTypeOfferings | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga detalles de snapshot de cada volumen de EBS adjunto para calcular los precios y el ahorro | ec2:DescribSnapshots | Explora el ahorro  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtén detalles de cada volumen de EBS adjunto para calcular los precios y el ahorro | ec2:DescribeVolumes  a| 
+* Inventario
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+.3+| Obtenga información clave de KMS para el cifrado del sistema de archivos FSx para ONTAP | Kms:ListAliases | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Km:ListKeys | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Km:DescripbeKey | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga una lista de pilas de CloudFormation que se ejecutan en el entorno para comprobar el límite de cuota | Cloudformation:ListStacks | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga una lista de directorios activos gestionados por AWS en la región | ds:DescripbeDirectories | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+.5+| Obtén listas y detalles de volúmenes, backups, SVM, sistemas de archivos en AZs y etiquetas para el sistema de archivos FSx para ONTAP | fsx:DescribeVolumes  a| 
+* Inventario
+* Explore Ahorros
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:DescripbeBackups  a| 
+* Inventario
+* Explore Ahorros
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:DescribeStorageVirtualMachines  a| 
+* Puesta en marcha
+* Gestionar operaciones
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:DescripciónFileSystems  a| 
+* Puesta en marcha
+* Gestionar operaciones
+* Inventario
+* Explora el ahorro
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:ListTagsForResource | Gestionar operaciones  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga los límites de cuotas de servicio para CloudFormation y VPC | ServiceQuotas:ListServiceQuotas | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Utilice la consulta basada en SSM para obtener la lista actualizada de regiones soportadas por FSx para ONTAP | ssm:GetParametersByPath | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Sondee la respuesta de SSM después de enviar el comando para gestionar las operaciones posteriores al despliegue | ssm:GetCommandInvocation  a| 
+* Gestionar operaciones
+* Inventario
+* Explora el ahorro
+* Optimización
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Envíe comandos sobre SSM a instancias EC2 | ssm:SendCommand  a| 
+* Gestionar operaciones
+* Inventario
+* Explora el ahorro
+* Optimización
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener el estado de conectividad de SSM en las instancias posteriores al despliegue | ssm:GetConnectionStatus  a| 
+* Gestionar operaciones
+* Inventario
+* Optimización
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga la lista de líneas base de parches disponibles para la evaluación de parches del sistema operativo | ssm:DescripciónPatchBaselines | Optimización  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener el estado de aplicación de parches en las instancias de Windows EC2 para la evaluación de parches del sistema operativo | ssm:DescripciónInstancePatchStates | Optimización  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Enumere los comandos ejecutados por AWS Patch Manager en las instancias EC2 para la gestión de parches del sistema operativo | ssm: ListCommands | Optimización  a| 
+* Lea
+* Automatizar
+
+
+
+
+.4+| Obtenga, enumere, cree y elimine parámetros de SSM para las credenciales de usuario de AD, FSx para ONTAP y SQL utilizadas durante la implementación o administradas en su cuenta de AWS | ssm:getParameter ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ssm:GetParameters ^1^ | Gestionar operaciones  a| 
+* Lea
+* Automatizar
+
+
+
+
+| ssm:PutParameter ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| ssm:DeleteParameters ^1^ | Gestionar operaciones  a| 
+* Lea
+* Automatizar
+
+
+
+
+.9+| Asocie recursos de red a nodos SQL y nodos de validación, y agregue IP secundarias adicionales a nodos SQL | EC2:AllocateAddress ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AllocateHosts ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AssignPrivateIpAddresses ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AssociateAddress ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AssociateRouteTable ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AssociateSubnetCidrBlock ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AssociateVpcCidrBlock ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AttachInternetGateway ^1^ | Puesta en marcha | Automatizar 
+
+
+| EC2:AttachNetworkInterface ^1^ | Puesta en marcha | Automatizar 
+
+
+| Conecte los volúmenes de EBS necesarios a los nodos SQL para la puesta en marcha | ec2:AttachVolume | Puesta en marcha | Automatizar 
+
+
+.2+| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+| Cree los volúmenes de EBS necesarios para los nodos SQL para la puesta en marcha | ec2:CreateVolume | Puesta en marcha | Automatizar 
+
+
+.11+| Elimine los nodos de validación temporales creados del tipo T2.micro y para la reversión o el reintento de EC2 nodos SQL fallidos | ec2:DeleteNetworkInterface | Puesta en marcha | Automatizar 
+
+
+| ec2:DeleteSecurityGroup | Puesta en marcha | Automatizar 
+
+
+| ec2:DeleteTags | Puesta en marcha | Automatizar 
+
+
+| ec2:DeleteVolume | Puesta en marcha | Automatizar 
+
+
+| EC2:DetachNetworkInterface | Puesta en marcha | Automatizar 
+
+
+| ec2:DetachVolume | Puesta en marcha | Automatizar 
+
+
+| EC2:DisasociateAddress | Puesta en marcha | Automatizar 
+
+
+| ec2:DisasociateIamInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| EC2:DisAssociateRouteTable | Puesta en marcha | Automatizar 
+
+
+| EC2:DisasociateSubnetCidrBlock | Puesta en marcha | Automatizar 
+
+
+| EC2:DisasociateVpcCidrBlock | Puesta en marcha | Automatizar 
+
+
+.7+| Modificar atributos para instancias SQL creadas. Solo se aplica a los nombres que comienzan con WLMDB. | ec2:ModificyInstanceAttribute | Puesta en marcha | Automatizar 
+
+
+| EC2:ModifyInstanceColocación | Puesta en marcha | Automatizar 
+
+
+| ec2:ModificyNetworkInterfaceAttribute | Puesta en marcha | Automatizar 
+
+
+| EC2:ModifySubnetAttribute | Puesta en marcha | Automatizar 
+
+
+| ec2:ModifiyVolume | Puesta en marcha | Automatizar 
+
+
+| ec2:ModifyVolumeAttribute | Puesta en marcha | Automatizar 
+
+
+| EC2:ModifyVpcAttribute | Puesta en marcha | Automatizar 
+
+
+.5+| Desasociar y destruir instancias de validación | EC2:Release Address | Puesta en marcha | Automatizar 
+
+
+| EC2:ReplaceRoute | Puesta en marcha | Automatizar 
+
+
+| EC2:ReplaceRouteTableAssociation | Puesta en marcha | Automatizar 
+
+
+| ec2:RevokeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+| Inicie las instancias desplegadas | ec2:StartuStarInstances | Puesta en marcha | Automatizar 
+
+
+| Pare las instancias desplegadas | ec2:StopInstances | Puesta en marcha | Automatizar 
+
+
+| Etiquete valores personalizados para los recursos de Amazon FSx for NetApp ONTAP creados por WLMDB para obtener detalles de facturación durante la gestión de recursos | fsx:TagResource ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+.5+| Cree y valide la plantilla de CloudFormation para el despliegue | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+
+
+| Cloudformation:DescribeStackEvents | Puesta en marcha | Automatizar 
+
+
+| Cloudformation:Describacks | Puesta en marcha | Automatizar 
+
+
+| Cloudformation:ListStacks | Puesta en marcha | Automatizar 
+
+
+| Cloudformation:ValidateTemplate | Puesta en marcha | Automatizar 
+
+
+| Recuperar métricas para la recomendación de optimización de cálculo | Cloudwatch:GetMetricStatistics | Explora el ahorro | Automatizar 
+
+
+| Recuperar directorios disponibles en la región | ds:DescripbeDirectories | Puesta en marcha | Automatizar 
+
+
+.2+| Agregue reglas para el grupo de seguridad asociado a las instancias EC2 provisionadas | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+.2+| Cree plantillas de pila anidadas para reintentos y rollback | EC2:CreateLaunchTemplate | Puesta en marcha | Automatizar 
+
+
+| EC2:CreateLaunchTemplateVersion | Puesta en marcha | Automatizar 
+
+
+.3+| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateNetworkInterface | Puesta en marcha | Automatizar 
+
+
+| ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+
+
+| ec2:CreateTags | Puesta en marcha | Automatizar 
+
+
+| Suprima el grupo de seguridad creado temporalmente para los nodos de validación | ec2:DeleteSecurityGroup | Puesta en marcha | Automatizar 
+
+
+.2+| Obtener detalles de instancia para el provisionamiento | EC2:Describir*  a| 
+* Puesta en marcha
+* Inventario
+* Explora el ahorro
+
+| Automatizar 
+
+
+| EC2:GET*  a| 
+* Puesta en marcha
+* Inventario
+* Explora el ahorro
+
+| Automatizar 
+
+
+| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Automatizar 
+
+
+| Systems Manager utiliza el extremo del servicio de entrega de mensajes de AWS para las operaciones de API | ec2messages:*  a| 
+* Implementación *Inventario
+
+| Automatizar 
+
+
+.3+| Crear FSx para los recursos de ONTAP necesarios para aprovisionamiento. Para los sistemas FSx para ONTAP existentes, se crea un nuevo SVM para alojar los volúmenes de SQL. | fsx:CreateFileSystem | Puesta en marcha | Automatizar 
+
+
+| fsx:CreateStorageVirtualMachine | Puesta en marcha | Automatizar 
+
+
+| fsx:CreateVolume  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+.2+| Obtén más información sobre FSx para ONTAP | fsx:describe*  a| 
+* Puesta en marcha
+* Inventario
+* Gestionar operaciones
+* Explora el ahorro
+
+| Automatizar 
+
+
+| fsx:List*  a| 
+* Puesta en marcha
+* Inventario
+
+| Automatizar 
+
+
+| Cambie el tamaño de FSx para el sistema de archivos ONTAP para solucionar el margen adicional del sistema de archivos | fsx:UpdateFilesystem | Optimización | Automatizar 
+
+
+| Cambie el tamaño de los volúmenes para corregir los tamaños de los registros y las unidades de TempDB | fsx:UpdateVolume | Optimización | Automatizar 
+
+
+.4+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+
+
+| Kms:describir* | Puesta en marcha | Automatizar 
+
+
+| Kms:Lista* | Puesta en marcha | Automatizar 
+
+
+| Km:GenerateDataKey | Puesta en marcha | Automatizar 
+
+
+.7+| Cree registros de CloudWatch para la validación y el aprovisionamiento de scripts que se ejecutan en instancias EC2 | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+
+
+| Registros:CreateLogStream | Puesta en marcha | Automatizar 
+
+
+| Registros:DescribeLog* | Puesta en marcha | Automatizar 
+
+
+| Registros:GetLog* | Puesta en marcha | Automatizar 
+
+
+| Logs:ListLogDeliveries | Puesta en marcha | Automatizar 
+
+
+| Logs:PutLogEvents  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+| Logs:TagResource | Puesta en marcha | Automatizar 
+
+
+| Cree secretos en una cuenta de usuario para las credenciales proporcionadas para SQL, el dominio y FSx para ONTAP | ServiceQuotas:ListServiceQuotas | Puesta en marcha | Automatizar 
+
+
+.2+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMDB, así como en el SNS del cliente, si está seleccionado | sns:ListTopics | Puesta en marcha | Automatizar 
+
+
+| sns: Publicar | Puesta en marcha | Automatizar 
+
+
+.11+| Permisos SSM necesarios para ejecutar el script de detección en instancias SQL aprovisionadas y para obtener la lista más reciente de regiones AWS compatibles con FSx para ONTAP. | ssm:DESCRIBE* | Puesta en marcha | Automatizar 
+
+
+| ssm:GET*  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+| ssm: Lista* | Puesta en marcha | Automatizar 
+
+
+| ssm:PutComplianceItems | Puesta en marcha | Automatizar 
+
+
+| ssm:PutConfigurePackageResult | Puesta en marcha | Automatizar 
+
+
+| ssm: Inventario de PutInventory | Puesta en marcha | Automatizar 
+
+
+| ssm:SendCommand  a| 
+* Puesta en marcha
+* Inventario
+* Gestionar operaciones
+
+| Automatizar 
+
+
+| ssm: UpdateAssociationStatus | Puesta en marcha | Automatizar 
+
+
+| ssm:UpdateInstanceAssociationStatus | Puesta en marcha | Automatizar 
+
+
+| ssm:UpdateInstanceInformation | Puesta en marcha | Automatizar 
+
+
+| ssmmessages:*  a| 
+* Puesta en marcha
+* Inventario
+* Gestionar operaciones
+
+| Automatizar 
+
+
+.4+| Guardar credenciales para FSX para ONTAP, Active Directory y el usuario SQL (solo para la autenticación de usuario SQL) | ssm:getParameter ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+* Inventario
+
+| Automatizar 
+
+
+| ssm:GetParameters ^1^  a| 
+* Puesta en marcha
+* Inventario
+
+| Automatizar 
+
+
+| ssm:PutParameter ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+| ssm:DeleteParameters ^1^  a| 
+* Puesta en marcha
+* Gestionar operaciones
+
+| Automatizar 
+
+
+| La pila de CloudFormation de señales se ha producido correctamente o ha fallado. | Formación de nubes:SignalResource ^1^ | Puesta en marcha | Automatizar 
+
+
+| Agregue el rol EC2 creado por la plantilla al perfil de instancia de EC2 para permitir que los scripts de EC2 accedan a los recursos necesarios para el despliegue. | iam:AddRoleToInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| Cree un perfil de instancia para EC2 y adjunte el rol EC2 creado. | iam:CreateInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| Cree un rol EC2 a través de una plantilla con los permisos enumerados a continuación | iam:CreateRole | Puesta en marcha | Automatizar 
+
+
+| Crear rol vinculado al servicio EC2 | iam:CreateServiceLinkedRole ^2^ | Puesta en marcha | Automatizar 
+
+
+| Suprimir perfil de instancia creado durante el despliegue específicamente para los nodos de validación | iam:DeleteInstanceProfile | Puesta en marcha | Automatizar 
+
+
+.5+| Obtenga los detalles del rol y la política para determinar las brechas en los permisos y validarlas para la implementación | iam: GetPolicy | Puesta en marcha | Automatizar 
+
+
+| iam:GetPolicyVersion | Puesta en marcha | Automatizar 
+
+
+| iam:GetRole | Puesta en marcha | Automatizar 
+
+
+| iam: GetRolePolicy | Puesta en marcha | Automatizar 
+
+
+| iam: GetUser | Puesta en marcha | Automatizar 
+
+
+| Transfiera el rol creado a la instancia EC2 | iam:PassRole ^3^ | Puesta en marcha | Automatizar 
+
+
+| Agregue una política con los permisos necesarios al rol EC2 creado | iam:PutRolePolicy | Puesta en marcha | Automatizar 
+
+
+| Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| Valide los permisos disponibles en el rol y compárelos con los permisos necesarios | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+|===
+. El permiso está restringido a los recursos que comienzan con WLMDB.
+. «iam:CreateServiceLinkedRole» limitado por «iam:AWSServiceName»: «ec2.amazonaws.com"*
+. “iam:PassRole” limitado por “iam:PassedToService”: “ec2.amazonaws.com"*
+
+
+====
+
+
+=== Permisos para cargas de trabajo de GenAI
+
+Las políticas de IAM para cargas de trabajo de VMware proporcionan los permisos que la fábrica de cargas de trabajo para VMware necesita para gestionar recursos y procesos dentro de tu entorno de nube pública en función del modo operativo en el que operes.
+
+Las políticas IAM de GenAI solo están disponibles en el modo de funcionamiento:
+
+.Políticas de IAM para las cargas de trabajo de GenAI
+[%collapsible]
+====
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudformationGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStacks"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/wlmai*/*"
+    },
+    {
+      "Sid": "EC2Group",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/aws:cloudformation:stack-name": "wlmai*"
+        }
+      }
+    },
+    {
+      "Sid": "EC2DescribeGroup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeTags",
+        "ec2:CreateVpcEndpoint",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstances",
+        "ec2:DescribeImages",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RunInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:CreateInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:PutRolePolicy",
+        "iam:SimulatePrincipalPolicy",
+        "iam:GetRolePolicy",
+        "iam:GetRole",
+        "iam:TagRole"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup2",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "FSXNGroup",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeVolumes",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "FSXNGroup2",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:UntagResource",
+        "fsx:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:fsx:*:*:volume/*/*",
+        "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+      ]
+    },
+    {
+      "Sid": "BedrockGroup",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
+        "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetModelInvocationLoggingConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:PutParameter"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmai/*"
+    },
+    {
+      "Sid": "SSM",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/aws/service/*"
+    },
+    {
+      "Sid": "SSMMessages",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMCommandDocument",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-RunShellScript"
+      ]
+    },
+    {
+      "Sid": "SSMCommandInstance",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetConnectionStatus"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ssm:resourceTag/aws:cloudformation:stack-name": "wlmai-*"
+        }
+      }
+    },
+    {
+      "Sid": "KMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNS",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchAiEngine",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:TagResource",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*"
+    },
+    {
+      "Sid": "CloudWatchAiEngineLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
+    },
+    {
+      "Sid": "CloudWatch2",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:TagResource"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+    }
+  ]
+}
+----
+====
+En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de trabajo de GenAI.
+
+.Tabla de permisos para cargas de trabajo de GenAI
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| Específico | Acción | Donde se utiliza | Modo 
+
+
+| Cree una pila de formación de cloud del motor de IA durante las operaciones de puesta en marcha y recompilación | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+
+
+| Cree la pila de formación de cloud del motor de IA | Cloudformation:Describacks | Puesta en marcha | Automatizar 
+
+
+| Enumere las regiones del asistente de despliegue del motor AI | ec2:regiones describidas | Puesta en marcha | Automatizar 
+
+
+| Mostrar etiquetas de motor AI | ec2:etiquetas a describTags | Puesta en marcha | Automatizar 
+
+
+| Enumere los extremos de VPC antes de crear la pila del motor de AI | EC2:CreateVpcEndpoint | Puesta en marcha | Automatizar 
+
+
+| Cree un grupo de seguridad del motor de IA durante la creación de la pila del motor de IA durante las operaciones de implementación y reconstrucción | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+
+
+| Etiquete los recursos creados por la creación de pila de motores de IA durante las operaciones de implementación y recompilación | ec2:CreateTags | Puesta en marcha | Automatizar 
+
+
+| Mostrar los PC virtuales durante el asistente de despliegue del motor AI | ec2:DescribeVpcs | Puesta en marcha | Automatizar 
+
+
+| Para mostrar las subredes del asistente de despliegue de AI-engine | ec2:DescribeSubnets | Puesta en marcha | Automatizar 
+
+
+| Obtenga tablas de ruta durante la puesta en marcha y recompilación del motor de IA | ec2:DescribeRouteTables | Puesta en marcha | Automatizar 
+
+
+| Enumere los pares de claves durante el asistente de implementación del motor de IA | ec2:DescribeKeyPairs | Puesta en marcha | Automatizar 
+
+
+| Enumerar los grupos de seguridad durante la creación de la pila del motor AI (para buscar grupos de seguridad en los extremos privados) | ec2:DescribeSecurityGroups | Puesta en marcha | Automatizar 
+
+
+| Consigue extremos de VPC para determinar si se deben crear alguno durante la puesta en marcha del motor de IA | ec2:DescribeVpcEndpoints | Puesta en marcha | Automatizar 
+
+
+| Enumere las instancias para averiguar el estado del motor de IA | ec2:DescribInstances | Resolución de problemas | Automatizar 
+
+
+| Enumera imágenes durante la creación de la pila del motor de IA durante las operaciones de implementación y recompilación | ec2:DescribeImages | Puesta en marcha | Automatizar 
+
+
+.2+| Para crear y actualizar la instancia de IA y el grupo de seguridad de punto final privado durante la creación de la pila de instancias de AI durante las operaciones de despliegue y reconstrucción | ec2:RevokeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+| Ejecutar el motor de IA durante la creación de pilas de formación de nube durante las operaciones de puesta en marcha y recompilación | ec2:RunInstances | Puesta en marcha | Automatizar 
+
+
+.2+| Asocie grupos de seguridad y modifique las reglas del motor de IA durante la creación de la pila durante las operaciones de puesta en marcha y recompilación | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+
+
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+| Consulte el estado de registro de Amazon Bedrock/Amazon CloudWatch durante la implementación del motor de IA | Bedrock:GetModelInvocationLoggingConfiguration | Puesta en marcha | Automatizar 
+
+
+| Para iniciar una solicitud de chat a uno de los modelos básicos | Bedrock:InvokeModelWithResponseStream | Puesta en marcha | Automatizar 
+
+
+| Iniciar solicitud de chat/inserción para modelos de base | Bedrock:InvokeModel | Puesta en marcha | Automatizar 
+
+
+| Muestra los modelos de base disponibles en una región | Bedrock:ListFoundationModels | Puesta en marcha | Automatizar 
+
+
+| Obtén regiones que dan soporte a FSx y a Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Automatizar 
+
+
+| Obtenga la imagen más reciente de Amazon Linux para la puesta en marcha del motor de IA durante las operaciones de implementación y reconstrucción | ssm: GetParameters | Puesta en marcha | Automatizar 
+
+
+| Obtenga la respuesta SSM del comando enviado al motor AI | ssm:GetCommandInvocation | Puesta en marcha | Automatizar 
+
+
+.3+| Compruebe la conexión del SSM al motor AI | ssm:SendCommand | Puesta en marcha | Automatizar 
+
+
+| ssm:GetConnectionStatus | Puesta en marcha | Automatizar 
+
+
+| ssm:SendCommand | Puesta en marcha | Automatizar 
+
+
+.8+| Cree un perfil de instancia del motor de IA durante la creación de pila durante las operaciones de puesta en marcha y recompilación | iam:CreateRole | Puesta en marcha | Automatizar 
+
+
+| iam:CreateInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| iam:AddRoleToInstanceProfile | Puesta en marcha | Automatizar 
+
+
+| iam:PutRolePolicy | Puesta en marcha | Automatizar 
+
+
+| iam: GetRolePolicy | Puesta en marcha | Automatizar 
+
+
+| iam:GetRole | Puesta en marcha | Automatizar 
+
+
+| iam:TagRole | Puesta en marcha | Automatizar 
+
+
+| iam:PassRole | Puesta en marcha | Automatizar 
+
+
+| Valide los permisos disponibles en el rol y compárelos con los permisos necesarios durante las operaciones de despliegue y reconstrucción | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+
+
+| Enumera los sistemas de archivos FSX durante el asistente para crear base de conocimientos | fsx:DescribeVolumes | Creación de la base de conocimientos | Automatizar 
+
+
+| Enumera los volúmenes del sistema de archivos FSx durante el asistente para crear base de conocimientos | fsx:DescripciónFileSystems | Creación de la base de conocimientos | Automatizar 
+
+
+| Gestionar las bases de conocimientos en el motor de IA durante las operaciones de recompilación | fsx:ListTagsForResource | Resolución de problemas | Automatizar 
+
+
+| Enumera las máquinas virtuales de almacenamiento del sistema de archivos FSx durante el asistente para crear base de conocimientos | fsx:DescribeStorageVirtualMachines | Puesta en marcha | Automatizar 
+
+
+| Mueva la base de conocimientos a una nueva instancia | fsx:UntagResource | Resolución de problemas | Automatizar 
+
+
+| Gestione la base de conocimientos en el motor de IA durante la recompilación | fsx:TagResource | Resolución de problemas | Automatizar 
+
+
+.2+| Guardar los secretos SSM (token ECR, credenciales CIFS, claves de las cuentas de servicio de inquilino) de una forma segura | ssm:getParameter | Puesta en marcha | Automatizar 
+
+
+| ssm: Parámetro de PutParameter | Puesta en marcha | Automatizar 
+
+
+| Verifique la necesidad de crear un grupo de registros de CloudWatch durante las operaciones de despliegue y reconstrucción | Logs:DescripbeLogGroups | Puesta en marcha | Automatizar 
+
+
+.2+| Envíe los registros del motor de IA al grupo de registros de CloudWatch durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+
+
+| Logs:PutRetentionPolicy | Puesta en marcha | Automatizar 
+
+
+| Envíe los registros del motor AI al grupo de registros de CloudWatch | Logs:TagResource | Resolución de problemas | Automatizar 
+
+
+| Obtener respuesta SSM de CloudWatch (cuando la respuesta es demasiado larga) | Registros:DescripbeLogStreams | Resolución de problemas | Automatizar 
+
+
+| Obtenga la respuesta SSM de CloudWatch | Logs:GetLogEvents | Resolución de problemas | Automatizar 
+
+
+.3+| Cree un grupo de registros de CloudWatch para los registros de rock durante la reconstrucción de la pila durante las operaciones de despliegue y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+
+
+| Logs:PutRetentionPolicy | Puesta en marcha | Automatizar 
+
+
+| Logs:TagResource | Puesta en marcha | Automatizar 
+
+
+| Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Resolución de problemas | Automatizar 
+|===
+====
+
+
+=== Permisos para cargas de trabajo de VMware
+
+Las políticas de IAM para cargas de trabajo de VMware proporcionan los permisos que la fábrica de cargas de trabajo para VMware necesita para gestionar recursos y procesos dentro de tu entorno de nube pública en función del modo operativo en el que operes.
+
+Seleccione el modo operativo para ver las políticas de IAM necesarias:
+
+.Políticas de IAM para cargas de trabajo de VMware
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.Modo de lectura
+--
+[source, json]
+----
+{
+  "Effect": "Allow",
+  "Action": [
+    "ec2:DescribeRegions",
+    "ec2:DescribeAvailabilityZones",
+    "ec2:DescribeVpcs",
+    "ec2:DescribeSecurityGroups",
+    "ec2:DescribeSubnets",
+    "ssm:GetParametersByPath",
+    "kms:DescribeKey",
+    "kms:ListKeys",
+    "kms:ListAliases"
+  ],
+  "Resource": "*"
+}
+----
+--
+.Modo de funcionamiento
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateFileSystem",
+        "fsx:DescribeFileSystems",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:CreateVolume",
+        "fsx:DescribeVolumes",
+        "fsx:TagResource",
+        "sns:Publish",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:CreateGrant"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:RunInstances",
+        "ec2:DescribeInstances",
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:CreateSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DescribeImages"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParametersByPath",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+=====
+====
+En la siguiente tabla se ofrece información sobre los permisos para las cargas de trabajo de VMware.
+
+.Tabla de permisos para cargas de trabajo de VMware
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| Específico | Acción | Donde se utiliza | Modo 
+
+
+| Obtenga los VPC en el entorno seleccionado para completar el formulario de implementación | ec2:DescribeVpcs  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener las subredes del entorno seleccionado para completar el formulario de despliegue | ec2:DescribeSubnets  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener los grupos de seguridad del entorno seleccionado para completar el formulario de implementación | ec2:DescribeSecurityGroups | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener las zonas de disponibilidad en el entorno seleccionado | EC2:DescripciónAvailabilityZones  a| 
+* Puesta en marcha
+* Inventario
+
+ a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtén las regiones con soporte de Amazon FSx para NetApp ONTAP | ec2:regiones describidas | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener alias de claves KMS para utilizar para el cifrado de Amazon FSx para NetApp ONTAP | Kms:ListAliases | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtenga las claves KMS para utilizar para el cifrado de Amazon FSx para NetApp ONTAP | Km:ListKeys | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Obtener detalles de caducidad de claves KMS que se utilizarán para el cifrado de Amazon FSx para NetApp ONTAP | Km:DescripbeKey | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| La consulta basada en SSM se utiliza para obtener la lista actualizada de regiones soportadas por Amazon FSx para NetApp ONTAP | ssm:GetParametersByPath | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+.3+| Cree los recursos de Amazon FSx para NetApp ONTAP necesarios para el aprovisionamiento | fsx:CreateFileSystem | Puesta en marcha | Automatizar 
+
+
+| fsx:CreateStorageVirtualMachine | Puesta en marcha | Automatizar 
+
+
+| fsx:CreateVolume  a| 
+* Puesta en marcha
+* Operaciones de gestión
+
+| Automatizar 
+
+
+.2+| Obtén los detalles de Amazon FSx para NetApp ONTAP | fsx:describe*  a| 
+* Puesta en marcha
+* Inventario
+* Operaciones de gestión
+* Explora el ahorro
+
+| Automatizar 
+
+
+| fsx:List*  a| 
+* Puesta en marcha
+* Inventario
+
+| Automatizar 
+
+
+.4+| Obtenga los detalles clave de KMS y utilícelos para el cifrado de Amazon FSx para NetApp ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+
+
+| Kms:describir* | Puesta en marcha | Automatizar 
+
+
+| Kms:Lista* | Puesta en marcha | Automatizar 
+
+
+| Km:GenerateDataKey | Puesta en marcha | Automatizar 
+
+
+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMVMC, así como en el SNS del cliente, si se selecciona | sns: Publicar | Puesta en marcha | Automatizar 
+
+
+| Se usa para buscar la lista más reciente de regiones de AWS admitidas por Amazon FSx para NetApp ONTAP | ssm:GET*  a| 
+* Puesta en marcha
+* Operaciones de gestión
+
+| Automatizar 
+
+
+| SimulatePrincipalPolicy es necesario para hacer la validación de los permisos disponibles en el rol y compararlos con los permisos requeridos | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+
+
+.4+| El almacén de parámetros de SSM se utiliza para guardar las credenciales de Amazon FSx para NetApp ONTAP | ssm:getParameter  a| 
+* Puesta en marcha
+* Operaciones de gestión
+* Inventario
+
+| Automatizar 
+
+
+| ssm: PutParameters  a| 
+* Puesta en marcha
+* Inventario
+
+| Automatizar 
+
+
+| ssm: Parámetro de PutParameter  a| 
+* Puesta en marcha
+* Operaciones de gestión
+
+| Automatizar 
+
+
+| ssm:DeleteParameters  a| 
+* Puesta en marcha
+* Operaciones de gestión
+
+| Automatizar 
+|===
+====
+
+
+== Registro de cambios
+
+A medida que se añadan y eliminen permisos, los anotaremos en las secciones siguientes.

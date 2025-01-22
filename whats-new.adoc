@@ -15,6 +15,18 @@ Descubra las novedades de las funciones de administración de la fábrica de car
 
 
 
+== 22 de enero de 2025
+
+
+
+=== Permisos de fábrica de cargas de trabajo de BlueXP 
+
+Ahora puede ver los permisos que utiliza la fábrica de carga de trabajo de BlueXP  para ejecutar diversas operaciones, comenzando desde la detección de sus entornos de almacenamiento hasta la implementación de recursos de AWS, como sistemas de archivos en almacenamiento o bases de conocimientos para cargas de trabajo de GenAI. Es posible ver políticas y permisos de IAM para almacenamiento, bases de datos, VMware y cargas de trabajo de GenAI.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Permisos de fábrica de cargas de trabajo de BlueXP "]
+
+
+
 == 05 de enero de 2025
 
 
