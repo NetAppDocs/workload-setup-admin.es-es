@@ -1688,6 +1688,9 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Muestra los modelos de base disponibles en una región | Bedrock:ListFoundationModels | Puesta en marcha | Automatizar 
 
 
+| Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Puesta en marcha | Automatizar 
+
+
 | Obtén regiones que dan soporte a FSx y a Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Automatizar 
 
 
@@ -1782,9 +1785,6 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 
 
 | Logs:TagResource | Puesta en marcha | Automatizar 
-
-
-| Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Resolución de problemas | Automatizar 
 |===
 ====
 
