@@ -315,10 +315,18 @@ La siguiente tabla muestra los permisos para Storage.
 .3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
 
 
-| Kms:describir* | Puesta en marcha | Automatizar 
+| Kms:describir* | Puesta en marcha  a| 
+* Lea
+* Automatizar
 
 
-| Kms:Lista* | Puesta en marcha | Automatizar 
+
+
+| Kms:Lista* | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
 
 
 | Describa Elastic File System en la calculadora de ahorro | ElasticfileSystem:describe* | Explora el ahorro | Lea 
