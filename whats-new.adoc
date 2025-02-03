@@ -17,7 +17,21 @@ Descubra las novedades de las funciones de administración de la fábrica de car
 
 == 02 de febrero de 2025
 
-incluye: _whatsnew/2025-02-02.adoc[]
+
+
+=== CloudShell disponible en la consola de fábrica de cargas de trabajo de BlueXP 
+
+CloudShell está disponible desde cualquier lugar de la consola de fábrica de cargas de trabajo de BlueXP . CloudShell le permite usar las credenciales de AWS y ONTAP que ha proporcionado en su cuenta de BlueXP  y ejecutar comandos de la CLI de AWS o comandos de la CLI de ONTAP en un entorno similar al shell.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html["Usar CloudShell"]
+
+
+
+=== Actualización de permisos para bases de datos
+
+El siguiente permiso ahora está disponible en el modo _READ_ para bases de datos `iam:SimulatePrincipalPolicy`: .
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Log de cambios de referencia de permisos"]
 
 
 
