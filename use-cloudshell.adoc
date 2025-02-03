@@ -1,0 +1,189 @@
+---
+sidebar: sidebar 
+permalink: use-cloudshell.html 
+keywords: cloudshell, command line, aws cli, ontap cli, bluexp workload factory, workload factory 
+summary: Puede utilizar CloudShell desde cualquier lugar de la interfaz de usuario de fábrica de cargas de trabajo de BlueXP  para emitir comandos de la CLI de AWS o ONTAP. 
+---
+= Utilice CloudShell en la fábrica de cargas de trabajo de BlueXP 
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Abra CloudShell para ejecutar comandos de la CLI de AWS o ONTAP desde cualquier lugar en la interfaz de usuario de fábrica de cargas de trabajo de BlueXP .
+
+
+
+== Acerca de esta tarea
+
+CloudShell le permite ejecutar comandos de la CLI de AWS o comandos de la CLI de ONTAP en un entorno similar al shell desde la interfaz de usuario de la fábrica de cargas de trabajo de BlueXP . Simula sesiones de terminal en el navegador, proporcionando características de terminal y mensajes de proxy a través del backend de la fábrica de carga de trabajo. Le permite utilizar las credenciales de AWS y las credenciales de ONTAP que ha proporcionado en su cuenta de BlueXP .
+
+Las características de CloudShell incluyen:
+
+* Varias sesiones de CloudShell: Implemente varias sesiones de CloudShell a la vez para emitir varias secuencias de comandos en paralelo,
+* Múltiples vistas: Divida las sesiones de la pestaña CloudShell para que pueda ver dos o más pestañas horizontal o verticalmente al mismo tiempo
+* Cambio de nombre de sesión: Cambie el nombre de las sesiones según sea necesario
+* Persistencia del contenido de la última sesión: Vuelva a abrir la última sesión si la cierra por error
+* Preferencias de configuración: Cambie el tamaño de fuente y el tipo de salida
+
+
+
+
+== Antes de empezar
+
+CloudShell funciona en el contexto de sus credenciales de AWS. Para utilizar CloudShell, debe proporcionar al menos una credencial de AWS.
+
+
+NOTE: CloudShell está disponible para ejecutar cualquier comando de la CLI de AWS o ONTAP. Sin embargo, si desea trabajar dentro del contexto de un sistema de archivos FSX for ONTAP, asegúrese de emitir el siguiente comando: `using fsx <file-system-name>`.
+
+
+
+== Implemente CloudShell
+
+Puede implementar CloudShell desde cualquier lugar de la consola de fábrica de cargas de trabajo de BlueXP . También puedes implementar CloudShell desde el almacenamiento desde un sistema de archivos FSx para ONTAP.
+
+[role="tabbed-block"]
+====
+.Despliegue desde la consola de fábrica de cargas de trabajo
+--
+.Pasos
+. Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
+. Abra CloudShell desde la barra de navegación superior.
++
+image:screenshot-select-cloudshell-icon.png["Captura de pantalla que muestra el icono de CloudShell en la barra de navegación superior."]
+
+. Seleccione las credenciales y la región para la sesión de CloudShell y, a continuación, seleccione la flecha para continuar.
++
+image:screenshot-deploy-cloudshell-session.png["Captura de pantalla que muestra una nueva sesión de CloudShell."]
+
+. Ingrese `help` para ver los comandos e instrucciones de CloudShell disponibles o consulte los siguientes documentos de referencia de la CLI para los comandos disponibles:
++
+** link:https://docs.aws.amazon.com/cli/latest/reference/["Referencia de AWS CLI"^]: Para los comandos relacionados con FSX para ONTAP, seleccione *fsx*.
+** link:https://docs.netapp.com/us-en/ontap-cli/["Referencia de ONTAP CLI"^]
+
+
+. Emitir comandos dentro de la sesión de CloudShell.
+
+
+--
+.Puesta en marcha desde almacenamiento
+--
+.Pasos
+. Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
+. En *Almacenamiento*, selecciona *Ir al inventario de almacenamiento*.
+. En la pestaña *FSX for ONTAP*, selecciona el menú de tres puntos del sistema de archivos y luego selecciona *Abrir CloudShell*.
++
+Se abre una sesión de CloudShell en el contexto del sistema de archivos seleccionado.
+
+. Ingrese `help` para ver los comandos e instrucciones de CloudShell disponibles o consulte los siguientes documentos de referencia de la CLI para los comandos disponibles:
++
+** link:https://docs.aws.amazon.com/cli/latest/reference/["Referencia de AWS CLI"^]: Para los comandos relacionados con FSX para ONTAP, seleccione *fsx*.
+** link:https://docs.netapp.com/us-en/ontap-cli/["Referencia de ONTAP CLI"^]
+
+
+. Emitir comandos dentro de la sesión de CloudShell.
+
+
+--
+====
+Las tareas de CloudShell que se muestran en esta captura de pantalla se pueden completar seleccionando el menú de tres puntos de una pestaña de sesión de CloudShell abierta. A continuación se indican las instrucciones para cada una de estas tareas.
+
+image:screenshot-cloudshell-tab-menu.png["Captura de pantalla que muestra el menú de tres puntos de la pestaña CloudShell con opciones como renombrar, duplicar, cerrar otras pestañas y cerrar todo."]
+
+
+
+== Cambie el nombre de una pestaña de sesión de CloudShell
+
+Puede cambiar el nombre de una pestaña de sesión de CloudShell para ayudarle a identificar la sesión.
+
+.Pasos
+. Seleccione el menú de tres puntos de la pestaña de sesión de CloudShell.
+. Seleccione *Cambiar nombre*.
+. Introduzca un nuevo nombre para el separador de sesiones y, a continuación, haga clic fuera del nombre del separador para definir el nuevo nombre.
+
+
+.Resultado
+El nuevo nombre aparece en la pestaña de sesión de CloudShell.
+
+
+
+== Duplicar la pestaña de sesión de CloudShell
+
+Puede duplicar un separador de sesión de CloudShell para crear una nueva sesión con el mismo nombre, credenciales y región. El código de la pestaña original no está duplicado en la pestaña duplicada.
+
+.Pasos
+. Seleccione el menú de tres puntos de la pestaña de sesión de CloudShell.
+. Seleccione *Duplicar*.
+
+
+.Resultado
+La nueva pestaña aparece con el mismo nombre que la pestaña original.
+
+
+
+== Cierre los separadores de sesión de CloudShell
+
+Puede cerrar las pestañas de CloudShell de una en una, cerrar otras pestañas en las que no está trabajando o cerrar todas las pestañas a la vez.
+
+.Pasos
+. Seleccione el menú de tres puntos de la pestaña de sesión de CloudShell.
+. Seleccione una de las siguientes opciones:
++
+** Seleccione “X” en la ventana de la pestaña CloudShell para cerrar una pestaña a la vez.
+** Selecciona *Cerrar otras pestañas* para cerrar todas las demás pestañas que estén abiertas excepto la que estés trabajando.
+** Seleccione *Cerrar todas las pestañas* para cerrar todas las pestañas.
+
+
+
+
+.Resultado
+Se cierran los separadores de sesión de CloudShell seleccionados.
+
+
+
+== Dividir las pestañas de sesión de CloudShell
+
+Puede dividir las pestañas de sesión de CloudShell para ver dos o más pestañas al mismo tiempo.
+
+.Paso
+Arrastre y suelte las pestañas de sesión de CloudShell en la parte superior, inferior, izquierda o derecha de la ventana de CloudShell para dividir la vista.
+
+image:screenshot-cloudshell-split-view.png["Captura de pantalla que muestra dos pestañas de CloudShell divididas horizontalmente. Las pestañas aparecen una al lado de otra."]
+
+
+
+== Vuelva a abrir su última sesión de CloudShell
+
+Si por accidente cierras tu sesión de CloudShell, puedes volver a abrirla.
+
+.Paso
+Seleccione el icono de CloudShell en la barra de navegación superior.
+
+image:screenshot-select-cloudshell-icon.png["Captura de pantalla que muestra el icono de CloudShell en la barra de navegación superior."]
+
+.Resultado
+Se abren las últimas sesiones de CloudShell.
+
+
+
+== Actualizar la configuración de una sesión de CloudShell
+
+Puede actualizar la configuración del tipo de fuente y de salida para las sesiones de CloudShell.
+
+.Pasos
+. Despliegue una sesión de CloudShell.
+. En la pestaña CloudShell, seleccione el icono de configuración.
++
+Se mostrará el cuadro de diálogo de configuración.
+
+. Actualice el tamaño de fuente y el tipo de salida según sea necesario.
++
+
+NOTE: La salida enriquecida se aplica a los objetos JSON y al formato de tabla. El resto de la salida aparece como texto sin formato.
+
+. Seleccione *aplicar*.
+
+
+.Resultado
+La configuración de CloudShell se actualiza.

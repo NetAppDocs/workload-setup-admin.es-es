@@ -1373,7 +1373,11 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 | Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha | Automatizar 
 
 
-| Valide los permisos disponibles en el rol y compárelos con los permisos necesarios | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+| Valide los permisos disponibles en el rol y compárelos con los permisos necesarios | iam: Política de SimulatePrincipalPolicy | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
 |===
 . El permiso está restringido a los recursos que comienzan con WLMDB.
 . «iam:CreateServiceLinkedRole» limitado por «iam:AWSServiceName»: «ec2.amazonaws.com"*
@@ -2073,3 +2077,9 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 == Registro de cambios
 
 A medida que se añadan y eliminen permisos, los anotaremos en las secciones siguientes.
+
+
+
+=== 3 de febrero de 2025
+
+El siguiente permiso ahora está disponible en el modo _READ_ para bases de datos `iam:SimulatePrincipalPolicy`: .
