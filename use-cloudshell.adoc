@@ -49,11 +49,8 @@ Puede implementar CloudShell desde cualquier lugar de la consola de fábrica de 
 --
 .Pasos
 . Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
-. Abra CloudShell desde la barra de navegación superior.
-+
-image:screenshot-select-cloudshell-icon.png["Captura de pantalla que muestra el icono de CloudShell en la barra de navegación superior."]
-
-. Seleccione las credenciales y la región para la sesión de CloudShell y, a continuación, seleccione la flecha para continuar.
+. Abra CloudShell image:cloudshell-icon.png["Captura de pantalla del icono de cloudshell"] desde la barra de navegación superior.
+. En la ventana de CloudShell, seleccione las credenciales y la región para la sesión de CloudShell y, a continuación, seleccione la flecha para continuar.
 +
 image:screenshot-deploy-cloudshell-session.png["Captura de pantalla que muestra una nueva sesión de CloudShell."]
 
