@@ -155,9 +155,7 @@ image:screenshot-cloudshell-split-view.png["Captura de pantalla que muestra dos 
 Si por accidente cierras tu sesión de CloudShell, puedes volver a abrirla.
 
 .Paso
-Seleccione el icono de CloudShell en la barra de navegación superior.
-
-image:screenshot-select-cloudshell-icon.png["Captura de pantalla que muestra el icono de CloudShell en la barra de navegación superior."]
+Seleccione el icono de CloudShell image:cloudshell-icon.png["Captura de pantalla del icono de cloudshell"]en la barra de navegación superior.
 
 .Resultado
 Se abren las últimas sesiones de CloudShell.
