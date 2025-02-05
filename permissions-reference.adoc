@@ -140,81 +140,7 @@ La siguiente tabla muestra los permisos para Storage.
 | ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
 
 
-.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Automatizar 
-
-
-| ec2:DeleteSecurityGroup | Operaciones de gestión | Automatizar 
-
-
-.16+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume* | Operaciones de gestión | Automatizar 
-
-
-| fsx:TagResource* | Operaciones de gestión | Automatizar 
-
-
-| fsx:CreateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DeleteFileSystem* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DeleteStorageVirtualMachine* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DescripciónFileSystems* | Inventario  a| 
-* Lea
-* Automatizar
-
-
-
-
-| fsx:DescripciónStorageVirtualMachines* | Inventario  a| 
-* Lea
-* Automatizar
-
-
-
-
-| fsx:UpdateFileSystem* | Operaciones de gestión | Automatizar 
-
-
-| fsx:UpdateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DescribeVolumes* | Inventario  a| 
-* Lea
-* Automatizar
-
-
-
-
-| fsx:UpdateVolume* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DeleteVolume* | Operaciones de gestión | Automatizar 
-
-
-| fsx:UntagResource* | Operaciones de gestión | Automatizar 
-
-
-| fsx:DescribeBackups* | Operaciones de gestión  a| 
-* Lea
-* Automatizar
-
-
-
-
-| fsx:CreateBackup* | Operaciones de gestión | Automatizar 
-
-
-| fsx:CreateVolumeFromBackup* | Operaciones de gestión | Automatizar 
-
-
-| Enumera las etiquetas de los recursos de FSx for ONTAP | fsx:ListTagsForResource | Inventario  a| 
-* Lea
-* Automatizar
-
-
+| El rol otorgado proporciona comunicación entre FSx para ONTAP y otros servicios de AWS | iam:CreateServiceLinkedIn | Puesta en marcha | Automatizar 
 
 
 .7+| Consulta los detalles que necesitas para rellenar el formulario de puesta en marcha del sistema de archivos FSx para ONTAP | ec2:DescribeVpcs  a| 
@@ -294,6 +220,23 @@ La siguiente tabla muestra los permisos para Storage.
 
 
 
+.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+
+
+| Kms:describir* | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Kms:Lista* | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
 | Obtenga detalles de volumen para las instancias de EC2 | ec2:DescribeVolumes  a| 
 * Inventario
 * Explora el ahorro
@@ -312,24 +255,84 @@ La siguiente tabla muestra los permisos para Storage.
 
 
 
-.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
-
-
-| Kms:describir* | Puesta en marcha  a| 
-* Lea
-* Automatizar
-
-
-
-
-| Kms:Lista* | Puesta en marcha  a| 
-* Lea
-* Automatizar
-
-
-
-
 | Describa Elastic File System en la calculadora de ahorro | ElasticfileSystem:describe* | Explora el ahorro | Lea 
+
+
+| Enumera las etiquetas de los recursos de FSx for ONTAP | fsx:ListTagsForResource | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Automatizar 
+
+
+| ec2:DeleteSecurityGroup | Operaciones de gestión | Automatizar 
+
+
+.16+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:TagResource* | Operaciones de gestión | Automatizar 
+
+
+| fsx:CreateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteFileSystem* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescripciónFileSystems* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:DescripciónStorageVirtualMachines* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:UpdateFileSystem* | Operaciones de gestión | Automatizar 
+
+
+| fsx:UpdateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescribeVolumes* | Inventario  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:UpdateVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DeleteVolume* | Operaciones de gestión | Automatizar 
+
+
+| fsx:UntagResource* | Operaciones de gestión | Automatizar 
+
+
+| fsx:DescribeBackups* | Operaciones de gestión  a| 
+* Lea
+* Automatizar
+
+
+
+
+| fsx:CreateBackup* | Operaciones de gestión | Automatizar 
+
+
+| fsx:CreateVolumeFromBackup* | Operaciones de gestión | Automatizar 
 
 
 | Informar de las métricas de CloudWatch | Cloudwatch:PutMetricData | Operaciones de gestión | Automatizar 
