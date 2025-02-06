@@ -1652,6 +1652,15 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Etiquete los recursos creados por la creación de pila de motores de IA durante las operaciones de implementación y recompilación | ec2:CreateTags | Puesta en marcha | Automatizar 
 
 
+.2+| Publique eventos cifrados en el backend WLMAI desde la pila ai-engine | Km:GenerateDataKey | Puesta en marcha | Automatizar 
+
+
+| Km:descifrar | Puesta en marcha | Automatizar 
+
+
+| Para publicar eventos y recursos personalizados en el backend WLMAI desde la pila ai-engine | sns: Publicar | Puesta en marcha | Automatizar 
+
+
 | Mostrar los PC virtuales durante el asistente de despliegue del motor AI | ec2:DescribeVpcs | Puesta en marcha | Automatizar 
 
 
@@ -1706,6 +1715,9 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Puesta en marcha | Automatizar 
 
 
+| Verifique la necesidad de crear un grupo de registros de CloudWatch durante las operaciones de despliegue y reconstrucción | Logs:DescripbeLogGroups | Puesta en marcha | Automatizar 
+
+
 | Obtén regiones que dan soporte a FSx y a Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Automatizar 
 
 
@@ -1715,13 +1727,10 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Obtenga la respuesta SSM del comando enviado al motor AI | ssm:GetCommandInvocation | Puesta en marcha | Automatizar 
 
 
-.3+| Compruebe la conexión del SSM al motor AI | ssm:SendCommand | Puesta en marcha | Automatizar 
+.2+| Compruebe la conexión del SSM al motor AI | ssm:SendCommand | Puesta en marcha | Automatizar 
 
 
 | ssm:GetConnectionStatus | Puesta en marcha | Automatizar 
-
-
-| ssm:SendCommand | Puesta en marcha | Automatizar 
 
 
 .8+| Cree un perfil de instancia del motor de IA durante la creación de pila durante las operaciones de puesta en marcha y recompilación | iam:CreateRole | Puesta en marcha | Automatizar 
@@ -1773,9 +1782,6 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 
 
 | ssm: Parámetro de PutParameter | Puesta en marcha | Automatizar 
-
-
-| Verifique la necesidad de crear un grupo de registros de CloudWatch durante las operaciones de despliegue y reconstrucción | Logs:DescripbeLogGroups | Puesta en marcha | Automatizar 
 
 
 .2+| Envíe los registros del motor de IA al grupo de registros de CloudWatch durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
@@ -1917,6 +1923,30 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 | Específico | Acción | Donde se utiliza | Modo 
 
 
+| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+
+
+| Cree volúmenes de EBS | ec2:CreateVolume | Puesta en marcha | Automatizar 
+
+
+| Etiquete valores personalizados para los recursos de FSx para NetApp ONTAP creados por las cargas de trabajo de VMware | fsx:TagResource | Puesta en marcha | Automatizar 
+
+
+| Cree y valide la plantilla de CloudFormation | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+
+
+| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+
+
+| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Automatizar 
+
+
+| Obtenga los detalles de las instancias de EC2 | ec2:DescribInstances | Puesta en marcha | Automatizar 
+
+
+| Muestre las imágenes durante la creación de la pila durante las operaciones de despliegue y reconstrucción | ec2:DescribeImages | Puesta en marcha | Automatizar 
+
+
 | Obtenga los VPC en el entorno seleccionado para completar el formulario de implementación | ec2:DescribeVpcs  a| 
 * Puesta en marcha
 * Inventario
@@ -2021,13 +2051,16 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 | Automatizar 
 
 
-.4+| Obtenga los detalles clave de KMS y utilícelos para el cifrado de Amazon FSx para NetApp ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+.5+| Obtenga los detalles clave de KMS y utilícelos para el cifrado de Amazon FSx para NetApp ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
 
 
 | Kms:describir* | Puesta en marcha | Automatizar 
 
 
 | Kms:Lista* | Puesta en marcha | Automatizar 
+
+
+| Km:descifrar | Puesta en marcha | Automatizar 
 
 
 | Km:GenerateDataKey | Puesta en marcha | Automatizar 
