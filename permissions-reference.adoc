@@ -763,6 +763,9 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 
 
+| Cree puntos finales de VPC si no existen para los servicios requeridos independientemente de la conectividad de red pública en las instancias de EC2 | EC2:CreateVpcEndpoint | Puesta en marcha | Automatizar 
+
+
 | Obtener tipos de instancias disponibles en la región para los nodos de validación (T2.micro/T3.micro) | EC2:DescripciónInstanceTypeOfferings | Puesta en marcha  a| 
 * Lea
 * Automatizar
@@ -810,6 +813,13 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 
 | Obtenga una lista de pilas de CloudFormation que se ejecutan en el entorno para comprobar el límite de cuota | Cloudformation:ListStacks | Puesta en marcha  a| 
+* Lea
+* Automatizar
+
+
+
+
+| Compruebe los límites de la cuenta para los recursos antes de activar el despliegue | Formación de nubes:DescribeAccountLimits | Puesta en marcha  a| 
 * Lea
 * Automatizar
 
@@ -948,6 +958,48 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Automatizar
 
 
+
+
+| Compruebe si la cuenta está inscrita en AWS Compute Optimizer | Compute-Optimizer:GetEnrollmentStatus  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
+
+
+| Actualice una preferencia de recomendación existente en AWS Compute Optimizer para adaptar las sugerencias para las cargas de trabajo de SQL Server | Compute-Optimizer:PutRecommendationPreferences  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
+
+
+| Obtener preferencias de recomendación que están en vigor para un recurso determinado de AWS Compute Optimizer | Compute-Optimizer:GetEffectiveRecommendationPreferences  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
+
+
+| Obtenga recomendaciones que AWS Compute Optimizer genera para las instancias de Amazon Elastic Compute Cloud (Amazon EC2) | Compute-Optimizer:GetEC2InstanceRecommendations  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
+
+
+.2+| Compruebe la asociación de instancias a grupos de escala automática | escala automática:DescripciónAutoScalingGroups  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
+
+
+| escala automática:DescripciónAutoScalingInstances  a| 
+* Explora el ahorro
+* Optimización
+
+| Automatizar 
 
 
 .4+| Obtenga, enumere, cree y elimine parámetros de SSM para las credenciales de usuario de AD, FSx para ONTAP y SQL utilizadas durante la implementación o administradas en su cuenta de AWS | ssm:getParameter ^1^  a| 

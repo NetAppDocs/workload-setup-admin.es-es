@@ -1054,4 +1054,18 @@
   <block id="043622d556b2884b98fb152bcf740dcd" category="cell">Cree y valide la plantilla de CloudFormation</block>
   <block id="7396fdf6f4dfc93451cc96093ccbe43e" category="cell">Obtenga los detalles de las instancias de EC2</block>
   <block id="1be679c04c8e52e60ad090d4b7848d64" category="cell">Muestre las imágenes durante la creación de la pila durante las operaciones de despliegue y reconstrucción</block>
+  <block id="4dcec483cf1f239f85db3400f495b54a" category="cell">Cree puntos finales de VPC si no existen para los servicios requeridos independientemente de la conectividad de red pública en las instancias de EC2</block>
+  <block id="5e5a90d60662f7306336a047b5b3b7f6" category="cell">Compruebe los límites de la cuenta para los recursos antes de activar el despliegue</block>
+  <block id="da7dbf1119bff3389296d7d9a38be487" category="cell">Formación de nubes:DescribeAccountLimits</block>
+  <block id="e0db06144a611c9dacbb1cbdc47398a2" category="cell">Compruebe si la cuenta está inscrita en AWS Compute Optimizer</block>
+  <block id="68f6ffe8302b37908ab1031d603a8537" category="cell">Compute-Optimizer:GetEnrollmentStatus</block>
+  <block id="e1b0fb1c7834e30cc2855e9e5978a6b2" category="cell">Actualice una preferencia de recomendación existente en AWS Compute Optimizer para adaptar las sugerencias para las cargas de trabajo de SQL Server</block>
+  <block id="e7878b5da7a61064cc75fec0ae2842c4" category="cell">Compute-Optimizer:PutRecommendationPreferences</block>
+  <block id="e1faa0bf56d94349eb5128478fc9e6c9" category="cell">Obtener preferencias de recomendación que están en vigor para un recurso determinado de AWS Compute Optimizer</block>
+  <block id="f4003017b8bd9e7024276d1eae7c252d" category="cell">Compute-Optimizer:GetEffectiveRecommendationPreferences</block>
+  <block id="bb90c212b52ea746f2de78f88fd32dfa" category="cell">Obtenga recomendaciones que AWS Compute Optimizer genera para las instancias de Amazon Elastic Compute Cloud (Amazon EC2)</block>
+  <block id="1b9183fc54789ff2117d927730975ee9" category="cell">Compute-Optimizer:GetEC2InstanceRecommendations</block>
+  <block id="38b28dd168a209df2daf8eaf5b0fc216" category="cell">Compruebe la asociación de instancias a grupos de escala automática</block>
+  <block id="841ea3d3891ce9dc21992730680d4dac" category="cell">escala automática:DescripciónAutoScalingGroups</block>
+  <block id="9d85d66bd60c64faffe2799f428cd8b3" category="cell">escala automática:DescripciónAutoScalingInstances</block>
 </blocks>
