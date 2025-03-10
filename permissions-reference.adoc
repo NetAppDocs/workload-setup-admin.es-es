@@ -1558,6 +1558,7 @@ Las políticas IAM de GenAI solo están disponibles en el modo de funcionamiento
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
         "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModel",
         "bedrock:GetFoundationModelAvailability",
         "bedrock:GetModelInvocationLoggingConfiguration"
       ],
@@ -1764,6 +1765,9 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Muestra los modelos de base disponibles en una región | Bedrock:ListFoundationModels | Puesta en marcha | Automatizar 
 
 
+| Obtenga información sobre un modelo de fundación | Bedrock:GetFoundationModel | Puesta en marcha | Automatizar 
+
+
 | Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Puesta en marcha | Automatizar 
 
 
@@ -1773,7 +1777,7 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Obtén regiones que dan soporte a FSx y a Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Automatizar 
 
 
-| Obtenga la imagen más reciente de Amazon Linux para la puesta en marcha del motor de IA durante las operaciones de implementación y reconstrucción | ssm: GetParameters | Puesta en marcha | Automatizar 
+| Obtenga la imagen más reciente de Amazon Linux para la puesta en marcha del motor de IA durante las operaciones de puesta en marcha y recompilación | ssm: GetParameters | Puesta en marcha | Automatizar 
 
 
 | Obtenga la respuesta SSM del comando enviado al motor AI | ssm:GetCommandInvocation | Puesta en marcha | Automatizar 
@@ -2165,6 +2169,12 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 == Registro de cambios
 
 A medida que se añadan y eliminen permisos, los anotaremos en las secciones siguientes.
+
+
+
+=== 2 de marzo de 2025
+
+El siguiente permiso ahora está disponible en el modo _READ_ para bases de datos `iam:SimulatePrincipalPolicy`: .
 
 
 
