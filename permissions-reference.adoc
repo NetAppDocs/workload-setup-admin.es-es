@@ -2174,7 +2174,7 @@ A medida que se añadan y eliminen permisos, los anotaremos en las secciones sig
 
 === 2 de marzo de 2025
 
-El siguiente permiso ahora está disponible en el modo _READ_ para bases de datos `iam:SimulatePrincipalPolicy`: . El siguiente permiso ahora está disponible en el modo _Automate_ para GenAI: `bedrock:GetFoundationModel`.
+El siguiente permiso ahora está disponible en el modo _Automate_ para GenAI: `bedrock:GetFoundationModel`.
 
 
 
