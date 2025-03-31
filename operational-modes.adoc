@@ -24,6 +24,8 @@ Modo de lectura:: Mejora la experiencia del modo básico al agregar permisos de 
 Modo de automatización:: Representa una relación de confianza completa para que la fábrica de carga de trabajo se asigne con permisos completos. Esto permite que la fábrica de cargas de trabajo ejecute y automatice operaciones en AWS en su nombre junto con las credenciales asignadas que tienen los permisos necesarios para su ejecución.
 
 
+Más información sobre link:https://review.docs.netapp.com/us-en/workload-setup-admin_simulation-permission-update/permissions-reference.html["Permisos para la fábrica de cargas de trabajo de BlueXP "].
+
 
 
 === Funciones del modo operativo
