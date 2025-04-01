@@ -1,10 +1,10 @@
-= CloudShell informa de errores generados por IA para los comandos de la CLI de ONTAP
+= CloudShell informa de respuestas de errores generadas por IA para comandos de la CLI de ONTAP
 :allow-uri-read: 
 
 
 
 
-=== CloudShell informa de errores generados por IA para los comandos de la CLI de ONTAP
+=== CloudShell informa de respuestas de errores generadas por IA para comandos de la CLI de ONTAP
 
 Al usar CloudShell, cada vez que emita un comando de la CLI de ONTAP y se produce un error, puede obtener respuestas de error generadas por IA que incluyen una descripción del fallo, la causa del fallo y una resolución detallada.
 
