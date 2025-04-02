@@ -2235,7 +2235,7 @@ A medida que se añadan y eliminen permisos, los anotaremos en las secciones sig
 
 === 2 de abril de 2025
 
-El siguiente permiso ahora está disponible en _READ MODE_ para las bases de datos: 'Sm:DescribeInstanceInformation'.
+El siguiente permiso ahora está disponible en _READ MODE_ para bases de datos `ssm:DescribeInstanceInformation`: .
 
 
 
