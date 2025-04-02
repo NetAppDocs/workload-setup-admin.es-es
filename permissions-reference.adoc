@@ -419,6 +419,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
+        "ssm:DescribeInstanceInformation",
         "fsx:ListTagsForResource"
       ],
       "Resource": [
@@ -437,7 +438,6 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
-      "Sid": "IAMGroup",
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -954,6 +954,9 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Automatizar
 
 
+
+
+| Recuperar el estado de asociación de SSM para un grupo de instancias EC2 gestionadas (nodos SQL) | ssm:Descripción InstanceInformation | Inventario | Lea 
 
 
 | Obtenga la lista de líneas base de parches disponibles para la evaluación de parches del sistema operativo | ssm:DescripciónPatchBaselines | Optimización  a| 
@@ -2227,6 +2230,12 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 == Registro de cambios
 
 A medida que se añadan y eliminen permisos, los anotaremos en las secciones siguientes.
+
+
+
+=== 2 de abril de 2025
+
+El siguiente permiso ahora está disponible en _READ MODE_ para las bases de datos: 'Sm:DescribeInstanceInformation'.
 
 
 

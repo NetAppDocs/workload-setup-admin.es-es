@@ -1126,4 +1126,8 @@
   <block id="bc7864e70344eae19121f3e6408c5e04" category="list-text">Introduzca<block ref="657f8b8da628ef83cf69101b6817150a" prefix=" " category="inline-code"></block> para ver las instrucciones disponibles  o consulte los siguientes documentos de referencia de la CLI para ver <block ref="0bdecf44265be755040a6284b4703b71" category="inline-xref-macro-rx"></block>los comandos disponibles:</block>
   <block id="34b14d4981e88ee13798aea3eecf0674" category="paragraph">Si se produce un error después de emitir un comando de la CLI de ONTAP, seleccione el icono de la bombilla para obtener una breve respuesta de error generada por IA con una descripción del fallo, la causa del fallo y una resolución detallada. Selecciona *Leer más* para más detalles.</block>
   <block id="ef74d01649997b60252254da8a1573fd" category="doc">CloudShell informa de respuestas de errores generadas por IA para comandos de la CLI de ONTAP</block>
+  <block id="e388026a0cea886de58a344e102aff29" category="cell">Recuperar el estado de asociación de SSM para un grupo de instancias EC2 gestionadas (nodos SQL)</block>
+  <block id="3320749a6854264e1889d72d7f41a0bf" category="cell">ssm:Descripción InstanceInformation</block>
+  <block id="99e26a6b02df18a6d3fcaa201c832eff" category="section-title">2 de abril de 2025</block>
+  <block id="3721724ce177d539f2733638cda0c562" category="paragraph">El siguiente permiso ahora está disponible en _READ MODE_ para las bases de datos: 'Sm:DescribeInstanceInformation'.</block>
 </blocks>
