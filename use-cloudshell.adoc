@@ -27,6 +27,7 @@ Las características de CloudShell incluyen:
 * Persistencia del contenido de la última sesión: Vuelva a abrir la última sesión si la cierra por error
 * Preferencias de configuración: Cambie el tamaño de fuente y el tipo de salida
 * Respuestas de errores generadas por IA para comandos de la CLI de ONTAP
+* Soporte de Autocompletar: Comienza a escribir un comando y usa la tecla *Tab* para ver las opciones disponibles
 
 
 

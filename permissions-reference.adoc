@@ -20,7 +20,7 @@ Para utilizar las funciones y los servicios de fábrica de cargas de trabajo de 
 
 == Por qué usar permisos
 
-Cuando se proporcionan permisos de modo de lectura o automatización, la fábrica de cargas de trabajo asocia una política a la instancia con permisos para administrar recursos y procesos dentro de esa cuenta de AWS. Esto permite que la fábrica de cargas de trabajo ejecute diversas operaciones a partir de la detección de entornos de almacenamiento hasta implementar recursos de AWS, como sistemas de archivos en administración de almacenamiento o bases de conocimientos para cargas de trabajo GenAI.
+Al proporcionar permisos de modo de solo lectura o lectura/escritura, la fábrica de cargas de trabajo asocia una política a la instancia con permisos para gestionar los recursos y procesos dentro de esa cuenta de AWS. Esto permite que la fábrica de cargas de trabajo ejecute diversas operaciones a partir de la detección de entornos de almacenamiento hasta implementar recursos de AWS, como sistemas de archivos en administración de almacenamiento o bases de conocimientos para cargas de trabajo GenAI.
 
 Para las cargas de trabajo de base de datos, por ejemplo, cuando se otorga la fábrica de carga de trabajo con los permisos necesarios, analiza todas las instancias EC2 de una cuenta y región determinadas y filtra todas las máquinas basadas en Windows. Si el agente de AWS Systems Manager (SSM) está instalado y ejecutándose en el host y la red de System Manager está configurada correctamente, la fábrica de cargas de trabajo puede acceder a la máquina Windows y verificar si el software de SQL Server está instalado o no.
 
@@ -43,7 +43,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 ====
 [role="tabbed-block"]
 =====
-.Modo de lectura
+.Modo de solo lectura
 --
 [source, json]
 ----
@@ -75,7 +75,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 }
 ----
 --
-.Modo de automatización
+.Modo de lectura/escritura
 --
 [source, json]
 ----
@@ -133,22 +133,22 @@ La siguiente tabla muestra los permisos para Storage.
 | Específico | Acción | Donde se utiliza | Modo 
 
 
-| Crea un sistema de archivos FSx for ONTAP | fsx:CreateFileSystem* | Puesta en marcha | Automatizar 
+| Crea un sistema de archivos FSx for ONTAP | fsx:CreateFileSystem* | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree un grupo de seguridad para un sistema de archivos FSx for ONTAP | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+| Cree un grupo de seguridad para un sistema de archivos FSx for ONTAP | ec2:CreateSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Agregue etiquetas a un grupo de seguridad para un sistema de archivos FSx para ONTAP | ec2:CreateTags | Puesta en marcha | Automatizar 
+| Agregue etiquetas a un grupo de seguridad para un sistema de archivos FSx para ONTAP | ec2:CreateTags | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Autorizar la salida e ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+.2+| Autorizar la salida e ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-| El rol otorgado proporciona comunicación entre FSx para ONTAP y otros servicios de AWS | iam:CreateServiceLinkedIn | Puesta en marcha | Automatizar 
+| El rol otorgado proporciona comunicación entre FSx para ONTAP y otros servicios de AWS | iam:CreateServiceLinkedIn | Puesta en marcha | Lectura/Escritura 
 
 
 .7+| Consulta los detalles que necesitas para rellenar el formulario de puesta en marcha del sistema de archivos FSx para ONTAP | ec2:DescribeVpcs  a| 
@@ -156,8 +156,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -167,8 +167,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -178,8 +178,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -189,8 +189,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -200,8 +200,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -211,8 +211,8 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -222,25 +222,25 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Lectura/Escritura 
 
 
 | Kms:describir* | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Kms:Lista* | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -250,112 +250,112 @@ La siguiente tabla muestra los permisos para Storage.
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga detalles para las instancias de EC2 | ec2:DescribInstances | Explora el ahorro  a| 
-* Lea
-* Automatizar
+* Sólo lectura
+* Lectura/Escritura
 
 
 
 
-| Describa Elastic File System en la calculadora de ahorro | ElasticfileSystem:describe* | Explora el ahorro | Lea 
+| Describa Elastic File System en la calculadora de ahorro | ElasticfileSystem:describe* | Explora el ahorro | Solo lectura 
 
 
 | Enumera las etiquetas de los recursos de FSx for ONTAP | fsx:ListTagsForResource | Inventario  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Automatizar 
+.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Lectura/Escritura 
 
 
-| ec2:DeleteSecurityGroup | Operaciones de gestión | Automatizar 
+| ec2:DeleteSecurityGroup | Operaciones de gestión | Lectura/Escritura 
 
 
-.16+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume* | Operaciones de gestión | Automatizar 
+.16+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:TagResource* | Operaciones de gestión | Automatizar 
+| fsx:TagResource* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:CreateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+| fsx:CreateStorageVirtualMachine* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:DeleteFileSystem* | Operaciones de gestión | Automatizar 
+| fsx:DeleteFileSystem* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:DeleteStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+| fsx:DeleteStorageVirtualMachine* | Operaciones de gestión | Lectura/Escritura 
 
 
 | fsx:DescripciónFileSystems* | Inventario  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | fsx:DescripciónStorageVirtualMachines* | Inventario  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-| fsx:UpdateFileSystem* | Operaciones de gestión | Automatizar 
+| fsx:UpdateFileSystem* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:UpdateStorageVirtualMachine* | Operaciones de gestión | Automatizar 
+| fsx:UpdateStorageVirtualMachine* | Operaciones de gestión | Lectura/Escritura 
 
 
 | fsx:DescribeVolumes* | Inventario  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-| fsx:UpdateVolume* | Operaciones de gestión | Automatizar 
+| fsx:UpdateVolume* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:DeleteVolume* | Operaciones de gestión | Automatizar 
+| fsx:DeleteVolume* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:UntagResource* | Operaciones de gestión | Automatizar 
+| fsx:UntagResource* | Operaciones de gestión | Lectura/Escritura 
 
 
 | fsx:DescribeBackups* | Operaciones de gestión  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-| fsx:CreateBackup* | Operaciones de gestión | Automatizar 
+| fsx:CreateBackup* | Operaciones de gestión | Lectura/Escritura 
 
 
-| fsx:CreateVolumeFromBackup* | Operaciones de gestión | Automatizar 
+| fsx:CreateVolumeFromBackup* | Operaciones de gestión | Lectura/Escritura 
 
 
-| Informar de las métricas de CloudWatch | Cloudwatch:PutMetricData | Operaciones de gestión | Automatizar 
+| Informar de las métricas de CloudWatch | Cloudwatch:PutMetricData | Operaciones de gestión | Lectura/Escritura 
 
 
 .2+| Obtenga métricas de volumen y sistema de archivos | Cloudwatch:GetMetricData | Operaciones de gestión  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Cloudwatch:GetMetricStatistics | Operaciones de gestión  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 |===
@@ -373,7 +373,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 ====
 [role="tabbed-block"]
 =====
-.Modo de lectura
+.Modo de solo lectura
 --
 [source, json]
 ----
@@ -438,6 +438,15 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
+      "Sid": "SSMResponseCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -448,7 +457,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 }
 ----
 --
-.Modo de automatización
+.Modo de lectura/escritura
 --
 [source, json]
 ----
@@ -607,8 +616,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
         "iam:GetRolePolicy",
         "iam:GetUser",
         "iam:PutRolePolicy",
-        "iam:RemoveRoleFromInstanceProfile",
-        "iam:SimulatePrincipalPolicy"
+        "iam:RemoveRoleFromInstanceProfile"
       ],
       "Resource": "*"
     },
@@ -644,6 +652,13 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -661,20 +676,31 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 | Específico | Acción | Donde se utiliza | Modo 
 
 
+| La fábrica de cargas de trabajo cambia a los registros de Amazon CloudWatch para la instancia SQL al encontrar el truncamiento de salida de SSM. | Logs:GetLogEvents  a| 
+* Evaluación del almacenamiento
+* Inventario
+
+ a| 
+* Solo lectura
+* Lectura/Escritura
+
+
+
+
 | Obtenga estadísticas de métricas de FSx para ONTAP, EBS y FSx para el servidor de archivos de Windows | Cloudwatch:GetMetricStatistics  a| 
 * Inventario
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Listar y definir disparadores para eventos | sns:ListTopics | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -684,22 +710,22 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ec2:DescribeKeyPairs | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ec2:DescribeNetworkinterfaces | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -709,8 +735,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -720,8 +746,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -731,29 +757,29 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ec2:DescribeSecurityGroups | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ec2:DescribeImages | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ec2:regiones describidas | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -763,8 +789,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -774,25 +800,25 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-| Cree puntos finales de VPC si no existen para los servicios requeridos independientemente de la conectividad de red pública en las instancias de EC2 | EC2:CreateVpcEndpoint | Puesta en marcha | Automatizar 
+| Cree puntos finales de VPC si no existen para los servicios requeridos independientemente de la conectividad de red pública en las instancias de EC2 | EC2:CreateVpcEndpoint | Puesta en marcha | Lectura/Escritura 
 
 
 | Obtener tipos de instancias disponibles en la región para los nodos de validación (T2.micro/T3.micro) | EC2:DescripciónInstanceTypeOfferings | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga detalles de snapshot de cada volumen de EBS adjunto para calcular los precios y el ahorro | ec2:DescribSnapshots | Explora el ahorro  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -802,50 +828,50 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 .3+| Obtenga información clave de KMS para el cifrado del sistema de archivos FSx para ONTAP | Kms:ListAliases | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Km:ListKeys | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Km:DescripbeKey | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga una lista de pilas de CloudFormation que se ejecutan en el entorno para comprobar el límite de cuota | Cloudformation:ListStacks | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Compruebe los límites de la cuenta para los recursos antes de activar el despliegue | Formación de nubes:DescribeAccountLimits | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga una lista de directorios activos gestionados por AWS en la región | ds:DescripbeDirectories | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -855,8 +881,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explore Ahorros
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -866,8 +892,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explore Ahorros
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -878,8 +904,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -891,29 +917,29 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explora el ahorro
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | fsx:ListTagsForResource | Gestionar operaciones  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga los límites de cuotas de servicio para CloudFormation y VPC | ServiceQuotas:ListServiceQuotas | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Utilice la consulta basada en SSM para obtener la lista actualizada de regiones soportadas por FSx para ONTAP | ssm:GetParametersByPath | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -925,8 +951,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Optimización
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -938,8 +964,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Optimización
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -950,8 +976,8 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Optimización
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -960,22 +986,22 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 
 | Obtenga la lista de líneas base de parches disponibles para la evaluación de parches del sistema operativo | ssm:DescripciónPatchBaselines | Optimización  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtener el estado de aplicación de parches en las instancias de Windows EC2 para la evaluación de parches del sistema operativo | ssm:DescripciónInstancePatchStates | Optimización  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Enumere los comandos ejecutados por AWS Patch Manager en las instancias EC2 para la gestión de parches del sistema operativo | ssm: ListCommands | Optimización  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -984,42 +1010,42 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | Actualice una preferencia de recomendación existente en AWS Compute Optimizer para adaptar las sugerencias para las cargas de trabajo de SQL Server | Compute-Optimizer:PutRecommendationPreferences  a| 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | Obtener preferencias de recomendación que están en vigor para un recurso determinado de AWS Compute Optimizer | Compute-Optimizer:GetEffectiveRecommendationPreferences  a| 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | Obtenga recomendaciones que AWS Compute Optimizer genera para las instancias de Amazon Elastic Compute Cloud (Amazon EC2) | Compute-Optimizer:GetEC2InstanceRecommendations  a| 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 .2+| Compruebe la asociación de instancias a grupos de escala automática | escala automática:DescripciónAutoScalingGroups  a| 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | escala automática:DescripciónAutoScalingInstances  a| 
 * Explora el ahorro
 * Optimización
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 .4+| Obtenga, enumere, cree y elimine parámetros de SSM para las credenciales de usuario de AD, FSx para ONTAP y SQL utilizadas durante la implementación o administradas en su cuenta de AWS | ssm:getParameter ^1^  a| 
@@ -1027,15 +1053,15 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Gestionar operaciones
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ssm:GetParameters ^1^ | Gestionar operaciones  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -1045,183 +1071,183 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Gestionar operaciones
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | ssm:DeleteParameters ^1^ | Gestionar operaciones  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-.9+| Asocie recursos de red a nodos SQL y nodos de validación, y agregue IP secundarias adicionales a nodos SQL | EC2:AllocateAddress ^1^ | Puesta en marcha | Automatizar 
+.9+| Asocie recursos de red a nodos SQL y nodos de validación, y agregue IP secundarias adicionales a nodos SQL | EC2:AllocateAddress ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AllocateHosts ^1^ | Puesta en marcha | Automatizar 
+| EC2:AllocateHosts ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AssignPrivateIpAddresses ^1^ | Puesta en marcha | Automatizar 
+| EC2:AssignPrivateIpAddresses ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AssociateAddress ^1^ | Puesta en marcha | Automatizar 
+| EC2:AssociateAddress ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AssociateRouteTable ^1^ | Puesta en marcha | Automatizar 
+| EC2:AssociateRouteTable ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AssociateSubnetCidrBlock ^1^ | Puesta en marcha | Automatizar 
+| EC2:AssociateSubnetCidrBlock ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AssociateVpcCidrBlock ^1^ | Puesta en marcha | Automatizar 
+| EC2:AssociateVpcCidrBlock ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AttachInternetGateway ^1^ | Puesta en marcha | Automatizar 
+| EC2:AttachInternetGateway ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:AttachNetworkInterface ^1^ | Puesta en marcha | Automatizar 
+| EC2:AttachNetworkInterface ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Conecte los volúmenes de EBS necesarios a los nodos SQL para la puesta en marcha | ec2:AttachVolume | Puesta en marcha | Automatizar 
+| Conecte los volúmenes de EBS necesarios a los nodos SQL para la puesta en marcha | ec2:AttachVolume | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+.2+| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree los volúmenes de EBS necesarios para los nodos SQL para la puesta en marcha | ec2:CreateVolume | Puesta en marcha | Automatizar 
+| Cree los volúmenes de EBS necesarios para los nodos SQL para la puesta en marcha | ec2:CreateVolume | Puesta en marcha | Lectura/Escritura 
 
 
-.11+| Elimine los nodos de validación temporales creados del tipo T2.micro y para la reversión o el reintento de EC2 nodos SQL fallidos | ec2:DeleteNetworkInterface | Puesta en marcha | Automatizar 
+.11+| Elimine los nodos de validación temporales creados del tipo T2.micro y para la reversión o el reintento de EC2 nodos SQL fallidos | ec2:DeleteNetworkInterface | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:DeleteSecurityGroup | Puesta en marcha | Automatizar 
+| ec2:DeleteSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:DeleteTags | Puesta en marcha | Automatizar 
+| ec2:DeleteTags | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:DeleteVolume | Puesta en marcha | Automatizar 
+| ec2:DeleteVolume | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:DetachNetworkInterface | Puesta en marcha | Automatizar 
+| EC2:DetachNetworkInterface | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:DetachVolume | Puesta en marcha | Automatizar 
+| ec2:DetachVolume | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:DisasociateAddress | Puesta en marcha | Automatizar 
+| EC2:DisasociateAddress | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:DisasociateIamInstanceProfile | Puesta en marcha | Automatizar 
+| ec2:DisasociateIamInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:DisAssociateRouteTable | Puesta en marcha | Automatizar 
+| EC2:DisAssociateRouteTable | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:DisasociateSubnetCidrBlock | Puesta en marcha | Automatizar 
+| EC2:DisasociateSubnetCidrBlock | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:DisasociateVpcCidrBlock | Puesta en marcha | Automatizar 
+| EC2:DisasociateVpcCidrBlock | Puesta en marcha | Lectura/Escritura 
 
 
-.7+| Modificar atributos para instancias SQL creadas. Solo se aplica a los nombres que comienzan con WLMDB. | ec2:ModificyInstanceAttribute | Puesta en marcha | Automatizar 
+.7+| Modificar atributos para instancias SQL creadas. Solo se aplica a los nombres que comienzan con WLMDB. | ec2:ModificyInstanceAttribute | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:ModifyInstanceColocación | Puesta en marcha | Automatizar 
+| EC2:ModifyInstanceColocación | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:ModificyNetworkInterfaceAttribute | Puesta en marcha | Automatizar 
+| ec2:ModificyNetworkInterfaceAttribute | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:ModifySubnetAttribute | Puesta en marcha | Automatizar 
+| EC2:ModifySubnetAttribute | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:ModifiyVolume | Puesta en marcha | Automatizar 
+| ec2:ModifiyVolume | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:ModifyVolumeAttribute | Puesta en marcha | Automatizar 
+| ec2:ModifyVolumeAttribute | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:ModifyVpcAttribute | Puesta en marcha | Automatizar 
+| EC2:ModifyVpcAttribute | Puesta en marcha | Lectura/Escritura 
 
 
-.5+| Desasociar y destruir instancias de validación | EC2:Release Address | Puesta en marcha | Automatizar 
+.5+| Desasociar y destruir instancias de validación | EC2:Release Address | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:ReplaceRoute | Puesta en marcha | Automatizar 
+| EC2:ReplaceRoute | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:ReplaceRouteTableAssociation | Puesta en marcha | Automatizar 
+| EC2:ReplaceRouteTableAssociation | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:RevokeSecurityGroupEgress | Puesta en marcha | Automatizar 
+| ec2:RevokeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Automatizar 
+| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-| Inicie las instancias desplegadas | ec2:StartuStarInstances | Puesta en marcha | Automatizar 
+| Inicie las instancias desplegadas | ec2:StartuStarInstances | Puesta en marcha | Lectura/Escritura 
 
 
-| Pare las instancias desplegadas | ec2:StopInstances | Puesta en marcha | Automatizar 
+| Pare las instancias desplegadas | ec2:StopInstances | Puesta en marcha | Lectura/Escritura 
 
 
 | Etiquete valores personalizados para los recursos de Amazon FSx for NetApp ONTAP creados por WLMDB para obtener detalles de facturación durante la gestión de recursos | fsx:TagResource ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-.5+| Cree y valide la plantilla de CloudFormation para el despliegue | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+.5+| Cree y valide la plantilla de CloudFormation para el despliegue | Cloudformation:CreateStack | Puesta en marcha | Lectura/Escritura 
 
 
-| Cloudformation:DescribeStackEvents | Puesta en marcha | Automatizar 
+| Cloudformation:DescribeStackEvents | Puesta en marcha | Lectura/Escritura 
 
 
-| Cloudformation:Describacks | Puesta en marcha | Automatizar 
+| Cloudformation:Describacks | Puesta en marcha | Lectura/Escritura 
 
 
-| Cloudformation:ListStacks | Puesta en marcha | Automatizar 
+| Cloudformation:ListStacks | Puesta en marcha | Lectura/Escritura 
 
 
-| Cloudformation:ValidateTemplate | Puesta en marcha | Automatizar 
+| Cloudformation:ValidateTemplate | Puesta en marcha | Lectura/Escritura 
 
 
-| Recuperar métricas para la recomendación de optimización de cálculo | Cloudwatch:GetMetricStatistics | Explora el ahorro | Automatizar 
+| Recuperar métricas para la recomendación de optimización de cálculo | Cloudwatch:GetMetricStatistics | Explora el ahorro | Lectura/Escritura 
 
 
-| Recuperar directorios disponibles en la región | ds:DescripbeDirectories | Puesta en marcha | Automatizar 
+| Recuperar directorios disponibles en la región | ds:DescripbeDirectories | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Agregue reglas para el grupo de seguridad asociado a las instancias EC2 provisionadas | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+.2+| Agregue reglas para el grupo de seguridad asociado a las instancias EC2 provisionadas | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Cree plantillas de pila anidadas para reintentos y rollback | EC2:CreateLaunchTemplate | Puesta en marcha | Automatizar 
+.2+| Cree plantillas de pila anidadas para reintentos y rollback | EC2:CreateLaunchTemplate | Puesta en marcha | Lectura/Escritura 
 
 
-| EC2:CreateLaunchTemplateVersion | Puesta en marcha | Automatizar 
+| EC2:CreateLaunchTemplateVersion | Puesta en marcha | Lectura/Escritura 
 
 
-.3+| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateNetworkInterface | Puesta en marcha | Automatizar 
+.3+| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateNetworkInterface | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+| ec2:CreateSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:CreateTags | Puesta en marcha | Automatizar 
+| ec2:CreateTags | Puesta en marcha | Lectura/Escritura 
 
 
-| Suprima el grupo de seguridad creado temporalmente para los nodos de validación | ec2:DeleteSecurityGroup | Puesta en marcha | Automatizar 
+| Suprima el grupo de seguridad creado temporalmente para los nodos de validación | ec2:DeleteSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
 .2+| Obtener detalles de instancia para el provisionamiento | EC2:Describir*  a| 
@@ -1229,7 +1255,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 * Explora el ahorro
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | EC2:GET*  a| 
@@ -1237,29 +1263,29 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 * Explora el ahorro
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Automatizar 
+| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Lectura/Escritura 
 
 
 | Systems Manager utiliza el extremo del servicio de entrega de mensajes de AWS para las operaciones de API | ec2messages:*  a| 
 * Implementación *Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-.3+| Crear FSx para los recursos de ONTAP necesarios para aprovisionamiento. Para los sistemas FSx para ONTAP existentes, se crea un nuevo SVM para alojar los volúmenes de SQL. | fsx:CreateFileSystem | Puesta en marcha | Automatizar 
+.3+| Crear FSx para los recursos de ONTAP necesarios para aprovisionamiento. Para los sistemas FSx para ONTAP existentes, se crea un nuevo SVM para alojar los volúmenes de SQL. | fsx:CreateFileSystem | Puesta en marcha | Lectura/Escritura 
 
 
-| fsx:CreateStorageVirtualMachine | Puesta en marcha | Automatizar 
+| fsx:CreateStorageVirtualMachine | Puesta en marcha | Lectura/Escritura 
 
 
 | fsx:CreateVolume  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 .2+| Obtén más información sobre FSx para ONTAP | fsx:describe*  a| 
@@ -1268,88 +1294,88 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Gestionar operaciones
 * Explora el ahorro
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | fsx:List*  a| 
 * Puesta en marcha
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| Cambie el tamaño de FSx para el sistema de archivos ONTAP para solucionar el margen adicional del sistema de archivos | fsx:UpdateFilesystem | Optimización | Automatizar 
+| Cambie el tamaño de FSx para el sistema de archivos ONTAP para solucionar el margen adicional del sistema de archivos | fsx:UpdateFilesystem | Optimización | Lectura/Escritura 
 
 
-| Cambie el tamaño de los volúmenes para corregir los tamaños de los registros y las unidades de TempDB | fsx:UpdateVolume | Optimización | Automatizar 
+| Cambie el tamaño de los volúmenes para corregir los tamaños de los registros y las unidades de TempDB | fsx:UpdateVolume | Optimización | Lectura/Escritura 
 
 
-.4+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+.4+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Lectura/Escritura 
 
 
-| Kms:describir* | Puesta en marcha | Automatizar 
+| Kms:describir* | Puesta en marcha | Lectura/Escritura 
 
 
-| Kms:Lista* | Puesta en marcha | Automatizar 
+| Kms:Lista* | Puesta en marcha | Lectura/Escritura 
 
 
-| Km:GenerateDataKey | Puesta en marcha | Automatizar 
+| Km:GenerateDataKey | Puesta en marcha | Lectura/Escritura 
 
 
-.7+| Cree registros de CloudWatch para la validación y el aprovisionamiento de scripts que se ejecutan en instancias EC2 | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+.7+| Cree registros de CloudWatch para la validación y el aprovisionamiento de scripts que se ejecutan en instancias EC2 | Registros:CreateLogGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Registros:CreateLogStream | Puesta en marcha | Automatizar 
+| Registros:CreateLogStream | Puesta en marcha | Lectura/Escritura 
 
 
-| Registros:DescribeLog* | Puesta en marcha | Automatizar 
+| Registros:DescribeLog* | Puesta en marcha | Lectura/Escritura 
 
 
-| Registros:GetLog* | Puesta en marcha | Automatizar 
+| Registros:GetLog* | Puesta en marcha | Lectura/Escritura 
 
 
-| Logs:ListLogDeliveries | Puesta en marcha | Automatizar 
+| Logs:ListLogDeliveries | Puesta en marcha | Lectura/Escritura 
 
 
 | Logs:PutLogEvents  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| Logs:TagResource | Puesta en marcha | Automatizar 
+| Logs:TagResource | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree secretos en una cuenta de usuario para las credenciales proporcionadas para SQL, el dominio y FSx para ONTAP | ServiceQuotas:ListServiceQuotas | Puesta en marcha | Automatizar 
+| Cree secretos en una cuenta de usuario para las credenciales proporcionadas para SQL, el dominio y FSx para ONTAP | ServiceQuotas:ListServiceQuotas | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMDB, así como en el SNS del cliente, si está seleccionado | sns:ListTopics | Puesta en marcha | Automatizar 
+.2+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMDB, así como en el SNS del cliente, si está seleccionado | sns:ListTopics | Puesta en marcha | Lectura/Escritura 
 
 
-| sns: Publicar | Puesta en marcha | Automatizar 
+| sns: Publicar | Puesta en marcha | Lectura/Escritura 
 
 
-.11+| Permisos SSM necesarios para ejecutar el script de detección en instancias SQL aprovisionadas y para obtener la lista más reciente de regiones AWS compatibles con FSx para ONTAP. | ssm:DESCRIBE* | Puesta en marcha | Automatizar 
+.11+| Permisos SSM necesarios para ejecutar el script de detección en instancias SQL aprovisionadas y para obtener la lista más reciente de regiones AWS compatibles con FSx para ONTAP. | ssm:DESCRIBE* | Puesta en marcha | Lectura/Escritura 
 
 
 | ssm:GET*  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| ssm: Lista* | Puesta en marcha | Automatizar 
+| ssm: Lista* | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm:PutComplianceItems | Puesta en marcha | Automatizar 
+| ssm:PutComplianceItems | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm:PutConfigurePackageResult | Puesta en marcha | Automatizar 
+| ssm:PutConfigurePackageResult | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm: Inventario de PutInventory | Puesta en marcha | Automatizar 
+| ssm: Inventario de PutInventory | Puesta en marcha | Lectura/Escritura 
 
 
 | ssm:SendCommand  a| 
@@ -1357,16 +1383,16 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| ssm: UpdateAssociationStatus | Puesta en marcha | Automatizar 
+| ssm: UpdateAssociationStatus | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm:UpdateInstanceAssociationStatus | Puesta en marcha | Automatizar 
+| ssm:UpdateInstanceAssociationStatus | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm:UpdateInstanceInformation | Puesta en marcha | Automatizar 
+| ssm:UpdateInstanceInformation | Puesta en marcha | Lectura/Escritura 
 
 
 | ssmmessages:*  a| 
@@ -1374,7 +1400,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Inventario
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 .4+| Guardar credenciales para FSX para ONTAP, Active Directory y el usuario SQL (solo para la autenticación de usuario SQL) | ssm:getParameter ^1^  a| 
@@ -1382,75 +1408,75 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Gestionar operaciones
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm:GetParameters ^1^  a| 
 * Puesta en marcha
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm:PutParameter ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm:DeleteParameters ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| La pila de CloudFormation de señales se ha producido correctamente o ha fallado. | Formación de nubes:SignalResource ^1^ | Puesta en marcha | Automatizar 
+| La pila de CloudFormation de señales se ha producido correctamente o ha fallado. | Formación de nubes:SignalResource ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Agregue el rol EC2 creado por la plantilla al perfil de instancia de EC2 para permitir que los scripts de EC2 accedan a los recursos necesarios para el despliegue. | iam:AddRoleToInstanceProfile | Puesta en marcha | Automatizar 
+| Agregue el rol EC2 creado por la plantilla al perfil de instancia de EC2 para permitir que los scripts de EC2 accedan a los recursos necesarios para el despliegue. | iam:AddRoleToInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree un perfil de instancia para EC2 y adjunte el rol EC2 creado. | iam:CreateInstanceProfile | Puesta en marcha | Automatizar 
+| Cree un perfil de instancia para EC2 y adjunte el rol EC2 creado. | iam:CreateInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree un rol EC2 a través de una plantilla con los permisos enumerados a continuación | iam:CreateRole | Puesta en marcha | Automatizar 
+| Cree un rol EC2 a través de una plantilla con los permisos enumerados a continuación | iam:CreateRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Crear rol vinculado al servicio EC2 | iam:CreateServiceLinkedRole ^2^ | Puesta en marcha | Automatizar 
+| Crear rol vinculado al servicio EC2 | iam:CreateServiceLinkedRole ^2^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Suprimir perfil de instancia creado durante el despliegue específicamente para los nodos de validación | iam:DeleteInstanceProfile | Puesta en marcha | Automatizar 
+| Suprimir perfil de instancia creado durante el despliegue específicamente para los nodos de validación | iam:DeleteInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-.5+| Obtenga los detalles del rol y la política para determinar las brechas en los permisos y validarlas para la implementación | iam: GetPolicy | Puesta en marcha | Automatizar 
+.5+| Obtenga los detalles del rol y la política para determinar las brechas en los permisos y validarlas para la implementación | iam: GetPolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:GetPolicyVersion | Puesta en marcha | Automatizar 
+| iam:GetPolicyVersion | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:GetRole | Puesta en marcha | Automatizar 
+| iam:GetRole | Puesta en marcha | Lectura/Escritura 
 
 
-| iam: GetRolePolicy | Puesta en marcha | Automatizar 
+| iam: GetRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| iam: GetUser | Puesta en marcha | Automatizar 
+| iam: GetUser | Puesta en marcha | Lectura/Escritura 
 
 
-| Transfiera el rol creado a la instancia EC2 | iam:PassRole ^3^ | Puesta en marcha | Automatizar 
+| Transfiera el rol creado a la instancia EC2 | iam:PassRole ^3^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Agregue una política con los permisos necesarios al rol EC2 creado | iam:PutRolePolicy | Puesta en marcha | Automatizar 
+| Agregue una política con los permisos necesarios al rol EC2 creado | iam:PutRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha | Automatizar 
+| Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
 | Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 |===
@@ -1466,7 +1492,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 Las políticas de IAM para cargas de trabajo de VMware proporcionan los permisos que la fábrica de cargas de trabajo para VMware necesita para gestionar recursos y procesos dentro de tu entorno de nube pública en función del modo operativo en el que operes.
 
-Las políticas IAM de GenAI solo están disponibles en el modo de funcionamiento:
+Las políticas IAM de GenAI sólo están disponibles en el modo de lectura/escritura:
 
 .Políticas de IAM para las cargas de trabajo de GenAI
 [%collapsible]
@@ -1527,7 +1553,6 @@ Las políticas IAM de GenAI solo están disponibles en el modo de funcionamiento
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
-        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
@@ -1701,6 +1726,22 @@ Las políticas IAM de GenAI solo están disponibles en el modo de funcionamiento
       "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
     },
     {
+      "Sid": "BedrockLoggingIamOperations",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreatePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "QBusiness",
+      "Effect": "Allow",
+      "Action": [
+        "qbusiness:ListApplications"
+      ],
+      "Resource": "*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -1721,196 +1762,202 @@ En la siguiente tabla se ofrecen detalles sobre los permisos para las cargas de 
 | Específico | Acción | Donde se utiliza | Modo 
 
 
-| Cree una pila de formación de cloud del motor de IA durante las operaciones de puesta en marcha y recompilación | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+| Cree una pila de formación de cloud del motor de IA durante las operaciones de puesta en marcha y recompilación | Cloudformation:CreateStack | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree la pila de formación de cloud del motor de IA | Cloudformation:Describacks | Puesta en marcha | Automatizar 
+| Cree la pila de formación de cloud del motor de IA | Cloudformation:Describacks | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere las regiones del asistente de despliegue del motor AI | ec2:regiones describidas | Puesta en marcha | Automatizar 
+| Enumere las regiones del asistente de despliegue del motor AI | ec2:regiones describidas | Puesta en marcha | Lectura/Escritura 
 
 
-| Mostrar etiquetas de motor AI | ec2:etiquetas a describTags | Puesta en marcha | Automatizar 
+| Mostrar etiquetas de motor AI | ec2:etiquetas a describTags | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere los extremos de VPC antes de crear la pila del motor de AI | EC2:CreateVpcEndpoint | Puesta en marcha | Automatizar 
+| Enumere los extremos de VPC antes de crear la pila del motor de AI | EC2:CreateVpcEndpoint | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree un grupo de seguridad del motor de IA durante la creación de la pila del motor de IA durante las operaciones de implementación y reconstrucción | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+| Cree un grupo de seguridad del motor de IA durante la creación de la pila del motor de IA durante las operaciones de implementación y reconstrucción | ec2:CreateSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Etiquete los recursos creados por la creación de pila de motores de IA durante las operaciones de implementación y recompilación | ec2:CreateTags | Puesta en marcha | Automatizar 
+| Etiquete los recursos creados por la creación de pila de motores de IA durante las operaciones de implementación y recompilación | ec2:CreateTags | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Publique eventos cifrados en el backend WLMAI desde la pila del motor AI | Km:GenerateDataKey | Puesta en marcha | Automatizar 
+.2+| Publique eventos cifrados en el backend WLMAI desde la pila del motor AI | Km:GenerateDataKey | Puesta en marcha | Lectura/Escritura 
 
 
-| Km:descifrar | Puesta en marcha | Automatizar 
+| Km:descifrar | Puesta en marcha | Lectura/Escritura 
 
 
-| Publique eventos y recursos personalizados en el backend WLMAI desde la pila ai-engine | sns: Publicar | Puesta en marcha | Automatizar 
+| Publique eventos y recursos personalizados en el backend WLMAI desde la pila ai-engine | sns: Publicar | Puesta en marcha | Lectura/Escritura 
 
 
-| Mostrar los PC virtuales durante el asistente de despliegue del motor AI | ec2:DescribeVpcs | Puesta en marcha | Automatizar 
+| Mostrar los PC virtuales durante el asistente de despliegue del motor AI | ec2:DescribeVpcs | Puesta en marcha | Lectura/Escritura 
 
 
-| Muestra las subredes del asistente de despliegue del motor AI | ec2:DescribeSubnets | Puesta en marcha | Automatizar 
+| Muestra las subredes del asistente de despliegue del motor AI | ec2:DescribeSubnets | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtenga tablas de ruta durante la puesta en marcha y recompilación del motor de IA | ec2:DescribeRouteTables | Puesta en marcha | Automatizar 
+| Obtenga tablas de ruta durante la puesta en marcha y recompilación del motor de IA | ec2:DescribeRouteTables | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere los pares de claves durante el asistente de implementación del motor de IA | ec2:DescribeKeyPairs | Puesta en marcha | Automatizar 
+| Enumere los pares de claves durante el asistente de implementación del motor de IA | ec2:DescribeKeyPairs | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumerar los grupos de seguridad durante la creación de la pila del motor AI (para buscar grupos de seguridad en los extremos privados) | ec2:DescribeSecurityGroups | Puesta en marcha | Automatizar 
+| Enumerar los grupos de seguridad durante la creación de la pila del motor AI (para buscar grupos de seguridad en los extremos privados) | ec2:DescribeSecurityGroups | Puesta en marcha | Lectura/Escritura 
 
 
-| Consigue extremos de VPC para determinar si se deben crear alguno durante la puesta en marcha del motor de IA | ec2:DescribeVpcEndpoints | Puesta en marcha | Automatizar 
+| Consigue extremos de VPC para determinar si se deben crear alguno durante la puesta en marcha del motor de IA | ec2:DescribeVpcEndpoints | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere las instancias para averiguar el estado del motor de IA | ec2:DescribInstances | Resolución de problemas | Automatizar 
+| Enumere las aplicaciones de Amazon Q Business | Qbusiness:ListApplications | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumera imágenes durante la creación de la pila del motor de IA durante las operaciones de implementación y recompilación | ec2:DescribeImages | Puesta en marcha | Automatizar 
+| Enumere las instancias para averiguar el estado del motor de IA | ec2:DescribInstances | Resolución de problemas | Lectura/Escritura 
 
 
-.2+| Cree y actualice la instancia de IA y el grupo de seguridad de punto final privado durante la creación de la pila de instancias de AI durante las operaciones de despliegue y reconstrucción | ec2:RevokeSecurityGroupEgress | Puesta en marcha | Automatizar 
+| Enumera imágenes durante la creación de la pila del motor de IA durante las operaciones de implementación y recompilación | ec2:DescribeImages | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Automatizar 
+.2+| Cree y actualice la instancia de IA y el grupo de seguridad de punto final privado durante la creación de la pila de instancias de AI durante las operaciones de despliegue y reconstrucción | ec2:RevokeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| Ejecutar el motor de IA durante la creación de pilas de formación de nube durante las operaciones de puesta en marcha y recompilación | ec2:RunInstances | Puesta en marcha | Automatizar 
+| ec2:RevokeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Asocie grupos de seguridad y modifique las reglas del motor de IA durante la creación de la pila durante las operaciones de puesta en marcha y recompilación | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Automatizar 
+| Ejecutar el motor de IA durante la creación de pilas de formación de nube durante las operaciones de puesta en marcha y recompilación | ec2:RunInstances | Puesta en marcha | Lectura/Escritura 
 
 
-| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+.2+| Asocie grupos de seguridad y modifique las reglas del motor de IA durante la creación de la pila durante las operaciones de puesta en marcha y recompilación | ec2:AuthorizeSecurityGroupEgress | Puesta en marcha | Lectura/Escritura 
 
 
-| Consulte el estado de registro de Amazon Bedrock/Amazon CloudWatch durante la implementación del motor de IA | Bedrock:GetModelInvocationLoggingConfiguration | Puesta en marcha | Automatizar 
+| ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-| Inicie una solicitud de chat para uno de los modelos básicos | Bedrock:InvokeModelWithResponseStream | Puesta en marcha | Automatizar 
+| Consulte el estado de registro de Amazon Bedrock/Amazon CloudWatch durante la implementación del motor de IA | Bedrock:GetModelInvocationLoggingConfiguration | Puesta en marcha | Lectura/Escritura 
 
 
-| Iniciar solicitud de chat/inserción para modelos de base | Bedrock:InvokeModel | Puesta en marcha | Automatizar 
+| Inicie una solicitud de chat para uno de los modelos básicos | Bedrock:InvokeModelWithResponseStream | Puesta en marcha | Lectura/Escritura 
 
 
-| Muestra los modelos de base disponibles en una región | Bedrock:ListFoundationModels | Puesta en marcha | Automatizar 
+| Iniciar solicitud de chat/inserción para modelos de base | Bedrock:InvokeModel | Puesta en marcha | Lectura/Escritura 
 
 
-| Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Puesta en marcha | Automatizar 
+| Muestra los modelos de base disponibles en una región | Bedrock:ListFoundationModels | Puesta en marcha | Lectura/Escritura 
 
 
-| Verifique la necesidad de crear un grupo de registros de Amazon CloudWatch durante las operaciones de despliegue y reconstrucción | Logs:DescripbeLogGroups | Puesta en marcha | Automatizar 
+| Obtenga información sobre un modelo de fundación | Bedrock:GetFoundationModel | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtén regiones que dan soporte a FSx y Amazon Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Automatizar 
+| Verifique el acceso al modelo de base | Bedrock:GetFoundationModelAvailability | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtenga la imagen más reciente de Amazon Linux para la puesta en marcha del motor de IA durante las operaciones de puesta en marcha y recompilación | ssm: GetParameters | Puesta en marcha | Automatizar 
+| Verifique la necesidad de crear un grupo de registros de Amazon CloudWatch durante las operaciones de despliegue y reconstrucción | Logs:DescripbeLogGroups | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtenga la respuesta SSM del comando enviado al motor AI | ssm:GetCommandInvocation | Puesta en marcha | Automatizar 
+| Obtén regiones que dan soporte a FSx y Amazon Bedrock durante el asistente del motor de IA | ssm:GetParametersByPath | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Compruebe la conexión del SSM al motor AI | ssm:SendCommand | Puesta en marcha | Automatizar 
+| Obtenga la imagen más reciente de Amazon Linux para la puesta en marcha del motor de IA durante las operaciones de puesta en marcha y recompilación | ssm: GetParameters | Puesta en marcha | Lectura/Escritura 
 
 
-| ssm:GetConnectionStatus | Puesta en marcha | Automatizar 
+| Obtenga la respuesta SSM del comando enviado al motor AI | ssm:GetCommandInvocation | Puesta en marcha | Lectura/Escritura 
 
 
-.8+| Cree un perfil de instancia del motor de IA durante la creación de pila durante las operaciones de puesta en marcha y recompilación | iam:CreateRole | Puesta en marcha | Automatizar 
+.2+| Compruebe la conexión del SSM al motor AI | ssm:SendCommand | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:CreateInstanceProfile | Puesta en marcha | Automatizar 
+| ssm:GetConnectionStatus | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:AddRoleToInstanceProfile | Puesta en marcha | Automatizar 
+.8+| Cree un perfil de instancia del motor de IA durante la creación de pila durante las operaciones de puesta en marcha y recompilación | iam:CreateRole | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:PutRolePolicy | Puesta en marcha | Automatizar 
+| iam:CreateInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| iam: GetRolePolicy | Puesta en marcha | Automatizar 
+| iam:AddRoleToInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:GetRole | Puesta en marcha | Automatizar 
+| iam:PutRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:TagRole | Puesta en marcha | Automatizar 
+| iam: GetRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| iam:PassRole | Puesta en marcha | Automatizar 
+| iam:GetRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+| iam:TagRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere los sistemas de archivos FSx para ONTAP durante el asistente para crear base de conocimientos | fsx:DescribeVolumes | Creación de la base de conocimientos | Automatizar 
+| iam:PassRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumera los volúmenes del sistema de archivos FSx para ONTAP durante el asistente para crear base de conocimientos | fsx:DescripciónFileSystems | Creación de la base de conocimientos | Automatizar 
+| Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Gestionar las bases de conocimientos en el motor de IA durante las operaciones de recompilación | fsx:ListTagsForResource | Resolución de problemas | Automatizar 
+| Enumere los sistemas de archivos FSx para ONTAP durante el asistente para crear base de conocimientos | fsx:DescribeVolumes | Creación de la base de conocimientos | Lectura/Escritura 
 
 
-| Enumere las máquinas virtuales de almacenamiento del sistema de archivos FSx para ONTAP durante el asistente de creación de base de conocimientos | fsx:DescribeStorageVirtualMachines | Puesta en marcha | Automatizar 
+| Enumera los volúmenes del sistema de archivos FSx para ONTAP durante el asistente para crear base de conocimientos | fsx:DescripciónFileSystems | Creación de la base de conocimientos | Lectura/Escritura 
 
 
-| Mueva la base de conocimientos a una nueva instancia | fsx:UntagResource | Resolución de problemas | Automatizar 
+| Gestionar las bases de conocimientos en el motor de IA durante las operaciones de recompilación | fsx:ListTagsForResource | Resolución de problemas | Lectura/Escritura 
 
 
-| Gestione la base de conocimientos en el motor de IA durante la recompilación | fsx:TagResource | Resolución de problemas | Automatizar 
+| Enumere las máquinas virtuales de almacenamiento del sistema de archivos FSx para ONTAP durante el asistente de creación de base de conocimientos | fsx:DescribeStorageVirtualMachines | Puesta en marcha | Lectura/Escritura 
 
 
-.2+| Guardar los secretos SSM (token ECR, credenciales CIFS, claves de las cuentas de servicio de inquilino) de una forma segura | ssm:getParameter | Puesta en marcha | Automatizar 
+| Mueva la base de conocimientos a una nueva instancia | fsx:UntagResource | Resolución de problemas | Lectura/Escritura 
 
 
-| ssm: Parámetro de PutParameter | Puesta en marcha | Automatizar 
+| Gestione la base de conocimientos en el motor de IA durante la recompilación | fsx:TagResource | Resolución de problemas | Lectura/Escritura 
 
 
-.2+| Envíe los registros del motor de IA al grupo de registros de Amazon CloudWatch durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+.2+| Guardar los secretos SSM (token ECR, credenciales CIFS, claves de las cuentas de servicio de inquilino) de una forma segura | ssm:getParameter | Puesta en marcha | Lectura/Escritura 
 
 
-| Logs:PutRetentionPolicy | Puesta en marcha | Automatizar 
+| ssm: Parámetro de PutParameter | Puesta en marcha | Lectura/Escritura 
 
 
-| Envíe los registros del motor de IA al grupo de registros de Amazon CloudWatch | Logs:TagResource | Resolución de problemas | Automatizar 
+.2+| Envíe los registros del motor de IA al grupo de registros de Amazon CloudWatch durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtener respuesta SSM de Amazon CloudWatch (cuando la respuesta es demasiado larga) | Registros:DescripbeLogStreams | Resolución de problemas | Automatizar 
+| Logs:PutRetentionPolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtén la respuesta SSM de Amazon CloudWatch | Logs:GetLogEvents | Resolución de problemas | Automatizar 
+| Envíe los registros del motor de IA al grupo de registros de Amazon CloudWatch | Logs:TagResource | Resolución de problemas | Lectura/Escritura 
 
 
-.3+| Cree un grupo de registros de Amazon CloudWatch para los registros de base de Amazon durante la recuperación de la pila durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Automatizar 
+| Obtener respuesta SSM de Amazon CloudWatch (cuando la respuesta es demasiado larga) | Registros:DescripbeLogStreams | Resolución de problemas | Lectura/Escritura 
 
 
-| Logs:PutRetentionPolicy | Puesta en marcha | Automatizar 
+| Obtén la respuesta SSM de Amazon CloudWatch | Logs:GetLogEvents | Resolución de problemas | Lectura/Escritura 
 
 
-| Logs:TagResource | Puesta en marcha | Automatizar 
+.3+| Cree un grupo de registros de Amazon CloudWatch para los registros de base de Amazon durante la creación de la pila durante las operaciones de implementación y reconstrucción | Registros:CreateLogGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Envía registros de Bedrock a Amazon CloudWatch | Bedrock:PutModelInvocationLoggingConfiguration | Resolución de problemas | Automatizar 
+| Logs:PutRetentionPolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam: AttachRolePolicy | Resolución de problemas | Automatizar 
+| Logs:TagResource | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam:PassRole | Resolución de problemas | Automatizar 
+| Envía registros de Bedrock a Amazon CloudWatch | Bedrock:PutModelInvocationLoggingConfiguration | Resolución de problemas | Lectura/Escritura 
 
 
-| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam:createPolicy | Resolución de problemas | Automatizar 
+| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam: AttachRolePolicy | Resolución de problemas | Lectura/Escritura 
 
 
-| Listar perfiles de inferencia para el modelo | Bedrock:ListInferenceProfiles | Resolución de problemas | Automatizar 
+| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam:PassRole | Resolución de problemas | Lectura/Escritura 
+
+
+| Cree la función que permita enviar registros de Amazon Bedrock a Amazon CloudWatch | iam:createPolicy | Resolución de problemas | Lectura/Escritura 
+
+
+| Listar perfiles de inferencia para el modelo | Bedrock:ListInferenceProfiles | Resolución de problemas | Lectura/Escritura 
 |===
 ====
 
@@ -1926,7 +1973,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 ====
 [role="tabbed-block"]
 =====
-.Modo de lectura
+.Modo de solo lectura
 --
 [source, json]
 ----
@@ -1959,7 +2006,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
 }
 ----
 --
-.Modo de automatización
+.Modo de lectura/escritura
 --
 [source, json]
 ----
@@ -2040,28 +2087,28 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 | Específico | Acción | Donde se utiliza | Modo 
 
 
-| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Automatizar 
+| Asocie grupos de seguridad y modifique reglas para los nodos aprovisionados | ec2:AuthorizeSecurityGroupIngress | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree volúmenes de EBS | ec2:CreateVolume | Puesta en marcha | Automatizar 
+| Cree volúmenes de EBS | ec2:CreateVolume | Puesta en marcha | Lectura/Escritura 
 
 
-| Etiquete valores personalizados para los recursos de FSx para NetApp ONTAP creados por las cargas de trabajo de VMware | fsx:TagResource | Puesta en marcha | Automatizar 
+| Etiquete valores personalizados para los recursos de FSx para NetApp ONTAP creados por las cargas de trabajo de VMware | fsx:TagResource | Puesta en marcha | Lectura/Escritura 
 
 
-| Cree y valide la plantilla de CloudFormation | Cloudformation:CreateStack | Puesta en marcha | Automatizar 
+| Cree y valide la plantilla de CloudFormation | Cloudformation:CreateStack | Puesta en marcha | Lectura/Escritura 
 
 
-| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateSecurityGroup | Puesta en marcha | Automatizar 
+| Gestionar etiquetas y seguridad de red en las instancias creadas | ec2:CreateSecurityGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Automatizar 
+| Inicie las instancias creadas | ec2:RunInstances | Puesta en marcha | Lectura/Escritura 
 
 
-| Obtenga los detalles de las instancias de EC2 | ec2:DescribInstances | Puesta en marcha | Automatizar 
+| Obtenga los detalles de las instancias de EC2 | ec2:DescribInstances | Puesta en marcha | Lectura/Escritura 
 
 
-| Muestre las imágenes durante la creación de la pila durante las operaciones de despliegue y reconstrucción | ec2:DescribeImages | Puesta en marcha | Automatizar 
+| Muestre las imágenes durante la creación de la pila durante las operaciones de despliegue y reconstrucción | ec2:DescribeImages | Puesta en marcha | Lectura/Escritura 
 
 
 | Obtenga los VPC en el entorno seleccionado para completar el formulario de implementación | ec2:DescribeVpcs  a| 
@@ -2069,8 +2116,8 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -2080,15 +2127,15 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtener los grupos de seguridad del entorno seleccionado para completar el formulario de implementación | ec2:DescribeSecurityGroups | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
@@ -2098,58 +2145,58 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 * Inventario
 
  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtén las regiones con soporte de Amazon FSx para NetApp ONTAP | ec2:regiones describidas | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtener alias de claves KMS para utilizar para el cifrado de Amazon FSx para NetApp ONTAP | Kms:ListAliases | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtenga las claves KMS para utilizar para el cifrado de Amazon FSx para NetApp ONTAP | Km:ListKeys | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | Obtener detalles de caducidad de claves KMS que se utilizarán para el cifrado de Amazon FSx para NetApp ONTAP | Km:DescripbeKey | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
 | La consulta basada en SSM se utiliza para obtener la lista actualizada de regiones soportadas por Amazon FSx para NetApp ONTAP | ssm:GetParametersByPath | Puesta en marcha  a| 
-* Lea
-* Automatizar
+* Solo lectura
+* Lectura/Escritura
 
 
 
 
-.3+| Cree los recursos de Amazon FSx para NetApp ONTAP necesarios para el aprovisionamiento | fsx:CreateFileSystem | Puesta en marcha | Automatizar 
+.3+| Cree los recursos de Amazon FSx para NetApp ONTAP necesarios para el aprovisionamiento | fsx:CreateFileSystem | Puesta en marcha | Lectura/Escritura 
 
 
-| fsx:CreateStorageVirtualMachine | Puesta en marcha | Automatizar 
+| fsx:CreateStorageVirtualMachine | Puesta en marcha | Lectura/Escritura 
 
 
 | fsx:CreateVolume  a| 
 * Puesta en marcha
 * Operaciones de gestión
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 .2+| Obtén los detalles de Amazon FSx para NetApp ONTAP | fsx:describe*  a| 
@@ -2158,42 +2205,42 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 * Operaciones de gestión
 * Explora el ahorro
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | fsx:List*  a| 
 * Puesta en marcha
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-.5+| Obtenga los detalles clave de KMS y utilícelos para el cifrado de Amazon FSx para NetApp ONTAP | Kms:CreateGrant | Puesta en marcha | Automatizar 
+.5+| Obtenga los detalles clave de KMS y utilícelos para el cifrado de Amazon FSx para NetApp ONTAP | Kms:CreateGrant | Puesta en marcha | Lectura/Escritura 
 
 
-| Kms:describir* | Puesta en marcha | Automatizar 
+| Kms:describir* | Puesta en marcha | Lectura/Escritura 
 
 
-| Kms:Lista* | Puesta en marcha | Automatizar 
+| Kms:Lista* | Puesta en marcha | Lectura/Escritura 
 
 
-| Km:descifrar | Puesta en marcha | Automatizar 
+| Km:descifrar | Puesta en marcha | Lectura/Escritura 
 
 
-| Km:GenerateDataKey | Puesta en marcha | Automatizar 
+| Km:GenerateDataKey | Puesta en marcha | Lectura/Escritura 
 
 
-| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMVMC, así como en el SNS del cliente, si se selecciona | sns: Publicar | Puesta en marcha | Automatizar 
+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMVMC, así como en el SNS del cliente, si se selecciona | sns: Publicar | Puesta en marcha | Lectura/Escritura 
 
 
 | Se usa para buscar la lista más reciente de regiones de AWS admitidas por Amazon FSx para NetApp ONTAP | ssm:GET*  a| 
 * Puesta en marcha
 * Operaciones de gestión
 
-| Automatizar 
+| Lectura/Escritura 
 
 
-| Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Automatizar 
+| Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Lectura/Escritura 
 
 
 .4+| El almacén de parámetros de SSM se utiliza para guardar las credenciales de Amazon FSx para NetApp ONTAP | ssm:getParameter  a| 
@@ -2201,28 +2248,28 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 * Operaciones de gestión
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm: PutParameters  a| 
 * Puesta en marcha
 * Inventario
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm: Parámetro de PutParameter  a| 
 * Puesta en marcha
 * Operaciones de gestión
 
-| Automatizar 
+| Lectura/Escritura 
 
 
 | ssm:DeleteParameters  a| 
 * Puesta en marcha
 * Operaciones de gestión
 
-| Automatizar 
+| Lectura/Escritura 
 |===
 ====
 
@@ -2233,9 +2280,17 @@ A medida que se añadan y eliminen permisos, los anotaremos en las secciones sig
 
 
 
+=== 4 de mayo de 2025
+
+El siguiente permiso ahora está disponible en el modo _Read/Write_ para GenAI: `qbusiness:ListApplications`.
+
+El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de datos `logs:GetLogEvents`: .
+
+
+
 === 2 de abril de 2025
 
-El siguiente permiso ahora está disponible en _READ MODE_ para bases de datos `ssm:DescribeInstanceInformation`: .
+El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de datos `ssm:DescribeInstanceInformation`: .
 
 
 
@@ -2245,7 +2300,7 @@ El siguiente permiso ahora está disponible en _READ MODE_ para bases de datos `
 
 ==== Actualización de permisos de carga de trabajo de GenAI
 
-Los siguientes permisos ahora están disponibles en _Automate mode_ para GenAI:
+Los siguientes permisos ahora están disponibles en _Modo de lectura/escritura_ para GenAI:
 
 * `bedrock:PutModelInvocationLoggingConfiguration`
 * `iam:AttachRolePolicy`
@@ -2254,7 +2309,7 @@ Los siguientes permisos ahora están disponibles en _Automate mode_ para GenAI:
 * `bedrock:ListInferenceProfiles`
 
 
-Se ha eliminado el siguiente permiso de _Automate MODE_ para GenAI: `Bedrock:GetFoundationModel`.
+Se ha eliminado el siguiente permiso de _Modo de lectura/escritura_ para GenAI: `Bedrock:GetFoundationModel`.
 
 
 
@@ -2266,10 +2321,10 @@ El `iam:SimulatePrincipalPolicy` permiso forma parte de todas las políticas de 
 
 === 2 de marzo de 2025
 
-El siguiente permiso ahora está disponible en el modo _Automate_ para GenAI: `bedrock:GetFoundationModel`.
+El siguiente permiso ahora está disponible en el modo _Read/Write_ para GenAI: `bedrock:GetFoundationModel`.
 
 
 
 === 3 de febrero de 2025
 
-El siguiente permiso ahora está disponible en el modo _READ_ para bases de datos `iam:SimulatePrincipalPolicy`: .
+El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de datos `iam:SimulatePrincipalPolicy`: .

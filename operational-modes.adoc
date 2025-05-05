@@ -20,8 +20,8 @@ La fábrica de cargas de trabajo proporciona tres modos operativos que le permit
 Los modos operativos proporcionan una organización lógica de la funcionalidad y las capacidades ofrecidas por la fábrica de cargas de trabajo, en relación con el nivel de confianza que se asigna. El objetivo principal en los modos operativos es comunicar claramente qué tareas de fábrica de carga de trabajo puede o no puede realizar dentro de su cuenta de AWS.
 
 Modo básico:: Representa una relación de confianza cero en la que no se asignan permisos de AWS a la fábrica de cargas de trabajo. Se ha diseñado para la exploración temprana de la fábrica de cargas de trabajo y el uso de los distintos asistentes para crear la infraestructura como código (IAC) necesaria. Puede copiar el código y usarlo en AWS introduciendo sus credenciales de AWS manualmente.
-Modo de lectura:: Mejora la experiencia del modo básico al agregar permisos de solo lectura para que las plantillas de IAC se llenen con sus variables específicas (por ejemplo, VPC, grupos de seguridad, etc.). Esto le permite ejecutar el IAC directamente desde su cuenta de AWS sin proporcionar ningún permiso de modificación a la fábrica de cargas de trabajo.
-Modo de automatización:: Representa una relación de confianza completa para que la fábrica de carga de trabajo se asigne con permisos completos. Esto permite que la fábrica de cargas de trabajo ejecute y automatice operaciones en AWS en su nombre junto con las credenciales asignadas que tienen los permisos necesarios para su ejecución.
+Modo de solo lectura:: Mejora la experiencia del modo básico al agregar permisos de solo lectura para que las plantillas de IAC se llenen con sus variables específicas (por ejemplo, VPC, grupos de seguridad, etc.). Esto le permite ejecutar el IAC directamente desde su cuenta de AWS sin proporcionar ningún permiso de modificación a la fábrica de cargas de trabajo.
+Modo de lectura/escritura:: Representa una relación de confianza completa para que la fábrica de carga de trabajo se asigne con permisos completos. Esto permite que la fábrica de cargas de trabajo ejecute y automatice operaciones en AWS en su nombre junto con las credenciales asignadas que tienen los permisos necesarios para su ejecución.
 
 
 Más información sobre link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Permisos para la fábrica de cargas de trabajo de BlueXP "].
@@ -40,10 +40,10 @@ Las características disponibles usando cada uno de los modos crecen con cada mo
 | Básico | No | Plantilla IAC mínimamente completa | No | No 
 
 
-| Lea | No | Plantilla IAC moderadamente completa | Sí | Sí 
+| Solo lectura | No | Plantilla IAC moderadamente completa | Sí | Sí 
 
 
-| Automatizar | Automatización completa | Plantilla IAC completa con automatización completa | Sí | Sí 
+| Lectura/Escritura | Automatización completa | Plantilla IAC completa con automatización completa | Sí | Sí 
 |===
 
 
@@ -59,10 +59,10 @@ No hay ningún selector que necesite definir en la fábrica de cargas de trabajo
 | Básico | No es obligatorio | No es obligatorio 
 
 
-| Lea | Solo lectura | No es obligatorio 
+| Solo lectura | Solo lectura | No es obligatorio 
 
 
-| Automatizar | Credenciales de lectura y escritura | Obligatorio 
+| Lectura/Escritura | Credenciales de lectura y escritura | Obligatorio 
 |===
 https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Obtenga más información sobre los enlaces"^]
 
@@ -70,7 +70,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Obtenga m�
 
 === Ejemplos de modo operativo
 
-Puede configurar sus credenciales para proporcionar un modo para un componente de carga de trabajo y otro modo para otro componente. Por ejemplo, puedes configurar el modo de automatización para las operaciones en las que estés implementando y gestionando los sistemas de archivos FSx para ONTAP, pero solo puedes configurar el modo de lectura para crear y desplegar cargas de trabajo de base de datos mediante la fábrica de cargas de trabajo.
+Puede configurar sus credenciales para proporcionar un modo para un componente de carga de trabajo y otro modo para otro componente. Por ejemplo, puede configurar el modo de lectura/escritura para las operaciones en las que está implementando y gestionando los sistemas de archivos FSx para ONTAP, pero solo puede configurar el modo de lectura para crear e implementar cargas de trabajo de bases de datos mediante la fábrica de cargas de trabajo.
 
 Puede proporcionar estas funcionalidades en un único conjunto de credenciales en una cuenta de fábrica de cargas de trabajo, o puede crear varios conjuntos de credenciales cuando cada credencial proporciona capacidades de despliegue de cargas de trabajo únicas.
 
@@ -78,11 +78,11 @@ Puede proporcionar estas funcionalidades en un único conjunto de credenciales e
 
 ==== Ejemplo 1
 
-Los usuarios de las cuentas que utilicen las credenciales a las que se les han otorgado los siguientes permisos tendrán control total (modo de automatización) para crear sistemas de archivos FSx para ONTAP, implementar bases de datos y ver otros tipos de almacenamiento AWS utilizados en la cuenta.
+Los usuarios de las cuentas que utilicen las credenciales a las que se les han otorgado los siguientes permisos tendrán un control total (modo de lectura/escritura) para crear sistemas de archivos FSx para ONTAP, implementar bases de datos y ver otros tipos de almacenamiento de AWS utilizados en la cuenta.
 
 image:screenshot-credentials1.png["Una captura de pantalla que muestra un juego de credenciales que proporcionan dos tipos de permisos de carga de trabajo."]
 
-Sin embargo, no dispondrán de controles de automatización para crear e implementar cargas de trabajo de VMware (modo básico) desde la fábrica de cargas de trabajo. Si quieren crear cargas de trabajo de VMware, tendrán que copiar el código del CodeBox, iniciar sesión en su cuenta de AWS manualmente y rellenar manualmente las entradas que faltan en el código generado para usar esta funcionalidad.
+Sin embargo, no dispondrán de controles de automatización para crear e implementar cargas de trabajo de VMware (modo básico) en la fábrica de cargas de trabajo. Si quieren crear cargas de trabajo de VMware, tendrán que copiar el código del CodeBox, iniciar sesión en su cuenta de AWS manualmente y rellenar manualmente las entradas que faltan en el código generado para usar esta funcionalidad.
 
 
 
