@@ -1356,7 +1356,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 | Solo lectura 
 
 
-| Permite que la fábrica de cargas de trabajo defina una política de retención de un día para los grupos de registros creados por la fábrica de cargas de trabajo para evitar la acumulación innecesaria de flujos de registro para las salidas de comandos SSM | Logs:PutRetentionPolicy  a| 
+| Permitir que la fábrica de cargas de trabajo defina una política de retención de un día para los grupos de logs creados por la fábrica de cargas de trabajo para evitar la acumulación innecesaria de flujos de log para las salidas de comandos SSM | Logs:PutRetentionPolicy  a| 
 * Evaluación del almacenamiento (optimización)
 * Inventario
 
