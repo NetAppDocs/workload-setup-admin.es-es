@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: operational-modes.html 
-keywords: modes, zero-trust, full-trust, read, basic, automate, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials 
-summary: La fábrica de cargas de trabajo proporciona tres modos operativos que le permiten controlar cuidadosamente el acceso entre la fábrica de cargas de trabajo y el estado de la nube en función de sus políticas DE TI. El modo operativo que utiliza está determinado por el nivel de permisos de AWS que proporciona a la fábrica de cargas de trabajo. 
+keywords: modes, zero-trust, full-trust, read-only, basic, read/write, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials 
+summary: La fábrica de cargas de trabajo proporciona tres modos operativos que le permiten controlar cuidadosamente el acceso entre la fábrica de cargas de trabajo y el estado de la nube en función de sus políticas DE TI. 
 ---
 = Obtenga más información sobre los modos operativos y las credenciales de AWS
 :allow-uri-read: 
@@ -70,7 +70,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Obtenga m�
 
 === Ejemplos de modo operativo
 
-Puede configurar sus credenciales para proporcionar un modo para un componente de carga de trabajo y otro modo para otro componente. Por ejemplo, puede configurar el modo de lectura/escritura para las operaciones en las que está implementando y gestionando los sistemas de archivos FSx para ONTAP, pero solo puede configurar el modo de lectura para crear e implementar cargas de trabajo de bases de datos mediante la fábrica de cargas de trabajo.
+Puede configurar sus credenciales para proporcionar un modo para un componente de carga de trabajo y otro modo para otro componente. Por ejemplo, puede configurar el modo de lectura/escritura para operaciones en las que implementa y administra sistemas de archivos FSx para ONTAP, pero solo configurar el modo de solo lectura para crear e implementar cargas de trabajo de base de datos mediante la fábrica de cargas de trabajo.
 
 Puede proporcionar estas funcionalidades en un único conjunto de credenciales en una cuenta de fábrica de cargas de trabajo, o puede crear varios conjuntos de credenciales cuando cada credencial proporciona capacidades de despliegue de cargas de trabajo únicas.
 
@@ -78,7 +78,7 @@ Puede proporcionar estas funcionalidades en un único conjunto de credenciales e
 
 ==== Ejemplo 1
 
-Los usuarios de las cuentas que utilicen las credenciales a las que se les han otorgado los siguientes permisos tendrán un control total (modo de lectura/escritura) para crear sistemas de archivos FSx para ONTAP, implementar bases de datos y ver otros tipos de almacenamiento de AWS utilizados en la cuenta.
+Los usuarios de la cuenta que usan las credenciales a las que se les han otorgado los siguientes permisos tendrán control total (modo de lectura/escritura) para crear sistemas de archivos FSx para ONTAP, implementar bases de datos y ver otros tipos de almacenamiento de AWS utilizados en la cuenta.
 
 image:screenshot-credentials1.png["Una captura de pantalla que muestra un juego de credenciales que proporcionan dos tipos de permisos de carga de trabajo."]
 
@@ -90,7 +90,7 @@ Sin embargo, no dispondrán de controles de automatización para crear e impleme
 
 Aquí el usuario ha creado dos juegos de credenciales para permitir diferentes capacidades operativas dependiendo del juego de credenciales seleccionado. Normalmente, cada conjunto de credenciales se empareja con una cuenta de AWS diferente.
 
-El primer conjunto de credenciales incluye permisos que ofrecen a los usuarios un control total para crear sistemas de archivos FSx para ONTAP (y la capacidad de ver otros tipos de almacenamiento AWS utilizados en la cuenta), pero solo permisos de lectura cuando se trabaja con cargas de trabajo de VMware.
+El primer conjunto de credenciales incluye permisos que brindan a los usuarios control total para crear sistemas de archivos FSx para ONTAP (y la capacidad de ver otros tipos de almacenamiento de AWS utilizados en la cuenta), pero solo permisos de solo lectura cuando trabajan con cargas de trabajo de VMware.
 
 image:screenshot-credentials-comparison-example-1.png["Una captura de pantalla que muestra un juego de credenciales que proporcionan dos tipos de permisos de carga de trabajo."]
 

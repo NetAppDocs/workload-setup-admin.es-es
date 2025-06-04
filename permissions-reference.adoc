@@ -20,7 +20,7 @@ Para utilizar las funciones y los servicios de fábrica de cargas de trabajo de 
 
 == Por qué usar permisos
 
-Al proporcionar permisos de modo de solo lectura o lectura/escritura, la fábrica de cargas de trabajo asocia una política a la instancia con permisos para gestionar los recursos y procesos dentro de esa cuenta de AWS. Esto permite que la fábrica de cargas de trabajo ejecute diversas operaciones a partir de la detección de entornos de almacenamiento hasta implementar recursos de AWS, como sistemas de archivos en administración de almacenamiento o bases de conocimientos para cargas de trabajo GenAI.
+Cuando proporciona permisos de modo _solo lectura_ o _lectura/escritura_, la fábrica de carga de trabajo adjunta una política a la instancia con permisos para administrar recursos y procesos dentro de esa cuenta de AWS. Esto permite que la fábrica de cargas de trabajo ejecute diversas operaciones a partir de la detección de entornos de almacenamiento hasta implementar recursos de AWS, como sistemas de archivos en administración de almacenamiento o bases de conocimientos para cargas de trabajo GenAI.
 
 Para las cargas de trabajo de base de datos, por ejemplo, cuando se otorga la fábrica de carga de trabajo con los permisos necesarios, analiza todas las instancias EC2 de una cuenta y región determinadas y filtra todas las máquinas basadas en Windows. Si el agente de AWS Systems Manager (SSM) está instalado y ejecutándose en el host y la red de System Manager está configurada correctamente, la fábrica de cargas de trabajo puede acceder a la máquina Windows y verificar si el software de SQL Server está instalado o no.
 
@@ -1512,7 +1512,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 Las políticas de IAM para cargas de trabajo de VMware proporcionan los permisos que la fábrica de cargas de trabajo para VMware necesita para gestionar recursos y procesos dentro de tu entorno de nube pública en función del modo operativo en el que operes.
 
-Las políticas IAM de GenAI sólo están disponibles en el modo de lectura/escritura:
+Las políticas de IAM de GenAI solo están disponibles en modo de lectura/escritura:
 
 .Políticas de IAM para las cargas de trabajo de GenAI
 [%collapsible]
@@ -2327,14 +2327,14 @@ Los siguientes permisos ahora están disponibles en el modo _Read-Only_ para bas
 * `logs:DescribeLogGroups`
 
 
-El siguiente permiso ahora está disponible en el modo _Read/Write_ para bases de datos
-`logs:PutRetentionPolicy`: .
+El siguiente permiso ahora está disponible en modo _lectura/escritura_ para bases de datos: 
+`logs:PutRetentionPolicy` .
 
 
 
 === 2 de abril de 2025
 
-El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de datos `ssm:DescribeInstanceInformation`: .
+El siguiente permiso ahora está disponible en modo de solo lectura para bases de datos:  `ssm:DescribeInstanceInformation` .
 
 
 
@@ -2344,7 +2344,7 @@ El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de
 
 ==== Actualización de permisos de carga de trabajo de GenAI
 
-Los siguientes permisos ahora están disponibles en _Modo de lectura/escritura_ para GenAI:
+Los siguientes permisos ahora están disponibles en _modo lectura/escritura_ para GenAI:
 
 * `bedrock:PutModelInvocationLoggingConfiguration`
 * `iam:AttachRolePolicy`
@@ -2353,7 +2353,7 @@ Los siguientes permisos ahora están disponibles en _Modo de lectura/escritura_ 
 * `bedrock:ListInferenceProfiles`
 
 
-Se ha eliminado el siguiente permiso de _Modo de lectura/escritura_ para GenAI: `Bedrock:GetFoundationModel`.
+Se ha eliminado el siguiente permiso del _modo lectura/escritura_ para GenAI:  `Bedrock:GetFoundationModel` .
 
 
 
@@ -2365,10 +2365,10 @@ El `iam:SimulatePrincipalPolicy` permiso forma parte de todas las políticas de 
 
 === 2 de marzo de 2025
 
-El siguiente permiso ahora está disponible en el modo _Read/Write_ para GenAI: `bedrock:GetFoundationModel`.
+El siguiente permiso ahora está disponible en modo _lectura/escritura_ para GenAI:  `bedrock:GetFoundationModel` .
 
 
 
 === 3 de febrero de 2025
 
-El siguiente permiso ahora está disponible en el modo _Read-Only_ para bases de datos `iam:SimulatePrincipalPolicy`: .
+El siguiente permiso ahora está disponible en modo de solo lectura para bases de datos:  `iam:SimulatePrincipalPolicy` .

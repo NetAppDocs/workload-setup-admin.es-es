@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: codebox-automation.html 
 keywords: codebox, automation 
-summary: 'CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por la fábrica de carga de trabajo. CodeBox está alineado con los modos de operación de fábrica de carga de trabajo (Basic, Read, Automate) y establece una ruta clara para la preparación de ejecución, además de proporcionar un catálogo de automatización para una reutilización rápida en el futuro.' 
+summary: 'CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por la fábrica de carga de trabajo.' 
 ---
 = Obtenga más información sobre la automatización de codebox
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda
 
 
 [role="lead"]
-CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por la fábrica de carga de trabajo. CodeBox está alineado con los modos de operación de fábrica de carga de trabajo (Básico, de solo lectura y de lectura/escritura) y establece una ruta clara para la preparación de ejecución, además de proporcionar un catálogo de automatización para una reutilización rápida en el futuro.
+CodeBox es un copiloto de Infraestructura como Código (IAC) que ayuda a los desarrolladores y DevOps a generar el código necesario para ejecutar cualquier operación soportada por la fábrica de carga de trabajo. Codebox está alineado con los modos de operación de la fábrica de carga de trabajo (_básico_, _solo lectura_ y _lectura/escritura_) y establece una ruta clara para la preparación de la ejecución, además de proporcionar un catálogo de automatización para una rápida reutilización futura.
 
 
 
@@ -23,7 +23,7 @@ CodeBox ofrece dos funciones clave de IAC:
 * _CodeBox Automation Catalog_ muestra todos los trabajos IAC guardados, lo que le permite hacer referencia fácilmente a ellos para su uso futuro. Los trabajos del catálogo de automatización se guardan como plantillas y se muestran en el contexto de los recursos que se les aplican.
 
 
-Además, al configurar las credenciales de fábrica de carga de trabajo, CodeBox muestra dinámicamente los permisos de AWS necesarios para crear políticas de IAM. Se proporcionan permisos para cada funcionalidad de fábrica de cargas de trabajo que haya pensado utilizar (bases de datos, IA, FSx para ONTAP, etc.), y se personalizan en función de si los usuarios de la política obtendrán permisos de solo lectura o permisos de lectura/escritura completos. Solo tiene que copiar los permisos de CodeBox y luego pegarlos en la consola de administración de AWS para que la fábrica de cargas de trabajo tenga los permisos correctos para administrar sus cargas de trabajo.
+Además, al configurar las credenciales de fábrica de carga de trabajo, CodeBox muestra dinámicamente los permisos de AWS necesarios para crear políticas de IAM. Los permisos se proporcionan para cada capacidad de fábrica de carga de trabajo que planea utilizar (bases de datos, IA, FSx para ONTAP, etc.) y se personalizan en función de si los usuarios de la política obtendrán permisos de _solo lectura_ o permisos completos de _lectura/escritura_. Solo tiene que copiar los permisos de CodeBox y luego pegarlos en la consola de administración de AWS para que la fábrica de cargas de trabajo tenga los permisos correctos para administrar sus cargas de trabajo.
 
 
 
