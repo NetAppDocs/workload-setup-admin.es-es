@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: configure-notifications.html 
+keywords: amazon, sns, notification, topic, notifications, notifications service, alerts 
+summary: Puede configurar la fábrica de carga de trabajo de BlueXP para enviar notificaciones a una persona u otra aplicación cuando ocurren determinados tipos de eventos. 
+---
+= Configurar las notificaciones de fábrica de la carga de trabajo de BlueXP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede configurar el servicio de notificaciones de la fábrica de cargas de trabajo de BlueXP para que envíe notificaciones al servicio de alertas de BlueXP o a un tema de Amazon SNS. Las notificaciones enviadas a las alertas de BlueXP aparecen en el panel de alertas de BlueXP. Cuando la fábrica de cargas de trabajo publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como usuarios u otras aplicaciones) reciben las notificaciones en los endpoints configurados para el tema (como correos electrónicos o mensajes SMS).
+
+
+
+== Tipos de notificaciones y mensajes
+
+La fábrica de carga de trabajo envía notificaciones para los siguientes eventos:
+
+[cols="6*"]
+|===
+| Evento | Descripción | Tipo de notificación | Gravedad | Carga de trabajo | Tipo de recurso 
+
+
+| Algunas instancias de bases de datos en su cuenta no tienen una buena arquitectura | Se han analizado todas las instancias de Microsoft SQL Server de su cuenta para detectar problemas de buena arquitectura. La descripción de este evento indica el número de instancias con buena arquitectura y las instancias no optimizadas. Revise los hallazgos y recomendaciones sobre el estado de buena arquitectura en el inventario de bases de datos desde la consola de Workload Factory. | Bien diseñado | Recomendación | Oracle | Instancia de Microsoft SQL Server 
+
+
+| Implementación exitosa del servidor Microsoft SQL Server/PostgreSQL | La implementación del host de Microsoft SQL Server o PostgreSQL se realizó correctamente. Para más información, consulte la sección de supervisión de trabajos. | Puesta en marcha | Correcto | Oracle | FSx para ONTAP, host de base de datos 
+
+
+| Error en la implementación del servidor Microsoft SQL Server/PostgreSQL | Se produjo un error en la implementación del host de Microsoft SQL Server o PostgreSQL. Para obtener más información, consulte la sección sobre supervisión de trabajos. | Puesta en marcha | Error | Oracle | FSx para ONTAP, host de base de datos 
+|===
+
+
+== Configurar las notificaciones de fábrica de carga de trabajo
+
+Configure las notificaciones de la fábrica de cargas de trabajo mediante la consola de BlueXP o la consola de la fábrica de cargas de trabajo. Si usa la consola de BlueXP, puede configurar la fábrica de cargas de trabajo para que envíe notificaciones a las alertas de BlueXP o a un tema de Amazon SNS. Puede configurar las alertas de BlueXP desde el área *Configuración de alertas y notificaciones* de BlueXP.
+
+.Antes de empezar
+* Debe configurar Amazon SNS y crear temas de Amazon SNS mediante la consola de Amazon SNS o la AWS CLI.
+* Tenga en cuenta que Workload Factory admite el tipo de tema *Estándar*. Este tipo de tema no garantiza que las notificaciones se envíen a los suscriptores en el orden en que se recibieron, así que considérelo si tiene notificaciones críticas o de emergencia.
+
+
+[role="tabbed-block"]
+====
+.Configurar notificaciones desde la consola de BlueXP
+--
+.Pasos
+. Inicie sesión en el link:https://console.bluexp.netapp.com["Consola BlueXP"^].
+. Seleccione *Workloads* en la navegación de la izquierda.
+. Seleccione *Inicio* para ver todas las cargas de trabajo o seleccione una carga de trabajo como *Almacenamiento* o *Bases de datos*.
+. Desde la barra de menú de la fábrica de carga de trabajo, seleccione el menú de configuración.
+. En el menú, seleccione *Configuración de notificaciones de Workload Factory*.
+. Opcional: seleccione *Habilitar notificaciones de BlueXP* para configurar la fábrica de carga de trabajo para enviar notificaciones a las alertas de BlueXP.
+. Seleccione *Habilitar notificaciones SNS*.
+. Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.
++
+Después de crear el tema, copie el ARN del tema e ingréselo en el campo *ARN del tema SNS* en el cuadro de diálogo *Configuración de notificación*.
+
+. Después de verificar la configuración enviando una notificación de prueba, seleccione *Aplicar*.
+
+
+.Resultado
+La fábrica de carga de trabajo está configurada para enviar notificaciones al tema de Amazon SNS que usted especificó.
+
+--
+.Configurar notificaciones desde la consola de fábrica de carga de trabajo
+--
+.Pasos
+. Inicie sesión en el link:https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^].
+. Abra el menú de la cuenta desde la barra de navegación superior.
+. En el menú, seleccione *Configuración de notificaciones*.
+. Seleccione *Habilitar notificaciones SNS*.
+. Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.
+. Después de verificar la configuración enviando una notificación de prueba, seleccione *Aplicar*.
+
+
+.Resultado
+La fábrica de carga de trabajo está configurada para enviar notificaciones al tema de Amazon SNS que usted especificó.
+
+--
+====
+
+
+== Suscríbete al tema de Amazon SNS
+
+Después de configurar la fábrica de carga de trabajo para enviar notificaciones a un tema, siga las  https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["instrucciones"] en la documentación de Amazon SNS para suscribirse al tema para poder recibir notificaciones de la fábrica de carga de trabajo.
+
+
+
+== Filtrar notificaciones
+
+Puede reducir el tráfico innecesario de notificaciones y dirigirse a tipos específicos de notificaciones para usuarios específicos aplicando filtros a las notificaciones. Puede hacerlo mediante una política de Amazon SNS para notificaciones de SNS y la configuración de notificaciones de BlueXP para notificaciones de BlueXP.
+
+
+
+=== Filtrar notificaciones de Amazon SNS
+
+Al suscribirse a un tema de Amazon SNS, recibirá todas las notificaciones publicadas en ese tema de forma predeterminada. Si desea recibir solo notificaciones específicas del tema, puede usar una política de filtro para controlar qué notificaciones recibe.
+
+Para obtener más información sobre la creación de políticas de filtros, consulte la  https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html["Documentación de Amazon SNS"^] .
+
+Para obtener ejemplos de políticas de filtrado, consulte  https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html["Políticas de filtro de ejemplo de Amazon SNS"^] .
+
+
+
+=== Filtrar notificaciones de BlueXP
+
+Puede utilizar la configuración de alertas y notificaciones de BlueXP para filtrar las alertas y notificaciones que recibe en BlueXP por nivel de gravedad, como Crítico, Información o Advertencia.
+
+Para obtener más información sobre cómo filtrar notificaciones en BlueXP, consulte la  https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#filter-notifications["Documentación de BlueXP"^] .
