@@ -19,6 +19,14 @@ Descubra las novedades de las funciones de administración de la fábrica de car
 
 
 
+=== Actualización de permisos para bases de datos
+
+El siguiente permiso ahora está disponible en modo de solo lectura para bases de datos:  `cloudwatch:GetMetricData` .
+
+https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Log de cambios de referencia de permisos"]
+
+
+
 === Compatibilidad con el servicio de notificación de fábrica de carga de trabajo de BlueXP
 
 El servicio de notificaciones de la fábrica de cargas de trabajo de BlueXP permite que esta envíe notificaciones al servicio de alertas de BlueXP o a un tema de Amazon SNS. Las notificaciones enviadas a las alertas de BlueXP aparecen en el panel de alertas de BlueXP. Cuando la fábrica de cargas de trabajo publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como usuarios u otras aplicaciones) reciben las notificaciones en los endpoints configurados para el tema (como correo electrónico o SMS).

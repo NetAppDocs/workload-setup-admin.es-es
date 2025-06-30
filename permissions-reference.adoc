@@ -364,7 +364,7 @@ La siguiente tabla muestra los permisos para Storage.
 
 === Permisos para cargas de trabajo de bases de datos
 
-Las políticas de IAM disponibles para cargas de trabajo de bases de datos proporcionan los permisos que la fábrica de cargas de trabajo necesita para gestionar los recursos y procesos dentro de su entorno de cloud público según el modo operativo en el que opere.
+Las políticas de IAM disponibles para las cargas de trabajo de bases de datos proporcionan los permisos que la fábrica de cargas de trabajo necesita para administrar recursos y procesos dentro de su entorno de nube pública en función del modo operativo en el que opera.
 
 Seleccione el modo operativo para ver las políticas de IAM necesarias:
 
@@ -385,6 +385,7 @@ Seleccione el modo operativo para ver las políticas de IAM necesarias:
       "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "sns:ListTopics",
         "ec2:DescribeInstances",
         "ec2:DescribeVpcs",
@@ -678,7 +679,7 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 | Específico | Acción | Donde se utiliza | Modo 
 
 
-| Obtenga estadísticas de métricas de FSx para ONTAP, EBS y FSx para el servidor de archivos de Windows | Cloudwatch:GetMetricStatistics  a| 
+| Obtenga estadísticas métricas para FSx para ONTAP, EBS y FSx para Windows File Server y para recomendaciones de optimización de cómputo | Cloudwatch:GetMetricStatistics  a| 
 * Inventario
 * Explora el ahorro
 
@@ -687,6 +688,9 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 * Lectura/Escritura
 
 
+
+
+| Recopile métricas de rendimiento guardadas en Amazon CloudWatch desde nodos SQL registrados. Los datos se generan en gráficos de tendencias de rendimiento en la pantalla de administración de instancias para las instancias SQL registradas. | Cloudwatch:GetMetricData | Inventario | Solo lectura 
 
 
 | Listar y definir disparadores para eventos | sns:ListTopics | Puesta en marcha  a| 
@@ -1209,9 +1213,6 @@ En la siguiente tabla se muestran los permisos para las cargas de trabajo de la 
 
 
 | Cloudformation:ValidateTemplate | Puesta en marcha | Lectura/Escritura 
-
-
-| Recuperar métricas para la recomendación de optimización de cálculo | Cloudwatch:GetMetricStatistics | Explora el ahorro | Lectura/Escritura 
 
 
 | Recuperar directorios disponibles en la región | ds:DescripbeDirectories | Puesta en marcha | Lectura/Escritura 
@@ -2311,17 +2312,23 @@ A medida que se añadan y eliminen permisos, los anotaremos en las secciones sig
 
 
 
+=== 29 de junio de 2025
+
+El siguiente permiso ahora está disponible en modo de solo lectura para bases de datos:  `cloudwatch:GetMetricData` .
+
+
+
 === 3 de junio de 2025
 
-El siguiente permiso ahora está disponible en el modo _Read/Write_ para GenAI: `s3:ListAllMyBuckets`.
+El siguiente permiso ahora está disponible en modo _lectura/escritura_ para GenAI:  `s3:ListAllMyBuckets` .
 
 
 
 === 4 de mayo de 2025
 
-El siguiente permiso ahora está disponible en el modo _Read/Write_ para GenAI: `qbusiness:ListApplications`.
+El siguiente permiso ahora está disponible en modo _lectura/escritura_ para GenAI:  `qbusiness:ListApplications` .
 
-Los siguientes permisos ahora están disponibles en el modo _Read-Only_ para bases de datos:
+Los siguientes permisos ahora están disponibles en modo de solo lectura para bases de datos:
 
 * `logs:GetLogEvents`
 * `logs:DescribeLogGroups`

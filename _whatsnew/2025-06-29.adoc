@@ -1,6 +1,14 @@
-= Compatibilidad con el servicio de notificación de fábrica de carga de trabajo de BlueXP
+= Actualización de permisos para bases de datos
 :allow-uri-read: 
 
+
+
+
+=== Actualización de permisos para bases de datos
+
+El siguiente permiso ahora está disponible en modo de solo lectura para bases de datos:  `cloudwatch:GetMetricData` .
+
+https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Log de cambios de referencia de permisos"]
 
 
 
