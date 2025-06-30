@@ -15,6 +15,18 @@ Descubra las novedades de las funciones de administración de la fábrica de car
 
 
 
+== 29 de junio de 2025
+
+
+
+=== Compatibilidad con el servicio de notificación de fábrica de carga de trabajo de BlueXP
+
+El servicio de notificaciones de la fábrica de cargas de trabajo de BlueXP permite que esta envíe notificaciones al servicio de alertas de BlueXP o a un tema de Amazon SNS. Las notificaciones enviadas a las alertas de BlueXP aparecen en el panel de alertas de BlueXP. Cuando la fábrica de cargas de trabajo publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como usuarios u otras aplicaciones) reciben las notificaciones en los endpoints configurados para el tema (como correo electrónico o SMS).
+
+https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Configurar las notificaciones de fábrica de la carga de trabajo de BlueXP"]
+
+
+
 == 04 de mayo de 2025
 
 
