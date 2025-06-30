@@ -1165,4 +1165,57 @@
   <block id="bf8eef80d28e69579638cd56629c94fb" category="paragraph">El siguiente permiso ahora está disponible en modo _lectura/escritura_ para GenAI: <block ref="e21c94a36c6dbf24001a64bddce9456f" prefix=" " category="inline-code"></block> .</block>
   <block id="b8be7a72d02de0cfb42fb93375981cdb" category="paragraph">El siguiente permiso ahora está disponible en modo _lectura/escritura_ para GenAI: <block ref="4f3c534c90392632c7d275f54d5b35a0" prefix=" " category="inline-code"></block> .</block>
   <block id="bebb3c7ec8a634b68ad1060e27e7dc42" category="paragraph">Los siguientes permisos ahora están disponibles en modo de solo lectura para bases de datos:</block>
+  <block id="2dda35be60147096ab6dcce42dede6b8" category="summary">Puede configurar la fábrica de carga de trabajo de BlueXP para enviar notificaciones a una persona u otra aplicación cuando ocurren determinados tipos de eventos.</block>
+  <block id="72d9710675d7970263ff88acdf0fcb66" category="paragraph">Puede configurar el servicio de notificaciones de la fábrica de cargas de trabajo de BlueXP para que envíe notificaciones al servicio de alertas de BlueXP o a un tema de Amazon SNS. Las notificaciones enviadas a las alertas de BlueXP aparecen en el panel de alertas de BlueXP. Cuando la fábrica de cargas de trabajo publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como usuarios u otras aplicaciones) reciben las notificaciones en los endpoints configurados para el tema (como correos electrónicos o mensajes SMS).</block>
+  <block id="0a7323d1562ccdc63a56a3101b1dfc69" category="section-title">Tipos de notificaciones y mensajes</block>
+  <block id="5a7513075d19cc4be93d3cf73f88603e" category="paragraph">La fábrica de carga de trabajo envía notificaciones para los siguientes eventos:</block>
+  <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">Evento</block>
+  <block id="9e89e978c220a2a733d027866cb12907" category="cell">Tipo de notificación</block>
+  <block id="007cc9547ae8884ad597cd92ba505422" category="cell">Gravedad</block>
+  <block id="68eaabb91b0d1c52be44217a24f27b91" category="cell">Carga de trabajo</block>
+  <block id="53a002434dc37d0a5f8e2aac58da6296" category="cell">Tipo de recurso</block>
+  <block id="05c77d02041a1213dcefbe713f2f79fc" category="cell">Algunas instancias de bases de datos en su cuenta no tienen una buena arquitectura</block>
+  <block id="11091ad57516013f76674cb4ef3a9a6a" category="cell">Se han analizado todas las instancias de Microsoft SQL Server de su cuenta para detectar problemas de buena arquitectura. La descripción de este evento indica el número de instancias con buena arquitectura y las instancias no optimizadas. Revise los hallazgos y recomendaciones sobre el estado de buena arquitectura en el inventario de bases de datos desde la consola de Workload Factory.</block>
+  <block id="64096d5dd63fb80716eda8d7d149213d" category="cell">Bien diseñado</block>
+  <block id="c76e3867213cff8946148c6510af0736" category="cell">Recomendación</block>
+  <block id="ea2ef9b0d095bf991f4973633b485340" category="cell">Oracle</block>
+  <block id="49e4c802abd20d6ed77d1f0421411716" category="cell">Instancia de Microsoft SQL Server</block>
+  <block id="434aae113a8df34dcafb760acae04817" category="cell">Implementación exitosa del servidor Microsoft SQL Server/PostgreSQL</block>
+  <block id="9f65a8622771b19d6c80a1fea621d39f" category="cell">La implementación del host de Microsoft SQL Server o PostgreSQL se realizó correctamente. Para obtener más información, consulte la sección sobre supervisión de trabajos.</block>
+  <block id="505a83f220c02df2f85c3810cd9ceb38" category="cell">Correcto</block>
+  <block id="a2e86ce39492ca1b92893ce168dc6fbb" category="cell">FSx para ONTAP, host de base de datos</block>
+  <block id="1ec0c15b651e4cd44325912e997a204c" category="cell">Error en la implementación del servidor Microsoft SQL Server/PostgreSQL</block>
+  <block id="3a966eb1052bbc81baf1db313011eddf" category="cell">Se produjo un error en la implementación del host de Microsoft SQL Server o PostgreSQL. Para obtener más información, consulte la sección sobre supervisión de trabajos.</block>
+  <block id="902b0d55fddef6f8d651fe1035b7d4bd" category="cell">Error</block>
+  <block id="237aaa83425818925b08506a76908e10" category="section-title">Configurar las notificaciones de fábrica de carga de trabajo</block>
+  <block id="cd052ec21a26111d70b96d3c1780fed2" category="paragraph">Configure las notificaciones de la fábrica de cargas de trabajo mediante la consola de BlueXP o la consola de la fábrica de cargas de trabajo. Si usa la consola de BlueXP, puede configurar la fábrica de cargas de trabajo para que envíe notificaciones a las alertas de BlueXP o a un tema de Amazon SNS. Puede configurar las alertas de BlueXP desde el área *Configuración de alertas y notificaciones* de BlueXP.</block>
+  <block id="9ccebe6954a81c5c1f9a57ddc658596a" category="list-text">Debe configurar Amazon SNS y crear temas de Amazon SNS mediante la consola de Amazon SNS o la AWS CLI.</block>
+  <block id="b5dff08e1a7f13984de22b0326ba3d57" category="list-text">Tenga en cuenta que Workload Factory admite el tipo de tema *Estándar*. Este tipo de tema no garantiza que las notificaciones se envíen a los suscriptores en el orden en que se recibieron, así que considérelo si tiene notificaciones críticas o de emergencia.</block>
+  <block id="5d146607ad7e1a4c8178f137a935e71b" category="open-title">Configurar notificaciones desde la consola de BlueXP</block>
+  <block id="7330391de12fa6f64dbbe05f2bf2943a" category="list-text">Desde la barra de menú de la fábrica de carga de trabajo, seleccione el menú de configuración.</block>
+  <block id="ebb0c20a2883844bf338eec0442bd3d9" category="list-text">En el menú, seleccione *Configuración de notificaciones de Workload Factory*.</block>
+  <block id="c1f26547e61b3cf682eb671f8d31e7ea" category="list-text">Opcional: seleccione *Habilitar notificaciones de BlueXP* para configurar la fábrica de carga de trabajo para enviar notificaciones a las alertas de BlueXP.</block>
+  <block id="9bc635b321d7a10ffec6283dfaa84aa0" category="list-text">Seleccione *Habilitar notificaciones SNS*.</block>
+  <block id="677c7dc689b0afdcb0633b635edd3a87" category="list-text">Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.</block>
+  <block id="5fda11ac3857aaeb1a1a9e3bb6aedef5" category="paragraph">Después de crear el tema, copie el ARN del tema e ingréselo en el campo *ARN del tema SNS* en el cuadro de diálogo *Configuración de notificación*.</block>
+  <block id="2339afaee28d73e91f81e490b67a4b5c" category="list-text">Después de verificar la configuración enviando una notificación de prueba, seleccione *Aplicar*.</block>
+  <block id="a596c719a1239c601cd009ed03cda388" category="paragraph">La fábrica de carga de trabajo está configurada para enviar notificaciones al tema de Amazon SNS que usted especificó.</block>
+  <block id="99405553b799dda5850e27264cbad120" category="open-title">Configurar notificaciones desde la consola de fábrica de carga de trabajo</block>
+  <block id="bbb5c9d7fd1535e42e50af70cae99495" category="list-text">Abra el menú de la cuenta desde la barra de navegación superior.</block>
+  <block id="5bbc9d3e1cf8f1e46acf248093877f06" category="list-text">En el menú, seleccione *Configuración de notificaciones*.</block>
+  <block id="5e5392f4dcdf5502f0937be76da274d0" category="section-title">Suscríbete al tema de Amazon SNS</block>
+  <block id="cbde2df6a7c89370edc449dc5705d30c" category="inline-link">instrucciones</block>
+  <block id="f796ddcb3cbbbd6b219cbc54c800ab86" category="paragraph">Después de configurar la fábrica de carga de trabajo para enviar notificaciones a un tema, siga las <block ref="88c7b6108316e02c36e39863bedc2019" category="inline-link-rx"></block> en la documentación de Amazon SNS para suscribirse al tema para poder recibir notificaciones de la fábrica de carga de trabajo.</block>
+  <block id="e457faf451b04c78c6b2c6bc25491ad1" category="section-title">Filtrar notificaciones</block>
+  <block id="3180a00483bf6ffa5db8c6178c4eb67a" category="paragraph">Puede reducir el tráfico innecesario de notificaciones y dirigirse a tipos específicos de notificaciones para usuarios específicos aplicando filtros a las notificaciones. Puede hacerlo mediante una política de Amazon SNS para notificaciones de SNS y la configuración de notificaciones de BlueXP para notificaciones de BlueXP.</block>
+  <block id="4ccc3070ee3f76f6afb040d5f99b3bdd" category="section-title">Filtrar notificaciones de Amazon SNS</block>
+  <block id="103130451f8943db9cb57de31a66dc79" category="paragraph">Al suscribirse a un tema de Amazon SNS, recibirá todas las notificaciones publicadas en ese tema de forma predeterminada. Si desea recibir solo notificaciones específicas del tema, puede usar una política de filtro para controlar qué notificaciones recibe.</block>
+  <block id="3f6971d458153040675cf8e95795f3b0" category="inline-link">Documentación de Amazon SNS</block>
+  <block id="c7fbd94f814dfe1f2c13e1ea015a39d7" category="paragraph">Para obtener más información sobre la creación de políticas de filtros, consulte la <block ref="c589c7fc86bb393dc58d099c6c8ea47e" category="inline-link-rx"></block> .</block>
+  <block id="aacb2329b4899fc1a4b8f0f2f67b0398" category="inline-link">Políticas de filtro de ejemplo de Amazon SNS</block>
+  <block id="0ef8ad02e6dcecafa6e5e696fe553279" category="paragraph">Para obtener ejemplos de políticas de filtrado, consulte <block ref="7c3f3bfbc0dabec1aca15cb9aeb0e326" category="inline-link-rx"></block> .</block>
+  <block id="92bb95ca7ce65dc7bedcbf84528f75fd" category="section-title">Filtrar notificaciones de BlueXP</block>
+  <block id="ac6e44b462d88f56828f381faa7907ca" category="paragraph">Puede utilizar la configuración de alertas y notificaciones de BlueXP para filtrar las alertas y notificaciones que recibe en BlueXP por nivel de gravedad, como Crítico, Información o Advertencia.</block>
+  <block id="eeb8e055593f1709925a03e2ebb13265" category="inline-link">Documentación de BlueXP</block>
+  <block id="7572b4e37ed025014a17bc1ae86c60a9" category="paragraph">Para obtener más información sobre cómo filtrar notificaciones en BlueXP, consulte la <block ref="f8c744992c7f60894906e0753601fc52" category="inline-link-rx"></block> .</block>
 </blocks>
