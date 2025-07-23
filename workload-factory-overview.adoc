@@ -39,6 +39,14 @@ La fábrica de cargas de trabajo le permite gestionar el almacenamiento en cloud
 
 
 
+== Seguridad
+
+La seguridad de la BlueXP workload factory es una prioridad absoluta para NetApp. Todas las cargas de trabajo de la fábrica se ejecutan en Amazon FSx for NetApp ONTAP. Además de todo... link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["Funciones de seguridad de AWS"^] La BlueXP workload factory ha recibido link:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058["Cumplimiento de SOC2 Tipo 1"^] .
+
+La fábrica de carga de trabajo Amazon FSx for NetApp ONTAP para BlueXP workload factory es una link:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/["Solución de AWS para implementar aplicaciones empresariales"^] que fue creado teniendo en mente las mejores prácticas bien diseñadas.
+
+
+
 == Coste
 
 La fábrica de carga de trabajo es libre de usar. El coste que paga a Amazon Web Services (AWS) depende de los servicios de almacenamiento y carga de trabajo que tenga pensado poner en marcha. Esto incluye el coste de los sistemas de archivos de Amazon FSx para NetApp ONTAP, la infraestructura de VMware Cloud en AWS, los servicios de AWS y mucho más.
