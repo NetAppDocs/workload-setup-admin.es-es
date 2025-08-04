@@ -98,11 +98,79 @@ Puede reducir el tráfico innecesario de notificaciones y dirigirse a tipos espe
 
 === Filtrar notificaciones de Amazon SNS
 
-Al suscribirse a un tema de Amazon SNS, recibirá todas las notificaciones publicadas en ese tema de forma predeterminada. Si desea recibir solo notificaciones específicas del tema, puede usar una política de filtro para controlar qué notificaciones recibe.
+Cuando te suscribes a un tema de Amazon SNS, recibes todas las notificaciones publicadas en ese tema de forma predeterminada.  Si desea recibir solo notificaciones específicas del tema, puede utilizar una política de filtro para controlar qué notificaciones recibe.  Las políticas de filtro hacen que Amazon SNS envíe únicamente las notificaciones que coinciden con la política de filtro al suscriptor.
 
-Para obtener más información sobre la creación de políticas de filtros, consulte la  https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html["Documentación de Amazon SNS"^] .
+Puede filtrar las notificaciones de Amazon SNS según los siguientes criterios:
 
-Para obtener ejemplos de políticas de filtrado, consulte  https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html["Políticas de filtro de ejemplo de Amazon SNS"^] .
+[cols="3*"]
+|===
+| Descripción | Nombre del campo de política de filtro | Valores posibles 
+
+
+| Tipo de recurso | `resourceType`  a| 
+* `DB`
+* `Microsoft SQL Server host`
+* `PostgreSQL Server host`
+
+
+
+
+| Carga de trabajo | `workload` | `WLMDB` 
+
+
+| Prioridad | `priority`  a| 
+* `Success`
+* `Info`
+* `Recommendation`
+* `Warning`
+* `Error`
+* `Critical`
+
+
+
+
+| Tipo de notificación | `notificationType`  a| 
+* `Deployment`
+* `Well-architected`
+
+
+|===
+.Pasos
+. En la consola de Amazon SNS, edite los detalles de suscripción para el tema de SNS.
+. En el área *Política de filtro de suscripción*, seleccione filtrar por *Atributos del mensaje*.
+. Habilite la opción *Política de filtro de suscripciones*.
+. Introduzca una política de filtro JSON en el cuadro *Editor JSON*.
++
+Por ejemplo, la siguiente política de filtro JSON acepta notificaciones del recurso Microsoft SQL Server que están relacionadas con la carga de trabajo WLMDB, tienen una prioridad de Éxito o Error y brindan detalles sobre el estado de buena arquitectura:
+
++
+[source, json]
+----
+{
+  "accountId": [
+    "account-a"
+  ],
+  "resourceType": [
+    "Microsoft SQL Server host"
+  ],
+  "workload": [
+    "WLMDB"
+  ],
+  "priority": [
+    "Success",
+    "Error"
+  ],
+  "notificationType": [
+    "Well-architected"
+  ]
+}
+----
+. Seleccione *Guardar cambios*.
+
+
+Para conocer otros ejemplos de políticas de filtrado, consulte https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html["Políticas de filtro de ejemplo de Amazon SNS"^] .
+
+Para obtener más información sobre la creación de políticas de filtros, consulte la https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html["Documentación de Amazon SNS"^] .
 
 
 
