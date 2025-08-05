@@ -31,6 +31,12 @@ La fábrica de carga de trabajo envía notificaciones para los siguientes evento
 
 
 | Error en la implementación del servidor Microsoft SQL Server/PostgreSQL | Se produjo un error en la implementación del host de Microsoft SQL Server o PostgreSQL. Para obtener más información, consulte la sección sobre supervisión de trabajos. | Puesta en marcha | Error | Oracle | FSx para ONTAP, host de base de datos 
+
+
+| Falló la creación de la relación de replicación | Ha fallado la creación de una relación de replicación de SnapMirror .  Para obtener más información, vaya a Rastreador. | Replicación | Crítico | Almacenamiento general | FSx para ONTAP 
+
+
+| Error en la creación de FSx para ONTAP | Ha fallado un proceso de creación del sistema de archivos FSx para ONTAP .  Para obtener más información, vaya a Rastreador. | Acción del sistema de archivos FSx para ONTAP | Crítico | Almacenamiento general | FSx para ONTAP 
 |===
 
 
