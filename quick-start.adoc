@@ -31,23 +31,7 @@ link:add-credentials.html["Aprenda a agregar credenciales a su cuenta"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Optimiza tus cargas de trabajo usando FSx para ONTAP
 [role="quick-margin-para"]
-Ahora que ya te has registrado, creado una cuenta y, de forma opcional, has añadido credenciales de AWS, puedes empezar a utilizar la fábrica de cargas de trabajo para optimizar tus cargas de trabajo utilizando FSx for ONTAP. Utilice los enlaces que figuran a continuación para seguir instrucciones paso a paso para cada tipo de carga de trabajo.
+Una vez que se haya registrado, creado una cuenta y, opcionalmente, agregado credenciales de AWS, puede comenzar a usar Workload Factory para optimizar sus cargas de trabajo usando FSx para ONTAP.
 
-[role="quick-margin-list"]
-* https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Amazon FSX para ONTAP de NetApp"^]
-+
-Evalúa y analiza el estado de los datos actuales para ahorrar posibles costes usando FSx para ONTAP como infraestructura de almacenamiento, aprovisiona y templatiza las implementaciones de FSx para ONTAP basadas en prácticas recomendadas y accede a funcionalidades de gestión avanzadas.
-
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-Implemente y gestione una infraestructura de generación aumentada de recuperación (RAG) para mejorar la precisión y la singularidad de sus aplicaciones de IA. Crea una base de conocimientos de RAG en FSx para ONTAP con seguridad de datos y cumplimiento normativo integrados.
-
-* https://docs.netapp.com/us-en/workload-databases/index.html["Cargas de trabajo de base de datos"^]
-+
-Detecta el estado de tus bases de datos actuales en AWS, evalúa el posible ahorro en costes con FSx para ONTAP, pon en marcha bases de datos integrales con las prácticas recomendadas incorporadas para la optimización y automatiza el clonado ligero para las canalizaciones de CI/CD.
-
-* https://docs.netapp.com/us-en/workload-vmware/index.html["Cargas de trabajo de"^]
-+
-Simplifique las migraciones y las operaciones con recomendaciones inteligentes y soluciones automáticas. Ponga en marcha backups eficientes y una sólida recuperación ante desastres. Supervise sus máquinas virtuales y solucione problemas.
-
-
+[role="quick-margin-para"]
+link:whats-next.html["Optimice sus cargas de trabajo con FSx para ONTAP"] .

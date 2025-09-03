@@ -2,28 +2,28 @@
 sidebar: sidebar 
 permalink: whats-next.html 
 keywords: what you can do 
-summary: Ahora que ha iniciado sesión y configurado la fábrica de cargas de trabajo, puede crear y gestionar los sistemas de archivos FSx para ONTAP, y utilizar otras capacidades de fábrica de cargas de trabajo. 
+summary: Después de iniciar sesión y configurar la fábrica de carga de trabajo, puede crear y administrar FSx para sistemas de archivos ONTAP y usar otras capacidades de la fábrica de carga de trabajo. 
 ---
-= Qué puede hacer luego con la fábrica de cargas de trabajo de BlueXP 
+= Optimice las cargas de trabajo con Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Ahora que ha iniciado sesión y configurado la fábrica de cargas de trabajo de BlueXP , puede empezar a usar diferentes funcionalidades de fábrica de cargas de trabajo, como crear sistemas de archivos Amazon FSx para ONTAP, poner en marcha bases de datos en FSx para sistemas de archivos ONTAP y migrar configuraciones de máquinas virtuales a VMware Cloud on AWS mediante sistemas de archivos FSx para ONTAP como almacenes de datos externos.
+Una vez que haya iniciado sesión y configurado la fábrica de carga de trabajo, puede comenzar a usar varias capacidades de la fábrica de carga de trabajo, como la creación de sistemas de archivos de Amazon FSx para ONTAP , la implementación de bases de datos en sistemas de archivos de FSx para ONTAP y la migración de configuraciones de máquinas virtuales a VMware Cloud on AWS usando sistemas de archivos de FSx para ONTAP como almacenes de datos externos.
 
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Amazon FSX para ONTAP de NetApp"^]
 +
 Evalúa y analiza el estado de los datos actuales para ahorrar posibles costes usando FSx para ONTAP como infraestructura de almacenamiento, aprovisiona y templatiza las implementaciones de FSx para ONTAP basadas en prácticas recomendadas y accede a funcionalidades de gestión avanzadas.
 
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-Implemente y gestione una infraestructura de generación aumentada de recuperación (RAG) para mejorar la precisión y la singularidad de sus aplicaciones de IA. Crea una base de conocimientos de RAG en FSx para ONTAP con seguridad de datos y cumplimiento normativo integrados.
-
 * https://docs.netapp.com/us-en/workload-databases/index.html["Cargas de trabajo de base de datos"^]
 +
 Detecta el estado de tus bases de datos actuales en AWS, evalúa el posible ahorro en costes cambiando a FSx para ONTAP, pon en marcha bases de datos integrales con prácticas recomendadas incorporadas para la optimización y automatiza la clonación ligera para las canalizaciones de CI/CD.
+
+* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
++
+Implemente y gestione una infraestructura de generación aumentada de recuperación (RAG) para mejorar la precisión y la singularidad de sus aplicaciones de IA. Crea una base de conocimientos de RAG en FSx para ONTAP con seguridad de datos y cumplimiento normativo integrados.
 
 * https://docs.netapp.com/us-en/workload-vmware/index.html["Cargas de trabajo de"^]
 +
