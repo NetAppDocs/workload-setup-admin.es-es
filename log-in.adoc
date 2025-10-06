@@ -2,26 +2,26 @@
 sidebar: sidebar 
 permalink: log-in.html 
 keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account 
-summary: Después de registrarte en la fábrica de cargas de trabajo, puedes iniciar sesión en cualquier momento desde la consola basada en web para empezar a gestionar tus cargas de trabajo y los sistemas de archivos FSx para ONTAP. 
+summary: Después de registrarse en Workload Factory, puede iniciar sesión en cualquier momento desde la consola basada en web para comenzar a administrar sus cargas de trabajo y los sistemas de archivos FSx for ONTAP . 
 ---
-= Inicie sesión en la fábrica de cargas de trabajo de BlueXP 
+= Inicie sesión en NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Después de iniciar sesión en la fábrica de cargas de trabajo de BlueXP , puedes iniciar sesión en cualquier momento desde la consola basada en web para empezar a gestionar tus cargas de trabajo y los sistemas de archivos de FSx para ONTAP.
+Después de registrarse en NetApp Workload Factory, puede iniciar sesión en cualquier momento desde la consola basada en web para comenzar a administrar sus cargas de trabajo y los sistemas de archivos FSx for ONTAP .
 
 .Acerca de esta tarea
-Puede iniciar sesión en la consola basada en web de fábrica de cargas de trabajo mediante una de las siguientes opciones:
+Puede iniciar sesión en la consola web de Workload Factory mediante una de las siguientes opciones:
 
 * Sus credenciales existentes del sitio de soporte de NetApp (NSS)
 * Un inicio de sesión en el cloud de NetApp con su dirección de correo electrónico y una contraseña
 
 
 .Pasos
-. Abra un navegador web y vaya a la https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^].
+. Abra un navegador web y vaya a https://console.workloads.netapp.com["Consola de Workload Factory"^] .
 . En la página *Iniciar sesión*, introduzca la dirección de correo electrónico asociada a su inicio de sesión.
 . En función del método de autenticación asociado a su inicio de sesión, se le pedirá que introduzca sus credenciales:
 +
@@ -32,7 +32,7 @@ Puede iniciar sesión en la consola basada en web de fábrica de cargas de traba
 
 . Seleccione *Iniciar sesión*.
 +
-Si ha iniciado sesión correctamente en el pasado, verá la página inicial de la fábrica de cargas de trabajo y utilizará la cuenta predeterminada.
+Si ha iniciado sesión correctamente en el pasado, verá la página de inicio de Workload Factory y utilizará la cuenta predeterminada.
 
 +
 Si esta es la primera vez que inicia sesión, se le dirigirá a la página *Cuenta*.
@@ -45,4 +45,4 @@ Si esta es la primera vez que inicia sesión, se le dirigirá a la página *Cuen
 
 
 .Resultado
-Ahora has iniciado sesión y puedes empezar a utilizar la fábrica de cargas de trabajo para gestionar los sistemas de archivos FSx para ONTAP y tus cargas de trabajo.
+Ahora ha iniciado sesión y puede comenzar a usar Workload Factory para administrar FSx para sistemas de archivos ONTAP y sus cargas de trabajo.

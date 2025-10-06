@@ -2,29 +2,29 @@
 sidebar: sidebar 
 permalink: configure-notifications.html 
 keywords: amazon, sns, notification, topic, notifications, notifications service, alerts 
-summary: Puede configurar la fábrica de carga de trabajo de BlueXP para enviar notificaciones a una persona u otra aplicación cuando ocurren determinados tipos de eventos. 
+summary: Puede configurar NetApp Workload Factory para enviar notificaciones a una persona u otra aplicación cuando ocurren determinados tipos de eventos. 
 ---
-= Configurar las notificaciones de fábrica de la carga de trabajo de BlueXP
+= Configurar las notificaciones de NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Puede configurar el servicio de notificaciones de la fábrica de cargas de trabajo de BlueXP para que envíe notificaciones al servicio de alertas de BlueXP o a un tema de Amazon SNS. Las notificaciones enviadas a las alertas de BlueXP aparecen en el panel de alertas de BlueXP. Cuando la fábrica de cargas de trabajo publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como usuarios u otras aplicaciones) reciben las notificaciones en los endpoints configurados para el tema (como correos electrónicos o mensajes SMS).
+Puede configurar el servicio de notificaciones de NetApp Workload Factory para enviar notificaciones como alertas en la consola de NetApp o en un tema de Amazon SNS.  Las notificaciones enviadas como alertas aparecen en la consola de NetApp cuando tiene un agente o un enlace de consola implementado.  Cuando Workload Factory publica notificaciones en un tema de Amazon SNS, los suscriptores del tema (como personas u otras aplicaciones) reciben las notificaciones en los puntos finales configurados para el tema (como mensajes de correo electrónico o SMS).
 
 
 
 == Tipos de notificaciones y mensajes
 
-La fábrica de carga de trabajo envía notificaciones para los siguientes eventos:
+Workload Factory envía notificaciones para los siguientes eventos:
 
 [cols="6*"]
 |===
 | Evento | Descripción | Tipo de notificación | Gravedad | Carga de trabajo | Tipo de recurso 
 
 
-| Algunas instancias de bases de datos en su cuenta no tienen una buena arquitectura | Se han analizado todas las instancias de Microsoft SQL Server de su cuenta para detectar problemas de buena arquitectura. La descripción de este evento indica el número de instancias con buena arquitectura y las instancias no optimizadas. Revise los hallazgos y recomendaciones sobre el estado de buena arquitectura en el inventario de bases de datos desde la consola de Workload Factory. | Bien diseñado | Recomendación | Oracle | Instancia de Microsoft SQL Server 
+| Algunas instancias de bases de datos en su cuenta no tienen una buena arquitectura | Se han analizado todas las instancias de Microsoft SQL Server en su cuenta para detectar problemas bien diseñados.  La descripción de este evento proporciona la cantidad de instancias bien diseñadas e instancias no optimizadas.  Revise los hallazgos y recomendaciones de estado bien diseñados en el inventario de bases de datos desde la consola de Workload Factory. | Bien diseñado | Recomendación | Oracle | Instancia de Microsoft SQL Server 
 
 
 | Implementación exitosa del servidor Microsoft SQL Server/PostgreSQL | La implementación del host de Microsoft SQL Server o PostgreSQL se realizó correctamente. Para obtener más información, consulte la sección sobre supervisión de trabajos. | Puesta en marcha | Correcto | Oracle | FSx para ONTAP, host de base de datos 
@@ -37,54 +37,57 @@ La fábrica de carga de trabajo envía notificaciones para los siguientes evento
 
 
 | Error en la creación de FSx para ONTAP | Ha fallado un proceso de creación del sistema de archivos FSx para ONTAP .  Para obtener más información, vaya a Rastreador. | Acción del sistema de archivos FSx para ONTAP | Crítico | Almacenamiento general | FSx para ONTAP 
+
+
+| Se detectó un problema con FSx para ONTAP | Se han analizado todos los sistemas de archivos FSx para ONTAP para detectar problemas de buena arquitectura.  El análisis detectó uno o más problemas.  Para obtener más información, revise el análisis bien diseñado desde el panel de Almacenamiento en la consola de Workload Factory. | Análisis bien diseñado | Recomendación | Almacenamiento general | FSx para sistemas de archivos ONTAP 
 |===
 
 
-== Configurar las notificaciones de fábrica de carga de trabajo
+== Configurar las notificaciones de Workload Factory
 
-Configure las notificaciones de la fábrica de cargas de trabajo mediante la consola de BlueXP o la consola de la fábrica de cargas de trabajo. Si usa la consola de BlueXP, puede configurar la fábrica de cargas de trabajo para que envíe notificaciones a las alertas de BlueXP o a un tema de Amazon SNS. Puede configurar las alertas de BlueXP desde el área *Configuración de alertas y notificaciones* de BlueXP.
+Configure las notificaciones de Workload Factory mediante la consola de NetApp o la consola de Workload Factory.  Si usa la consola de NetApp , puede configurar Workload Factory para enviar notificaciones como alertas en la consola de NetApp o a un tema de Amazon SNS.  Puede configurar notificaciones desde la *Configuración de notificaciones* en la consola de NetApp .
 
 .Antes de empezar
 * Debe configurar Amazon SNS y crear temas de Amazon SNS mediante la consola de Amazon SNS o la AWS CLI.
-* Tenga en cuenta que Workload Factory admite el tipo de tema *Estándar*. Este tipo de tema no garantiza que las notificaciones se envíen a los suscriptores en el orden en que se recibieron, así que considérelo si tiene notificaciones críticas o de emergencia.
+* Tenga en cuenta que Workload Factory admite el tipo de tema *Estándar*.  Este tipo de tema no garantiza que las notificaciones se envíen a los suscriptores en el orden en que se recibieron, así que considere esto si tiene notificaciones críticas o de emergencia.
 
 
 [role="tabbed-block"]
 ====
-.Configurar notificaciones desde la consola de BlueXP
+.Configurar notificaciones desde la consola de NetApp
 --
 .Pasos
-. Inicie sesión en el link:https://console.bluexp.netapp.com["Consola BlueXP"^].
-. Seleccione *Workloads* en la navegación de la izquierda.
-. Seleccione *Inicio* para ver todas las cargas de trabajo o seleccione una carga de trabajo como *Almacenamiento* o *Bases de datos*.
-. Desde la barra de menú de la fábrica de carga de trabajo, seleccione el menú de configuración.
-. En el menú, seleccione *Configuración de notificaciones de Workload Factory*.
-. Opcional: seleccione *Habilitar notificaciones de BlueXP* para configurar la fábrica de carga de trabajo para enviar notificaciones a las alertas de BlueXP.
-. Seleccione *Habilitar notificaciones SNS*.
-. Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.
+. Iniciar sesión en ellink:https://console.netapp.com["Consola de NetApp"^] .
+. Desde el menú de la consola de NetApp , seleccione *Cargas de trabajo*, *Administración* y, luego, *Configuración de notificaciones*.
+. En la página de configuración de notificaciones, haga lo siguiente:
 +
-Después de crear el tema, copie el ARN del tema e ingréselo en el campo *ARN del tema SNS* en el cuadro de diálogo *Configuración de notificación*.
+.. Opcional: seleccione *Habilitar notificaciones de la consola de NetApp * para configurar Workload Factory para que envíe notificaciones en la consola de NetApp .
+.. Seleccione *Habilitar notificaciones SNS*.
+.. Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.
++
+Después de crear el tema, copie el ARN del tema e ingréselo en el campo *ARN del tema SNS* en la página *Configuración de notificaciones*.
+
+
 
 . Después de verificar la configuración enviando una notificación de prueba, seleccione *Aplicar*.
 
 
 .Resultado
-La fábrica de carga de trabajo está configurada para enviar notificaciones al tema de Amazon SNS que usted especificó.
+Workload Factory está configurado para enviar notificaciones al tema de Amazon SNS que usted especificó.
 
 --
-.Configurar notificaciones desde la consola de fábrica de carga de trabajo
+.Configurar notificaciones desde la consola de Workload Factory
 --
 .Pasos
-. Inicie sesión en el link:https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^].
-. Abra el menú de la cuenta desde la barra de navegación superior.
-. En el menú, seleccione *Configuración de notificaciones*.
+. Iniciar sesión en ellink:https://console.workloads.netapp.com["Consola de Workload Factory"^] .
+. Desde el menú de la consola de Workload Factory, seleccione *Cargas de trabajo*, *Administración* y luego *Configuración de notificaciones*.
 . Seleccione *Habilitar notificaciones SNS*.
 . Siga las instrucciones para configurar Amazon SNS desde la consola de Amazon SNS.
 . Después de verificar la configuración enviando una notificación de prueba, seleccione *Aplicar*.
 
 
 .Resultado
-La fábrica de carga de trabajo está configurada para enviar notificaciones al tema de Amazon SNS que usted especificó.
+Workload Factory está configurado para enviar notificaciones al tema de Amazon SNS que usted especificó.
 
 --
 ====
@@ -92,13 +95,13 @@ La fábrica de carga de trabajo está configurada para enviar notificaciones al 
 
 == Suscríbete al tema de Amazon SNS
 
-Después de configurar la fábrica de carga de trabajo para enviar notificaciones a un tema, siga las  https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["instrucciones"] en la documentación de Amazon SNS para suscribirse al tema para poder recibir notificaciones de la fábrica de carga de trabajo.
+Después de configurar Workload Factory para enviar notificaciones a un tema, siga las https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["instrucciones"] en la documentación de Amazon SNS para suscribirse al tema para poder recibir notificaciones de Workload Factory.
 
 
 
 == Filtrar notificaciones
 
-Puede reducir el tráfico innecesario de notificaciones y dirigirse a tipos específicos de notificaciones para usuarios específicos aplicando filtros a las notificaciones. Puede hacerlo mediante una política de Amazon SNS para notificaciones de SNS y la configuración de notificaciones de BlueXP para notificaciones de BlueXP.
+Puede reducir el tráfico de notificaciones innecesarias y orientar tipos de notificaciones específicos para usuarios específicos aplicando filtros a las notificaciones.  Puede hacerlo mediante una política de Amazon SNS para notificaciones de SNS y mediante la configuración de notificaciones en la consola de NetApp .
 
 
 
@@ -180,8 +183,8 @@ Para obtener más información sobre la creación de políticas de filtros, cons
 
 
 
-=== Filtrar notificaciones de BlueXP
+=== Filtrar notificaciones en la consola de NetApp
 
-Puede utilizar la configuración de alertas y notificaciones de BlueXP para filtrar las alertas y notificaciones que recibe en BlueXP por nivel de gravedad, como Crítico, Información o Advertencia.
+Puede utilizar la configuración de notificaciones de la consola de NetApp para filtrar las notificaciones que recibe en la consola por nivel de gravedad, como Crítico, Información o Advertencia.
 
-Para obtener más información sobre cómo filtrar notificaciones en BlueXP, consulte la  https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#filter-notifications["Documentación de BlueXP"^] .
+Para obtener más información sobre cómo filtrar notificaciones en la consola, consulte la https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications["Documentación de la consola de NetApp"^] .

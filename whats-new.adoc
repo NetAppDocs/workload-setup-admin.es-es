@@ -2,16 +2,44 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
-summary: 'Descubra las novedades de las funciones de administración de la fábrica de cargas de trabajo: Credenciales del proveedor de la nube, mejoras de CodeBox y mucho más.' 
+summary: 'Conozca las novedades en las funciones de administración de Workload Factory: credenciales de proveedores de nube, mejoras de Codebox y más.' 
 ---
-= Novedades de las funciones de administración de fábrica de cargas de trabajo de BlueXP 
+= Novedades en las funciones de administración de NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Descubra las novedades de las funciones de administración de la fábrica de cargas de trabajo: Credenciales del proveedor de la nube, mejoras de CodeBox y mucho más.
+Conozca las novedades en las funciones de administración de Workload Factory: credenciales de proveedores de nube, mejoras de Codebox y más.
+
+
+
+== 6 de octubre de 2025
+
+
+
+=== BlueXP workload factory ahora Fábrica de cargas de trabajo de NetApp
+
+BlueXP ha sido renombrado y rediseñado para reflejar mejor el papel que desempeña en la gestión de su infraestructura de datos. Como resultado, la BlueXP workload factory pasó a llamarse Fábrica de carga de trabajo de NetApp .
+
+
+
+=== Integración de Ask Me con MCP
+
+Ask Me, el asistente de inteligencia artificial de Workload Factory, está integrado con el Protocolo de contexto de modelo (MCP).  Al utilizar MCP, Ask Me interactúa de forma segura con entornos externos y consulta herramientas API para brindar respuestas adaptadas a su entorno de almacenamiento específico.
+
+
+
+== 5 de octubre de 2025
+
+
+
+=== Nueva notificación para Almacenamiento
+
+El servicio de notificación de NetApp Workload Factory incluye la notificación de problemas bien diseñados para el almacenamiento.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Notificaciones para NetApp Workload Factory"]
 
 
 

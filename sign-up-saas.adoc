@@ -2,33 +2,33 @@
 sidebar: sidebar 
 permalink: sign-up-saas.html 
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
-summary: Se puede acceder a la fábrica de cargas de trabajo desde una consola basada en web. Cuando comienza a utilizar la fábrica de cargas de trabajo, el primer paso es registrarse con las credenciales del sitio de soporte de NetApp o crear un inicio de sesión en el cloud de NetApp. 
+summary: Se puede acceder a Workload Factory desde una consola basada en web.  Cuando comienza a utilizar Workload Factory, el primer paso es registrarse utilizando sus credenciales existentes del sitio de soporte de NetApp o creando un inicio de sesión en la nube de NetApp . 
 ---
-= Inicie sesión en la fábrica de cargas de trabajo de BlueXP 
+= Regístrese en NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Puede accederse a la fábrica de cargas de trabajo de BlueXP  desde una consola basada en web. Cuando comienza a utilizar la fábrica de cargas de trabajo, el primer paso es registrarse con las credenciales del sitio de soporte de NetApp o crear un inicio de sesión en el cloud de NetApp.
+Se puede acceder a NetApp Workload Factory desde una consola basada en web.  Cuando comienza a utilizar Workload Factory, el primer paso es registrarse utilizando sus credenciales existentes del sitio de soporte de NetApp o creando un inicio de sesión en la nube de NetApp .
 
 .Acerca de esta tarea
-Puede registrarse en la fábrica de carga de trabajo mediante una de las siguientes opciones:
+Puedes registrarte en Workload Factory utilizando una de las siguientes opciones:
 
 * Sus credenciales existentes del sitio de soporte de NetApp (NSS)
 * Inicio de sesión en el cloud de NetApp especificando su dirección de correo electrónico y una contraseña
 
 
 .Pasos
-. Abra un navegador web y vaya a https://console.workloads.netapp.com["consola de fábrica de carga de trabajo"^]
+. Abra un navegador web y vaya a https://console.workloads.netapp.com["Consola de Workload Factory"^]
 . Si tienes una cuenta del sitio de soporte de NetApp, introduce la dirección de correo electrónico asociada con tu cuenta de NSS directamente en la página *Iniciar sesión*.
 +
-Puede omitir la página de registro si tiene una cuenta NSS. La fábrica de cargas de trabajo le registrará como parte de este inicio de sesión inicial.
+Puede omitir la página de registro si tiene una cuenta NSS.  Workload Factory lo registrará como parte de este inicio de sesión inicial.
 
 . Si no tienes una cuenta NSS y quieres registrarte mediante la creación de un inicio de sesión en la nube de NetApp, selecciona *Regístrate*.
 +
-image:screenshot-sign-up1.png["Una captura de pantalla de la página de registro donde puede agregar su nombre de usuario y contraseña para acceder a la fábrica de cargas de trabajo."]
+image:screenshot-sign-up1.png["Una captura de pantalla de la página de registro donde puede agregar su nombre de usuario y contraseña para acceder a Workload Factory."]
 
 . En la página *Registrarse*, ingrese la información requerida para crear un inicio de sesión en la nube de NetApp y seleccione *Siguiente*.
 +
@@ -47,8 +47,8 @@ Una cuenta es el elemento de nivel superior de la plataforma de identidad de Net
 +
 image:screenshot-account-selection.png["Una captura de pantalla de la página Cuenta que aparece al iniciar sesión con una cuenta nueva."]
 
-. Seleccione *Crear* y se mostrará la página inicial de la fábrica de carga de trabajo.
+. Seleccione *Crear* y se mostrará la página de inicio de Workload Factory.
 
 
 .Resultado
-Ahora dispone de un inicio de sesión de fábrica de cargas de trabajo y una cuenta. Se le considera administrador de cuentas y tiene acceso a todas las funciones de fábrica de cargas de trabajo.
+Ahora tiene un inicio de sesión y una cuenta de Workload Factory.  Se le considera administrador de cuenta y tiene acceso a todas las funciones de Workload Factory.

@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: whats-next.html 
 keywords: what you can do 
-summary: Después de iniciar sesión y configurar la fábrica de carga de trabajo, puede crear y administrar FSx para sistemas de archivos ONTAP y usar otras capacidades de la fábrica de carga de trabajo. 
+summary: Una vez que haya iniciado sesión y configurado NetApp Workload Factory, podrá crear y administrar sistemas de archivos FSx para ONTAP y utilizar otras capacidades de Workload Factory. 
 ---
-= Optimice las cargas de trabajo con Workload Factory
+= Optimice las cargas de trabajo con NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Una vez que haya iniciado sesión y configurado la fábrica de carga de trabajo, puede comenzar a usar varias capacidades de la fábrica de carga de trabajo, como la creación de sistemas de archivos de Amazon FSx para ONTAP , la implementación de bases de datos en sistemas de archivos de FSx para ONTAP y la migración de configuraciones de máquinas virtuales a VMware Cloud on AWS usando sistemas de archivos de FSx para ONTAP como almacenes de datos externos.
+Una vez que haya iniciado sesión y configurado NetApp Workload Factory, puede comenzar a usar varias capacidades de Workload Factory, como la creación de sistemas de archivos de Amazon FSx para ONTAP , la implementación de bases de datos en sistemas de archivos de FSx para ONTAP y la migración de configuraciones de máquinas virtuales a VMware Cloud on AWS usando sistemas de archivos de FSx para ONTAP como almacenes de datos externos.
 
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Amazon FSX para ONTAP de NetApp"^]
 +

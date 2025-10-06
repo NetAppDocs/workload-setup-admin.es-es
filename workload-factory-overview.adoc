@@ -1,67 +1,68 @@
 ---
 sidebar: sidebar 
 permalink: workload-factory-overview.html 
-keywords: overview, concepts, features, use case, workloads, how workload factory works 
-summary: La fábrica de cargas de trabajo de BlueXP  es una potente plataforma de gestión del ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo mediante los sistemas de archivos de Amazon FSx para NetApp ONTAP. 
+keywords: overview, concepts, features, use case, workloads, how Workload Factory works 
+summary: NetApp Workload Factory es una potente plataforma de gestión del ciclo de vida diseñada para ayudarlo a optimizar sus cargas de trabajo utilizando Amazon FSx for NetApp ONTAP . 
 ---
-= Obtenga más información sobre la fábrica de cargas de trabajo BlueXP 
+= Obtenga más información sobre NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-La fábrica de cargas de trabajo de BlueXP  es una potente plataforma de gestión del ciclo de vida diseñada para ayudarte a optimizar tus cargas de trabajo mediante los sistemas de archivos de Amazon FSx para NetApp ONTAP. Entre las cargas de trabajo que se pueden optimizar mediante la fábrica de cargas de trabajo y FSx para ONTAP se incluyen bases de datos, migraciones de VMware a VMware Cloud on AWS, bots de chat de IA, etc.
+NetApp Workload Factory es una potente plataforma de gestión del ciclo de vida diseñada para ayudarlo a optimizar sus cargas de trabajo utilizando Amazon FSx for NetApp ONTAP .  Las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP incluyen bases de datos, migraciones de VMware a VMware Cloud en AWS, chatbots de IA y más.
 
 Una carga de trabajo abarca una combinación de recursos, código y servicios o aplicaciones, diseñada para servir un objetivo de negocio. Esto puede ser cualquier cosa, desde una aplicación de cara al cliente hasta un proceso de back-end. Las cargas de trabajo pueden implicar un subconjunto de recursos dentro de una única cuenta de AWS o abarcar varias cuentas.
 
-Amazon FSx para NetApp ONTAP proporciona volúmenes de almacenamiento NFS, SMB/CIFS e iSCSI nativos de AWS totalmente gestionados para aplicaciones críticas para la misión, bases de datos, contenedores, almacenes de datos en la nube de VMware y archivos de usuario. Puedes gestionar FSx para ONTAP mediante la fábrica de cargas de trabajo y mediante herramientas de gestión nativas de AWS.
+Amazon FSx for NetApp ONTAP proporciona volúmenes de almacenamiento NFS, SMB/CIFS e iSCSI totalmente administrados y nativos de AWS para aplicaciones de misión crítica, bases de datos, contenedores, almacenes de datos de VMware Cloud y archivos de usuario.  Puede administrar FSx para ONTAP a través de Workload Factory y utilizando herramientas de administración nativas de AWS.
 
 
 
 == Funciones
 
-La plataforma de fábrica de cargas de trabajo ofrece las siguientes capacidades principales.
+La plataforma Workload Factory ofrece las siguientes capacidades principales.
 
 Almacenamiento flexible y de bajo coste:: Detecta, implementa y gestiona los sistemas de archivos de Amazon FSx para NetApp ONTAP en la nube. FSX para ONTAP incorpora todas las funcionalidades de ONTAP en un servicio gestionado de AWS nativo que ofrece una experiencia de nube híbrida constante.
 Migra los entornos vSphere on-premises a VMware Cloud on AWS:: El asesor de migración de VMware Cloud on AWS le permite analizar sus configuraciones de máquinas virtuales actuales en entornos vSphere locales, generar un plan para implementar diseños de máquinas virtuales recomendados en VMware Cloud on AWS y utilizar sistemas de archivos personalizados de Amazon FSx para NetApp ONTAP como almacenes de datos externos.
 Gestión del ciclo de vida de las bases de:: Detecte cargas de trabajo de bases de datos y analice el ahorro de costes con Amazon FSx para NetApp ONTAP; aproveche las ventajas de almacenamiento y aplicaciones al migrar bases de datos de SQL Server a FSx para almacenamiento de ONTAP; ponga en marcha servidores SQL, bases de datos y clones de bases de datos que implementen prácticas recomendadas de proveedores; utilice un piloto conjunto de Infraestructura como código para automatizar operaciones; y supervise y optimice continuamente las propiedades de SQL Server para mejorar el rendimiento, la disponibilidad, la protección y la rentabilidad.
 Desarrollo de bots conversacionales de IA:: Aprovecha tus sistemas de archivos FSx para ONTAP para almacenar las fuentes de chatbot de tu organización y las bases de datos del motor de IA. Esto le permite integrar los datos no estructurados de su organización en una aplicación de chatbot empresarial.
 Calculadoras de ahorro para ahorrar costes:: Analiza tus implementaciones actuales con el almacenamiento de Amazon Elastic Block Store (EBS) o Elastic File System (EFS), o Amazon FSx para el servidor de archivos de Windows, para descubrir cuánto dinero puedes ahorrar al pasar a Amazon FSx para NetApp ONTAP. También puede utilizar la calculadora para realizar un escenario hipotético de una puesta en marcha futura que esté planificando.
-Cuentas de servicio para promover la automatización:: Utiliza las cuentas de servicio para automatizar las operaciones de la fábrica de cargas de trabajo de BlueXP  de forma segura y fiable. Las cuentas de servicio proporcionan una automatización fiable y duradera sin restricciones de administración de usuarios y son más seguras porque solo proporcionan acceso a la API.
+Cuentas de servicio para promover la automatización:: Utilice cuentas de servicio para automatizar las operaciones de NetApp Workload Factory de forma segura y confiable.  Las cuentas de servicio proporcionan una automatización confiable y duradera sin restricciones de administración de usuarios y son más seguras porque solo brindan acceso a la API.
+Asistente de inteligencia artificial Ask Me:: Haga preguntas al asistente de IA sobre la administración y el funcionamiento de FSx para sistemas de archivos ONTAP .  Al utilizar el Protocolo de contexto de modelo (MCP), Ask Me interactúa de forma segura con entornos externos y consulta herramientas API para brindar respuestas adaptadas a su entorno de almacenamiento específico.
 
 
 
 
 == Proveedores de cloud compatibles
 
-La fábrica de cargas de trabajo le permite gestionar el almacenamiento en cloud y utilizar las capacidades de carga de trabajo en Amazon Web Services.
+Workload Factory le permite administrar el almacenamiento en la nube y utilizar las capacidades de carga de trabajo en Amazon Web Services.
 
 
 
 == Seguridad
 
-La seguridad de la BlueXP workload factory es una prioridad absoluta para NetApp. Todas las cargas de trabajo de la fábrica se ejecutan en Amazon FSx for NetApp ONTAP. Además de todo... link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["Funciones de seguridad de AWS"^] La BlueXP workload factory ha recibido link:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058["Cumplimiento de SOC2 Tipo 1"^] .
+La seguridad de NetApp Workload Factory es una prioridad máxima para NetApp.  Todas las cargas de trabajo en Workload Factory se ejecutan en Amazon FSx for NetApp ONTAP.  Además de todolink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["Funciones de seguridad de AWS"^] NetApp Workload Factory ha recibidolink:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058["Cumplimiento de SOC2 Tipo 1"^] .
 
-La fábrica de carga de trabajo Amazon FSx for NetApp ONTAP para BlueXP workload factory es una link:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/["Solución de AWS para implementar aplicaciones empresariales"^] que fue creado teniendo en mente las mejores prácticas bien diseñadas.
+Amazon FSx for NetApp ONTAP para NetApp Workload Factory es unalink:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/["Solución de AWS para implementar aplicaciones empresariales"^] que fue creado teniendo en mente las mejores prácticas bien diseñadas.
 
 
 
 == Coste
 
-La fábrica de carga de trabajo es libre de usar. El coste que paga a Amazon Web Services (AWS) depende de los servicios de almacenamiento y carga de trabajo que tenga pensado poner en marcha. Esto incluye el coste de los sistemas de archivos de Amazon FSx para NetApp ONTAP, la infraestructura de VMware Cloud en AWS, los servicios de AWS y mucho más.
+Workload Factory es de uso gratuito.  El costo que paga a Amazon Web Services (AWS) depende de los servicios de almacenamiento y carga de trabajo que planea implementar.  Esto incluye el costo de Amazon FSx for NetApp ONTAP , la infraestructura de VMware Cloud on AWS, los servicios de AWS y más.
 
 
 
-== Cómo funciona la fábrica de la carga de trabajo
+== Cómo funciona Workload Factory
 
-La fábrica de cargas de trabajo incluye una consola basada en web que se proporciona a través de la capa SaaS, una cuenta, modos operativos que controlan el acceso a su estado de nube, enlaces que proporcionan conectividad segregada entre la fábrica de cargas de trabajo y una cuenta de AWS, y mucho más.
+Workload Factory incluye una consola basada en web que se proporciona a través de la capa SaaS, una cuenta, modos operativos que controlan el acceso a su patrimonio en la nube, enlaces que brindan conectividad segregada entre Workload Factory y una cuenta de AWS, y más.
 
 
 
 === Software como servicio
 
-Se puede acceder a la fábrica de cargas de trabajo a través de la fábrica de cargas de trabajo BlueXP  https://console.workloads.netapp.com["consola basada en web"^] y la BlueXP link:https://console.bluexp.netapp.com["consola basada en web"^]. Estas experiencias SaaS le permiten acceder automáticamente a las últimas características a medida que se publican y cambiar fácilmente entre sus cuentas y enlaces de Workload Factory.
+Se puede acceder a Workload Factory a través delink:https://console.workloads.netapp.com["Consola de NetApp Workload Factory"^] y ellink:https://console.netapp.com["Consola de NetApp"^] .  Estas experiencias SaaS le permiten acceder automáticamente a las últimas funciones a medida que se lanzan y cambiar fácilmente entre sus cuentas y enlaces de Workload Factory.
 
 Aprende más sobre lo diferentelink:console-experiences.html["experiencias de consola"].
 
@@ -69,22 +70,22 @@ Aprende más sobre lo diferentelink:console-experiences.html["experiencias de co
 
 === Cuentas
 
-Cuando inicia sesión en la fábrica de cargas de trabajo por primera vez, se le pedirá que cree una cuenta. Esta cuenta le permite organizar el acceso a recursos, cargas de trabajo y cargas de trabajo de su organización mediante credenciales.
+Cuando inicia sesión en Workload Factory por primera vez, se le solicitará que cree una cuenta.  Esta cuenta le permite organizar sus recursos, cargas de trabajo y acceso a las cargas de trabajo para su organización mediante credenciales.
 
-image:screenshot-account-selection.png["Una captura de pantalla del asistente de configuración de fábrica de cargas de trabajo que le solicita la cuenta de fábrica de cargas de trabajo."]
+image:screenshot-account-selection.png["Una captura de pantalla del asistente de configuración de Workload Factory que le solicita la cuenta de Workload Factory."]
 
 Cuando crea una cuenta, usted es el usuario _account admin_ único de esa cuenta.
 
 Si su organización requiere una cuenta adicional o administración de usuarios, comuníquese con nosotros mediante el chat del producto.
 
 
-TIP: Si usa NetApp BlueXP , ya pertenecerá a una cuenta porque la fábrica de cargas de trabajo utiliza las cuentas de BlueXP .
+TIP: Si usa la consola de NetApp , ya pertenecerá a una cuenta porque Workload Factory aprovecha las cuentas de NetApp .
 
 
 
 ==== Cuentas de servicio
 
-Una cuenta de servicio actúa como un «usuario» que puede hacer llamadas API autorizadas a la fábrica de cargas de trabajo de BlueXP  con fines de automatización. Esto facilita la gestión de la automatización, ya que no necesita crear scripts de automatización basados en la cuenta de usuario de una persona real que pueda salir de la empresa en cualquier momento. Todos los titulares de cuentas de Workload Factory se consideran administradores de cuentas. Los administradores de cuentas pueden crear y eliminar varias cuentas de servicio.
+Una cuenta de servicio actúa como un "usuario" que puede realizar llamadas API autorizadas a NetApp Workload Factory para fines de automatización.  Esto facilita la gestión de la automatización porque no es necesario crear scripts de automatización basados ​​en la cuenta de usuario de una persona real que puede abandonar la empresa en cualquier momento.  Todos los titulares de cuentas en Workload Factory se consideran administradores de cuentas.  Los administradores de cuentas pueden crear y eliminar varias cuentas de servicio.
 
 link:manage-service-accounts.html["Aprenda a administrar cuentas de servicio"].
 
@@ -92,22 +93,22 @@ link:manage-service-accounts.html["Aprenda a administrar cuentas de servicio"].
 
 === Modos de funcionamiento
 
-La fábrica de cargas de trabajo proporciona tres modos operativos que le permiten controlar con cuidado el acceso al estado de su cloud y asignar confianza incremental a la fábrica de cargas de trabajo en función de sus políticas de TI.
+Workload Factory ofrece tres modos operativos que le permiten controlar cuidadosamente el acceso a su patrimonio en la nube y asignar confianza incremental a Workload Factory en función de sus políticas de TI.
 
-* *El modo básico* representa una relación de confianza cero y está diseñado para la exploración temprana de la fábrica de cargas de trabajo y el uso de los diversos asistentes para crear la infraestructura necesaria como código. Este código puede ser copiado y utilizado manualmente por el usuario junto con sus credenciales relevantes de AWS.
+* El *modo básico* representa una relación de confianza cero y está diseñado para la exploración temprana de Workload Factory y el uso de los distintos asistentes para crear la Infraestructura como Código necesaria.  El usuario puede copiar y utilizar manualmente este código junto con sus credenciales de AWS correspondientes.
 * *El modo de solo lectura* mejora la experiencia del modo básico al ayudar al usuario a detectar varios recursos y herramientas, y por lo tanto, ayudar a completar asistentes relevantes.
 * *El modo de lectura/escritura* representa una relación de confianza total y está diseñado para ejecutar y automatizar en nombre del usuario junto con las credenciales asignadas que tienen los permisos necesarios y validados para su ejecución.
 
 
-link:operational-modes.html["Obtenga más información sobre los modos operativos de fábrica de cargas de trabajo"].
+link:operational-modes.html["Obtenga más información sobre los modos operativos de Workload Factory"] .
 
 
 
 === Enlaces de conectividad
 
-Un enlace de fábrica de cargas de trabajo crea una relación de confianza y conectividad entre la fábrica de cargas de trabajo y uno o más sistemas de archivos FSx para ONTAP. De este modo, puede supervisar y gestionar determinadas funciones del sistema de archivos directamente desde las llamadas API DE REST DE ONTAP que no están disponibles a través de la API de Amazon FSx para ONTAP.
+Un vínculo de Workload Factory crea una relación de confianza y conectividad entre Workload Factory y uno o más sistemas de archivos FSx para ONTAP .  Esto le permite monitorear y administrar ciertas características del sistema de archivos directamente desde las llamadas API REST de ONTAP que no están disponibles a través de la API de Amazon FSx para ONTAP .
 
-No es necesario establecer un vínculo para empezar con la fábrica de cargas de trabajo, pero en algunos casos deberá crear un vínculo para desbloquear todas las funciones de fábrica de cargas de trabajo y las capacidades de cargas de trabajo.
+No necesita un enlace para comenzar a usar Workload Factory, pero en algunos casos necesitará crear un enlace para desbloquear todas las funciones y capacidades de carga de trabajo de Workload Factory.
 
 Los enlaces aprovechan actualmente AWS Lambda.
 
@@ -117,9 +118,9 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Más infor
 
 === Automatización de CodeBox
 
-CodeBox es un copiloto de infraestructura como código (IAC) que ayuda a los desarrolladores e ingenieros de DevOps a generar el código necesario para ejecutar cualquier operación soportada por la fábrica de carga de trabajo. Los formatos de código incluyen la API REST DE fábrica de cargas de trabajo, la CLI de AWS y AWS CloudFormation.
+Codebox es un copiloto de Infraestructura como Código (IaC) que ayuda a los desarrolladores e ingenieros de DevOps a generar el código necesario para ejecutar cualquier operación compatible con Workload Factory.  Los formatos de código incluyen la API REST de Workload Factory, AWS CLI y AWS CloudFormation.
 
-Codebox está alineado con los modos de operación de la fábrica de carga de trabajo (_básico_, _solo lectura_ y _lectura/escritura_) y establece una ruta clara para la preparación de la ejecución, así como un catálogo de automatización para una rápida reutilización futura.
+Codebox está alineado con los modos de operación de Workload Factory (_básico_, _solo lectura_ y _lectura/escritura_) y establece una ruta clara para la preparación de la ejecución, así como un catálogo de automatización para una rápida reutilización futura.
 
 El panel CodeBox muestra el IAC generado por una operación de flujo de trabajo específica, y coincide con un asistente gráfico o una interfaz de chat conversacional. Si bien CodeBox admite codificación de colores y búsqueda para facilitar la navegación y el análisis, no permite la edición. Sólo puede copiar o guardar en el catálogo de automatización.
 
@@ -129,7 +130,7 @@ link:codebox-automation.html["Más información sobre CodeBox"].
 
 === Calculadoras de ahorro
 
-La fábrica de cargas de trabajo ofrece calculadoras de ahorro para que pueda comparar los costes de sus entornos de almacenamiento o las cargas de trabajo de bases de datos en los sistemas de archivos FSx para ONTAP con Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para el servidor de archivos de Windows. Dependiendo de sus requisitos de almacenamiento, puede descubrir que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
+Workload Factory proporciona calculadoras de ahorro para que pueda comparar los costos de sus entornos de almacenamiento o sus cargas de trabajo de base de datos en FSx para sistemas de archivos ONTAP con Elastic Block Store (EBS), Elastic File Systems (EFS) y FSx para Windows File Server.  Dependiendo de sus requisitos de almacenamiento, es posible que descubra que los sistemas de archivos FSx para ONTAP son la opción más rentable para usted.
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["Descubra cómo analizar el ahorro para sus entornos de almacenamiento"^]
 * link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html["Aprenda a analizar el ahorro para sus cargas de trabajo de base de datos"^]
@@ -137,30 +138,30 @@ La fábrica de cargas de trabajo ofrece calculadoras de ahorro para que pueda co
 
 
 
-== Herramientas para utilizar la fábrica de cargas de trabajo
+== Herramientas para utilizar NetApp Workload Factory
 
-Puede utilizar la fábrica de cargas de trabajo de BlueXP  con las siguientes herramientas:
+Puede utilizar NetApp Workload Factory con las siguientes herramientas:
 
-* *Consola de fábrica de carga de trabajo*: La consola de fábrica de carga de trabajo proporciona una visión visual y holística de sus aplicaciones y proyectos.
-* *Consola BlueXP *: La consola BlueXP  proporciona una experiencia de interfaz híbrida para que pueda usar la fábrica de cargas de trabajo BlueXP  junto con otros servicios BlueXP .
-* *Pregúntame*: Usa el asistente de Ask Me AI para hacer preguntas y aprender más sobre la fábrica de cargas de trabajo sin salir de la interfaz de usuario web de la fábrica de cargas de trabajo. Acceda a Preguntarme desde el menú de ayuda de fábrica de cargas de trabajo.
-* *CLI de CloudShell*: La fábrica de cargas de trabajo incluye una CLI de CloudShell para administrar y operar entornos de AWS y NetApp a través de cuentas desde una única CLI basada en navegador. Acceda a CloudShell desde la barra superior de la consola de fábrica de cargas de trabajo.
-* *API REST*: Usa las API REST DE fábrica de cargas de trabajo para implementar y administrar tus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
-* *CloudFormation*: Utilice el código CloudFormation de AWS para realizar las acciones que definió en la consola de la fábrica de cargas de trabajo para modelar, aprovisionar y administrar recursos de AWS y de terceros desde la pila CloudFormation en su cuenta de AWS.
-* * Proveedor de fábrica de cargas de trabajo Terraform BlueXP *: Utilice Terraform para crear y administrar flujos de trabajo de infraestructura generados en la consola de la fábrica de cargas de trabajo.
+* *Consola Workload Factory*: La consola Workload Factory proporciona una vista visual y holística de sus aplicaciones y proyectos.
+* *Consola NetApp *: La consola NetApp proporciona una experiencia de interfaz híbrida para que pueda utilizar Workload Factory junto con otros servicios de datos de NetApp .
+* *Pregúntame*: utiliza el asistente de IA Pregúntame para hacer preguntas y obtener más información sobre Workload Factory sin salir de la consola de Workload Factory. Accede a Pregúntame desde el menú de ayuda de Workload Factory.
+* *CloudShell CLI*: Workload Factory incluye una CLI de CloudShell para administrar y operar entornos de AWS y NetApp en todas las cuentas desde una única CLI basada en navegador. Acceda a CloudShell desde la barra superior de la consola de Workload Factory.
+* *API REST*: utilice las API REST de Workload Factory para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
+* *CloudFormation*: use el código de AWS CloudFormation para realizar las acciones que definió en la consola de Workload Factory para modelar, aprovisionar y administrar recursos de AWS y de terceros desde la pila de CloudFormation en su cuenta de AWS.
+* *Proveedor de Terraform NetApp Workload Factory*: utilice Terraform para crear y administrar flujos de trabajo de infraestructura generados en la consola de Workload Factory.
 
 
 
 
 === API de REST
 
-La fábrica de cargas de trabajo le permite optimizar, automatizar y operar sus sistemas de archivos FSx para ONTAP para cargas de trabajo específicas. Cada carga de trabajo expone una API de REST asociada. Colectivamente, estas cargas de trabajo y API forman una plataforma de desarrollo flexible y ampliable que puedes utilizar para administrar tus sistemas de archivos FSx para ONTAP.
+Workload Factory le permite optimizar, automatizar y operar sus sistemas de archivos FSx for ONTAP para cargas de trabajo específicas.  Cada carga de trabajo expone una API REST asociada.  En conjunto, estas cargas de trabajo y API forman una plataforma de desarrollo flexible y extensible que puede utilizar para administrar sus sistemas de archivos FSx para ONTAP .
 
-Hay varios beneficios cuando se utilizan las API de REST de fábrica de cargas de trabajo:
+Existen varios beneficios al utilizar las API REST de Workload Factory:
 
 * Las API se han diseñado en función de la tecnología REST y de las mejores prácticas actuales. Las tecnologías centrales incluyen HTTP y JSON.
-* La autenticación de fábrica de cargas de trabajo se basa en el estándar OAuth2. NetApp confía en la implantación del servicio Auth0.
-* La consola basada en web de la fábrica de cargas de trabajo utiliza las mismas API REST del núcleo para que haya coherencia entre las dos rutas de acceso.
+* La autenticación de Workload Factory se basa en el estándar OAuth2.  NetApp se basa en la implementación del servicio Auth0.
+* La consola basada en web de Workload Factory utiliza las mismas API REST principales, por lo que existe coherencia entre las dos rutas de acceso.
 
 
-https://console.workloads.netapp.com/api-doc["Ver la documentación de la API de REST de fábrica de cargas de trabajo"^]
+https://console.workloads.netapp.com/api-doc["Ver la documentación de la API REST de Workload Factory"^]
