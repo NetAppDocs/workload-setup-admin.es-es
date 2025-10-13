@@ -43,6 +43,18 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.
 
 
 
+== 9 de septiembre de 2025
+
+
+
+=== Nueva notificación para Almacenamiento
+
+El servicio de notificación de NetApp Workload Factory incluye la notificación para la gestión automática de la capacidad de almacenamiento.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Notificaciones para NetApp Workload Factory"]
+
+
+
 == 29 de junio de 2025
 
 
