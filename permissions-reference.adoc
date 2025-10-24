@@ -1315,206 +1315,208 @@ Puesta en marcha
 | Lectura/Escritura 
 
 
-.2+| Obtén más información sobre FSx para ONTAP | fsx:DescribeFileSystemAliases  a| 
-Puesta en marcha
-| Lectura/Escritura 
+| Obtén más información sobre FSx para ONTAP | fsx:DescribeFileSystemAliases | Puesta en marcha | Lectura/Escritura 
 
 
-| Cambie el tamaño de FSx para el sistema de archivos ONTAP para solucionar el margen adicional del sistema de archivos | fsx:UpdateFilesystem | Optimización 
+| Cambie el tamaño de FSx para el sistema de archivos ONTAP para solucionar el margen adicional del sistema de archivos | fsx:UpdateFilesystem | Optimización | Lectura/Escritura 
 
 
-| Lectura/Escritura | Cambie el tamaño de los volúmenes para corregir los tamaños de los registros y las unidades de TempDB | fsx:UpdateVolume | Optimización 
+| Cambie el tamaño de los volúmenes para corregir los tamaños de los registros y las unidades de TempDB | fsx:UpdateVolume | Optimización | Lectura/Escritura 
 
 
-| Lectura/Escritura .3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha 
+.3+| Obtén los detalles clave de KMS y utilízalos para el cifrado FSx para ONTAP | Kms:CreateGrant | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | kms:DescribeCustomKeyStores | Puesta en marcha 
+| kms:DescribeCustomKeyStores | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Km:GenerateDataKey | Puesta en marcha 
+| Km:GenerateDataKey | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura .8+| Cree registros de CloudWatch para la validación y el aprovisionamiento de scripts que se ejecutan en instancias EC2 | Registros:CreateLogGroup | Puesta en marcha 
+.8+| Cree registros de CloudWatch para la validación y el aprovisionamiento de scripts que se ejecutan en instancias EC2 | Registros:CreateLogGroup | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Registros:CreateLogStream | Puesta en marcha 
+| Registros:CreateLogStream | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Registros:DescripbeLogStreams  a| 
+| Registros:DescripbeLogStreams  a| 
 * Puesta en marcha
 * Evaluación
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | registros:Obtener campos del grupo de registros | Puesta en marcha 
-
-
-| Lectura/Escritura | registros:ObtenerRegistro | Puesta en marcha 
+| registros:Obtener campos del grupo de registros | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Logs:ListLogDeliveries | Puesta en marcha 
+| registros:ObtenerRegistro | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Logs:PutLogEvents  a| 
+| Logs:ListLogDeliveries | Puesta en marcha | Lectura/Escritura 
+
+
+| Logs:PutLogEvents  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
+| Lectura/Escritura 
 
 
+| Logs:TagResource | Puesta en marcha | Lectura/Escritura 
 
-| Lectura/Escritura | Logs:TagResource | Puesta en marcha 
 
-
-| Lectura/Escritura | Workload Factory cambia a los registros de Amazon CloudWatch para la instancia de SQL al detectar un truncamiento de la salida de SSM | Logs:GetLogEvents  a| 
+| Workload Factory cambia a los registros de Amazon CloudWatch para la instancia de SQL al detectar un truncamiento de la salida de SSM | Logs:GetLogEvents  a| 
 * Evaluación del almacenamiento (optimización)
 * Inventario
-
-
-
 
  a| 
 * Solo lectura
 * Lectura/Escritura
+
+
+
 
 | Permitir que Workload Factory obtenga grupos de registros actuales y verificar que la retención esté configurada para los grupos de registros creados por Workload Factory | Logs:DescripbeLogGroups  a| 
 * Evaluación del almacenamiento (optimización)
 * Inventario
 
+| Solo lectura 
 
 
-
-| Solo lectura | Permitir que Workload Factory establezca una política de retención de un día para los grupos de registros creados por Workload Factory para evitar la acumulación innecesaria de flujos de registros para las salidas del comando SSM | Logs:PutRetentionPolicy  a| 
+| Permitir que Workload Factory establezca una política de retención de un día para los grupos de registros creados por Workload Factory para evitar la acumulación innecesaria de flujos de registros para las salidas del comando SSM | Logs:PutRetentionPolicy  a| 
 * Evaluación del almacenamiento (optimización)
 * Inventario
-
-
-
 
  a| 
 * Solo lectura
 * Lectura/Escritura
 
-| Cree secretos en una cuenta de usuario para las credenciales proporcionadas para SQL, el dominio y FSx para ONTAP | ServiceQuotas:ListServiceQuotas | Puesta en marcha 
 
 
-| Lectura/Escritura .2+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMDB, así como en el SNS del cliente, si está seleccionado | sns:ListTopics | Puesta en marcha 
+
+| Cree secretos en una cuenta de usuario para las credenciales proporcionadas para SQL, el dominio y FSx para ONTAP | ServiceQuotas:ListServiceQuotas | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | sns: Publicar | Puesta en marcha 
+.2+| Enumere los temas de SNS del cliente y publique en el SNS de backend de WLMDB, así como en el SNS del cliente, si está seleccionado | sns:ListTopics | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura .11+| Permisos SSM necesarios para ejecutar el script de detección en instancias SQL aprovisionadas y para obtener la lista más reciente de regiones AWS compatibles con FSx para ONTAP. | ssm:PutComplianceItems | Puesta en marcha 
+| sns: Publicar | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssm:PutConfigurePackageResult | Puesta en marcha 
+.11+| Permisos SSM necesarios para ejecutar el script de detección en instancias SQL aprovisionadas y para obtener la lista más reciente de regiones AWS compatibles con FSx para ONTAP. | ssm:PutComplianceItems | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssm: Inventario de PutInventory | Puesta en marcha 
+| ssm:PutConfigurePackageResult | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssm:SendCommand  a| 
+| ssm: Inventario de PutInventory | Puesta en marcha | Lectura/Escritura 
+
+
+| ssm:SendCommand  a| 
 * Puesta en marcha
 * Inventario
 * Gestionar operaciones
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | ssm: UpdateAssociationStatus | Puesta en marcha 
-
-
-| Lectura/Escritura | ssm:UpdateInstanceAssociationStatus | Puesta en marcha 
+| ssm: UpdateAssociationStatus | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssm:UpdateInstanceInformation | Puesta en marcha 
+| ssm:UpdateInstanceAssociationStatus | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssmmessages:CrearCanalDeControl | Puesta en marcha 
+| ssm:UpdateInstanceInformation | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssmmessages:CrearCanalDeDatos | Puesta en marcha 
+| ssmmessages:CrearCanalDeControl | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | ssmmessages:Abrir canal de control | Puesta en marcha 
+| ssmmessages:CrearCanalDeDatos | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | mensajes ssmmessages:Canal de datos abiertos | Puesta en marcha 
+| ssmmessages:Abrir canal de control | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura .4+| Guardar credenciales para FSX para ONTAP, Active Directory y el usuario SQL (solo para la autenticación de usuario SQL) | ssm:getParameter ^1^  a| 
+| mensajes ssmmessages:Canal de datos abiertos | Puesta en marcha | Lectura/Escritura 
+
+
+.4+| Guardar credenciales para FSX para ONTAP, Active Directory y el usuario SQL (solo para la autenticación de usuario SQL) | ssm:getParameter ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 * Inventario
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | ssm:GetParameters ^1^  a| 
+| ssm:GetParameters ^1^  a| 
 * Puesta en marcha
 * Inventario
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | ssm:PutParameter ^1^  a| 
+| ssm:PutParameter ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | ssm:DeleteParameters ^1^  a| 
+| ssm:DeleteParameters ^1^  a| 
 * Puesta en marcha
 * Gestionar operaciones
 
+| Lectura/Escritura 
 
 
-
-| Lectura/Escritura | La pila de CloudFormation de señales se ha producido correctamente o ha fallado. | Formación de nubes:SignalResource ^1^ | Puesta en marcha 
-
-
-| Lectura/Escritura | Agregue el rol EC2 creado por la plantilla al perfil de instancia de EC2 para permitir que los scripts de EC2 accedan a los recursos necesarios para el despliegue. | iam:AddRoleToInstanceProfile | Puesta en marcha 
+| La pila de CloudFormation de señales se ha producido correctamente o ha fallado. | Formación de nubes:SignalResource ^1^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Cree un perfil de instancia para EC2 y adjunte el rol EC2 creado. | iam:CreateInstanceProfile | Puesta en marcha 
+| Agregue el rol EC2 creado por la plantilla al perfil de instancia de EC2 para permitir que los scripts de EC2 accedan a los recursos necesarios para el despliegue. | iam:AddRoleToInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Cree un rol EC2 a través de una plantilla con los permisos enumerados a continuación | iam:CreateRole | Puesta en marcha 
+| Cree un perfil de instancia para EC2 y adjunte el rol EC2 creado. | iam:CreateInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Crear rol vinculado al servicio EC2 | iam:CreateServiceLinkedRole ^2^ | Puesta en marcha 
+| Cree un rol EC2 a través de una plantilla con los permisos enumerados a continuación | iam:CreateRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Suprimir perfil de instancia creado durante el despliegue específicamente para los nodos de validación | iam:DeleteInstanceProfile | Puesta en marcha 
+| Crear rol vinculado al servicio EC2 | iam:CreateServiceLinkedRole ^2^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura .5+| Obtenga los detalles del rol y la política para determinar las brechas en los permisos y validarlas para la implementación | iam: GetPolicy | Puesta en marcha 
+| Suprimir perfil de instancia creado durante el despliegue específicamente para los nodos de validación | iam:DeleteInstanceProfile | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | iam:GetPolicyVersion | Puesta en marcha 
+.5+| Obtenga los detalles del rol y la política para determinar las brechas en los permisos y validarlas para la implementación | iam: GetPolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | iam:GetRole | Puesta en marcha 
+| iam:GetPolicyVersion | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | iam: GetRolePolicy | Puesta en marcha 
+| iam:GetRole | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | iam: GetUser | Puesta en marcha 
+| iam: GetRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Transfiera el rol creado a la instancia EC2 | iam:PassRole ^3^ | Puesta en marcha 
+| iam: GetUser | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Agregue una política con los permisos necesarios al rol EC2 creado | iam:PutRolePolicy | Puesta en marcha 
+| Transfiera el rol creado a la instancia EC2 | iam:PassRole ^3^ | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha 
+| Agregue una política con los permisos necesarios al rol EC2 creado | iam:PutRolePolicy | Puesta en marcha | Lectura/Escritura 
 
 
-| Lectura/Escritura | Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha 
+| Separe el rol del perfil de instancia de EC2 aprovisionado | iam:RemoveRoleFromInstanceProfile | Puesta en marcha | Lectura/Escritura 
+
+
+| Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha  a| 
+* Solo lectura
+* Lectura/Escritura
+
+
 |===
 . El permiso está restringido a los recursos que comienzan con WLMDB.
 . «iam:CreateServiceLinkedRole» limitado por «iam:AWSServiceName»: «ec2.amazonaws.com"*
