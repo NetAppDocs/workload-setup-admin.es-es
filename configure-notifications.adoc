@@ -46,6 +46,12 @@ Workload Factory envía notificaciones para los siguientes eventos:
 
 
 | Se detectó un problema con FSx para ONTAP | Se han analizado todos los sistemas de archivos FSx para ONTAP para detectar problemas de buena arquitectura.  El análisis detectó uno o más problemas.  Para obtener más información, revise el análisis bien diseñado desde el panel de Almacenamiento en la consola de Workload Factory. | Análisis bien diseñado | Recomendación | Almacenamiento general | FSx para sistemas de archivos ONTAP 
+
+
+| Evento de gestión automática de capacidad para FSx para ONTAP | El nivel de rendimiento SSD para el sistema de archivos FSx para ONTAP alcanzó el umbral de advertencia de capacidad/porcentaje total. | Gestión de la capacidad | Advertencia | Almacenamiento general | FSx para sistemas de archivos ONTAP 
+
+
+| Evento de gestión automática de inodos para FSx para ONTAP | El recuento de inodos para el volumen FSx para ONTAP alcanzó el umbral de advertencia de recuento/porcentaje total. | Gestión de la capacidad | Advertencia | Almacenamiento general | FSx para sistemas de archivos ONTAP 
 |===
 
 

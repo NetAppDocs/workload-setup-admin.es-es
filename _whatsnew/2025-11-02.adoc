@@ -1,0 +1,27 @@
+= Actualización de permisos
+:allow-uri-read: 
+
+
+
+
+=== Actualización de permisos
+
+En esta versión, hemos realizado actualizaciones significativas en las políticas de permisos para las cargas de trabajo de almacenamiento, bases de datos y VMware para mejorar la seguridad y el control del usuario.  Puedes personalizar la configuración de permisos de forma más detallada, añadiendo o eliminando permisos según te convenga.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Referencia de permisos para Workload Factory"]
+
+
+
+=== Nueva notificación para Almacenamiento
+
+El servicio de notificaciones de NetApp Workload Factory incluye la notificación para la gestión automática de inodos para almacenamiento.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Notificaciones para NetApp Workload Factory"]
+
+
+
+=== Advertencias de umbral para la gestión automática de capacidad e inodos
+
+Se puede configurar la gestión automática de capacidad e inodos para el almacenamiento con un umbral de advertencia que activa una notificación del servicio de notificaciones de Workload Factory.  Para utilizar esta función, primero debe habilitar el servicio de notificaciones de Workload Factory.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Configurar notificaciones para NetApp Workload Factory"]
