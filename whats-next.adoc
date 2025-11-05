@@ -29,4 +29,8 @@ Implemente y gestione una infraestructura de generación aumentada de recuperaci
 +
 Simplifique las migraciones y las operaciones con recomendaciones inteligentes y soluciones automáticas. Ponga en marcha backups eficientes y una sólida recuperación ante desastres. Supervise sus máquinas virtuales y solucione problemas.
 
+* https://docs.netapp.com/us-en/workload-builders/index.html["Cargas de trabajo del constructor"^]
++
+Simplifique el consumo y el acceso a las versiones de software al permitir la integración instantánea de clones con sistemas de control de versiones y flujos de CI/CD, ahorrando tiempo y recursos.
+
 
