@@ -15,6 +15,24 @@ Conozca las novedades en las funciones de administración de Workload Factory: c
 
 
 
+== 27 de noviembre de 2025
+
+
+
+=== Actualización de permisos para almacenamiento
+
+El analizador de eventos de FSx para ONTAP EMS utiliza los siguientes permisos de Amazon Bedrock en la política de permisos _operaciones y remediación_ para obtener datos de eventos para la carga de trabajo de almacenamiento.
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
+
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Log de cambios de referencia de permisos"]
+
+
+
 == 6 de octubre de 2025
 
 
