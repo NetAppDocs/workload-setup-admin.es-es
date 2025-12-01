@@ -111,6 +111,7 @@ Consulte las políticas IAM requeridas:
         "fsx:TagResource",
         "fsx:UntagResource",
         "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
         "bedrock:GetInferenceProfile"
       ],
@@ -286,13 +287,16 @@ La siguiente tabla muestra los permisos para Storage.
 | Enumera las etiquetas de los recursos de FSx for ONTAP | fsx:ListTagsForResource | Inventario | Visualización, planificación y análisis 
 
 
-.2+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Creación y eliminación de archivos 
+.3+| Gestionar la salida y el ingreso de grupos de seguridad para un sistema de archivos FSx para ONTAP | ec2:RevokeSecurityGroupIngress | Operaciones de gestión | Creación y eliminación de archivos 
+
+
+| ec2: Revocar la salida del grupo de seguridad | Operaciones de gestión | Creación y eliminación de archivos 
 
 
 | ec2:DeleteSecurityGroup | Operaciones de gestión | Creación y eliminación de archivos 
 
 
-.17+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume | Operaciones de gestión | Operaciones y remediación 
+.18+| Cree, vea y gestione recursos del sistema de archivos FSx para ONTAP | fsx:CreateVolume | Operaciones de gestión | Operaciones y remediación 
 
 
 | fsx:TagResource | Operaciones de gestión | Operaciones y remediación 
@@ -343,6 +347,9 @@ La siguiente tabla muestra los permisos para Storage.
 | fsx:CrearVolumenDesdeCopiaDeSeguridad | Operaciones de gestión | Operaciones y remediación 
 
 
+| fsx:Eliminar copia de seguridad | Operaciones de gestión | Operaciones y remediación 
+
+
 .2+| Obtenga métricas de volumen y sistema de archivos | Cloudwatch:GetMetricData | Operaciones de gestión | Visualización, planificación y análisis 
 
 
@@ -350,6 +357,24 @@ La siguiente tabla muestra los permisos para Storage.
 
 
 | Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Todo 
+
+
+.4+| Obtener FSx para eventos de ONTAP EMS | Bedrock:ListInferenceProfiles | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
+
+
+| lecho de roca: Obtener perfil de inferencia | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
+
+
+| lecho de roca: InvokeModelWihResponseStream | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
+
+
+| Bedrock:InvokeModel | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
+
+
+.2+| Obtenga datos de costos y uso de FSx para sistemas de archivos ONTAP desde AWS Cost Explorer | ce:ObtenerCostoYUso | Análisis de costos y uso | Visualización, planificación y análisis 
+
+
+| ce:Obtener etiquetas | Análisis de costos y uso | Visualización, planificación y análisis 
 |===
 ====
 
@@ -1984,6 +2009,18 @@ En la siguiente tabla se ofrece información sobre los permisos para las cargas 
 == Registro de cambios
 
 A medida que se añadan y eliminen permisos, los anotaremos en las secciones siguientes.
+
+
+
+=== 27 de noviembre de 2025
+
+Se agregaron los siguientes permisos a la carga de trabajo de almacenamiento:
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
+
 
 
 
