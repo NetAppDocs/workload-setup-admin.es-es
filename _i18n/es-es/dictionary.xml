@@ -1257,4 +1257,10 @@
   <block id="491e45ff3f847be901c7d8962829a3f8" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block></block>
   <block id="6fe4c05a9bf5207dceacd4fcc6fc1064" category="doc">Actualización de permisos para almacenamiento</block>
   <block id="7d3f4d33aca7af4519cb87a63113caf9" category="paragraph">El analizador de eventos de FSx para ONTAP EMS utiliza los siguientes permisos de Amazon Bedrock en la política de permisos _operaciones y remediación_ para obtener datos de eventos para la carga de trabajo de almacenamiento.</block>
+  <block id="499a631b37689fc0831d508e7df713ac" category="paragraph">También puedes invitar a otras personas a unirse a tu cuenta de Workload Factory para que puedan acceder y utilizar Workload Factory.</block>
+  <block id="74c47b5a5003eaa998a2ddfd60579fcd" category="section-title">Invitar a otros a unirse a una cuenta en Workload Factory</block>
+  <block id="cfe62ca3b745b1e1ba1704c2d481b1a0" category="paragraph">Como administrador de cuenta, puede invitar a otras personas a unirse a su cuenta de Workload Factory para que puedan acceder y utilizar Workload Factory. La gestión de cuentas solo es posible desde la NetApp Console.</block>
+  <block id="4271c82b5b3d2551c37fdf5569e1bdf4" category="inline-link-macro">Aprenda cómo agregar miembros (cuentas de usuario)</block>
+  <block id="c128860bea2b6fa591ace59f9f82d9e2" category="paragraph">Consulte la documentación de la NetApp Console para <block ref="d39c43ee8c7f0d03870545e14a548b70" category="inline-link-macro-rx"></block>, a su cuenta de Workload Factory.</block>
+  <block id="51a52248cd0718b8835bd272badd5424" category="paragraph">El usuario invitado recibirá un correo electrónico con instrucciones para unirse a su cuenta de Workload Factory.</block>
 </blocks>
