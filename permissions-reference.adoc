@@ -359,7 +359,7 @@ La siguiente tabla muestra los permisos para Storage.
 | Simule operaciones de carga de trabajo para validar los permisos disponibles y compárelos con los permisos necesarios para la cuenta de AWS | iam: Política de SimulatePrincipalPolicy | Puesta en marcha | Todo 
 
 
-.4+| Obtener FSx para eventos de ONTAP EMS | Bedrock:ListInferenceProfiles | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
+.4+| Proporcionar información basada en IA para FSx para eventos de ONTAP EMS | Bedrock:ListInferenceProfiles | FSx para el análisis de ONTAP EMS | Operaciones y remediación 
 
 
 | lecho de roca: Obtener perfil de inferencia | FSx para el análisis de ONTAP EMS | Operaciones y remediación 

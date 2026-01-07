@@ -1234,7 +1234,6 @@
   <block id="97364a76409afb35bcf8e78ca91dd72d" category="paragraph">Puede acceder a Workload Factory desde la NetApp Console. Además de utilizar Workload Factory para las capacidades de almacenamiento y carga de trabajo de AWS, también puede acceder a otros servicios de datos como NetApp Copy and Sync y más.</block>
   <block id="01984b12c408bdab681895b084bd6c06" category="cell">ec2: Revocar la salida del grupo de seguridad</block>
   <block id="c8f3ab0d5795ea54c17a7c0f85e22fbd" category="cell">fsx:Eliminar copia de seguridad</block>
-  <block id="efd5fd045b2b5a8ad184072097e91070" category="cell">Obtener FSx para eventos de ONTAP EMS</block>
   <block id="b2ebd142eb09c979a63764f09a9ebbd9" category="cell">FSx para el análisis de ONTAP EMS</block>
   <block id="fdd997ab8b4252f76acdda855bb7b890" category="cell">lecho de roca: Obtener perfil de inferencia</block>
   <block id="b67afe892c78b2491b3d4ac0b4c2f0b0" category="cell">lecho de roca: InvokeModelWihResponseStream</block>
@@ -1266,4 +1265,5 @@
   <block id="2bc4b4a88d694b207aacb90573eb4b7f" category="inline-link">Cargas de trabajo de EDA</block>
   <block id="f5051781c2f560348461adb9d928d406" category="list-text"><block ref="f5051781c2f560348461adb9d928d406" category="inline-link-rx"></block></block>
   <block id="ce9f0edfab2350bf4aa1961cdca492ac" category="paragraph">Optimice FSx para ONTAP en múltiples sistemas de archivos para mejorar el rendimiento y reducir los costos operativos mediante la gestión automatizada de parámetros de almacenamiento.</block>
+  <block id="27dd4ab95b0517b4bda67fc48ed886e9" category="cell">Proporcionar información basada en IA para FSx para eventos de ONTAP EMS</block>
 </blocks>
