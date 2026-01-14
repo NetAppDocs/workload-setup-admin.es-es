@@ -13,7 +13,7 @@ summary: NetApp Workload Factory es una potente plataforma de gestión del ciclo
 [role="lead"]
 NetApp Workload Factory es una potente plataforma de gestión del ciclo de vida diseñada para ayudarlo a optimizar sus cargas de trabajo utilizando Amazon FSx for NetApp ONTAP .  Las cargas de trabajo que se pueden optimizar con Workload Factory y FSx para ONTAP incluyen bases de datos, migraciones de VMware a VMware Cloud en AWS, chatbots de IA y más.
 
-Una carga de trabajo abarca una combinación de recursos, código y servicios o aplicaciones, diseñada para servir un objetivo de negocio. Esto puede ser cualquier cosa, desde una aplicación de cara al cliente hasta un proceso de back-end. Las cargas de trabajo pueden implicar un subconjunto de recursos dentro de una única cuenta de AWS o abarcar varias cuentas.
+Una _carga de trabajo_ abarca una combinación de recursos, código y servicios o aplicaciones, diseñados para alcanzar un objetivo comercial. Esto podría ser cualquier cosa, desde una aplicación orientada al cliente hasta un proceso backend. Las cargas de trabajo pueden involucrar un subconjunto de recursos dentro de una sola cuenta de AWS o abarcar varias cuentas.
 
 Amazon FSx for NetApp ONTAP proporciona volúmenes de almacenamiento NFS, SMB/CIFS e iSCSI totalmente administrados y nativos de AWS para aplicaciones de misión crítica, bases de datos, contenedores, almacenes de datos de VMware Cloud y archivos de usuario.  Puede administrar FSx para ONTAP a través de Workload Factory y utilizando herramientas de administración nativas de AWS.
 
@@ -42,7 +42,7 @@ Workload Factory le permite administrar el almacenamiento en la nube y utilizar 
 
 == Seguridad
 
-La seguridad de NetApp Workload Factory es una prioridad máxima para NetApp.  Todas las cargas de trabajo en Workload Factory se ejecutan en Amazon FSx for NetApp ONTAP.  Además de todolink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["Funciones de seguridad de AWS"^] NetApp Workload Factory ha recibidolink:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058["Cumplimiento de SOC2 Tipo 1"^] .
+La seguridad de NetApp Workload Factory es una prioridad máxima para NetApp. Todas las cargas de trabajo en Workload Factory se ejecutan en Amazon FSx for NetApp ONTAP. Además de todo link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["Funciones de seguridad de AWS"^]NetApp Workload Factory ha recibido link:https://trust.netapp.com/["Cumplimiento de SOC2 Tipo 1, Cumplimiento de SOC2 Tipo 2 y Cumplimiento de HIPAA"^].
 
 Amazon FSx for NetApp ONTAP para NetApp Workload Factory es unalink:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/["Solución de AWS para implementar aplicaciones empresariales"^] que fue creado teniendo en mente las mejores prácticas bien diseñadas.
 
@@ -146,6 +146,14 @@ Puede utilizar NetApp Workload Factory con las siguientes herramientas:
 * *CloudFormation*: use el código de AWS CloudFormation para realizar las acciones que definió en la consola de Workload Factory para modelar, aprovisionar y administrar recursos de AWS y de terceros desde la pila de CloudFormation en su cuenta de AWS.
 * *Proveedor de Terraform NetApp Workload Factory*: utilice Terraform para crear y administrar flujos de trabajo de infraestructura generados en la consola de Workload Factory.
 
+
+
+
+=== Cargas de trabajo bien diseñadas
+
+Workload Factory le ayuda a mantener y operar configuraciones de almacenamiento y bases de datos confiables, seguras, eficientes y rentables que se alinean con AWS Well-Architected Framework. Workload Factory escanea FSx diariamente en busca de sistemas de archivos ONTAP , SQL Server e implementaciones de bases de datos Oracle para brindar información sobre posibles configuraciones incorrectas y recomienda acciones manuales o automatizadas para solucionar problemas.
+
+link:well-architected-workloads.html["Obtenga más información sobre cargas de trabajo bien diseñadas"]
 
 
 
