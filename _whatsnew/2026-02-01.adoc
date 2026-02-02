@@ -1,0 +1,44 @@
+= Actualizaciones bien arquitectadas
+:allow-uri-read: 
+
+
+
+
+=== Actualizaciones bien arquitectadas
+
+NetApp Workload Factory incluye la evaluación bien diseñada para cargas de trabajo de Elastic VMware Service (EVS), y añade nuevas configuraciones para cargas de trabajo de Storage y Database.
+
+* *Cargas de trabajo de VMware* NetApp Workload Factory proporciona las mejores prácticas y recomendaciones para operar cargas de trabajo de Amazon Elastic VMware Service (EVS) bien arquitectadas.
++
+link:https://docs.netapp.com/us-en/workload-vmware/view-evs-well-architected.html["Implementa configuraciones de EVS bien diseñadas"^]
+
+* *Cargas de trabajo de almacenamiento* Se han añadido varias configuraciones nuevas a la función well-architected en la carga de trabajo de almacenamiento para que tengas más información sobre el rendimiento y los costos del almacenamiento.
++
+** Informes lógicos de Storage VM
+** Optimiza el tamaño del volumen de caché
+** Dispositivos de bloque huérfanos
++
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html["Implementa configuraciones de sistemas de archivos bien diseñadas para cargas de trabajo de almacenamiento"^]
+
+
+
+* *Cargas de trabajo de bases de datos* Workload Factory for Databases incluye una nueva configuración de almacenamiento para Oracle para habilitar y configurar Direct NFS (dNFS) para mejorar el rendimiento de I/O y disminuir la carga en el host y el sistema de almacenamiento.
++
+** habilitación de dNFS
+** resolución IP coherente de dNFS
+** dNFS archivo de configuración
+** dNFS `nosharecache`
++
+link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html["Implementar cargas de trabajo de bases de datos bien diseñadas"^]
+
+
+
+
+
+
+
+=== Nuevos permisos para Storage
+
+Se han añadido nuevos permisos a la carga de trabajo de Storage para mejoras en la gestión de los puntos de acceso S3.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Log de cambios de referencia de permisos"]
