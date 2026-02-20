@@ -1501,7 +1501,6 @@
   <block id="a49bf929860657a29ec7b321ff7a63ba" category="list-text">*Informes lógicos de Storage VM*</block>
   <block id="7edda8ec9be79d47927f4aa7e27bd776" category="paragraph">Workload Factory recomienda que la configuración de informes predeterminada se establezca en logical para una VM de almacenamiento para ofrecer mejor visibilidad del uso del almacenamiento a nivel de volumen.</block>
   <block id="394c926099d3d2cf7e0d7477f17faf38" category="paragraph">La optimización de costes te ayuda a obtener el máximo valor para tu negocio mientras mantienes los costes bajos.</block>
-  <block id="6d281baa5967f3e1be000f071dda6d92" category="list-text">*Dispositivos de bloque huérfanos*</block>
   <block id="934ae55c0ac8033312b0dd4fc00ad677" category="paragraph">Después de que un dispositivo de bloque no se use durante siete días, Workload Factory recomienda archivar los datos del dispositivo de bloque o eliminar el dispositivo de bloque no utilizado para reducir costos.</block>
   <block id="08e31d66d631ac235f15db15294a1bed" category="paragraph">Para obtener el mejor rendimiento de almacenamiento, crea volúmenes FSx para ONTAP en el nivel primario de SSD. Usar el nivel de pool de capacidad puede hacer que el rendimiento sea más lento y aumentar la latencia.</block>
   <block id="c882de88255b448709010276c1779e90" category="paragraph">Para optimizar el rendimiento del almacenamiento, ajusta la capacidad del sistema de archivos a 1,35 veces el tamaño total de tus volúmenes.</block>
@@ -1518,4 +1517,5 @@
   <block id="9bcd13fbdffcddd84a7b637f7ec4e9b8" category="list-text">*Gestión de nodos del clúster*</block>
   <block id="240380a5970626d74754b96038898f5e" category="paragraph">Asegúrate de que los nodos de tu clúster EVS tengan configurada la protección adecuada contra detención y terminación en EC2. Los nodos ESXi de EVS deben gestionarse exclusivamente usando vCenter u otras herramientas de gestión a nivel de VMware. Sin las protecciones adecuadas a nivel de EC2, los nodos podrían detenerse o eliminarse accidentalmente desde la consola de EC2, lo que puede causar la indisponibilidad de los datos de las máquinas virtuales o la pérdida de datos.</block>
   <block id="d1fabbd85b7cc34641739e525d26f652" category="section-title">01 de febrero de 2026</block>
+  <block id="c359614024935abd3712075452782fa3" category="list-text">*Dispositivos de bloque inactivos*</block>
 </blocks>

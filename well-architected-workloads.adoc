@@ -147,7 +147,7 @@ Se deben habilitar eficiencias de almacenamiento (compactación, compresión y d
 +
 Las instantáneas y copias de seguridad que ya no se necesitan deben eliminarse para reducir costos.
 
-* *Dispositivos de bloque huérfanos*
+* *Dispositivos de bloque inactivos*
 +
 Después de que un dispositivo de bloque no se use durante siete días, Workload Factory recomienda archivar los datos del dispositivo de bloque o eliminar el dispositivo de bloque no utilizado para reducir costos.
 
