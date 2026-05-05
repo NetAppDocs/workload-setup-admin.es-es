@@ -1073,7 +1073,6 @@
   <block id="23f4fbebbe0125e9fa4a06e2e7e8b9fc" category="list-text">Después de haber utilizado la consola Workload Factory para definir la operación que desea realizar, copie el código API en Codebox.</block>
   <block id="8c308624c961296988a91695046fff26" category="list-text">Después de haber utilizado la consola de Workload Factory para definir la operación que desea realizar, copie la AWS CLI en Codebox.</block>
   <block id="6e9cd110581bdd8427e1caca1ab0a668" category="list-text">Después de haber utilizado la consola Workload Factory para definir la operación que desea realizar, descargue el código Terraform desde Codebox.</block>
-  <block id="3c9ee3abb878e5099cd76beeedcb2d04" category="summary">Conozca las novedades en las funciones de administración de Workload Factory: credenciales de proveedores de nube, mejoras de Codebox y más.</block>
   <block id="8e11dbed1edcb7cf815a9454ba0f0315" category="doc">Novedades en las funciones de administración de NetApp Workload Factory</block>
   <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">6 de octubre de 2025</block>
   <block id="7fe837fc0a93acdad81da1d440ee3fd2" category="section-title">5 de octubre de 2025</block>
@@ -1418,4 +1417,10 @@
   <block id="8749fce6a42b5cc208c97e090bbdf52e" category="section-title">Filtrar notificaciones en NetApp Console</block>
   <block id="067205dc8475e129dc9d47a407ae631d" category="paragraph">Puedes usar la configuración de notificaciones de la consola NetApp para filtrar las notificaciones que recibes en la consola por nivel de gravedad, como crítico, info o advertencia.</block>
   <block id="3be044b694628f6e958377c22febfacd" category="section-title">03 de mayo de 2026</block>
+  <block id="394b492bc5d751a9928357af63eeb4df" category="section-title">Nueva notificación para sistemas de archivos FSx for ONTAP</block>
+  <block id="6d358c966898e9dabc6d051e85958cd8" category="paragraph">El servicio de notificación NetApp Workload Factory incluye la notificación con un resumen mensual del costo de tu cuenta, mostrando tendencias de gasto, cambios inusuales y las mejores oportunidades de ahorro para FSx for ONTAP file systems.</block>
+  <block id="2c18ddd8b06b4ef1ba84f543d572dc20" category="cell">Informe mensual de costes</block>
+  <block id="e3e28d348f2fd8f74a410b0565f54037" category="cell">Resumen mensual de costes de tu cuenta, mostrando tendencias de gasto, cambios inusuales y las mejores oportunidades de ahorro para FSx para sistemas de archivos ONTAP.</block>
+  <block id="e298f728c751f07eb265d52e8b508cc2" category="cell">Informe de costes</block>
+  <block id="f983e68b5fe658be13decdbe22777f19" category="summary">Conoce las novedades de las funciones de administración de Workload Factory, como las credenciales del proveedor de la nube, las mejoras de Codebox y mucho más.</block>
 </blocks>

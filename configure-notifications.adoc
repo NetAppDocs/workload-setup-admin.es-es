@@ -58,6 +58,9 @@ Workload Factory envía notificaciones para los siguientes eventos:
 
 
 | Se detectó una superación del umbral de latencia | Uno o más volúmenes en el clúster FSx for ONTAP superaron el umbral de latencia. | Supervisión del rendimiento | Advertencia | EDA | FSx para sistemas de archivos ONTAP 
+
+
+| Informe mensual de costes | Resumen mensual de costes de tu cuenta, mostrando tendencias de gasto, cambios inusuales y las mejores oportunidades de ahorro para FSx para sistemas de archivos ONTAP. | Informe de costes | Recomendación | Almacenamiento general | FSx para sistemas de archivos ONTAP 
 |===
 
 
