@@ -61,6 +61,9 @@ Workload Factory envía notificaciones para los siguientes eventos:
 
 
 | Informe mensual de costes | Resumen mensual de costes de tu cuenta, mostrando tendencias de gasto, cambios inusuales y las mejores oportunidades de ahorro para FSx para sistemas de archivos ONTAP. | Informe de costes | Recomendación | Almacenamiento general | FSx para sistemas de archivos ONTAP 
+
+
+| Retraso de replicación | La replicación tarda más de lo esperado. | Replicación | Crítico | Almacenamiento general | FSx para sistemas de archivos ONTAP 
 |===
 
 
