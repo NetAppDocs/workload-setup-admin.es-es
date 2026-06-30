@@ -1436,4 +1436,13 @@
   <block id="d097d681103ac768d9ca87aa43096db9" category="list-text">Opcionalmente, haz que la cuenta sea una cuenta de AWS GovCloud (US). Este tipo de cuenta solo utiliza endpoints y regiones de AWS GovCloud (US) para la configuración y las operaciones. Las credenciales y los secretos permanecen en GovCloud. Esta selección es permanente.</block>
   <block id="5aa69fed46341f59b5dc6e550c082135" category="list-text">Opcionalmente, proporciona una descripción del trabajo para la cuenta.</block>
   <block id="92ee6e4d72d15689a675017ce0db2fa1" category="section-title">31 de mayo de 2026</block>
+  <block id="b8646f09ea34b75c077cfea12f75617b" category="inline-link-macro">Referencia sobre permisos</block>
+  <block id="cd96cf7ebfb9b4a10268be38c383fa2e" category="paragraph">Obtén más información sobre los permisos que se requieren para cada capacidad de carga de trabajo en la <block ref="a5f4ae61e232cd6bd835f3c22c2ae14c" category="inline-link-macro-rx"></block>.</block>
+  <block id="d19d35e43d16db0ea1d21d81cb1ac01d" category="admonition">Si tienes una cuenta de GovCloud, no necesitas los permisos de Cost Explorer<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> o<block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block> en la política **Visualización, planificación y análisis** de Almacenamiento. Después de copiar el script del cuadro de código, elimina estos permisos y borra la coma final de la línea anterior.</block>
+  <block id="cd9aa9a92963bccf53a18059deb4f182" category="admonition">AWS GovCloud no es compatible con AWS Cost Explorer, así que no necesitas estos permisos:<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> y<block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>. Si los incluyes, la política seguirá funcionando.</block>
+  <block id="044dbc650d6316ed90f739b69dfff7ee" category="section-title">Compatibilidad con regiones</block>
+  <block id="468469fded9ecf5cf0e132a6daa62d32" category="paragraph">Las siguientes regiones de AWS no son compatibles:</block>
+  <block id="cc6dcf46ebcb08f1caa420526cc0ab18" category="list-text">Regiones de China</block>
+  <block id="ecd96786b112acf6970d6aaf3be575ca" category="list-text">Secret Cloud</block>
+  <block id="151ef168e17772f7a361db78a0c86552" category="list-text">Top Secret Cloud</block>
 </blocks>
