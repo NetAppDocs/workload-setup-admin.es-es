@@ -115,6 +115,9 @@ Consulte las políticas IAM requeridas:
         "fsx:DetachAndDeleteS3AccessPoint",
         "s3:CreateAccessPoint",
         "s3:DeleteAccessPoint",
+        "s3:TagResource",
+        "s3:UntagResource",
+        "s3:ListTagsForResource",
         "s3:GetObjectTagging",
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
@@ -139,6 +142,19 @@ Consulte las políticas IAM requeridas:
         "s3:ListBucket"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:PutEventSelectors",
+        "cloudtrail:GetEventSelectors"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/netapp-fsx-s3-metadata": "journal"
+        }
+      }
     },
     {
       "Effect": "Allow",
@@ -452,6 +468,12 @@ La siguiente tabla muestra los permisos para Storage.
 
 
 | Recupera el etiquetado de objetos a través del punto de acceso | s3:GetObjectTagging | Operaciones de objetos S3 | Operaciones y remediación 
+
+
+| Recupera la configuración actual del selector de eventos del trail de AWS CloudTrail | cloudtrail:GetEventSelectors | Operaciones de registro en diario del punto de acceso S3 | Operaciones y remediación 
+
+
+| Configura o actualiza los selectores de eventos de AWS CloudTrail habilitando o deshabilitando la asociación entre el punto de acceso S3 de FSx for ONTAP y el trail de CloudTrail | cloudtrail:PutEventSelectors | Operaciones de registro en diario del punto de acceso S3 | Operaciones y remediación 
 |===
 ====
 
