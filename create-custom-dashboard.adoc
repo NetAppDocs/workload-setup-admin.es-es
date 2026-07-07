@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: create-custom-dashboard.html 
+keywords: create dashboard, custom dashboard, AI dashboard, dashboard creation, personalized dashboard 
+summary: Crea un panel de control personalizado usando indicaciones guiadas por IA para supervisar lo que más importa a tus cargas de trabajo y prioridades operativas. 
+---
+= Crear un panel de control personalizado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crea paneles personalizados describiendo en un lenguaje sencillo lo que quieres supervisar. La IA te guía a lo largo del proceso de configuración para que tus paneles se adapten a tus cargas de trabajo y prioridades.
+
+.Acerca de esta tarea
+Los paneles personalizados utilizan un diálogo guiado por IA para comprender qué es lo que quieres visualizar. Describes tus necesidades de supervisión en lenguaje natural, y el sistema te hace preguntas aclaratorias para asegurarse de que el panel cumpla con tus requisitos.
+
+Una vez creado, puedes actualizar el panel de control para ver los datos actualizados.
+
+Recuerda que los paneles personalizados son de solo lectura por diseño y no pueden hacer cambios en tus configuraciones de almacenamiento o cargas de trabajo.
+
+.Antes de empezar
+* Necesitas permiso para acceder a los recursos que quieres supervisar en tu panel de control.
+* Configura tus cargas de trabajo en Workload Factory antes de crear paneles de control para supervisarlas.
+
+
+
+
+== Crear un panel de control
+
+.Pasos
+. Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
+. Selecciona el menú image:workloads-menu-icon.png["El icono del menú hamburguesa se usa para navegar a cargas de trabajo como almacenamiento, eda, ai, bases de datos, vmware y administración."] y luego selecciona *Resumen de cargas de trabajo* > *Cuadros de mando personalizados*.
++
+Si es tu primer panel de control, verás una pantalla en blanco con indicaciones de ejemplo para ayudarte a empezar. Puedes seleccionar *Copiar indicación* para copiar una indicación de ejemplo en el cuadro de texto del diálogo de IA.
+
+. Selecciona *Crear nuevo panel de control*.
+. En el cuadro de diálogo de IA, describe lo que quieres monitorizar.
++
+Descríbelo en un lenguaje sencillo. La IA te hará algunas preguntas para comprender mejor tus necesidades.
+
+. Selecciona image:arrow.png["El icono del menú se usa para empezar a generar paneles de control., width=18"].
+. Responde a las preguntas aclaratorias de la IA.
++
+Es posible que la IA te pida que elijas entre varias opciones para comprender mejor lo que necesitas. Responde a cada pregunta y selecciona *Continuar*, o selecciona *Omitir* para saltarte las preguntas opcionales.
+
+. Después de responder todas las preguntas, selecciona *Continuar* para crear tu panel de control.
+
+
+.Resultado
+Tu panel de control personalizado ya se encuentra en el catálogo de paneles de control. Todos los usuarios de tu cuenta de Workload Factory pueden acceder a él y consultarlo.
+
+.Qué sigue
+Después de crearla, puedes:
+
+* Actualiza los datos del panel de control para ver la información más reciente
+* Edita los paneles de control para modificar lo que muestran
+* Elimina los paneles que ya no necesites
+* Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez
+
+
+
+
+== Información relacionada
+
+* link:manage-custom-dashboards.html["Gestiona tus paneles personalizados"]
+* link:troubleshoot-custom-dashboards.html["Soluciona problemas en los paneles personalizados"]
+

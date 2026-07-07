@@ -48,6 +48,14 @@ indexpage:
       url: https://docs.netapp.com/us-en/workload-databases/analyze-error-logs.html
     - title: Ver y analizar eventos EMS para cargas de trabajo de almacenamiento
       url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
+  - title: Paneles de control personalizados
+    links:
+    - title: Conoce los paneles personalizados
+      url: "/learn-custom-dashboards.html"
+    - title: Crear un panel de control personalizado
+      url: "/create-custom-dashboard.html"
+    - title: Gestiona paneles personalizados
+      url: "/manage-custom-dashboards.html"
   - title: Blogs y comunidad
     links:
     - title: Consola de NetApp

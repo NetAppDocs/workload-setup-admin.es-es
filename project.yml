@@ -46,6 +46,16 @@ sidebar:
       url: "/well-architected-workloads.html"
     - title: Configurar notificaciones
       url: "/configure-notifications.html"
+    - title: Paneles de control personalizados
+      entries:
+      - title: Conoce los paneles personalizados
+        url: "/learn-custom-dashboards.html"
+      - title: Crear un panel de control personalizado
+        url: "/create-custom-dashboard.html"
+      - title: Gestiona paneles personalizados
+        url: "/manage-custom-dashboards.html"
+      - title: Soluciona problemas en los paneles personalizados
+        url: "/troubleshoot-custom-dashboards.html"
     - title: Automatizar tareas con CodeBox
       entries:
       - title: Más información sobre CodeBox

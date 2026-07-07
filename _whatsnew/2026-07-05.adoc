@@ -1,0 +1,15 @@
+= Paneles de control personalizados
+:allow-uri-read: 
+
+
+
+
+=== Paneles de control personalizados
+
+Crea paneles de control basados en IA que se adapten a tus cargas de trabajo y prioridades, para que puedas ver fácilmente cómo están funcionando tus operaciones. En lugar de depender de vistas fijas, los paneles de control personalizados te permiten centrarte en la información que más te importa.
+
+Solo tienes que describir en un lenguaje sencillo lo que quieres supervisar, y la IA creará un panel de control basado en tu solicitud. Por ejemplo, puedes supervisar el estado de la recuperación ante desastres, la capacidad y los costes en todas las regiones, el cumplimiento de las normas de protección del almacenamiento y otras métricas operativas.
+
+Los paneles personalizados son de solo lectura, por lo que no permiten modificar la configuración de almacenamiento ni de las cargas de trabajo. Cualquier usuario de tu cuenta de Workload Factory puede ver y gestionar estos paneles, lo que facilita que los equipos compartan información y se mantengan coordinados.
+
+link:learn-custom-dashboards.html["Conoce más sobre los paneles personalizados"]

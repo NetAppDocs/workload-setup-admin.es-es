@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: troubleshoot-custom-dashboards.html 
+keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading 
+summary: Resuelve problemas comunes con los paneles personalizados, incluyendo fallos en la creación, problemas al cargar datos y problemas de acceso. 
+---
+= Soluciona problemas en los paneles personalizados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta información para resolver los problemas habituales que puedas encontrar al crear o usar paneles personalizados.
+
+
+
+== Error al crear el panel de control
+
+**Problema:** Ves el mensaje de error “No se pudo interpretar la solicitud ni generar el código” al crear un panel de control.
+
+**Causa:** El sistema no pudo entender tu solicitud o no pudo crear la visualización a partir de tu indicación.
+
+**Solución:** Prueba lo siguiente:
+
+* Reformula tu solicitud con detalles más claros sobre lo que quieres monitorizar.
+* Empieza con una de las propuestas de ejemplo en link:create-custom-dashboard.html["Crear un panel de control personalizado"].
+* Divide las necesidades de monitoreo complejas en varios paneles de control más sencillos.
+* Especifica las cargas de trabajo, las métricas, los intervalos de tiempo o las dimensiones que deseas supervisar.
+
+
+
+
+== El panel de control no pudo cargar los datos
+
+**Problema:** El panel de control fue creado, pero muestra errores al cargar datos.
+
+**Causa:** Esto suele pasar por problemas de permisos o porque las fuentes de datos no están disponibles.
+
+**Solución:**
+
+* **Comprueba los permisos:** Asegúrate de que tu cuenta de Workload Factory tenga acceso de lectura a las cargas de trabajo y los recursos que usa el panel de control. Consulta los requisitos de permisos en link:learn-custom-dashboards.html#permissions["Permisos"].
+* **Comprobar las credenciales:** Confirma que tus credenciales de AWS son válidas y no han caducado. Consulta link:add-credentials.html["Añada las credenciales de AWS"] para obtener más información.
+* **Confirma la configuración de las cargas de trabajo:** Asegúrate de que las cargas de trabajo que quieres supervisar estén correctamente configuradas en Workload Factory y estén ejecutándose en este momento.
+
+
+
+
+== El panel de control no se carga o se carga lentamente
+
+**Problema:** El panel de control tarda en cargarse o algunos widgets no aparecen.
+
+**Causa:** La lentitud en la carga puede deberse a problemas de red, grandes volúmenes de datos o retrasos temporales en el servicio.
+
+**Solución:**
+
+* **Comprueba tu conexión a Internet:** Asegúrate de que tu conexión a Internet sea estable.
+* **Actualiza tu navegador:** Intenta actualizar la página para comprobar si el panel de control se carga correctamente.
+* **Borra la caché y las cookies de tu navegador:** esto puede ayudar a resolver los problemas de carga provocados por datos obsoletos o dañados.
+* **Espera y vuelve a intentarlo:** Si el problema continúa, espera unos minutos y vuelve a intentarlo.
+
+
+
+
+== No se puede editar el panel de control
+
+**Problema:** Cuando intentas editar un panel, ves el mensaje “Actualmente lo está editando [nombre de usuario]”.
+
+**Causa:** Otro usuario de tu cuenta de Workload Factory está editando el dashboard. Solo un usuario puede editar un dashboard a la vez.
+
+**Solución:**
+
+* Espera a que el otro usuario termine y guarde sus cambios.
+* Ponte en contacto con la persona que figura en el mensaje para coordinar la edición.
+* Si el usuario ya no está editando pero el bloqueo sigue activo, pídele que cierre la ventana de edición para liberar el bloqueo.
+
+
+
+
+== Faltan paneles de control
+
+**Problema:** Un panel de control que creaste ya no aparece en el catálogo de paneles de control.
+
+**Causa:** otro usuario de tu cuenta de Workload Factory puede haberlo eliminado.
+
+**Solución:**
+
+* Asegúrate de haber iniciado sesión en la cuenta correcta de Workload Factory.
+* Pregunta a los demás usuarios de tu cuenta si alguien eliminó el panel de control.
+* Si es necesario, vuelve a crear el dashboard usando los requisitos originales.
+
+
+Todos los usuarios de una cuenta de Workload Factory pueden ver y eliminar los paneles personalizados. Coordínate con tu equipo cuando gestiones los paneles compartidos.
+
+
+
+== Ayuda adicional
+
+Si sigues teniendo problemas con los paneles personalizados, consulta link:get-help.html["Obtenga ayuda"] para obtener información sobre cómo ponerte en contacto con el soporte de NetApp.
