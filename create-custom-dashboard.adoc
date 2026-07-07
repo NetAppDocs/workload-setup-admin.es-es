@@ -30,7 +30,7 @@ Recuerda que los paneles personalizados son de solo lectura por diseño y no pue
 == Crear un panel de control
 
 .Pasos
-. Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
+. Inicia sesión usando una de las link:console-experiences.html["experiencias de consola"^].
 . Selecciona el menú image:workloads-menu-icon.png["El icono del menú hamburguesa se usa para navegar a cargas de trabajo como almacenamiento, eda, ai, bases de datos, vmware y administración."] y luego selecciona *Resumen de cargas de trabajo* > *Cuadros de mando personalizados*.
 +
 Si es tu primer panel de control, verás una pantalla en blanco con indicaciones de ejemplo para ayudarte a empezar. Puedes seleccionar *Copiar indicación* para copiar una indicación de ejemplo en el cuadro de texto del diálogo de IA.

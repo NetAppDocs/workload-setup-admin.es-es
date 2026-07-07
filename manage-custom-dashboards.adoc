@@ -26,7 +26,7 @@ Debes tener al menos un panel de control personalizado en tu cuenta de Workload 
 == Accede al catálogo del panel de control
 
 .Pasos
-. Inicie sesión con uno de los link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^]botones .
+. Inicia sesión usando una de las link:console-experiences.html["experiencias de consola"^].
 . En el menú, selecciona *Resumen de cargas de trabajo* y luego *Cuadros de mando personalizados*.
 +
 El catálogo de paneles muestra todos los paneles personalizados de tu cuenta de Workload Factory.
