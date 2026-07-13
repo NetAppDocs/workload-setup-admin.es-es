@@ -19,6 +19,7 @@ Todos los usuarios de tu cuenta de Workload Factory pueden ver todos los paneles
 
 
 
+[[why-use-custom-dashboards]]
 == Por qué usar paneles personalizados
 
 Los usuarios de Workload Factory gestionan numerosas cargas de trabajo, entornos y prioridades, pero los paneles de control estándar solo muestran vistas predefinidas. Los paneles de control personalizados ayudan a resolver varios retos operativos:
@@ -31,6 +32,7 @@ Los usuarios de Workload Factory gestionan numerosas cargas de trabajo, entornos
 
 
 
+[[what-you-can-do-with-custom-dashboards]]
 == Qué puedes hacer con los paneles personalizados
 
 Durante la configuración, el diálogo guiado por IA te ayuda a definir:
@@ -44,11 +46,13 @@ Durante la configuración, el diálogo guiado por IA te ayuda a definir:
 
 
 
+[[considerations-and-limitations]]
 == Consideraciones y limitaciones
 
 
 
-=== Permisos
+[[aws-credentials-and-permissions]]
+=== Credenciales y permisos de AWS
 
 Para crear o ver paneles personalizados, necesitas los permisos correctos de AWS IAM para los recursos que quieres supervisar. Asegúrate de que la cuenta de Workload Factory tenga acceso de lectura a las fuentes de datos que usan los paneles.
 
@@ -56,29 +60,40 @@ link:add-credentials.html["Aprende a añadir credenciales de AWS y configurar lo
 
 
 
+[[link-to-fsx-for-ontap]]
+=== Enlace a FSx para ONTAP
+
+Workload Factory requiere un Link para conectarse a los sistemas de archivos FSx for ONTAP. Un Link crea una relación de confianza y conectividad entre Workload Factory y uno o varios sistemas de archivos FSx for ONTAP. Esto te permite supervisar y gestionar ciertas funciones del sistema de archivos directamente desde las llamadas a la API de REST de ONTAP que no están disponibles a través de la API de Amazon FSx for ONTAP.
+
+https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Aprende a crear un enlace"^].
+
+
+
+[[read-only-design]]
 === Diseño de solo lectura
 
 Los paneles personalizados son de solo lectura. No pueden modificar la configuración de almacenamiento ni de las cargas de trabajo. Esto te permite supervisar tu sistema sin modificar nada accidentalmente.
 
 
 
+[[limitations]]
 === Limitaciones
 
 Actualmente, se aplican las siguientes limitaciones a los paneles personalizados:
 
 * No puedes compartir paneles de control fuera de tu cuenta de Workload Factory
-* Solo un usuario puede editar un panel de control a la vez
-* No se admite la edición simultánea
 
 
 
 
+[[demo-environment]]
 === Entorno de demostración
 
 Si utilizas una cuenta de demostración de Workload Factory, tienes a tu disposición algunos paneles predefinidos. Estos te ayudan a ver lo que pueden hacer los paneles personalizados. Cada panel muestra una necesidad común de supervisión: el estado de la recuperación ante desastres, la capacidad y los costes en las distintas regiones, y si se están cumpliendo las reglas de protección del almacenamiento.
 
 
 
+[[sample-prompts]]
 === Ejemplos de prompts
 
 Los siguientes ejemplos muestran cómo describir tus necesidades de monitoreo en un lenguaje sencillo:
@@ -96,6 +111,7 @@ Los siguientes ejemplos muestran cómo describir tus necesidades de monitoreo en
 
 
 
+[[next-steps]]
 == Próximos pasos
 
 * link:create-custom-dashboard.html["Crear un panel de control personalizado"]

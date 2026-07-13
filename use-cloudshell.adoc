@@ -15,6 +15,7 @@ Abra CloudShell para ejecutar comandos CLI de AWS o ONTAP desde cualquier lugar 
 
 
 
+[[about-this-task]]
 == Acerca de esta tarea
 
 CloudShell le permite ejecutar comandos de AWS CLI o comandos de ONTAP CLI en un entorno similar a un shell desde la consola de Workload Factory.  Simula sesiones de terminal en el navegador, brindando funciones de terminal y enviando mensajes a través del backend de Workload Factory.  Le permite utilizar las credenciales de AWS y las credenciales de ONTAP que haya proporcionado en su cuenta de NetApp .
@@ -32,6 +33,7 @@ Las características de CloudShell incluyen:
 
 
 
+[[cloudshell-commands]]
 == Comandos de CloudShell
 
 Dentro de la interfaz GUI de CloudShell, puede ingresar `help` para ver los comandos de CloudShell disponibles. Después de emitir `help` el comando, aparece la siguiente referencia.
@@ -71,6 +73,7 @@ No se admiten operadores de vaciado como tubería `|`, ejecución en segundo pla
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 CloudShell funciona en el contexto de sus credenciales de AWS. Para utilizar CloudShell, debe proporcionar al menos una credencial de AWS.
@@ -80,6 +83,7 @@ NOTE: CloudShell está disponible para ejecutar cualquier comando de la CLI de A
 
 
 
+[[deploy-cloudshell]]
 == Implemente CloudShell
 
 Puede implementar CloudShell desde cualquier lugar en la consola de NetApp Workload Factory.  También puede implementar CloudShell desde la consola de NetApp .
@@ -138,6 +142,7 @@ image:screenshot-cloudshell-tab-menu.png["Captura de pantalla que muestra el men
 
 
 
+[[rename-a-cloudshell-session-tab]]
 == Cambie el nombre de una pestaña de sesión de CloudShell
 
 Puede cambiar el nombre de una pestaña de sesión de CloudShell para ayudarle a identificar la sesión.
@@ -153,6 +158,7 @@ El nuevo nombre aparece en la pestaña de sesión de CloudShell.
 
 
 
+[[duplicate-cloudshell-session-tab]]
 == Duplicar la pestaña de sesión de CloudShell
 
 Puede duplicar un separador de sesión de CloudShell para crear una nueva sesión con el mismo nombre, credenciales y región. El código de la pestaña original no está duplicado en la pestaña duplicada.
@@ -167,6 +173,7 @@ La nueva pestaña aparece con el mismo nombre que la pestaña original.
 
 
 
+[[close-cloudshell-session-tabs]]
 == Cierre los separadores de sesión de CloudShell
 
 Puede cerrar las pestañas de CloudShell de una en una, cerrar otras pestañas en las que no está trabajando o cerrar todas las pestañas a la vez.
@@ -187,6 +194,7 @@ Se cierran los separadores de sesión de CloudShell seleccionados.
 
 
 
+[[split-cloudshell-session-tabs]]
 == Dividir las pestañas de sesión de CloudShell
 
 Puede dividir las pestañas de sesión de CloudShell para ver dos o más pestañas al mismo tiempo.
@@ -198,6 +206,7 @@ image:screenshot-cloudshell-split-view.png["Captura de pantalla que muestra dos 
 
 
 
+[[update-settings-for-a-cloudshell-session]]
 == Actualizar la configuración de una sesión de CloudShell
 
 Puede actualizar la configuración del tipo de fuente y de salida para las sesiones de CloudShell.

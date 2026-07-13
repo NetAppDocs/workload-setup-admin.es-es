@@ -15,6 +15,7 @@ Puedes configurar el servicio de notificaciones de NetApp Workload Factory para 
 
 
 
+[[notification-types-and-messages]]
 == Tipos de notificaciones y mensajes
 
 Workload Factory envía notificaciones para los siguientes eventos:
@@ -67,6 +68,7 @@ Workload Factory envía notificaciones para los siguientes eventos:
 |===
 
 
+[[configure-workload-factory-notifications]]
 == Configurar las notificaciones de Workload Factory
 
 Puedes configurar las notificaciones de Workload Factory usando NetApp Console o la consola de Workload Factory.
@@ -75,6 +77,7 @@ Las opciones para recibir notificaciones incluyen:
 
 
 
+[[netapp-console]]
 === Consola de NetApp
 
 * *Notificaciones*: Configura Workload Factory para que envíe notificaciones que aparezcan bajo el icono de la campana en NetApp Console.
@@ -84,6 +87,7 @@ Las opciones para recibir notificaciones incluyen:
 
 
 
+[[workload-factory-console]]
 === Consola de Workload Factory
 
 * *Correo electrónico*: Habilita las notificaciones por correo electrónico en la consola de Workload Factory para recibir notificaciones en cualquier dirección de correo electrónico asociada a la cuenta sin necesidad de configurar Amazon SNS.
@@ -121,6 +125,7 @@ Después de crear el tema, copie el ARN del tema e ingréselo en el campo *ARN d
 
 
 --
+[[wf-console-email-notifications]]
 .Configurar notificaciones desde la consola de Workload Factory
 --
 .Pasos
@@ -141,18 +146,21 @@ Después de verificar la configuración enviando una notificación de prueba, se
 ====
 
 
+[[subscribe-to-the-amazon-sns-topic]]
 == Suscríbete al tema de Amazon SNS
 
 Después de configurar Workload Factory para enviar notificaciones a un tema, siga las https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["instrucciones"] en la documentación de Amazon SNS para suscribirse al tema para poder recibir notificaciones de Workload Factory.
 
 
 
+[[filter-notifications]]
 == Filtrar notificaciones
 
 Puedes reducir el tráfico innecesario de notificaciones y dirigir tipos específicos de notificaciones a usuarios concretos aplicando filtros a las notificaciones. Puedes hacer esto usando una política de Amazon SNS para notificaciones SNS y usando la configuración de notificaciones en NetApp Console.
 
 
 
+[[filter-amazon-sns-notifications]]
 === Filtrar notificaciones de Amazon SNS
 
 Cuando te suscribes a un tema de Amazon SNS, recibes todas las notificaciones publicadas en ese tema de forma predeterminada.  Si desea recibir solo notificaciones específicas del tema, puede utilizar una política de filtro para controlar qué notificaciones recibe.  Las políticas de filtro hacen que Amazon SNS envíe únicamente las notificaciones que coinciden con la política de filtro al suscriptor.
@@ -231,6 +239,7 @@ Para obtener más información sobre la creación de políticas de filtros, cons
 
 
 
+[[filter-notifications-in-netapp-console]]
 === Filtrar notificaciones en NetApp Console
 
 Puedes usar la configuración de notificaciones de la consola NetApp para filtrar las notificaciones que recibes en la consola por nivel de gravedad, como crítico, info o advertencia.

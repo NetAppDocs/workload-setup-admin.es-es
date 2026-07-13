@@ -15,6 +15,7 @@ Utiliza esta información para resolver los problemas habituales que puedas enco
 
 
 
+[[dashboard-creation-failed]]
 == Error al crear el panel de control
 
 **Problema:** Ves el mensaje de error “No se pudo interpretar la solicitud ni generar el código” al crear un panel de control.
@@ -31,6 +32,7 @@ Utiliza esta información para resolver los problemas habituales que puedas enco
 
 
 
+[[dashboard-failed-to-load-data]]
 == El panel de control no pudo cargar los datos
 
 **Problema:** El panel de control fue creado, pero muestra errores al cargar datos.
@@ -39,13 +41,13 @@ Utiliza esta información para resolver los problemas habituales que puedas enco
 
 **Solución:**
 
-* **Comprueba los permisos:** Asegúrate de que tu cuenta de Workload Factory tenga acceso de lectura a las cargas de trabajo y los recursos que usa el panel de control. Consulta los requisitos de permisos en link:learn-custom-dashboards.html#permissions["Permisos"].
+* **Comprueba los permisos:** Asegúrate de que tu cuenta de Workload Factory tenga acceso de lectura a las cargas de trabajo y los recursos que usa el panel de control. Consulta los requisitos de permisos en link:learn-custom-dashboards.html#aws-credentials-and-permissions["Credenciales y permisos de AWS"].
 * **Comprobar las credenciales:** Confirma que tus credenciales de AWS son válidas y no han caducado. Consulta link:add-credentials.html["Añada las credenciales de AWS"] para obtener más información.
-* **Confirma la configuración de las cargas de trabajo:** Asegúrate de que las cargas de trabajo que quieres supervisar estén correctamente configuradas en Workload Factory y estén ejecutándose en este momento.
 
 
 
 
+[[dashboard-not-loading-or-loading-slowly]]
 == El panel de control no se carga o se carga lentamente
 
 **Problema:** El panel de control tarda en cargarse o algunos widgets no aparecen.
@@ -62,21 +64,7 @@ Utiliza esta información para resolver los problemas habituales que puedas enco
 
 
 
-== No se puede editar el panel de control
-
-**Problema:** Cuando intentas editar un panel, ves el mensaje “Actualmente lo está editando [nombre de usuario]”.
-
-**Causa:** Otro usuario de tu cuenta de Workload Factory está editando el dashboard. Solo un usuario puede editar un dashboard a la vez.
-
-**Solución:**
-
-* Espera a que el otro usuario termine y guarde sus cambios.
-* Ponte en contacto con la persona que figura en el mensaje para coordinar la edición.
-* Si el usuario ya no está editando pero el bloqueo sigue activo, pídele que cierre la ventana de edición para liberar el bloqueo.
-
-
-
-
+[[missing-dashboards]]
 == Faltan paneles de control
 
 **Problema:** Un panel de control que creaste ya no aparece en el catálogo de paneles de control.
@@ -94,6 +82,7 @@ Todos los usuarios de una cuenta de Workload Factory pueden ver y eliminar los p
 
 
 
+[[additional-help]]
 == Ayuda adicional
 
 Si sigues teniendo problemas con los paneles personalizados, consulta link:get-help.html["Obtenga ayuda"] para obtener información sobre cómo ponerte en contacto con el soporte de NetApp.

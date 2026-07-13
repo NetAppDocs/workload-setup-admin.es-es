@@ -4,6 +4,7 @@
 
 
 
+[[custom-dashboards]]
 === Paneles de control personalizados
 
 Crea paneles de control basados en IA que se adapten a tus cargas de trabajo y prioridades, para que puedas ver fácilmente cómo están funcionando tus operaciones. En lugar de depender de vistas fijas, los paneles de control personalizados te permiten centrarte en la información que más te importa.

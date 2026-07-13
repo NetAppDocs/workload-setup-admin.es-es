@@ -20,13 +20,9 @@ Una vez creado, puedes actualizar el panel de control para ver los datos actuali
 
 Recuerda que los paneles personalizados son de solo lectura por diseño y no pueden hacer cambios en tus configuraciones de almacenamiento o cargas de trabajo.
 
-.Antes de empezar
-* Necesitas permiso para acceder a los recursos que quieres supervisar en tu panel de control.
-* Configura tus cargas de trabajo en Workload Factory antes de crear paneles de control para supervisarlas.
 
 
-
-
+[[create-a-dashboard]]
 == Crear un panel de control
 
 .Pasos
@@ -55,13 +51,13 @@ Tu panel de control personalizado ya se encuentra en el catálogo de paneles de 
 Después de crearla, puedes:
 
 * Actualiza los datos del panel de control para ver la información más reciente
-* Edita los paneles de control para modificar lo que muestran
 * Elimina los paneles que ya no necesites
 * Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez
 
 
 
 
+[[related-information]]
 == Información relacionada
 
 * link:manage-custom-dashboards.html["Gestiona tus paneles personalizados"]

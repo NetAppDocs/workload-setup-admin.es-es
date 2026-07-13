@@ -4,6 +4,7 @@
 
 
 
+[[cloudshell-reports-ai-generated-error-responses-for-ontap-cli-commands]]
 === CloudShell informa de respuestas de errores generadas por IA para comandos de la CLI de ONTAP
 
 Al usar CloudShell, cada vez que emita un comando de la CLI de ONTAP y se produce un error, puede obtener respuestas de error generadas por IA que incluyen una descripción del fallo, la causa del fallo y una resolución detallada.
@@ -12,6 +13,7 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html["Usa
 
 
 
+[[iamsimulatepermissionpolicy-permission-update]]
 === iam:SimulatePermissionPolicy actualización de permisos
 
 Ahora puede administrar `iam:SimulatePrincipalPolicy` el permiso desde la consola de fábrica de cargas de trabajo cuando agrega credenciales de cuenta de AWS adicionales o agrega una nueva capacidad de carga de trabajo, como la carga de trabajo de GenAI.

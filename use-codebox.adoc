@@ -17,6 +17,7 @@ Codebox se alinea con las políticas de permisos de Workload Factory al completa
 
 
 
+[[how-to-use-codebox]]
 == Cómo usar CodeBox
 
 A medida que ingresa valores en los asistentes de interfaz de usuario de Workload Factory, puede ver la actualización de datos en Codebox a medida que completa cada campo.  Cuando complete el asistente, pero antes de seleccionar el botón *Crear* en la parte inferior de la página, seleccioneimage:button-copy-codebox.png["el botón copiar"] copiar en Codebox para capturar el código necesario para construir su configuración.  Por ejemplo, esta captura de pantalla de la creación de un nuevo Microsoft SQL Server muestra las entradas del asistente para VPC y zonas de disponibilidad y las entradas equivalentes en Codebox para una implementación de API REST.
@@ -27,6 +28,7 @@ Con algunos formatos de código también puedes seleccionar el botón de descarg
 
 
 
+[[use-cloudformation-code-from-codebox]]
 == Utilice el código CloudFormation de CodeBox
 
 Puede copiar el código de CloudFormation generado desde Codebox y luego iniciar la pila de Amazon Web Services CloudFormation en su cuenta de AWS.  CloudFormation realizará las acciones que definió en la interfaz de usuario de Workload Factory.
@@ -88,6 +90,7 @@ Tenga en cuenta que el código dentro de un archivo YAML generado por CloudForma
 
 
 
+[[use-rest-api-code-from-codebox]]
 == Utilice el código de API REST de CodeBox
 
 Puede utilizar las API REST de Workload Factory generadas desde Codebox para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
@@ -103,6 +106,7 @@ Tenga en cuenta que los tokens de autenticación están ocultos en CodeBox, pero
 
 
 
+[[use-aws-cli-code-from-codebox]]
 == Utilice el código de la CLI de AWS de CodeBox
 
 Puede usar la interfaz de línea de comandos de Amazon Web Services generada desde CodeBox para implementar y administrar sus sistemas de archivos FSx para ONTAP y otros recursos de AWS.
@@ -115,6 +119,7 @@ Puede usar la interfaz de línea de comandos de Amazon Web Services generada des
 
 
 
+[[use-terraform-from-codebox]]
 == Utilice Terraform de CodeBox
 
 Puedes utilizar Terraform para implementar y gestionar tus sistemas de archivos FSx para ONTAP y otros recursos de AWS.

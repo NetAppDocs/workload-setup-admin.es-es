@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: manage-custom-dashboards.html 
-keywords: manage dashboards, edit dashboard, delete dashboard, refresh dashboard, dashboard catalog 
-summary: Accede a tu catálogo de paneles para ver, editar, actualizar y eliminar paneles personalizados en Workload Factory. 
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
+summary: Accede a tu catálogo de paneles de control para ver, actualizar y eliminar paneles de control personalizados en Workload Factory. 
 ---
 = Gestiona paneles personalizados
 :allow-uri-read: 
@@ -11,18 +11,19 @@ summary: Accede a tu catálogo de paneles para ver, editar, actualizar y elimina
 
 
 [role="lead"]
-Gestiona tus paneles personalizados desde el catálogo de paneles. Desde allí, puedes ver detalles, actualizar datos, editar la configuración del panel o eliminar paneles que ya no necesites.
+Gestiona tus paneles personalizados desde el catálogo de paneles. Desde allí, puedes ver detalles, actualizar datos o eliminar paneles que ya no necesites.
 
 .Acerca de esta tarea
-Todos los usuarios de tu cuenta de Workload Factory pueden acceder a todos los paneles personalizados. Cada panel muestra datos básicos, como el nombre del creador, la fecha de creación y si alguien lo está editando en ese momento.
+Todos los usuarios de tu cuenta de Workload Factory pueden acceder a todos los paneles personalizados. Cada panel muestra datos básicos, como el nombre del creador y la fecha de creación.
 
-Los paneles personalizados son de solo lectura. No pueden modificar tu almacenamiento ni la configuración de las cargas de trabajo. Puedes editar el propio panel, pero no los recursos que supervisa.
+Los paneles personalizados son de solo lectura. No pueden modificar tu almacenamiento ni la configuración de las cargas de trabajo.
 
 .Antes de empezar
 Debes tener al menos un panel de control personalizado en tu cuenta de Workload Factory.
 
 
 
+[[access-the-dashboard-catalog]]
 == Accede al catálogo del panel de control
 
 .Pasos
@@ -36,6 +37,7 @@ El catálogo de paneles muestra todos los paneles personalizados de tu cuenta de
 
 
 
+[[refresh-dashboard-data]]
 == Actualizar los datos del panel de control
 
 Los datos del panel se cargan al abrir un panel. Puedes actualizarlo para ver la información más reciente.
@@ -44,28 +46,7 @@ El panel de control vuelve a cargar los datos de tus cargas de trabajo. La hora 
 
 
 
-== Editar un panel de control
-
-Puedes editar un panel de control para modificar lo que muestra, incluidas las métricas y los gráficos.
-
-.Pasos
-. En la página *Paneles personalizados*, busca el panel que quieras editar.
-. En el menú *Actions* de ese dashboard, selecciona *Edit dashboard*.
-+
-Si otro usuario está editando el panel de control, verás un mensaje como “Actualmente lo está editando [nombre de usuario]”. Espera a que termine o coordina con él.
-
-. En el cuadro de diálogo de IA, describe los cambios que quieres hacer.
-+
-Este proceso es similar al de crear un nuevo panel de control. Puedes modificar las cargas de trabajo, las métricas o los intervalos de tiempo que supervisa el panel de control.
-
-. Revisa los cambios y selecciona **Guardar**.
-
-
-.Resultado
-El panel de control se actualiza con los cambios que realices. La fecha de la última modificación también se actualiza.
-
-
-
+[[delete-a-dashboard]]
 == Eliminar un panel de control
 
 Elimina los paneles que ya no necesites. Esta acción es permanente y no se puede deshacer.
@@ -81,6 +62,7 @@ El panel de control se elimina definitivamente de tu cuenta de Workload Factory 
 
 
 
+[[related-information]]
 == Información relacionada
 
 * link:create-custom-dashboard.html["Crear paneles personalizados adicionales"]
