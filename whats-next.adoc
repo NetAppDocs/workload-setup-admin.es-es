@@ -21,10 +21,6 @@ Evalúa y analiza el estado de los datos actuales para ahorrar posibles costes u
 +
 Detecta el estado de tus bases de datos actuales en AWS, evalúa el posible ahorro en costes cambiando a FSx para ONTAP, pon en marcha bases de datos integrales con prácticas recomendadas incorporadas para la optimización y automatiza la clonación ligera para las canalizaciones de CI/CD.
 
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-Implemente y gestione una infraestructura de generación aumentada de recuperación (RAG) para mejorar la precisión y la singularidad de sus aplicaciones de IA. Crea una base de conocimientos de RAG en FSx para ONTAP con seguridad de datos y cumplimiento normativo integrados.
-
 * https://docs.netapp.com/us-en/workload-vmware/index.html["Cargas de trabajo de"^]
 +
 Simplifique las migraciones y las operaciones con recomendaciones inteligentes y soluciones automáticas. Ponga en marcha backups eficientes y una sólida recuperación ante desastres. Supervise sus máquinas virtuales y solucione problemas.

@@ -24,7 +24,7 @@ link:sign-up-saas.html["Aprenda a registrarse y a crear una cuenta"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]Agregar credenciales de AWS a Workload Factory
 [role="quick-margin-para"]
-Este paso es opcional. Puede utilizar Workload Factory sin necesidad de añadir credenciales para acceder a su cuenta de AWS.  Al agregar las credenciales de AWS a Workload Factory, su cuenta de Workload Factory obtiene los permisos necesarios para crear y administrar sistemas de archivos FSx para ONTAP y para implementar y administrar cargas de trabajo específicas, como bases de datos y GenAI.
+Este paso es opcional. Puedes utilizar Workload Factory sin añadir credenciales para acceder a tu cuenta de AWS. Añadir credenciales de AWS a Workload Factory le da a tu cuenta de Workload Factory los permisos necesarios para crear y gestionar sistemas de archivos FSx for ONTAP y para implementar y gestionar cargas de trabajo específicas como bases de datos.
 
 [role="quick-margin-para"]
 link:add-credentials.html["Aprenda a agregar credenciales a su cuenta"].
