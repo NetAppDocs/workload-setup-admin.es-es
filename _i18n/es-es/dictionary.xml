@@ -1467,7 +1467,6 @@
   <block id="22e8351c82677bcc78bd23d6fb170bc8" category="paragraph">El panel de control se elimina definitivamente de tu cuenta de Workload Factory y todos los usuarios pierden acceso a él.</block>
   <block id="9537d9160ef701530bdd875698475957" category="inline-link-macro">Crear paneles personalizados adicionales</block>
   <block id="1258b44f1520a3cf10d648fb08dbf72e" category="list-text"><block ref="1258b44f1520a3cf10d648fb08dbf72e" category="inline-link-macro-rx"></block></block>
-  <block id="87377124bfbafaf3a36cd9e53255e829" category="summary">Resuelve problemas comunes con los paneles personalizados, incluyendo fallos en la creación, problemas al cargar datos y problemas de acceso.</block>
   <block id="0c5896a9e6c8d2cff1b4d007852b1732" category="paragraph">Utiliza esta información para resolver los problemas habituales que puedas encontrar al crear o usar paneles personalizados.</block>
   <block id="2e00365fe32c89b1fd1ad214f291ca85" category="section-title">Error al crear el panel de control</block>
   <block id="09a8c59ab236b488dde6ce993a012c63" category="paragraph">**Problema:** Ves el mensaje de error “No se pudo interpretar la solicitud ni generar el código” al crear un panel de control.</block>
@@ -1491,7 +1490,6 @@
   <block id="e7347594ee6cffce40f1598054f4f163" category="list-text">**Espera y vuelve a intentarlo:** Si el problema continúa, espera unos minutos y vuelve a intentarlo.</block>
   <block id="318369ae5a2f25e9c7cb0b7b846d1775" category="section-title">Faltan paneles de control</block>
   <block id="732976f9f9cc4b9938c0a1a9c2569828" category="paragraph">**Problema:** Un panel de control que creaste ya no aparece en el catálogo de paneles de control.</block>
-  <block id="d0a35413e8843c3f263cb1fad4f4cb3e" category="paragraph">**Causa:** otro usuario de tu cuenta de Workload Factory puede haberlo eliminado.</block>
   <block id="4d6f4bd604a33b7ae11eceb4c29146f9" category="list-text">Asegúrate de haber iniciado sesión en la cuenta correcta de Workload Factory.</block>
   <block id="86d37fb397f8d1a33dc0e6cb1de913ae" category="list-text">Pregunta a los demás usuarios de tu cuenta si alguien eliminó el panel de control.</block>
   <block id="62ad02c42e5e548dcaf80a64c2d0eefd" category="list-text">Si es necesario, vuelve a crear el dashboard usando los requisitos originales.</block>
@@ -1513,4 +1511,7 @@
   <block id="ef18329e66f7a0f5b022b9a400dd74ed" category="paragraph">La carga de trabajo GenAI se ha eliminado de la consola de Workload Factory.</block>
   <block id="7548d07d123f53ef8a847c6be983f3e5" category="paragraph">Cuando concedes permisos, Workload Factory asocia una política a la instancia con permisos para gestionar recursos y procesos dentro de esa cuenta de AWS. Esto permite a Workload Factory ejecutar diversas operaciones, desde el descubrimiento de tus entornos de almacenamiento hasta la implementación de recursos de AWS como sistemas de archivos en la gestión de almacenamiento.</block>
   <block id="b0e0fd1b2977dcfd6e5719ca7a3a6e37" category="paragraph">Este paso es opcional. Puedes utilizar Workload Factory sin añadir credenciales para acceder a tu cuenta de AWS. Añadir credenciales de AWS a Workload Factory le da a tu cuenta de Workload Factory los permisos necesarios para crear y gestionar sistemas de archivos FSx for ONTAP y para implementar y gestionar cargas de trabajo específicas como bases de datos.</block>
+  <block id="00436cf3153058a6cc1bda7834e2df46" category="paragraph">Para crear paneles de control, Workload Factory utiliza credenciales de AWS de solo lectura. Estas credenciales solo permiten acciones de lectura, como<block ref="24ca8966cf3ca7c9dc7c9de631b31ff0" prefix=" " category="inline-code"></block> y<block ref="0054238c3be20aab765346f029c558a4" prefix=" " category="inline-code"></block>, para los siguientes servicios: EC2, FSx, CloudWatch, Resource Groups Tagging API, Backup, CloudWatch Logs, KMS y EFS.</block>
+  <block id="660503a3fa3804fff2a7f84301e40d4a" category="summary">Soluciona los problemas más habituales con los paneles personalizados, incluyendo fallos de configuración, problemas de carga de datos y problemas de acceso.</block>
+  <block id="e3c8b96b5757e581b1d0e7900d690797" category="paragraph">**Causa:** Es posible que otro usuario de tu cuenta de Workload Factory lo haya eliminado.</block>
 </blocks>

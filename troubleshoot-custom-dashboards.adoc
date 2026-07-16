@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: troubleshoot-custom-dashboards.html 
 keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading 
-summary: Resuelve problemas comunes con los paneles personalizados, incluyendo fallos en la creación, problemas al cargar datos y problemas de acceso. 
+summary: Soluciona los problemas más habituales con los paneles personalizados, incluyendo fallos de configuración, problemas de carga de datos y problemas de acceso. 
 ---
 = Soluciona problemas en los paneles personalizados
 :allow-uri-read: 
@@ -69,7 +69,7 @@ Utiliza esta información para resolver los problemas habituales que puedas enco
 
 **Problema:** Un panel de control que creaste ya no aparece en el catálogo de paneles de control.
 
-**Causa:** otro usuario de tu cuenta de Workload Factory puede haberlo eliminado.
+**Causa:** Es posible que otro usuario de tu cuenta de Workload Factory lo haya eliminado.
 
 **Solución:**
 
