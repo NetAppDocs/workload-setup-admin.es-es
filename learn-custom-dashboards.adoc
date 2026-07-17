@@ -65,7 +65,7 @@ link:add-credentials.html["Aprende a añadir credenciales de AWS y configurar lo
 [[link-to-fsx-for-ontap]]
 === Enlace a FSx para ONTAP
 
-Workload Factory requiere un Link para conectarse a los sistemas de archivos FSx for ONTAP. Un Link crea una relación de confianza y conectividad entre Workload Factory y uno o varios sistemas de archivos FSx for ONTAP. Esto te permite supervisar y gestionar ciertas funciones del sistema de archivos directamente desde las llamadas a la API de REST de ONTAP que no están disponibles a través de la API de Amazon FSx for ONTAP.
+Workload Factory requiere un enlace para conectarse a los sistemas de archivos FSx for ONTAP. Un enlace crea una relación de confianza y conectividad entre Workload Factory y uno o varios sistemas de archivos FSx for ONTAP. Esto te permite supervisar y gestionar ciertas funciones del sistema de archivos directamente desde las llamadas a la API de REST de ONTAP que no están disponibles a través de la API de Amazon FSx for ONTAP.
 
 https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Aprende a crear un enlace"^].
 
