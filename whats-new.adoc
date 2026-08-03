@@ -46,9 +46,9 @@ Una vez que hayas creado un panel personalizado, recibirás una notificación co
 
 Esto te ayuda a saber cuándo tu panel de control está listo y hace que sea fácil revisarlo o recrearlo.
 
-link:create-custom-dashboard.html["Aprende a crear paneles personalizados"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["Aprende a crear paneles personalizados"]
 
-link:configure-notifications.html["Aprende sobre cómo configurar las notificaciones"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Aprende sobre cómo configurar las notificaciones"]
 
 
 
@@ -60,9 +60,9 @@ Los nuevos paneles son privados por defecto y solo tú puedes verlos. Puedes hac
 
 Cada tarjeta del panel muestra una etiqueta de Privado o Público para que puedas ver rápidamente qué paneles están compartidos.
 
-link:learn-custom-dashboards.html#dashboard-visibility-and-sharing["Conoce la visibilidad y el uso compartido de los paneles de control"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-custom-dashboards.html#view-and-share-dashboards["Conoce la visibilidad y el uso compartido de los paneles de control"]
 
-link:manage-custom-dashboards.html#change-dashboard-visibility["Aprende a compartir paneles de control"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html#change-dashboard-visibility["Aprende a compartir paneles de control"]
 
 
 
@@ -81,7 +81,7 @@ Las funciones de IA incluyen Ask Me, paneles personalizados, el generador de reg
 
 Si las funciones de IA están desactivadas, los usuarios verán un mensaje que indica que la IA no está disponible.
 
-link:manage-genai-features.html["Aprende sobre cómo gestionar las funciones de IA"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["Aprende sobre cómo gestionar las funciones de IA"]
 
 
 
