@@ -29,7 +29,12 @@ Los permisos de visualización, planificación y análisis se limitan a los docu
 
 Los permisos de operaciones y corrección te permiten realizar cambios en tus recursos, analizar los registros de errores, obtener un análisis exhaustivo de la arquitectura de tus recursos y solucionar problemas de configuración.
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Referencia sobre permisos"] === Paneles personalizados
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Referencia sobre permisos"]
+
+
+
+[[custom-dashboards]]
+=== Paneles de control personalizados
 
 
 
