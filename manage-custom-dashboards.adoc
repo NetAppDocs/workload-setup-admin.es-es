@@ -11,10 +11,10 @@ summary: Accede a tu catálogo de paneles de control para ver, actualizar y elim
 
 
 [role="lead"]
-Gestiona tus paneles personalizados desde el catálogo de paneles. Desde allí, puedes ver detalles, actualizar datos o eliminar paneles que ya no necesites.
+Gestiona tus paneles personalizados desde el catálogo de paneles. Desde allí, puedes consultar detalles, compartir paneles, actualizar los datos o eliminar los paneles que ya no necesites.
 
 .Acerca de esta tarea
-Todos los usuarios de tu cuenta de Workload Factory pueden acceder a todos los paneles personalizados. Cada panel muestra datos básicos, como el nombre del creador y la fecha de creación.
+Puedes ver y gestionar los paneles personalizados desde el catálogo de paneles. Los paneles privados solo son visibles para ti, mientras que los paneles públicos son visibles para todos los usuarios de tu cuenta de Workload Factory. Cada panel muestra datos básicos como el nombre del creador, la fecha de creación y una etiqueta de visibilidad (Privado o Público).
 
 Los paneles personalizados son de solo lectura. No pueden modificar tu almacenamiento ni la configuración de las cargas de trabajo.
 
@@ -34,6 +34,26 @@ El catálogo de paneles muestra todos los paneles personalizados de tu cuenta de
 
 . Revisa la lista del panel de control.
 
+
+
+
+[[change-dashboard-visibility]]
+== Cambiar la visibilidad del panel de control
+
+Haz que un panel sea público para compartirlo con tu equipo. Hazlo privado para dejar de compartirlo.
+
+.Pasos
+. En la página *Paneles personalizados*, busca el panel que quieras actualizar.
+. En el menú desplegable *Acciones* image:icon-action.png["El icono de tres puntos que abre el menú de acciones"] de ese panel de control, selecciona una de las siguientes:
++
+** *Compartir panel* - hace que el panel sea visible para todos los usuarios de tu cuenta de Workload Factory
+** *Cambiar a panel de control privado* - hace que el panel de control solo sea visible para ti
+
+
+
+
+.Resultado
+El panel de control se actualiza al instante. La etiqueta de visibilidad de la tarjeta del panel de control muestra el estado actual.
 
 
 

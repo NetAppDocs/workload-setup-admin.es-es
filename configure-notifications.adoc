@@ -65,6 +65,12 @@ Workload Factory envía notificaciones para los siguientes eventos:
 
 
 | Retraso de replicación | La replicación tarda más de lo esperado. | Replicación | Crítico | Almacenamiento general | FSx para sistemas de archivos ONTAP 
+
+
+| La creación del panel de control personalizado se realizó correctamente | Tu panel de control personalizado se ha creado correctamente y ya está listo para consultarlo. | Paneles personalizados | Correcto | Almacenamiento general | Cuenta de Workload Factory 
+
+
+| No se pudo crear el panel de control personalizado | Workload Factory no ha podido crear tu panel de control personalizado. Intenta crear el panel de control de nuevo. | Paneles personalizados | Error | Almacenamiento general | Cuenta de Workload Factory 
 |===
 
 

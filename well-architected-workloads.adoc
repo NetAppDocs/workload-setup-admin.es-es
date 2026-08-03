@@ -22,7 +22,13 @@ Workload Factory analiza tus cargas de trabajo que se ejecutan diariamente en Am
 
 Una vez completado el análisis diario, las configuraciones aparecen como "optimizadas" o "no optimizadas" en el panel de control de buena arquitectura para la implementación. Encontrará la puntuación de optimización total, los problemas de configuración por categoría y una lista de problemas de configuración y recomendaciones. Puede revisar las recomendaciones para problemas de configuración. Algunos problemas pueden solucionarse automáticamente mediante Workload Factory, mientras que otros requieren intervención manual. En este caso, Workload Factory proporciona instrucciones detalladas para ayudarle a implementar los cambios recomendados.
 
-Puedes descartar el análisis de configuraciones que no se aplican a tus entornos. Esto evita alertas innecesarias y resultados de optimización imprecisos. Cuando descartas el análisis de una configuración específica, Workload Factory no incluye la configuración en la puntuación total de optimización.
+Puedes descartar el análisis de las configuraciones que no se aplican a tus entornos. Así evitas alertas innecesarias y resultados de optimización inexactos.
+
+También puedes crear reglas personalizadas en lenguaje sencillo para validar tus entornos según las normas de tu organización y las mejores prácticas de NetApp. Prueba las reglas con una simulación y luego programa que se ejecuten en todos tus entornos. link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["Obtén más información sobre las reglas personalizadas"^].
+
+También puedes crear reglas personalizadas en lenguaje sencillo para validar tus entornos según las normas de tu organización y las mejores prácticas de NetApp. Prueba las reglas con una simulación y luego programa que se ejecuten en todos tus entornos.
+
+link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["Obtén más información sobre las reglas personalizadas"^].
 
 
 

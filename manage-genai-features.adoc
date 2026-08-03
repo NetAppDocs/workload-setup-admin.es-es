@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: manage-genai-features.html 
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
+summary: Controla el acceso a las funciones de IA basadas en Bedrock en Workload Factory. Puedes desactivar las funciones de IA o usar AWS Bedrock gestionado por NetApp. 
+---
+= Gestiona funciones de IA
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Controla el acceso a las funciones de IA en Workload Factory. Puedes desactivar las funciones de IA o usar AWS Bedrock gestionado por NetApp.
+
+
+
+[[about-ai-features]]
+== Acerca de las funciones de IA
+
+Workload Factory incluye varias funciones basadas en inteligencia artificial que mejoran tu experiencia, como Ask Me, paneles de control personalizados y analizadores para EMS, registros de bases de datos y latencia.
+
+Como administrador de Workload Factory, puedes controlar cómo estas funciones usan la IA en la página de configuración de la IA.
+
+
+
+[[configuration-options]]
+== Opciones de configuración
+
+Elige entre estas opciones de configuración:
+
+NetApp-managed Bedrock (recomendado):: Utiliza un servicio de AWS Bedrock gestionado por NetApp. Esta opción se recomienda para la mayoría de los usuarios.
++
+--
+* Tus datos no se utilizan para entrenar modelos
+* Los créditos de uso mensual se reparten entre toda tu organización
+* No es necesaria ninguna configuración adicional de AWS
+
+
+--
+Funciones de GenAI desactivadas:: Desactiva todas las funciones de IA. Los usuarios ya no pueden usar Ask Me, los analizadores, los paneles personalizados, el generador de reglas ni otras herramientas impulsadas por IA.
+
+
+
+
+[[before-you-begin]]
+== Antes de empezar
+
+* Recomendamos que un administrador de la cuenta configure las funciones de IA.
+
+
+
+
+[[configure-ai-features]]
+== Configura funciones de IA
+
+.Pasos
+. Inicia sesión usando una de las link:console-experiences.html["experiencias de consola"^].
+. En el menú, selecciona *Administración* y luego *Configuración de IA*.
+. En la página *Configuración de IA*, selecciona la configuración que prefieras:
++
+** *NetApp-managed Bedrock (recomendado)*: utiliza NetApp-managed AWS Bedrock.
+** *Funciones de IA general desactivadas*: desactiva todas las funciones de IA.
+
+
+. Selecciona *Guardar preferencias*.
+
+
+.Resultado
+La configuración se guarda y se aplica de inmediato a todas las funciones de IA de Workload Factory. En Tracker puedes ver quién actualizó la configuración por última vez y cuándo.
+
+Si las funciones de IA están desactivadas, los usuarios ven un mensaje cuando intentan utilizar funciones basadas en IA. La interfaz permanece visible y muestra claramente que la función no está disponible.
+
+
+
+[[budget-controls-and-credit-limits]]
+== Controles presupuestarios y límites de crédito
+
+NetApp gestiona los controles presupuestarios de las funciones de IA cuando se utiliza la configuración predeterminada gestionada por NetApp.
+
+
+
+[[monthly-credit-limits]]
+=== Límites de crédito mensuales
+
+Cada cuenta tiene un límite de gasto mensual para cada función de IA cuando se utiliza NetApp-managed Bedrock.
+
+
+
+[[when-budget-is-reached]]
+=== Cuando se alcance el presupuesto
+
+Si tu cuenta alcanza el límite del presupuesto mensual, Workload Factory:
+
+* Desactiva las funciones de IA y atenúa las partes relacionadas de la interfaz
+* Muestra este mensaje como información sobre herramientas: “Se alcanzó el límite mensual de créditos de IA. Contacta al soporte de NetApp.”
+* Registrar el uso para fines de seguimiento
+
+
+
+
+[[request-additional-credits]]
+=== Solicitar créditos adicionales
+
+Si necesitas más créditos de IA, ponte en contacto con tu representante de NetApp. Ellos pueden ajustar tu límite de crédito en función de tus necesidades.
+
+[TIP]
+====
+Para ponerte en contacto con tu representante de NetApp sobre los límites de crédito, usa el chat dentro del producto o visita la página link:get-help.html["Obtenga ayuda"].
+
+====
+
+
+[[govcloud-considerations]]
+== Consideraciones de GovCloud
+
+Si creas una cuenta de Workload Factory en AWS GovCloud (US), ten en cuenta que las funciones de IA utilizan los servicios de AWS Bedrock en regiones públicas de AWS de forma predeterminada.
+
+Si tus requisitos de seguridad no permiten conexiones a los servicios públicos de AWS Region, puedes desactivar las funciones de IA.
+
+link:sign-up-saas.html["Conoce cómo crear cuentas GovCloud"].
+
+
+
+[[impact-on-existing-sessions]]
+== Impacto en las sesiones existentes
+
+Al modificar la configuración de la IA, las sesiones de IA activas se cierran de forma suave. Los flujos de trabajo en curso pueden completarse, pero las nuevas solicitudes usan la configuración actualizada.
+
+El comportamiento de la finalización puede variar según la función. Consulta la documentación específica de la función para más detalles.
+
+
+
+[[related-information]]
+== Información relacionada
+
+* link:workload-factory-overview.html["Descubre las funciones de Workload Factory"]
+* link:learn-custom-dashboards.html["Conoce los paneles personalizados"]
+* link:add-credentials.html["Añada las credenciales de AWS"]
+* link:permissions-reference.html["Referencia sobre permisos"]
+

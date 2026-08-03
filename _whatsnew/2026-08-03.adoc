@@ -1,0 +1,63 @@
+= Políticas de permisos de IAM actualizadas para Databases
+:allow-uri-read: 
+
+
+
+
+[[updated-iam-permission-policies-for-databases]]
+=== Políticas de permisos de IAM actualizadas para Databases
+
+Se actualizaron los permisos de las bases de datos para mejorar el acceso a las funciones y limitar el acceso a SSM cuando no es necesario.
+
+Los permisos de visualización, planificación y análisis se limitan a los documentos de AWS SSM. Con estos permisos, puedes ver hosts, instancias y bases de datos. También puedes ejecutar un análisis básico bajo demanda bien arquitectado de tus recursos.
+
+Los permisos de operaciones y corrección te permiten realizar cambios en tus recursos, analizar los registros de errores, obtener un análisis exhaustivo de la arquitectura de tus recursos y solucionar problemas de configuración.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Referencia sobre permisos"] === Paneles personalizados
+
+
+
+==== Notificaciones para paneles personalizados
+
+Workload Factory ahora te avisa cuando tu panel de control personalizado está listo o si la creación falla.
+
+Una vez que hayas creado un panel personalizado, recibirás una notificación con un enlace directo para verlo. Si la creación falla, recibirás una notificación con un enlace al inventario de paneles personalizados para que lo intentes de nuevo.
+
+Esto te ayuda a saber cuándo tu panel de control está listo y hace que sea fácil revisarlo o recrearlo.
+
+link:create-custom-dashboard.html["Aprende a crear paneles personalizados"]
+
+link:configure-notifications.html["Aprende sobre cómo configurar las notificaciones"]
+
+
+
+==== Paneles de control personalizados privados y públicos
+
+Los paneles personalizados ahora incluyen opciones de uso compartido. Puedes mantener un panel privado o compartirlo con tu equipo.
+
+Los nuevos paneles son privados por defecto y solo tú puedes verlos. Puedes hacer público un panel en cualquier momento para compartirlo con todos en tu cuenta de Workload Factory.
+
+Cada tarjeta del panel muestra una etiqueta de Privado o Público para que puedas ver rápidamente qué paneles están compartidos.
+
+link:learn-custom-dashboards.html#dashboard-visibility-and-sharing["Conoce la visibilidad y el uso compartido de los paneles de control"]
+
+link:manage-custom-dashboards.html#change-dashboard-visibility["Aprende a compartir paneles de control"]
+
+
+
+[[ai-features-administration]]
+=== Administración de funciones de IA
+
+Puedes controlar el acceso a las funciones de IA en toda tu organización con los siguientes ajustes en la administración de Workload Factory.
+
+* Utiliza NetApp-managed Bedrock (recomendado y activado por defecto, con límites de crédito mensuales)
+* Desactiva todas las funciones de IA
+
+
+La nueva página de administración te permite gestionar estos ajustes desde un único lugar.
+
+Las funciones de IA incluyen Ask Me, paneles personalizados, el generador de reglas y analizadores para EMS, registros de bases de datos y latencia de volumen.
+
+Si las funciones de IA están desactivadas, los usuarios verán un mensaje que indica que la IA no está disponible.
+
+link:manage-genai-features.html["Aprende sobre cómo gestionar las funciones de IA"]

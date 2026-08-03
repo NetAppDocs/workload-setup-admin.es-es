@@ -21,6 +21,9 @@ Una vez creado, puedes actualizar el panel de control para ver los datos actuali
 Recuerda que los paneles personalizados son de solo lectura por diseño y no pueden hacer cambios en tus configuraciones de almacenamiento o cargas de trabajo.
 
 
+NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear paneles de control. Ponte en contacto con tu administrador o link:manage-genai-features.html["conoce la administración de IA"].
+
+
 
 [[create-a-dashboard]]
 == Crear un panel de control
@@ -44,12 +47,17 @@ Es posible que la IA te pida que elijas entre varias opciones para comprender me
 . Después de responder todas las preguntas, selecciona *Continuar* para crear tu panel de control.
 
 
+Se está creando tu panel de control. Puede que tarde unos instantes.
+
 .Resultado
-Tu panel de control personalizado ya se encuentra en el catálogo de paneles de control. Todos los usuarios de tu cuenta de Workload Factory pueden acceder a él y consultarlo.
+Tu panel de control personalizado se ha creado y se ha añadido al catálogo de paneles de control. Por defecto, el panel de control es privado y solo tú puedes verlo. Puedes cambiar la visibilidad a pública si quieres compartirlo con otros usuarios en tu cuenta de Workload Factory. link:manage-custom-dashboards.html#change-dashboard-visibility["Descubre cómo cambiar la visibilidad del panel de control"].
+
+Recibirás una notificación cuando tu panel de control esté listo. Si no se puede crear, recibirás una notificación con un enlace para volver a intentarlo. link:configure-notifications.html["Aprende sobre cómo configurar las notificaciones"].
 
 .Qué sigue
 Después de crearla, puedes:
 
+* Cambia la visibilidad del panel de control para compartirlo con tu equipo
 * Actualiza los datos del panel de control para ver la información más reciente
 * Elimina los paneles que ya no necesites
 * Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez

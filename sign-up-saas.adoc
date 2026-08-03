@@ -53,6 +53,10 @@ image:screenshot-account-selection-govcloud.png["Una captura de pantalla de la p
 +
 .. Introduce un nombre para la cuenta.
 .. Opcionalmente, haz que la cuenta sea una cuenta de AWS GovCloud (US). Este tipo de cuenta solo utiliza endpoints y regiones de AWS GovCloud (US) para la configuración y las operaciones. Las credenciales y los secretos permanecen en GovCloud. Esta selección es permanente.
++
+
+NOTE: Las funciones de IA de Workload Factory utilizan los servicios de AWS Bedrock alojados en regiones públicas de AWS. Si tus políticas de seguridad no permiten conexiones a servicios de regiones públicas, puedes desactivar las funciones de IA en la configuración de Administración. link:manage-genai-features.html["Aprende sobre cómo gestionar las funciones de IA"].
+
 .. Opcionalmente, proporciona una descripción del trabajo para la cuenta.
 
 

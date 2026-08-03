@@ -18,6 +18,9 @@ Los paneles de control personalizados utilizan la inteligencia artificial para c
 Todos los usuarios de tu cuenta de Workload Factory pueden ver todos los paneles personalizados. Esta configuración compartida ayuda a los equipos a colaborar y ver la misma información operativa en toda la organización.
 
 
+NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear paneles de control. Ponte en contacto con tu administrador o link:manage-genai-features.html["conoce la administración de IA"].
+
+
 
 [[why-use-custom-dashboards]]
 == Por qué usar paneles personalizados
@@ -43,6 +46,21 @@ Durante la configuración, el diálogo guiado por IA te ayuda a definir:
 * Vistas por región, carga de trabajo u otras categorías
 * Normas o requisitos que debes controlar y demostrar
 
+
+
+
+[[view-and-share-dashboards]]
+== Ver y compartir paneles de control
+
+Los nuevos paneles son privados por defecto, por lo que solo tú puedes verlos. Puedes hacer público un panel en cualquier momento para compartirlo con tu equipo.
+
+* *Cuadros de mando privados*: Solo tú puedes ver estos cuadros de mando. Úsalos para el seguimiento personal, pruebas o trabajo en curso.
+* *Cuadros de mando públicos*: Todos los usuarios de tu cuenta de Workload Factory pueden ver estos cuadros de mando. Úsalos para compartir vistas de supervisión y mantener a tu equipo alineado con las cargas de trabajo, las prioridades y los objetivos empresariales.
+
+
+Cada tarjeta del panel muestra si el panel es privado o público, así puedes ver rápidamente qué paneles están compartidos.
+
+link:manage-custom-dashboards.html#change-dashboard-visibility["Descubre cómo cambiar la visibilidad del panel de control"].
 
 
 
@@ -83,7 +101,7 @@ Los paneles personalizados son de solo lectura. No pueden modificar la configura
 
 Actualmente, se aplican las siguientes limitaciones a los paneles personalizados:
 
-* No puedes compartir paneles de control fuera de tu cuenta de Workload Factory
+* No puedes compartir paneles fuera de tu cuenta de Workload Factory. El uso compartido de paneles se limita a los usuarios de la misma cuenta de Workload Factory.
 
 
 
