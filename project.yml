@@ -46,6 +46,8 @@ sidebar:
       url: "/well-architected-workloads.html"
     - title: Configurar notificaciones
       url: "/configure-notifications.html"
+    - title: Supervisar las operaciones
+      url: "/monitor-operations.html"
     - title: Gestiona funciones de IA
       url: "/manage-genai-features.html"
     - title: Paneles de control personalizados

@@ -1,0 +1,92 @@
+= Haz un seguimiento y monitoriza las operaciones
+:allow-uri-read: 
+
+
+Supervisa y realiza un seguimiento de la ejecución de FSx para ONTAP, las credenciales y las operaciones de enlace, y supervisa el progreso de las tareas con Tracker en NetApp Workload Factory.
+
+.Acerca de esta tarea
+Workload Factory ofrece Tracker, una función de supervisión que te permite supervisar y realizar un seguimiento del progreso y el estado de FSx para ONTAP, credenciales y operaciones de enlace, revisar detalles de las tareas y subtareas operativas, y diagnosticar cualquier problema o fallo.
+
+En Tracker hay varias acciones disponibles. Puedes filtrar los trabajos por intervalo de tiempo (últimas 24 horas, 7 días, 14 días o 30 días), carga de trabajo, estado y usuario; buscar trabajos mediante la función de búsqueda; y descargar la tabla de trabajos como un archivo CSV. Puedes actualizar Tracker en cualquier momento. Y puedes volver a intentar rápidamente una operación fallida o editar los parámetros de una operación fallida y volver a intentarla.
+
+Tracker admite dos niveles de supervisión en función de la operación. Cada tarea, como la implementación del sistema de archivos, muestra la descripción de la tarea, el estado, la hora de inicio, la duración de la tarea, el usuario, la región, el recurso proxy, el ID de la tarea y todas las subtareas relacionadas. Puedes consultar las respuestas de la API para comprender qué ocurrió durante la operación.
+
+Niveles de tareas de Tracker con ejemplos::
++
+--
+* Nivel 1 (tarea): realiza un seguimiento de la implementación del sistema de archivos.
+* Nivel 2 (subtarea): Realiza un seguimiento de las subtareas relacionadas con la implementación del sistema de archivos.
+
+
+--
+Estado operativo:: El estado de la operación en Tracker es el siguiente: _en curso_, _correcta_ y _fallida_.
++
+--
+Frecuencia de funcionamiento:: La frecuencia de funcionamiento depende del tipo de trabajo y del horario del trabajo.
+
+
+--
+Retención de eventos:: Los eventos se conservan en la interfaz de usuario durante 30 días.
+
+
+
+
+[[track-and-monitor-operations]]
+== Haz un seguimiento y monitoriza las operaciones
+
+Realiza un seguimiento y supervisa las operaciones en la NetApp Console con Tracker.
+
+.Pasos
+. Inicia sesión usando una de las link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiencias de consola"^].
+. Selecciona el menú image:workloads-menu-icon.png["El icono del menú hamburguesa se usa para navegar a cargas de trabajo como almacenamiento, eda, ai, bases de datos, vmware y administración."] y luego selecciona *Administración*.
+. En el menú Administración, selecciona *Tracker*.
+. En Tracker, utiliza los filtros o la función de búsqueda para acotar los resultados de trabajo. También puedes descargar un informe de trabajos.
+
+
+
+
+[[view-api-request]]
+== Ver solicitud de API
+
+Consulta la solicitud de API en el Codebox para una tarea en Tracker.
+
+.Pasos
+. En Tracker, selecciona una tarea.
+. Selecciona el menú de acciones y luego selecciona *Ver solicitud de API*.
+
+
+
+
+[[retry-a-failed-operation]]
+== Vuelve a intentar una operación fallida
+
+Reintenta una operación fallida en Tracker. También puedes copiar el mensaje de error de una operación fallida.
+
+
+NOTE: Solo se permiten x intentos de reintento para una operación fallida.
+
+.Pasos
+. En Tracker, selecciona una operación fallida.
+. Selecciona el menú de acciones y luego selecciona *Reintentar*.
+
+
+.Resultado
+La operación se reinicia.
+
+
+
+[[edit-and-retry-a-failed-operation]]
+== Editar y volver a intentar una operación fallida
+
+Modifica los parámetros de la operación fallida y vuelve a intentarla fuera de Tracker.
+
+.Pasos
+. En Tracker, selecciona una operación fallida.
+. Selecciona el menú de acciones y luego selecciona *Editar y volver a intentarlo*.
++
+Se te redirige a la página de la operación, donde puedes editar los parámetros y volver a intentar la operación.
+
+
+
+.Resultado
+La operación se ha reiniciado. Ve a Tracker para ver el estado de la operación.
