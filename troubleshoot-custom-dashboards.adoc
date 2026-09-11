@@ -4,7 +4,7 @@ permalink: troubleshoot-custom-dashboards.html
 keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading 
 summary: Soluciona los problemas más habituales con los paneles personalizados, incluyendo fallos de configuración, problemas de carga de datos y problemas de acceso. 
 ---
-= Soluciona problemas en los paneles personalizados
+= Soluciona problemas de los paneles personalizados en NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

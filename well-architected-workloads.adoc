@@ -4,7 +4,7 @@ permalink: well-architected-workloads.html
 keywords: well-architected, best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP 
 summary: Workload Factory escanea las configuraciones de carga de trabajo en busca de confiabilidad, seguridad, excelencia operativa, optimización de costos y eficiencia del rendimiento, brindando información y recomendaciones para ayudarlo a lograr la excelencia operativa. 
 ---
-= Crea y opera cargas de trabajo bien diseñadas con NetApp Workload Factory
+= Cómo NetApp Workload Factory da soporte a las cargas de trabajo bien diseñadas
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

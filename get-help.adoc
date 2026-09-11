@@ -4,7 +4,7 @@ permalink: get-help.html
 keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue 
 summary: 'NetApp proporciona soporte para Workload Factory de distintas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.' 
 ---
-= Obtenga ayuda
+= Obtén ayuda con NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
