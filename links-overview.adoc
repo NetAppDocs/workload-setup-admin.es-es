@@ -76,4 +76,11 @@ Las funciones que requieren un enlace incluyen:
 * Visualización de los detalles de la VM de almacenamiento y del LIF del clúster, incluidas las funciones, los endpoints, los nodos, las direcciones IP y el estado
 
 
-Descubre cómo link:create-link.html["conectar un enlace a un sistema de archivos FSx para ONTAP"].
+
+
+[[related-information]]
+== Información relacionada
+
+* link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html["Conectar un enlace a un sistema de archivos FSx para ONTAP"]
+* link:https://docs.netapp.com/us-en/workload-setup-admin/manage-links.html["Gestionar enlaces"]
+
