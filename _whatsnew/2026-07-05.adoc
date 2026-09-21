@@ -13,7 +13,7 @@ Solo tienes que describir en un lenguaje sencillo lo que quieres supervisar, y l
 
 Los paneles personalizados son de solo lectura, por lo que no permiten modificar la configuración de almacenamiento ni de las cargas de trabajo. Cualquier usuario de tu cuenta de Workload Factory puede ver y gestionar estos paneles, lo que facilita que los equipos compartan información y se mantengan coordinados.
 
-link:learn-custom-dashboards.html["Conoce más sobre los paneles personalizados"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-custom-dashboards.html["Conoce más sobre los paneles personalizados"]
 
 
 
