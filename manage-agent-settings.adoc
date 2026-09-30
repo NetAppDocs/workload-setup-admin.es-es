@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: manage-agent-settings.html 
+keywords: agents settings, aiops, agent configuration, ai agent, agent mode, credentials, read-only, read-write, custom prompt, verbose, slack integration 
+summary: Configura los ajustes de los agentes de IA, como el modo de funcionamiento, los permisos de acceso, las instrucciones personalizadas y los niveles de detalle de las respuestas, para controlar cómo funcionan los agentes en tu entorno de Workload Factory. 
+---
+= Gestiona la configuración de los agentes de IA en NetApp Workload Factory
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Configura cómo funcionan los agentes de IA en tu entorno de Workload Factory. Puedes elegir cómo funcionan los agentes, decidir qué credenciales pueden usar, añadir indicaciones personalizadas y ajustar los niveles de detalle de las respuestas.
+
+
+
+[[before-you-begin]]
+== Antes de empezar
+
+* Recomendamos que un administrador de la cuenta configure los ajustes de los agentes.
+* Antes de activar el modo de lectura/escritura, asegúrate de comprender los riesgos de seguridad que conlleva permitir que los agentes realicen acciones por ti.
+
+
+
+NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, los agentes de IA no estarán disponibles. link:manage-genai-features.html["Aprende sobre cómo gestionar las funciones de IA"].
+
+
+
+[[access-agents-settings]]
+== Accede a la configuración de Agents
+
+.Pasos
+. Inicia sesión usando una de las link:console-experiences.html["experiencias de consola"^].
+. Accede a la configuración de Agents mediante uno de estos métodos:
++
+** En el menú, selecciona *Administración*, *Configuración* y, a continuación, *Agentes*.
+** Desde la experiencia de chat de los agentes, selecciona el enlace a *Agents settings*.
+
+
+
+
+
+
+[[set-up-agents-operation-mode]]
+== Configurar el modo de funcionamiento de los agentes
+
+Elige si los agentes funcionan en modo de solo lectura o en modo de lectura y escritura.
+
+.Acerca de esta tarea
+El modo de funcionamiento de los agentes determina qué acciones pueden realizar los agentes:
+
+Modo de solo lectura (predeterminado):: Los agentes pueden consultar y analizar tus datos, pero no pueden modificar tus recursos. Pueden responder a tus preguntas, identificar riesgos, ofrecer recomendaciones y ayudarte a resolver problemas.
+Modo de lectura/escritura:: Los agentes pueden realizar acciones por ti utilizando las credenciales que elijas. Antes de realizar cualquier acción, te muestran un resumen y esperan tu aprobación. No realizarán ninguna acción sin tu aprobación.
+
+
+.Pasos
+. En el menú, selecciona *Administración*, *Configuración* y, a continuación, *Agentes*.
+. En la página *Configuración de agentes*, ve a la sección *Modo de agentes*.
+. Selecciona el modo de funcionamiento.
+. Seleccione *aplicar*.
+
+
+
+
+[[select-credentials-for-agents-access]]
+== Selecciona credenciales para el acceso de los agentes
+
+Selecciona qué credenciales de AWS pueden usar los agentes para acceder a tu entorno en la nube. Por defecto, todas las credenciales están seleccionadas, pero puedes reducir esta selección a un subconjunto de las credenciales que hayas configurado.
+
+.Acerca de esta tarea
+Puedes seleccionar ninguna, una, algunas o todas tus credenciales configuradas. Si no seleccionas ninguna credencial, los agentes pueden responder preguntas generales, pero no pueden analizar los recursos de tu entorno.
+
+.Pasos
+. En la página *Configuración de agentes*, ve a la sección *Credenciales*.
+. En el menú desplegable *Nombre de las credenciales*, selecciona qué credenciales pueden usar los agentes.
++
+Si no hay credenciales configuradas, verás una opción para añadir credenciales para tu cuenta de Workload Factory.
+
+. Seleccione *aplicar*.
+
+
+
+
+[[slack-integration]]
+== Integración con Slack
+
+Puedes conectar los agentes a Slack e interactuar con ellos directamente en tu espacio de trabajo de Slack.
+
+Para obtener información sobre cómo configurar la integración con Slack, consulta la documentación de integración de Slack o ponte en contacto con tu representante de NetApp para obtener información sobre los agentes.
+
+
+
+[[add-a-custom-prompt]]
+== Añade un prompt personalizado
+
+Añade directrices, preferencias o reglas personalizadas para que los agentes las sigan al responder a tus solicitudes.
+
+.Acerca de esta tarea
+Una plantilla personalizada ayuda a orientar cómo responden los agentes para que sigan las políticas, el lenguaje y los flujos de trabajo de tu organización. Se aplica a cada interacción de los agentes.
+
+El campo de mensaje personalizado está vacío de forma predeterminada. Puedes añadir, modificar o eliminar el mensaje personalizado en cualquier momento.
+
+.Pasos
+. En la página *Configuración de agentes*, ve a la sección *Mensaje personalizado*.
+. En el campo de texto, introduce tus directrices personalizadas para los agentes.
++
+Por ejemplo, puedes definir reglas de nomenclatura, formatos de respuesta preferidos o políticas de la empresa que los agentes deben seguir.
+
+. Seleccione *aplicar*.
+
+
+.Resultado
+Los agentes utilizarán tu indicación personalizada junto con sus funciones integradas al responder a tus solicitudes.
+
+Para cambiar o eliminar el mensaje personalizado, vuelve a esta página, edita el cuadro de texto y selecciona *Aplicar*.
+
+
+
+[[configure-verbosity-options]]
+== Configurar las opciones de nivel de detalle
+
+Elige cuánto detalle comparten los agentes sobre su razonamiento y el uso de herramientas.
+
+.Acerca de esta tarea
+Las opciones de nivel de detalle te permiten ver más información sobre cómo los agentes llegan a sus respuestas y qué herramientas utilizan para recopilar información:
+
+Razonamiento detallado:: Cuando está activada, los agentes explican cómo llegan a sus respuestas y toman decisiones. Esto te ayuda a entender por qué recomiendan determinadas acciones o llegan a conclusiones específicas.
+Detalles de herramientas de Verbose:: Cuando está activada, los agentes muestran qué herramientas y API utilizan para recopilar datos y realizar análisis. Esto te ayuda a entender cómo interactúan con tu entorno.
+
+
+Ambas opciones están desactivadas de forma predeterminada para que las respuestas sean concisas. Actívalas cuando necesites más transparencia o estés solucionando problemas con el comportamiento de los agentes.
+
+.Pasos
+. En la página *Configuración de agentes*, ve a la sección *Nivel de detalle*.
+. Selecciona las opciones de nivel de detalle que quieras activar.
+. Seleccione *aplicar*.
+

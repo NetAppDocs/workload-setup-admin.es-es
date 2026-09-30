@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: learn-agent.html 
+keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agents settings 
+summary: Descubre cómo los agentes de IA de Workload Factory pueden analizar tu entorno, identificar riesgos y formas de mejorar el rendimiento, y actuar por ti con tu aprobación. 
+---
+= Descubre los agentes de IA en NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Workload Factory AIOps utiliza IA para analizar tu entorno y recomendarte mejoras. Si lo apruebas, también puede realizar acciones utilizando las credenciales y los permisos que hayas configurado.
+
+
+NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, verás un mensaje y no podrás usar los agentes. Ponte en contacto con tu administrador o link:manage-genai-features.html["conoce la administración de IA"].
+
+
+
+[[before-you-begin]]
+== Antes de empezar
+
+Asegúrate de que tu cuenta de Workload Factory disponga de credenciales de AWS y de los permisos de IAM que los agentes necesitan para los recursos a los que acceden. Si activas el modo de lectura y escritura, esos permisos también deben permitir los cambios compatibles.
+
+link:add-credentials.html["Aprende a añadir credenciales de AWS y configurar los permisos de IAM"^].
+
+
+
+[[data-usage-and-privacy]]
+== Uso de datos y privacidad
+
+Tus datos no se usan para entrenar modelos de IA. Los agentes usan tus credenciales para acceder de forma segura a los recursos de AWS a través de las API estándar de AWS y responder en función de tu entorno real. Toda la actividad de los agentes sigue las políticas de privacidad de NetApp y los controles de seguridad de AWS.
+
+
+
+[[why-use-ai-agents]]
+== Por qué usar agentes de IA
+
+Los agentes de IA te ayudan a trabajar de forma más eficiente en Workload Factory:
+
+* Obtén respuestas y recomendaciones adaptadas a tu entorno.
+* Identifica riesgos y oportunidades de optimización.
+* Resuelve los problemas y aplica las medidas aprobadas en un único flujo de trabajo.
+* Ejecuta comprobaciones programadas y recibe actualizaciones en el historial de chat.
+* Funciona tanto en entornos de FSx for ONTAP como en entornos ONTAP locales.
+
+
+
+
+[[access-the-ai-agents]]
+== Accede a los agentes de IA
+
+Desde la página de inicio de «Ask Me»:: En la página de inicio de «Ask Me», selecciona *Explorar agentes*. Se abre el panel lateral de los agentes de IA con un mensaje de bienvenida que presenta las capacidades de los agentes.
+Desde los enlaces de redirección de los agentes:: Al utilizar **Ask Me** u otras funciones, es posible que veas enlaces que te redirijan a los agentes para recibir ayuda más avanzada.
+
+
+
+
+[[how-ai-agents-work]]
+== Cómo funcionan los agentes de IA
+
+
+
+[[how-agents-access-your-environment]]
+=== Cómo acceden los agentes a tu entorno
+
+Los agentes solo pueden acceder a los recursos cuando están incluidos en tu ámbito actual de Workload Factory y son compatibles con las credenciales seleccionadas en link:manage-agent-settings.html["Configuración de los agentes"]. Los agentes solo pueden operar donde se apliquen ambos controles. Los recursos a los que pueden acceder también dependen de los permisos asignados a sus credenciales de AWS. De forma predeterminada, todas las credenciales están seleccionadas, pero puedes reducir esta selección a un subconjunto de las credenciales que hayas configurado.
+
+Tu ámbito de trabajo actual incluye:
+
+* *Cuentas de AWS*: a qué cuentas de AWS pueden acceder los agentes.
+* *Credenciales*: qué credenciales pueden utilizar los agentes.
+* *Regiones*: a qué regiones de AWS pueden acceder los agentes.
+
+
+Los filtros de Workload Factory definen el ámbito de la página actual, como las cuentas y regiones de AWS que se muestran. La configuración de los agentes controla qué credenciales pueden usar los agentes dentro de ese ámbito. El acceso a los recursos también depende de los permisos de IAM asignados a esas credenciales.
+
+
+NOTE: Seleccionar una credencial en *Configuración de agentes* no otorga permisos adicionales de AWS. Asegúrate de que las credenciales cuenten con los permisos de IAM necesarios para que los agentes accedan a los recursos que quieres que analicen o gestionen.
+
+
+
+[[read-only-mode-default]]
+=== Modo de solo lectura (predeterminado)
+
+Por defecto, los agentes funcionan en modo de solo lectura. En este modo, pueden:
+
+* Responde a las preguntas sobre tu entorno.
+* Analiza tus sistemas de archivos, bases de datos y cargas de trabajo de FSx for ONTAP.
+* Identifica riesgos, errores de configuración y oportunidades de optimización.
+* Ofrece recomendaciones para mejorar el rendimiento, la disponibilidad, la protección y la rentabilidad.
+* Soluciona problemas y sugiere medidas correctivas.
+
+
+No pueden modificar recursos en modo de solo lectura. Si solicitas una acción que requiera acceso de escritura, el agente explica la limitación y enlaza a la configuración de Agents.
+
+
+
+[[read-write-mode-opt-in]]
+=== Modo de lectura y escritura (opcional)
+
+Puedes activar las funciones de lectura y escritura en link:manage-agent-settings.html["Configuración de los agentes"]. En este modo, los agentes te explican cada acción compatible y solicitan tu aprobación antes de realizar cualquier cambio.
+
+Este proceso de aprobación se aplica a todas las experiencias de los agentes, incluidas las integraciones con Slack y NetApp Console.
+
+
+
+[[what-users-see-when-ai-agents-have-no-data-or-activity]]
+== Lo que ven los usuarios cuando los agentes de IA no tienen datos ni actividad
+
+Si los agentes no tienen credenciales, igual pueden ofrecerte orientación general. Sin embargo, no pueden revisar tus recursos ni darte información específica sobre tu entorno.
