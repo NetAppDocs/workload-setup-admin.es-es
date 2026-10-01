@@ -43,7 +43,7 @@ Los agentes de IA te ayudan a trabajar de forma más eficiente en Workload Facto
 * Identifica riesgos y oportunidades de optimización.
 * Resuelve los problemas y aplica las medidas aprobadas en un único flujo de trabajo.
 * Ejecuta comprobaciones programadas y recibe actualizaciones en el historial de chat.
-* Funciona tanto en entornos de FSx for ONTAP como en entornos ONTAP locales.
+* Trabaja en entornos de FSx para ONTAP y Google Cloud NetApp Volumes.
 
 
 
