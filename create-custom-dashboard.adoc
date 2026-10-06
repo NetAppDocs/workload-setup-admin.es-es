@@ -59,6 +59,7 @@ Después de crearla, puedes:
 
 * Cambia la visibilidad del panel de control para compartirlo con tu equipo
 * Actualiza los datos del panel de control para ver la información más reciente
+* Edita los paneles de control para cambiar lo que muestran, incluidas las métricas, los gráficos y los intervalos de tiempo
 * Elimina los paneles que ya no necesites
 * Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez
 

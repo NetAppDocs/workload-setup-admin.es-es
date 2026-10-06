@@ -18,7 +18,7 @@ Los paneles de control personalizados utilizan la inteligencia artificial para c
 Todos los usuarios de tu cuenta de Workload Factory pueden ver todos los paneles personalizados. Esta configuración compartida ayuda a los equipos a colaborar y ver la misma información operativa en toda la organización.
 
 
-NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear paneles de control. Ponte en contacto con tu administrador o link:manage-genai-features.html["conoce la administración de IA"].
+NOTE: Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear ni editar paneles. Ponte en contacto con tu administrador o link:manage-genai-features.html["conoce la administración de IA"].
 
 
 
@@ -46,6 +46,11 @@ Durante la configuración, el diálogo guiado por IA te ayuda a definir:
 * Vistas por región, carga de trabajo u otras categorías
 * Normas o requisitos que debes controlar y demostrar
 
+
+Puedes editar los paneles desde el catálogo y actualizar el nombre, la descripción, la categoría o la solicitud de supervisión antes de decidir si guardas la versión revisada.
+
+
+NOTE: Solo quien creó el dashboard puede editarlo. Mientras lo editas, los demás usuarios no pueden ver tus cambios hasta que los guardes.
 
 
 

@@ -62,29 +62,27 @@ El panel de control se actualiza al instante. La etiqueta de visibilidad de la t
 
 Los datos del panel se cargan al abrir un panel. Puedes actualizarlo para ver la información más reciente.
 
-El panel de control vuelve a cargar los datos de tus cargas de trabajo. La hora de la última actualización cambia para mostrar cuándo se actualizaron los datos.
+El panel de control vuelve a cargar los datos de tus cargas de trabajo.
 
 
 
-[[delete-a-dashboard]]
-== Eliminar un panel de control
+[[edit-dashboards]]
+== Editar paneles de control
 
-Elimina los paneles que ya no necesites. Esta acción es permanente y no se puede deshacer.
+Puedes editar un panel de control para modificar lo que muestra, incluidas las métricas, los gráficos y los intervalos de tiempo.
+
+
+NOTE: Solo quien creó el dashboard puede editarlo. Mientras lo editas, los demás usuarios no pueden ver tus cambios hasta que los guardes.
 
 .Pasos
-. En la página *Paneles personalizados*, busca el panel que quieras eliminar.
-. En el menú desplegable *Acciones* de ese panel de control, selecciona *Eliminar*.
-. Confirma la eliminación.
+. En la página *Paneles personalizados*, busca el panel que quieras editar.
+. En el menú *Actions* de ese dashboard, selecciona *Edit dashboard*.
+. En el cuadro de diálogo de IA, describe los cambios que quieres hacer.
++
+Este proceso es similar al de crear un nuevo panel de control. Puedes modificar las cargas de trabajo, las métricas o los intervalos de tiempo que supervisa el panel de control.
+
+. Revisa los cambios y selecciona **Guardar**.
 
 
 .Resultado
-El panel de control se elimina definitivamente de tu cuenta de Workload Factory y todos los usuarios pierden acceso a él.
-
-
-
-[[related-information]]
-== Información relacionada
-
-* link:create-custom-dashboard.html["Crear paneles personalizados adicionales"]
-* link:troubleshoot-custom-dashboards.html["Soluciona problemas en los paneles personalizados"]
-
+El panel de control se actualiza con los cambios que realices. La fecha de la última modificación también se actualiza.

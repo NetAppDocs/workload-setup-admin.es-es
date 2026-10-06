@@ -1,0 +1,28 @@
+= Actualizaciones de los paneles personalizados
+:allow-uri-read: 
+
+
+
+
+[[custom-dashboard-updates]]
+=== Actualizaciones de los paneles personalizados
+
+Los paneles personalizados ahora te facilitan la gestión de tu trabajo.
+
+Puedes editar los paneles directamente desde el catálogo, incluyendo métricas, gráficos e intervalos de tiempo.
+
+Cuando editas un panel de control, Workload Factory vuelve a abrir el chat con tus indicaciones y mensajes anteriores. A continuación, puedes actualizar el panel de control, guardar los cambios o restaurar la versión anterior.
+
+Solo quien creó el dashboard puede editarlo. Mientras lo editas, los demás usuarios no pueden ver tus cambios hasta que los guardes.
+
+El catálogo de paneles incluye ahora más filtros que te ayudarán a encontrar rápidamente los paneles según su categoría y estado.
+
+Si tu administrador desactiva las funciones de IA o se alcanza tu límite de crédito mensual, no podrás crear ni editar paneles de control.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-custom-dashboards.html["Conoce los paneles personalizados"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["Crear un panel de control personalizado"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html["Gestiona paneles personalizados"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/troubleshoot-custom-dashboards.html["Soluciona problemas en los paneles personalizados"]

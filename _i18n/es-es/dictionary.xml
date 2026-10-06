@@ -1433,15 +1433,6 @@
   <block id="dffad8b6380340c5079727deb13bb3f2" category="list-text">Revisa la lista del panel de control.</block>
   <block id="9e3f16aef1d22400bdae48c5cb77b00f" category="section-title">Actualizar los datos del panel de control</block>
   <block id="4e424a1ad37782627141d4d50f79b586" category="paragraph">Los datos del panel se cargan al abrir un panel. Puedes actualizarlo para ver la información más reciente.</block>
-  <block id="6835e72df37e141c78401ea8d4bfcf90" category="paragraph">El panel de control vuelve a cargar los datos de tus cargas de trabajo. La hora de la última actualización cambia para mostrar cuándo se actualizaron los datos.</block>
-  <block id="74ee9feffcb1603b7eeb47c099c0e5a5" category="section-title">Eliminar un panel de control</block>
-  <block id="e54360b7371199d6607f76cd1ae6ad17" category="paragraph">Elimina los paneles que ya no necesites. Esta acción es permanente y no se puede deshacer.</block>
-  <block id="3325f3a5c13a73bb87ed2dabebb0b6a3" category="list-text">En la página *Paneles personalizados*, busca el panel que quieras eliminar.</block>
-  <block id="0ce6306187e44bdf505a14f5d0676bb6" category="list-text">En el menú desplegable *Acciones* de ese panel de control, selecciona *Eliminar*.</block>
-  <block id="b26a5fa549c938ffb56d20623c3f69c0" category="list-text">Confirma la eliminación.</block>
-  <block id="22e8351c82677bcc78bd23d6fb170bc8" category="paragraph">El panel de control se elimina definitivamente de tu cuenta de Workload Factory y todos los usuarios pierden acceso a él.</block>
-  <block id="9537d9160ef701530bdd875698475957" category="inline-link-macro">Crear paneles personalizados adicionales</block>
-  <block id="1258b44f1520a3cf10d648fb08dbf72e" category="list-text"><block ref="1258b44f1520a3cf10d648fb08dbf72e" category="inline-link-macro-rx"></block></block>
   <block id="0c5896a9e6c8d2cff1b4d007852b1732" category="paragraph">Utiliza esta información para resolver los problemas habituales que puedas encontrar al crear o usar paneles personalizados.</block>
   <block id="2e00365fe32c89b1fd1ad214f291ca85" category="section-title">Error al crear el panel de control</block>
   <block id="09a8c59ab236b488dde6ce993a012c63" category="paragraph">**Problema:** Ves el mensaje de error “No se pudo interpretar la solicitud ni generar el código” al crear un panel de control.</block>
@@ -1977,4 +1968,28 @@
   <block id="541644294bd888a59c4f26e19102bfb2" category="paragraph">Ask Me ahora es compatible con FSx para ONTAP y Google Cloud NetApp Volumes. Utiliza la misma experiencia de chat para obtener respuestas e información en todos tus entornos de almacenamiento compatibles.</block>
   <block id="54ba8fb885319acf274731794ecf9b35" category="list-text">Trabaja en entornos de FSx para ONTAP y Google Cloud NetApp Volumes.</block>
   <block id="3ddb8c8ba0ebed85a3c1d3ddf7cc424c" category="list-text">Haz preguntas al asistente de IA sobre la gestión y el funcionamiento de FSx para ONTAP y Google Cloud NetApp Volumes. Ask Me se conecta de forma segura a tu entorno y utiliza API para ofrecer respuestas basadas en tu configuración de almacenamiento.</block>
+  <block id="77c39d029270c567ae2816d2c688ea3b" category="doc">Actualizaciones de los paneles personalizados</block>
+  <block id="b4a3fedd52cfe46140994157b6fa12ec" category="paragraph">Los paneles personalizados ahora te facilitan la gestión de tu trabajo.</block>
+  <block id="5d95426dd9834d03b33e051ae7f9fb5c" category="paragraph">Puedes editar los paneles directamente desde el catálogo, incluyendo métricas, gráficos e intervalos de tiempo.</block>
+  <block id="e57137dc0ab44a9b0797700e3e8c851c" category="paragraph">Cuando editas un panel de control, Workload Factory vuelve a abrir el chat con tus indicaciones y mensajes anteriores. A continuación, puedes actualizar el panel de control, guardar los cambios o restaurar la versión anterior.</block>
+  <block id="8f44990f66d79c05eb2b8e612e7e18b5" category="paragraph">Solo quien creó el dashboard puede editarlo. Mientras lo editas, los demás usuarios no pueden ver tus cambios hasta que los guardes.</block>
+  <block id="14dd0ad1c8f18e92cbbc77ecf3a2645b" category="paragraph">El catálogo de paneles incluye ahora más filtros que te ayudarán a encontrar rápidamente los paneles según su categoría y estado.</block>
+  <block id="fb1ecdb5253f537a735a53d5e9e2eba6" category="paragraph">Si tu administrador desactiva las funciones de IA o se alcanza tu límite de crédito mensual, no podrás crear ni editar paneles de control.</block>
+  <block id="f736e966e4394f88a05cee94fdba57ff" category="paragraph"><block ref="f736e966e4394f88a05cee94fdba57ff" category="inline-link-macro-rx"></block></block>
+  <block id="e703f5c9737234e07b6d50b473d03d31" category="paragraph"><block ref="e703f5c9737234e07b6d50b473d03d31" category="inline-link-macro-rx"></block></block>
+  <block id="a6624b6c8238a8d2fecbcab00748683a" category="paragraph"><block ref="a6624b6c8238a8d2fecbcab00748683a" category="inline-link-macro-rx"></block></block>
+  <block id="6690aacdf8125a25e4539caa3239e86f" category="paragraph"><block ref="6690aacdf8125a25e4539caa3239e86f" category="inline-link-macro-rx"></block></block>
+  <block id="b2174789d5314bb12b464a8d03a18be6" category="list-text">Edita los paneles de control para cambiar lo que muestran, incluidas las métricas, los gráficos y los intervalos de tiempo</block>
+  <block id="0d4c6d4cadfc35e450177a6f124a12ce" category="admonition">Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear ni editar paneles. Ponte en contacto con tu administrador o <block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>.</block>
+  <block id="3dacf374ca39e9d1e2ccd73b21e8d75a" category="paragraph">Puedes editar los paneles desde el catálogo y actualizar el nombre, la descripción, la categoría o la solicitud de supervisión antes de decidir si guardas la versión revisada.</block>
+  <block id="09716803bbab78d4545cc7210ae61d90" category="paragraph">El panel de control vuelve a cargar los datos de tus cargas de trabajo.</block>
+  <block id="d2258a9653c6a977efeeb955b27c66e9" category="section-title">Editar paneles de control</block>
+  <block id="4e2f12e496523d85bae4a969657d45aa" category="paragraph">Puedes editar un panel de control para modificar lo que muestra, incluidas las métricas, los gráficos y los intervalos de tiempo.</block>
+  <block id="b13bad0dcb6df4e403e8e2af9058dfe5" category="list-text">En la página *Paneles personalizados*, busca el panel que quieras editar.</block>
+  <block id="d431f68c965a7131bbc2f48128983c25" category="list-text">En el menú *Actions* de ese dashboard, selecciona *Edit dashboard*.</block>
+  <block id="63f40ecf20824ff6d561a306d3a25fd1" category="list-text">En el cuadro de diálogo de IA, describe los cambios que quieres hacer.</block>
+  <block id="3184c7e78934ef4b37ea845f1d56789a" category="paragraph">Este proceso es similar al de crear un nuevo panel de control. Puedes modificar las cargas de trabajo, las métricas o los intervalos de tiempo que supervisa el panel de control.</block>
+  <block id="f66306510aaf399aef8bdf649739a15e" category="list-text">Revisa los cambios y selecciona **Guardar**.</block>
+  <block id="89806ea6a9ed9b0bb6cb322f912aff65" category="paragraph">El panel de control se actualiza con los cambios que realices. La fecha de la última modificación también se actualiza.</block>
+  <block id="6cd19393862a5a23e39bb63b43a86baa" category="section-title">04 de octubre de 2026</block>
 </blocks>
