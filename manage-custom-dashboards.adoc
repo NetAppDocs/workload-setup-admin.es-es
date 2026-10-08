@@ -86,3 +86,28 @@ Este proceso es similar al de crear un nuevo panel de control. Puedes modificar 
 
 .Resultado
 El panel de control se actualiza con los cambios que realices. La fecha de la última modificación también se actualiza.
+
+
+
+[[delete-a-dashboard]]
+== Eliminar un panel de control
+
+Elimina los paneles que ya no necesites. Esta acción es permanente y no se puede deshacer.
+
+.Pasos
+. En la página *Paneles personalizados*, busca el panel que quieras eliminar.
+. En el menú desplegable *Acciones* de ese panel de control, selecciona *Eliminar*.
+. Confirma la eliminación.
+
+
+.Resultado
+El panel de control se elimina definitivamente de tu cuenta de Workload Factory y todos los usuarios pierden acceso a él.
+
+
+
+[[related-information]]
+== Información relacionada
+
+* link:create-custom-dashboard.html["Crear paneles personalizados adicionales"]
+* link:troubleshoot-custom-dashboards.html["Soluciona problemas en los paneles personalizados"]
+
