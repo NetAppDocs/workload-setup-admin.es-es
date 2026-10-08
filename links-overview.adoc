@@ -74,6 +74,7 @@ Las funciones que requieren un enlace incluyen:
 * Creación y gestión de clones, para la clonación de datos instantánea y en el lugar
 * Mostrar métricas adicionales directamente desde ONTAP, como la versión de ONTAP
 * Visualización de los detalles de la VM de almacenamiento y del LIF del clúster, incluidas las funciones, los endpoints, los nodos, las direcciones IP y el estado
+* Desglose por componentes de los eventos de latencia
 
 
 
