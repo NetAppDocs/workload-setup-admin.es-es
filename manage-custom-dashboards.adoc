@@ -14,7 +14,7 @@ summary: Accede a tu catálogo de paneles de control para ver, actualizar y elim
 Gestiona tus paneles personalizados desde el catálogo de paneles. Desde allí, puedes consultar detalles, compartir paneles, actualizar los datos o eliminar los paneles que ya no necesites.
 
 .Acerca de esta tarea
-Puedes ver y gestionar los paneles personalizados desde el catálogo de paneles. Los paneles privados solo son visibles para ti, mientras que los paneles públicos son visibles para todos los usuarios de tu cuenta de Workload Factory. Cada panel muestra datos básicos como el nombre del creador, la fecha de creación y una etiqueta de visibilidad (Privado o Público).
+Puedes ver y gestionar los paneles personalizados desde el catálogo de paneles. Los paneles privados solo son visibles para ti, mientras que los paneles públicos son visibles para todos los usuarios de tu cuenta de Workload Factory. Cada panel muestra datos básicos como el nombre del creador, la fecha de creación y una etiqueta de visibilidad (privado o público).
 
 Los paneles personalizados son de solo lectura. No pueden modificar tu almacenamiento ni la configuración de las cargas de trabajo.
 
