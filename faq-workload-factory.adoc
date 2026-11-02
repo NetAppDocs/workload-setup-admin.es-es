@@ -228,6 +228,11 @@ En la página de configuración de IA, un administrador puede elegir Bedrock ges
 
 link:manage-genai-features.html["Gestiona funciones de IA"].
 
+.¿Dónde aparecen los ajustes y las acciones de los agentes a efectos de auditoría?
+Tracker registra los cambios en la configuración de los agentes y, en modo de lectura/escritura, cada solicitud de aprobación, incluidas la pregunta del agente y la respuesta del usuario. El servicio Workload Factory que realiza la operación registra los cambios en los recursos realizados a través de las APIs de Workload Factory.
+
+link:manage-agent-settings.html#audit-and-tracking-for-agent-actions["Infórmate sobre la auditoría y el seguimiento de las acciones de los agentes"].
+
 .¿Hay algún límite en el uso de la IA?
 Sí. Con Bedrock gestionado por NetApp, cada cuenta tiene un límite de gasto mensual para cada función de IA. Cuando se alcanza el límite, Workload Factory desactiva las funciones de IA, pone en gris las partes relacionadas de la interfaz y muestra una descripción emergente. Para obtener más créditos, ponte en contacto con tu representante de NetApp.
 

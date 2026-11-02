@@ -16,7 +16,7 @@ Crea paneles personalizados describiendo en un lenguaje sencillo lo que quieres 
 .Acerca de esta tarea
 Los paneles personalizados utilizan un diálogo guiado por IA para comprender qué es lo que quieres visualizar. Describes tus necesidades de supervisión en lenguaje natural, y el sistema te hace preguntas aclaratorias para asegurarse de que el panel cumpla con tus requisitos.
 
-Una vez creado, puedes actualizar el panel de control para ver los datos actualizados.
+Una vez creado, puedes comprobar cuándo se actualizaron por última vez las métricas de tu panel de control y solicitar una actualización bajo demanda. link:manage-custom-dashboards.html#refresh-dashboard-data["Aprende a actualizar los datos del panel de control"].
 
 Recuerda que los paneles personalizados son de solo lectura por diseño y no pueden hacer cambios en tus configuraciones de almacenamiento o cargas de trabajo.
 
@@ -58,10 +58,10 @@ Recibirás una notificación cuando tu panel de control esté listo. Si no se pu
 Después de crearla, puedes:
 
 * Cambia la visibilidad del panel de control para compartirlo con tu equipo
+* Comprueba la marca de tiempo de *Last Updated* y selecciona *Refresh data* para solicitar métricas actualizadas
 * Actualiza los datos del panel de control para ver la información más reciente
 * Edita los paneles de control para cambiar lo que muestran, incluidas las métricas, los gráficos y los intervalos de tiempo
 * Elimina los paneles que ya no necesites
-* Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez
 
 
 

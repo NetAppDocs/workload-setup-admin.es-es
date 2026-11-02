@@ -15,6 +15,62 @@ Conoce las novedades de las funciones de administración de Workload Factory, co
 
 
 
+[[01-november-2026]]
+== 01 noviembre 2026
+
+
+
+[[check-and-refresh-custom-dashboard-data]]
+=== Comprobar y actualizar los datos del panel de control personalizado
+
+Ahora puedes ver cuándo se actualizaron por última vez las métricas de tu panel personalizado y actualizarlas manualmente. Pasa el cursor por encima de *Actualizar datos* para ver la fecha y la hora de la última actualización.
+
+Selecciona *Actualizar datos* para iniciar un nuevo escaneo. Aparecerá un mensaje que confirma que el escaneo ha comenzado y el botón permanecerá desactivado hasta que finalice el escaneo.
+
+Cuando haya datos nuevos disponibles, selecciona *Cargar ahora* en el banner de notificación para actualizar el panel de control.
+
+Tanto *Actualizar datos* como *Cargar ahora* generan eventos de recopilación de datos en Tracker.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html#refresh-dashboard-data["Descubre cómo actualizar los datos de un panel de control personalizado"]
+
+
+
+[[specify-regions-for-custom-dashboards]]
+=== Especifica regiones para paneles personalizados
+
+Los paneles personalizados ahora te piden que elijas una o varias regiones si tu solicitud no las incluye. Los datos del panel se limitan a las regiones que selecciones.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["Aprende a crear un panel de control personalizado"]
+
+
+
+[[iam-policy-for-link-creation]]
+=== Política de IAM para la creación de enlaces
+
+La plantilla de CloudFormation y el código de Terraform para crear enlaces ahora usan una política de IAM en lugar de permisos de Lambda integrados.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html["Aprende a crear un enlace"]
+
+
+
+[[audit-and-tracking-for-ai-agent-actions]]
+=== Auditoría y seguimiento de las acciones de los agentes de IA
+
+Ahora puedes utilizar Tracker para revisar los cambios realizados en la configuración de los agentes de IA y, en modo de lectura/escritura, cada solicitud de aprobación, incluida la pregunta del agente y la respuesta del usuario.
+
+Los cambios en los recursos realizados a través de las API de Workload Factory quedan registrados por el servicio Workload Factory que lleva a cabo la operación.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-agent.html#audit-and-tracking-for-agent-actions["Infórmate sobre la auditoría y el seguimiento de las acciones de los agentes"]
+
+
+
+[[link-creation-improvements]]
+=== Mejoras en la creación de enlaces
+
+Workload Factory ha actualizado la salida de Codebox para la creación de enlaces sustituyendo los permisos inline de Lambda por la política de IAM para la plantilla CloudFormation y Terraform.
+
+
+
 [[14-october-2026]]
 == 14 de octubre de 2026
 

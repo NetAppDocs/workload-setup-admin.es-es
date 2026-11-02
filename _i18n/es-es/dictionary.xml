@@ -1363,7 +1363,6 @@
   <block id="dfc2a77d9b383cd28cba1a1e99f9a378" category="doc">Crear un panel de control personalizado</block>
   <block id="43d2bb31c641fd8b871b835572bc7441" category="paragraph">Crea paneles personalizados describiendo en un lenguaje sencillo lo que quieres supervisar. La IA te guía a lo largo del proceso de configuración para que tus paneles se adapten a tus cargas de trabajo y prioridades.</block>
   <block id="463a1f1058198f82800c115a2a913de5" category="paragraph">Los paneles personalizados utilizan un diálogo guiado por IA para comprender qué es lo que quieres visualizar. Describes tus necesidades de supervisión en lenguaje natural, y el sistema te hace preguntas aclaratorias para asegurarse de que el panel cumpla con tus requisitos.</block>
-  <block id="5af1607522ddad534f7fc3e5976684e5" category="paragraph">Una vez creado, puedes actualizar el panel de control para ver los datos actualizados.</block>
   <block id="a8f8e9b8eb3f376a4b560c169094087e" category="paragraph">Recuerda que los paneles personalizados son de solo lectura por diseño y no pueden hacer cambios en tus configuraciones de almacenamiento o cargas de trabajo.</block>
   <block id="1490f3908001d2cdf7587ba480973340" category="section-title">Crear un panel de control</block>
   <block id="342a19841e494c61bf9c06a5879eaffa" category="inline-image-macro">El icono del menú hamburguesa se usa para navegar a cargas de trabajo como almacenamiento, eda, ai, bases de datos, vmware y administración.</block>
@@ -1381,7 +1380,6 @@
   <block id="fb3b6f147b0a44a08f4c961dc053571e" category="paragraph">Después de crearla, puedes:</block>
   <block id="a5c04615d2baa4c3104d2afbb5b85c59" category="list-text">Actualiza los datos del panel de control para ver la información más reciente</block>
   <block id="7bff2130a08698224667671d85a34ed4" category="list-text">Elimina los paneles que ya no necesites</block>
-  <block id="ed5184af3d39b3e314759db5b95ba675" category="list-text">Ver los detalles del panel de control, incluyendo quién lo creó y cuándo se actualizó por última vez</block>
   <block id="d10995cac5dfc264a5da7f4abec9025d" category="inline-link-macro">Gestiona tus paneles personalizados</block>
   <block id="1c028f2c092927e5beff0c52bcc2456a" category="list-text"><block ref="1c028f2c092927e5beff0c52bcc2456a" category="inline-link-macro-rx"></block></block>
   <block id="1703fc0755f2533bd9d727fa0298c500" category="inline-link-macro">Soluciona problemas en los paneles personalizados</block>
@@ -1432,7 +1430,6 @@
   <block id="04b69ec1d9e5301be209cb2b652a1602" category="paragraph">El catálogo de paneles muestra todos los paneles personalizados de tu cuenta de Workload Factory.</block>
   <block id="dffad8b6380340c5079727deb13bb3f2" category="list-text">Revisa la lista del panel de control.</block>
   <block id="9e3f16aef1d22400bdae48c5cb77b00f" category="section-title">Actualizar los datos del panel de control</block>
-  <block id="4e424a1ad37782627141d4d50f79b586" category="paragraph">Los datos del panel se cargan al abrir un panel. Puedes actualizarlo para ver la información más reciente.</block>
   <block id="0c5896a9e6c8d2cff1b4d007852b1732" category="paragraph">Utiliza esta información para resolver los problemas habituales que puedas encontrar al crear o usar paneles personalizados.</block>
   <block id="2e00365fe32c89b1fd1ad214f291ca85" category="section-title">Error al crear el panel de control</block>
   <block id="09a8c59ab236b488dde6ce993a012c63" category="paragraph">**Problema:** Ves el mensaje de error “No se pudo interpretar la solicitud ni generar el código” al crear un panel de control.</block>
@@ -1974,7 +1971,6 @@
   <block id="b2174789d5314bb12b464a8d03a18be6" category="list-text">Edita los paneles de control para cambiar lo que muestran, incluidas las métricas, los gráficos y los intervalos de tiempo</block>
   <block id="0d4c6d4cadfc35e450177a6f124a12ce" category="admonition">Si el administrador de tu cuenta ha desactivado las funciones de IA, aparecerá un mensaje y no podrás crear ni editar paneles. Ponte en contacto con tu administrador o <block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>.</block>
   <block id="3dacf374ca39e9d1e2ccd73b21e8d75a" category="paragraph">Puedes editar los paneles desde el catálogo y actualizar el nombre, la descripción, la categoría o la solicitud de supervisión antes de decidir si guardas la versión revisada.</block>
-  <block id="09716803bbab78d4545cc7210ae61d90" category="paragraph">El panel de control vuelve a cargar los datos de tus cargas de trabajo.</block>
   <block id="d2258a9653c6a977efeeb955b27c66e9" category="section-title">Editar paneles de control</block>
   <block id="4e2f12e496523d85bae4a969657d45aa" category="paragraph">Puedes editar un panel de control para modificar lo que muestra, incluidas las métricas, los gráficos y los intervalos de tiempo.</block>
   <block id="b13bad0dcb6df4e403e8e2af9058dfe5" category="list-text">En la página *Paneles personalizados*, busca el panel que quieras editar.</block>
@@ -2147,4 +2143,50 @@
   <block id="fb28d89a6b0c6ce8708edc67fed69652" category="paragraph-title">¿Qué necesito tener preparado para crear y utilizar paneles personalizados?</block>
   <block id="548b72381df096d33b738a36b3370ab7" category="paragraph">El administrador de tu cuenta debe habilitar las funciones de IA. Necesitas credenciales de AWS con acceso de lectura a los servicios que deseas supervisar. Necesitas un Link para conectarte a los sistemas de archivos FSx for ONTAP. Los paneles de control son de solo lectura y no permiten modificar la configuración de tu almacenamiento ni de tus cargas de trabajo.</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">Preguntas frecuentes</block>
+  <block id="d5700d6fbdfdaa11c8c6dcbd565d8446" category="doc">Comprobar y actualizar los datos del panel de control personalizado</block>
+  <block id="a2ace9589bb1ff3e1b64e40ba9982721" category="paragraph">Ahora puedes ver cuándo se actualizaron por última vez las métricas de tu panel personalizado y actualizarlas manualmente. Pasa el cursor por encima de *Actualizar datos* para ver la fecha y la hora de la última actualización.</block>
+  <block id="6497706c70a607634590a156941b4e50" category="paragraph">Selecciona *Actualizar datos* para iniciar un nuevo escaneo. Aparecerá un mensaje que confirma que el escaneo ha comenzado y el botón permanecerá desactivado hasta que finalice el escaneo.</block>
+  <block id="2895998bd3d7c5fdb39e7fddc2bd608a" category="paragraph">Cuando haya datos nuevos disponibles, selecciona *Cargar ahora* en el banner de notificación para actualizar el panel de control.</block>
+  <block id="f418ba29e821ca3da1b907e6156d2db5" category="paragraph">Tanto *Actualizar datos* como *Cargar ahora* generan eventos de recopilación de datos en Tracker.</block>
+  <block id="0b62b5947fe6e091e6c0c1e387e32e69" category="inline-link-macro">Descubre cómo actualizar los datos de un panel de control personalizado</block>
+  <block id="348426e840eb5ae32d612438487c2065" category="paragraph"><block ref="348426e840eb5ae32d612438487c2065" category="inline-link-macro-rx"></block></block>
+  <block id="524f9b4ee818c419ee1585959e10855c" category="section-title">Especifica regiones para paneles personalizados</block>
+  <block id="9aca8419896ce9b5d75b523be971bafb" category="paragraph">Los paneles personalizados ahora te piden que elijas una o varias regiones si tu solicitud no las incluye. Los datos del panel se limitan a las regiones que selecciones.</block>
+  <block id="35a63836682befdc98086e583b61298a" category="inline-link-macro">Aprende a crear un panel de control personalizado</block>
+  <block id="c41b815c81909f8ff39eb5b52d29746d" category="paragraph"><block ref="c41b815c81909f8ff39eb5b52d29746d" category="inline-link-macro-rx"></block></block>
+  <block id="cc2d0ca75f186230ede0faa3f7692c06" category="section-title">Política de IAM para la creación de enlaces</block>
+  <block id="20721709cc5df2882070722a30cc34c3" category="paragraph">La plantilla de CloudFormation y el código de Terraform para crear enlaces ahora usan una política de IAM en lugar de permisos de Lambda integrados.</block>
+  <block id="38b63c1d391fa52af61b987953824171" category="paragraph"><block ref="38b63c1d391fa52af61b987953824171" category="inline-link-macro-rx"></block></block>
+  <block id="b3e7d6d7f8501adc86f1a7337ebfb531" category="section-title">Auditoría y seguimiento de las acciones de los agentes de IA</block>
+  <block id="fc5902f94dd3899ad0ce791954b6f521" category="paragraph">Ahora puedes utilizar Tracker para revisar los cambios realizados en la configuración de los agentes de IA y, en modo de lectura/escritura, cada solicitud de aprobación, incluida la pregunta del agente y la respuesta del usuario.</block>
+  <block id="25d50a8630b3c335d684f59cca6d3ace" category="paragraph">Los cambios en los recursos realizados a través de las API de Workload Factory quedan registrados por el servicio Workload Factory que lleva a cabo la operación.</block>
+  <block id="db0781c4ffb5f26ba7ad4f2ffe3dfdbd" category="inline-link-macro">Infórmate sobre la auditoría y el seguimiento de las acciones de los agentes</block>
+  <block id="9b06f95ad3e4fc8477f2ca89d854a603" category="paragraph"><block ref="9b06f95ad3e4fc8477f2ca89d854a603" category="inline-link-macro-rx"></block></block>
+  <block id="3714dde7378ac290c154f62d9c080369" category="section-title">Mejoras en la creación de enlaces</block>
+  <block id="73501dc89cd2fc3be142f43eaffe971b" category="paragraph">Workload Factory ha actualizado la salida de Codebox para la creación de enlaces sustituyendo los permisos inline de Lambda por la política de IAM para la plantilla CloudFormation y Terraform.</block>
+  <block id="0e43f192242267f4b6ae5962e9f5b38c" category="inline-link-macro">Aprende a actualizar los datos del panel de control</block>
+  <block id="05aeb0d0c1502e57f980bbf322cf31a6" category="paragraph">Una vez creado, puedes comprobar cuándo se actualizaron por última vez las métricas de tu panel de control y solicitar una actualización bajo demanda. <block ref="831e74ba37d5e8d2f1bf86cd0b468bf4" category="inline-link-macro-rx"></block>.</block>
+  <block id="a0029b147e3a4c22ba57efcbb020c23e" category="list-text">Comprueba la marca de tiempo de *Last Updated* y selecciona *Refresh data* para solicitar métricas actualizadas</block>
+  <block id="6d852ab3090e66a5f1f1a6d5675164cb" category="paragraph-title">¿Dónde aparecen los ajustes y las acciones de los agentes a efectos de auditoría?</block>
+  <block id="0f679622d131d4b9f3abef96c35743be" category="paragraph">Tracker registra los cambios en la configuración de los agentes y, en modo de lectura/escritura, cada solicitud de aprobación, incluidas la pregunta del agente y la respuesta del usuario. El servicio Workload Factory que realiza la operación registra los cambios en los recursos realizados a través de las APIs de Workload Factory.</block>
+  <block id="4c1cd3a1bad23fecc0286da543614cd7" category="paragraph"><block ref="bc36590c397b325a073c2ae9b60e53fd" category="inline-link-macro-rx"></block>.</block>
+  <block id="b70a9e9de689b4f17365d6060076d3b8" category="section-title">Auditoría y seguimiento de las acciones del agente</block>
+  <block id="774a23889a059a060f089bac423f3b00" category="paragraph">En el modo de lectura/escritura, Tracker registra cada solicitud de aprobación, incluida la pregunta del agente y la respuesta del usuario. El servicio Workload Factory que realiza la operación registra los cambios en los recursos realizados a través de las API de Workload Factory. Por ejemplo, un volumen creado a través de Workload Factory aparece en la etiqueta de servicio *Storage*, no en *Agent*.</block>
+  <block id="1c25d10ad7fe7b9def7bd90be9bb63ac" category="section-title">Comprueba si los datos están actualizados</block>
+  <block id="40d839f036c0870ce0f44a810dc01fd9" category="paragraph">Puedes comprobar cuándo se actualizaron por última vez los datos de tu dashboard y solicitar una actualización en cualquier momento. Un tooltip muestra la fecha y la hora de la última actualización.</block>
+  <block id="3943baa01d778cb77042aa99b8829491" category="paragraph">Selecciona *Refresh data* para iniciar un nuevo escaneo. El botón no está disponible mientras hay un escaneo en curso. Cuando los datos nuevos están listos, aparece un banner con la opción de actualizar el dashboard.</block>
+  <block id="80aab7a96b15f6ce5d375faafb077b13" category="paragraph"><block ref="831e74ba37d5e8d2f1bf86cd0b468bf4" category="inline-link-macro-rx"></block>.</block>
+  <block id="4561b6d16c60561c7dfef3363842359b" category="paragraph">Comprueba cuándo se actualizó por última vez tu panel de control y solicita un análisis bajo demanda cuando necesites datos actualizados.</block>
+  <block id="cb19e9f8b4fdf3bf166690f03f0888ff" category="paragraph">La descripción emergente de *Refresh data* muestra una marca de tiempo de *Last Updated* con la fecha y la hora en que se actualizó por última vez el dashboard. Esta marca de tiempo se refiere a los datos recopilados, no a la última vez que se cambió la configuración del dashboard.</block>
+  <block id="34839e5b2cbe60267b78999786be488f" category="paragraph">Al seleccionar *Actualizar datos* se inicia un nuevo análisis. Mientras se ejecuta un análisis, el botón está desactivado y su tooltip indica que hay un análisis en curso.</block>
+  <block id="13ab1a7b5cd6ff60fb50525984ba6258" category="inline-link-macro">Descubre cómo supervisar las operaciones con Tracker</block>
+  <block id="b6b3389b8e77a02f15ea3aba7cce028e" category="paragraph">Workload Factory registra un evento en Tracker cuando seleccionas *Actualizar datos* o *Cárgalo ahora*. <block ref="74993bbdd897b4c73c70c66a0dd88655" category="inline-link-macro-rx"></block>.</block>
+  <block id="b2f99e18989e76354ebba4fd4d399227" category="list-text">En el catálogo de paneles, abre el panel que quieras ver.</block>
+  <block id="b01e2768b9cf649d978bf4ea1879ea19" category="list-text">Pasa el cursor sobre *Actualizar datos* para comprobar la fecha y la hora de la *Última actualización*.</block>
+  <block id="669bf0e2d3a5223b736f207a1738dcea" category="list-text">Para solicitar métricas actualizadas, selecciona *Actualizar datos*.</block>
+  <block id="2c40fb628cd47c18fe14a2939979ebf9" category="paragraph">Un banner indica que ha comenzado un análisis. Espera a que finalice el análisis.</block>
+  <block id="dd2142eca6bec99aaba2fbc5a1fef1f5" category="list-text">Cuando hay datos nuevos disponibles, aparece un banner con este mensaje: "hay datos nuevos disponibles. Cárgalos ahora o haz clic en Refresh data en cualquier momento para actualizar la vista."</block>
+  <block id="f5f7ef3c1692aa4447b9fb26ad98940c" category="list-text">Selecciona *Cargar ahora* en el banner para cargar los datos disponibles en el panel. Como alternativa, selecciona *Actualizar datos* para actualizar la vista.</block>
+  <block id="abff96b75117f320254f372b6518244b" category="paragraph">El panel de control muestra las métricas actualizadas.</block>
+  <block id="8b253c1d4259c21c8314fc85adcb31d6" category="section-title">01 noviembre 2026</block>
 </blocks>

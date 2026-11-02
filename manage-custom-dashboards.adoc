@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: manage-custom-dashboards.html 
-keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog, refresh data, load data, last updated 
 summary: Accede a tu catálogo de paneles de control para ver, actualizar y eliminar paneles de control personalizados en Workload Factory. 
 ---
 = Gestiona paneles personalizados en NetApp Workload Factory
@@ -60,9 +60,28 @@ El panel de control se actualiza al instante. La etiqueta de visibilidad de la t
 [[refresh-dashboard-data]]
 == Actualizar los datos del panel de control
 
-Los datos del panel se cargan al abrir un panel. Puedes actualizarlo para ver la información más reciente.
+Comprueba cuándo se actualizó por última vez tu panel de control y solicita un análisis bajo demanda cuando necesites datos actualizados.
 
-El panel de control vuelve a cargar los datos de tus cargas de trabajo.
+.Acerca de esta tarea
+La descripción emergente de *Refresh data* muestra una marca de tiempo de *Last Updated* con la fecha y la hora en que se actualizó por última vez el dashboard. Esta marca de tiempo se refiere a los datos recopilados, no a la última vez que se cambió la configuración del dashboard.
+
+Al seleccionar *Actualizar datos* se inicia un nuevo análisis. Mientras se ejecuta un análisis, el botón está desactivado y su tooltip indica que hay un análisis en curso.
+
+Workload Factory registra un evento en Tracker cuando seleccionas *Actualizar datos* o *Cárgalo ahora*. link:monitor-operations.html["Descubre cómo supervisar las operaciones con Tracker"].
+
+.Pasos
+. En el catálogo de paneles, abre el panel que quieras ver.
+. Pasa el cursor sobre *Actualizar datos* para comprobar la fecha y la hora de la *Última actualización*.
+. Para solicitar métricas actualizadas, selecciona *Actualizar datos*.
++
+Un banner indica que ha comenzado un análisis. Espera a que finalice el análisis.
+
+. Cuando hay datos nuevos disponibles, aparece un banner con este mensaje: "hay datos nuevos disponibles. Cárgalos ahora o haz clic en Refresh data en cualquier momento para actualizar la vista."
+. Selecciona *Cargar ahora* en el banner para cargar los datos disponibles en el panel. Como alternativa, selecciona *Actualizar datos* para actualizar la vista.
+
+
+.Resultado
+El panel de control muestra las métricas actualizadas.
 
 
 
